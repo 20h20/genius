@@ -1,0 +1,87 @@
+/* -------------------------------
+BLOCS SIMPLE COMPONENT
+------------------------------- */
+.cbo-blocs{
+  .blocs-title{
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  .blocs-list{
+    .list-el{
+      margin: 2.5rem 0;
+
+      .el-inner{
+        display: flex;
+        align-items: center;
+
+        .inner-picture{
+          min-width: 6.875rem;
+          height: 4.5rem;
+
+          img{
+            object-position: left;
+          }
+        }
+        .inner-content{
+          padding-left: 0.75rem;
+
+          .content-title{
+            color: $colorblue;
+          }
+        }
+      }
+    }
+  }
+}
+/* -------------------------------
+SMALL SCREENS
+------------------------------- */
+@media (min-width: $screen-sm-min){
+  .cbo-blocs{
+    .blocs-list{
+      display: flex;
+      flex-wrap: wrap;
+      margin: -1.25rem -0.625rem;
+
+      .list-el{
+        margin: 1.25rem 0;
+        width: 50%;
+        padding: 0 0.625rem;
+      }
+    }
+  }
+}
+/* -------------------------------
+MEDIUM SCREENS
+------------------------------- */
+@media (min-width: $screen-md-min){
+  .cbo-blocs{
+    .blocs-title{
+      margin-bottom: 5rem;
+    }
+  }
+}
+/* -------------------------------
+LARGE SCREENS
+------------------------------- */
+@media (min-width: $screen-lg-min){
+  .cbo-blocs{
+    .blocs-list{
+      margin: -2.5rem -0.625rem;
+
+      .list-el{
+        width: 45%;
+        margin: 2.5rem 0;
+
+        &:nth-child(3n){
+          margin-left: 10%;
+        }
+        .el-inner{
+          .inner-content{
+            padding-left: 1.875rem;
+          }
+        }
+      }
+    }
+  }
+}

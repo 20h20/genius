@@ -1,0 +1,114 @@
+/* -------------------------------
+BACK OFFICE COMPONENT
+------------------------------- */
+#poststuff {
+	.acfe-fc-placeholder:hover .acfe-fc-overlay{
+		z-index: 9;
+	}
+	.acfe-flexible-placeholder{
+		font-family: 'Gilroy';
+
+		h1,h2,h3,h4,h5,h6{
+			color: $colorbluedark;
+			font-weight: bold;
+		}
+		.cbo-title-1,
+		.cbo-title-1 h1, .cbo-title-1 h2, .cbo-title-1 h3, .cbo-title-1 h4, .cbo-title-1 p{
+			font-size: 46px;
+			line-height: 50px;
+		}
+		.cbo-title-2
+		.cbo-title-2 h1, .cbo-title-2 h2, .cbo-title-2 h3, .cbo-title-2 h4, .cbo-title-2 p{
+			font-size: 38px;
+			line-height: 42px;
+		}
+		.cbo-title-3,
+		.cbo-title-3 h1, .cbo-title-3 h2, .cbo-title-3 h3, .cbo-title-3 h4{
+			font-size: 36px;
+			line-height: 42px;
+		}
+		.cbo-cms{
+			p{
+				margin: 14px 0;
+		
+				&:last-child{
+					margin-bottom: 0;
+				}
+				&:first-child{
+					margin-top: 0;
+				}
+			}
+			h2,h3,h4{
+				margin:50px 0 20px 0;
+				padding: 0;
+		
+				&:first-child{
+					margin-top: 0;
+				}
+				strong{
+					color: $colorblue;
+				}
+			}
+			h2{
+				font-size: 36px;
+				line-height: 46px;
+			}
+			h3{
+				font-size: 36px;
+				line-height: 42px;
+			}
+			h4{
+				font-size: 32px;
+				line-height: 36px;
+			}
+		}
+	}
+	.cbo-cta .cta-box .cta-content .content-title{
+		h2,h3,h4,h5,h6{
+			color: $colorwhite;
+		}
+	}
+	.cbo-context .context-video .video-container::after {
+		z-index: 1;
+	  }
+}
+/* -------------------------------
+MEDIUM SCREENS
+------------------------------- */
+@media (min-width: $screen-md-min){
+	#poststuff{
+		.acfe-flexible-placeholder{
+			.cbo-title-1,
+			.cbo-title-1 h1, .cbo-title-1 h2, .cbo-title-1 h3, .cbo-title-1 h4, .cbo-title-1 p{
+				font-size: 76px;
+				line-height: 82px;
+			}
+			.cbo-title-2
+			.cbo-title-2 h1, .cbo-title-2 h2, .cbo-title-2 h3, .cbo-title-2 h4, .cbo-title-2 p{
+				font-size: 56px;
+				line-height: 66px;
+			}
+		}
+		.cbo-herorich .herorich-picture{
+			position: relative;
+			left: 0;
+			width: 40%;
+			height: auto;
+		}
+	}
+}
+/* -------------------------------
+LARGE SCREENS
+------------------------------- */
+@media (min-width: $screen-lg-min){
+	#poststuff {
+		.acfe-flexible-placeholder{
+			.cbo-cms{
+				h2{
+					font-size: 46px;
+					line-height: 50px;
+				}
+			}
+		}
+	}
+}

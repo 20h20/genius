@@ -1,0 +1,63 @@
+/* -------------------------------
+CONTAINER MICRO COMPONENT
+------------------------------- */
+.cbo-container {
+  margin: 50px auto;
+  max-width: 1696px;
+  padding: 0 20px;
+  position: relative;
+  width: 100%;
+
+  &.container--nomargin{
+    margin: 0 auto;
+  }
+  &.container--padding {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 50px;
+    padding-bottom:50px;
+  }
+  &.container--medium{
+    max-width: 1300px;
+  }
+  &.container--small{
+    max-width: 1000px;
+  }
+}
+/* -------------------------------
+SMALL SCREENS
+------------------------------- */
+@media (min-width: $screen-sm-min) {
+  .cbo-container {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+/* -------------------------------
+MEDIUM SCREENS
+------------------------------- */
+@media (min-width: $screen-md-min) {
+  .cbo-container {
+    margin: 80px auto;
+    padding-left: 70px;
+    padding-right: 70px;
+
+    &.container--padding {
+      padding-top: 80px;
+      padding-bottom: 80px;
+    }
+  }
+}
+/* -------------------------------
+LARGE SCREENS
+------------------------------- */
+@media (min-width: $screen-lg-min) {
+  .cbo-container {
+    margin: 110px auto;
+
+    &.container--padding {
+      padding-top: 110px;
+      padding-bottom: 110px;
+    }
+  }
+}

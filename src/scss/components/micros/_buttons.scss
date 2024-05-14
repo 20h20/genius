@@ -1,0 +1,102 @@
+/* -------------------------------
+BUTTONS MICRO COMPONENT
+------------------------------- */
+.cbo-button,
+input[type="submit"]{
+	font-weight: 600;
+	background: $colorbluemedium;
+	color: $colorwhite;
+	width: fit-content;
+	border-radius: 99rem;
+	height:60px;
+	line-height: 18px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	cursor: pointer;
+	padding: 0 20px;
+	transition: all 0.8s cubic-bezier(0.85, 0, 0.15, 1) 0s;
+
+	&:hover{
+		background: $colorbluexlight;
+		color: $colorwhite;
+	}
+	&.button--border{
+		background: none;
+		color: $colorwhite;
+		box-shadow: 0px 0px 0px 2px $colorwhite inset;
+		transition: all 0.8s cubic-bezier(0.85, 0, 0.15, 1) 0s;
+
+		&:hover{
+			color: $colorblue;
+			box-shadow: 0px 0px 0px 300px $colorwhite inset;
+
+			&:after{
+				color: $colorblue;
+			}
+		}
+		&.button--icon{
+			&:hover{	
+				&:after{
+					color: $colorblue;
+				}
+			}
+		}
+	}
+	&.button--borderblue{
+		background: none;
+		color: $colorblue;
+		box-shadow: 0px 0px 0px 3px $colorblue inset;
+
+		&:hover{
+			color: $colorwhite;
+			box-shadow: 0px 0px 0px 300px $colorblue inset;
+		}
+	}
+	&.button--icon{
+		&:after{
+			font-family:"icons";
+			content: "\f104";
+			display: block;
+			margin-left: 20px;
+			color: $colorbluexlight;
+			font-weight: normal;
+			transition: all 0.8s cubic-bezier(0.85, 0, 0.15, 1) 0s;
+		}
+		&:hover{
+			&:after{
+				color: $colorwhite;
+			}
+		}
+	}
+	&.cbo-link{
+		color: $colorblue;
+		background: none;
+		padding: 0;
+		min-width: inherit;
+		height: auto;
+
+		&:hover{
+			color: $colorbluexlight;
+		}
+		&.button--icon{
+			&:hover{
+				&:after{
+					color: $colorbluexlight;
+				}
+			}
+		}
+	}
+}
+/* -------------------------------
+LARGE SCREENS
+------------------------------- */
+@media (min-width: $screen-lg-min){
+	.cbo-button,
+	input[type="submit"]{
+		min-width: 216px;
+		height:60px;
+		padding: 0 20px;
+	}
+}

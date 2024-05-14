@@ -1,0 +1,170 @@
+html {
+	min-height:100%;
+
+	&.html--hidden{
+		overflow: hidden;
+	}
+}
+body {
+	font-family: 'Gilroy';
+	font-weight: 500;
+	background: $colorwhite;
+	color: $colorbluedark;
+	font-size: 18px;
+	line-height: 24px;
+	width: 100%;
+	min-height: 100%;
+	text-rendering: geometricPrecision;
+	margin: 0;
+	hyphens: initial;
+
+	&.body--menuopen,
+	&.body-modale-open{
+		overflow: hidden;
+		width: 100vw;
+		height: 100vh;
+		overscroll-behavior: contain;
+	}
+}
+*{
+	box-sizing: border-box;
+
+	&:focus {
+		outline:none;
+	}
+	&::selection{
+		background: $colorblue;
+	}
+}
+.cbo-main{
+	padding-top: 108px;
+	position: relative;
+
+	&:after{
+		content: '';
+		background: linear-gradient(0deg, rgba(255,255,255,0.66) 0%, rgba(254,255,255,0.66) 42%, rgba(165,244,255,0.5) 100%); 
+		width: 100%;
+		height: 300px;
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: -1;
+	}
+}
+button{
+	background: none;
+	border: none;
+}
+figure{
+	margin: 0;
+}
+.cbo-page{
+	z-index: 2;
+	position: relative;
+
+	section{
+		&:first-child{
+			.cbo-container{
+				margin-top: 0;
+			}
+		}
+	}
+	&.page-404{
+		text-align: center;
+	}
+}
+
+@keyframes changeColor {
+    0% { background-color: #9bb1d6;opacity:0.6;}
+    25% { background-color: #91bdf2;opacity:0.8;}
+    50% { background-color: #a7ecf8;opacity:0.9;}
+	75% { background-color: #91bdf2;opacity:0.8;}
+	100% { background-color: #9bb1d6;opacity:0.6; }
+}
+@keyframes scaleAnimation {
+    0%, 100% {
+        transform: scale(0.6);
+    }
+    50% {
+        transform: scale(1);
+    }
+}
+.container-halo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 80vh;
+    height: 80vh;
+    z-index: 1;
+	animation: scaleAnimation 6s infinite;
+
+	.halo {
+		display: block;
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 80vh;
+		height: 80vh;
+		border-radius: 100%;
+		will-change: transform;
+		filter: blur(10vh);
+		pointer-events: none;
+		z-index: 3;
+		transform: translateX(-50%);
+		transition: background-color 1s ease-out;
+		animation: changeColor 6s infinite
+	}
+}
+/* -------------------------------
+MEDIUM SCREENS
+------------------------------- */
+@media (min-width: $screen-md-min){
+	body{
+		hyphens: auto;
+
+		&.cbo-landing{
+			.cbo-main{
+				padding-top: 0;
+
+				.cbo-herorich{
+					.herorich-content{
+						padding-top: 120px;
+					}
+					.herorich-picture {
+						.picture-main{
+							border-radius: 0 0 0 20px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+/* -------------------------------
+LARGE SCREENS
+------------------------------- */
+@media (min-width: $screen-lg-min){
+	.cbo-main{
+		&:after{
+			height: 700px;
+		}
+	}
+	.cbo-main{
+		overflow: hidden;
+		padding-top: 180px;
+	}
+}
+/* -------------------------------
+XLARGE SCREENS
+------------------------------- */
+@media (min-width: $screen-xl-min){
+	body{
+		&.cbo-landing{
+			.cbo-main{
+				.cbo-herorich .herorich-content{
+					padding-top: 150px;
+				}
+			}
+		}
+	}
+}

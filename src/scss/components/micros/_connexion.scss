@@ -1,0 +1,39 @@
+/* -------------------------------
+CONNEXION COMPONENT
+------------------------------- */
+.login{
+	padding: 0;
+	display: flex;
+	color:$colorbluedark;
+
+	a,
+	label{
+		color:$colorbluedark;
+	}
+	h1{
+		a{
+			background: url("../img/logo-genius.png") no-repeat center;
+			background-size: contain;
+			width: 200px;
+		}
+	}
+	form .input{
+		border:1px solid $colorblue;
+	}
+	.button.button-large{
+		background: $colorblue;
+		border: 0px;
+		margin-top: 30px;
+		width: 100%;
+	}
+	form .input{
+		border-radius: 0px;
+	}
+	.language-switcher{
+		display: none;
+	}
+	#backtoblog a,
+	#nav a {
+		color: $colorbluedark;
+	}
+}

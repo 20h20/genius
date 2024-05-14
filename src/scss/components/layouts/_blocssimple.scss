@@ -1,0 +1,109 @@
+/* -------------------------------
+BLOCS SIMPLE 3 COLS COMPONENT
+------------------------------- */
+.cbo-blocssimple{
+  .blocssimple-title{
+    text-align: center;
+    margin-bottom: 32px;
+  }
+  .blocssimple-list{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+
+    .list-el{
+      margin: 40px 0;
+
+      .el-inner{
+        display: flex;
+
+        .inner-picture{
+          min-width: 80px;
+          height: 80px;
+
+          img{
+            object-position: left;
+          }
+        }
+        .inner-content{
+          padding-left: 20px;
+
+          .content-title{
+            color: $colorblue;
+            font-size: 22px;
+            line-height: 30px;
+          }
+        }
+      }
+    }
+  }
+}
+/* -------------------------------
+SMALL SCREENS
+------------------------------- */
+@media (min-width: $screen-sm-min){
+  .cbo-blocssimple{
+    .blocssimple-list{
+      margin: -20px -10px;
+      flex-direction: inherit;
+      justify-content: center;
+
+      .list-el{
+        margin: 20px 0;
+        width: 50%;
+        padding: 0 10px;
+      }
+    }
+  }
+}
+/* -------------------------------
+MEDIUM SCREENS
+------------------------------- */
+@media (min-width: $screen-md-min){
+  .cbo-blocssimple{
+    .blocssimple-title{
+      margin-bottom: 80px;
+    }
+    .blocssimple-list{
+      margin: -40px -15px;
+
+      .list-el{
+        width: 33.33333%;
+        margin: 40px 0;
+        padding: 0 15px;
+
+        .el-inner{
+          .inner-content{
+            padding-left: 30px;
+          }
+        }
+      }
+    }
+  }
+}
+/* -------------------------------
+LARGE SCREENS
+------------------------------- */
+@media (min-width: $screen-lg-min){
+  .cbo-blocssimple{
+    .blocssimple-list{
+      margin: -40px -30px;
+
+      .list-el{
+        padding: 0 30px;
+
+        .el-inner{
+          .inner-content{
+            .content-title{
+              font-size: 30px;
+              line-height: 40px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

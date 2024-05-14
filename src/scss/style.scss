@@ -1,0 +1,64 @@
+/******************************************************************
+Author: Julien B.
+******************************************************************/
+
+/*********************
+IMPORTING PARTIALS
+*********************/
+@import "partials/variables";
+@import "partials/icons";
+
+/*********************
+STUCTURE COMPONENTS
+*********************/  
+@import "components/structure/base";
+@import "components/structure/header";
+@import "components/structure/footer";
+
+/*********************
+MICRO COMPONENTS
+*********************/
+@import "components/micros/appointment";
+@import "components/micros/blocarticle";
+@import "components/micros/bloctestimonial";
+@import "components/micros/buttons";
+@import "components/micros/connexion";
+@import "components/micros/container";
+@import "components/micros/featured";
+@import "components/micros/filters";
+@import "components/micros/modale";
+@import "components/micros/pagination";
+@import "components/micros/pictures";
+@import "components/micros/slick";
+@import "components/micros/typography";
+
+/*********************
+LAYOUTS COMPONENTS
+*********************/
+@import "components/layouts/blocs";
+@import "components/layouts/blocssimple";
+@import "components/layouts/context";
+@import "components/layouts/cta";
+@import "components/layouts/herorich";
+@import "components/layouts/partners";
+@import "components/layouts/picfull";
+@import "components/layouts/relation";
+@import "components/layouts/richblocs";
+@import "components/layouts/textpicture";
+@import "components/layouts/textpicturelist";
+@import "components/layouts/testimonials";
+@import "components/layouts/text";
+
+/*********************
+BACK END REMOVE
+*********************/
+.cbo-main{
+    @import "partials/_animations";
+}
+.cbo-main,
+.acfe-flexible-placeholder{
+    @import "components/micros/form";
+}
+.wp-admin{
+    @import "components/micros/back-office";
+}

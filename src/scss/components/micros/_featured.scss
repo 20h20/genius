@@ -1,0 +1,136 @@
+/* -------------------------------
+FEATURED ARTICLE MICRO COMPONENT
+------------------------------- */
+.cbo-featured{
+	.featured-title{
+		text-align: center;
+		margin-bottom: 32px;
+	}
+	.featured-article{
+		.article-inner{
+			display: block;
+
+			.article-picture{
+				padding-bottom: 67%;
+				border-radius: 20px;
+				width: calc(100% - 40px);
+				display: block;
+				overflow: hidden;
+
+				img{
+					transition: all 0.8s cubic-bezier(0.85, 0, 0.15, 1) 0s;
+				}
+			}
+			.article-content{
+				background: linear-gradient(45deg, rgba($colorblue,1) 0%, rgba(#5B9EFF,1) 100%);
+				border-radius: 20px;
+				padding: 40px 20px;
+				width: calc(100% - 40px);
+				margin: -68px 0 0 40px;
+				display: block;
+				position: relative;
+				color: $colorwhite;
+				transition: all 0.8s cubic-bezier(0.85, 0, 0.15, 1) 0s;
+
+				.content-title{
+					display: block;
+				}
+				.content-text{
+					margin: 28px 0;
+					display: block;
+				}
+				.cbo-button{
+					color: $colorwhite;
+
+					&:after{
+						color: $colorwhite;
+					}
+				}
+			}
+		}
+	}
+}
+/* -------------------------------
+SMALL SCREENS
+------------------------------- */
+@media (min-width: $screen-sm-min){
+	.cbo-featured{
+		.featured-article{
+			.article-inner{
+				display: flex;
+
+				.article-picture{
+					width: 70%;
+					padding-bottom: 0;
+					margin-bottom: 60px;
+				}
+				.article-content{
+					width: 50%;
+					margin: 60px 0 0 -20%;
+				}
+			}
+		}
+	}
+}
+/* -------------------------------
+MEDIUM SCREENS
+------------------------------- */
+@media (min-width: $screen-md-min){
+	.cbo-featured{
+		.featured-title{
+			margin-bottom: 80px;
+		}
+		.featured-article{
+			.article-inner{
+				&:hover{
+					.article-picture{
+						img{
+							transform: scale(1.2);
+						}
+					}
+					.article-content{
+						color: $colorbluexlight;
+
+						.cbo-button{
+							&:after{
+								margin-left: 16px;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+/* -------------------------------
+LARGE SCREENS
+------------------------------- */
+@media (min-width: $screen-lg-min){
+	.cbo-featured{
+		.featured-article{
+			.article-inner{
+				.article-picture{
+					margin-bottom: 100px;
+				}
+				.article-content{
+					padding: 60px 40px;
+					margin: 100px 0 0 -20%;
+				}
+			}
+		}
+	}
+}
+/* -------------------------------
+XLARGE SCREENS
+------------------------------- */
+@media (min-width: $screen-xl-min){
+	.cbo-featured{
+		.featured-article{
+			.article-inner{
+				.article-content{
+					padding: 80px;
+				}
+			}
+		}
+	}
+}

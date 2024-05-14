@@ -1,0 +1,66 @@
+/* -------------------------------
+PAGINATION MICRO COMPONENT
+------------------------------- */
+.cbo-pagination{
+	margin-top: 1.875rem;
+	display: flex;
+	align-content: center;
+	justify-content: center;
+	width: 100%;
+	
+	li{
+		margin: 0 0.3125rem;
+
+		a{
+			color: $colorbluedark;
+			position: relative;
+			border-radius: 99rem;
+			width: 2.5rem;
+			height: 2.5rem;
+			font-weight: 600;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			transition: all 0.4s cubic-bezier(0.85, 0, 0.15, 1) 0s;
+
+			&:after{
+				content:'';
+				background: $colorblue;
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				border-radius: 99rem;
+				transform: scale(0);
+				z-index: -1;
+				transition: all 0.4s cubic-bezier(0.85, 0, 0.15, 1) 0s;
+			}
+		}
+		&:hover{
+			a{
+				color: $colorwhite;
+
+				&:after{
+					transform: scale(1);
+				}
+			}
+		}
+		&.disabled{
+			display: none;
+		}
+		&.cbo-paginate-prev,
+		&.cbo-paginate-next{
+			a{
+				width: auto;
+				padding: 0 1rem;
+			}
+		}
+		&.cbo-paginate-prev,
+		&.cbo-paginate-next,
+		&.active{
+			a{
+				background: $colorblue;
+				color: $colorwhite;
+			}
+		}
+	}
+}

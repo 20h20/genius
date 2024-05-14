@@ -1,0 +1,33 @@
+// Custom template
+
+@font-face {
+    font-family:"icons";
+    src: url("../iconfont/icons.eot?4680620ef2b270128a47fe158e0842e9");
+    src: url("../iconfont/icons.eot?4680620ef2b270128a47fe158e0842e9#iefix") format("embedded-opentype"),
+		url("../iconfont/icons.woff?4680620ef2b270128a47fe158e0842e9") format("woff"),
+		url("../iconfont/icons.ttf?4680620ef2b270128a47fe158e0842e9") format("truetype"),
+		url("../iconfont/icons.svg?4680620ef2b270128a47fe158e0842e9#icons") format("svg");
+    font-weight:normal;
+    font-style:normal;
+    }
+
+.icon {
+    font-family:"icons";
+    display:inline-block;
+    font-style:normal;
+    speak:none;
+    -webkit-font-smoothing:antialiased;
+    font-size:1em;
+    line-height:1em;
+    vertical-align:baseline;
+    }
+
+// Icons
+.icon--chevron:before { content:"\f101"; }
+.icon--home:before { content:"\f102"; }
+.icon--infos:before { content:"\f103"; }
+.icon--next-arrow:before { content:"\f104"; }
+.icon--phone:before { content:"\f105"; }
+.icon--pin:before { content:"\f106"; }
+.icon--player:before { content:"\f107"; }
+.icon--top-quote:before { content:"\f108"; }

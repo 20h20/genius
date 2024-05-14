@@ -1,0 +1,137 @@
+/* -------------------------------
+TEXT PICTURE LIST COMPONENT
+------------------------------- */
+.cbo-textpicturelist {
+  .textpicturelist-title{
+    text-align: center;
+    margin-bottom: 32px;
+  }
+  .textpicturelist-picture{
+    max-width: 600px;
+    margin: 0 auto 20px auto;
+    padding-bottom: 70%;
+  }
+  .textpicturelist-content {
+    max-width: 600px;
+    margin: 0 auto;
+
+     &.content--timeline{
+      .list-el{
+        position: relative;
+
+          &:after{
+            content: '';
+            background: $colorgrey;
+            width: 5px;
+            height: calc(100% - -45px);
+            position: absolute;
+            top: 3px;
+            left: 28px;
+          }
+          &:last-child{
+            &:after{
+              display: none;
+            }
+          }
+      }
+    }
+    .list-el{
+      .el-inner{
+        z-index: 2;
+        position: relative;
+        display: flex;
+        margin-top: 45px;
+
+        .inner-picture{
+          margin-right:24px;
+          min-width: 60px;
+          height: 80px;
+          display: block;
+        }
+        .inner-title {
+          color: $colorblue;
+          margin-bottom: 12px;
+        }
+      }
+    }
+  }
+}
+/* -------------------------------
+MEDIUM SCREENS
+------------------------------- */
+@media (min-width: $screen-md-min) {
+  .cbo-textpicturelist {
+    .inner-container{
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .textpicturelist-picture{
+      width: 45%;
+      max-width: inherit;
+      margin: 0;
+      padding-bottom: 50%;
+    }
+    .textpicturelist-content {
+      width: 45%;
+      max-width: inherit;
+      margin: 0;
+
+      .list-el{
+        &:first-child{
+          .el-inner{
+              margin-top: 0;
+          }
+        }
+      }
+    }
+    &.textpicturelist--right {
+      .inner-container{
+        flex-direction: row-reverse;
+      }
+    }
+  }
+}
+/* -------------------------------
+LARGE SCREENS
+------------------------------- */
+@media (min-width: $screen-lg-min) {
+  .cbo-textpicturelist {
+    .textpicturelist-content {
+      &.content--timeline{
+        .list-el{
+          &:after{
+            height: calc(100% - -60px);
+          }
+        }
+      }
+      .list-el{
+        .el-inner{
+          margin-top: 60px;
+        }
+      }
+    }
+  }
+}
+/* -------------------------------
+XLARGE SCREENS
+------------------------------- */
+@media (min-width: $screen-xl-min) {
+  .cbo-textpicturelist {
+    .textpicturelist-content {
+      &.content--timeline{
+        .list-el{
+          &:after{
+            height: calc(100% - -100px);
+          }
+        }
+      }
+      .list-el{
+        .el-inner{
+          margin-top: 100px;
+        }
+      }
+    }
+  }
+}

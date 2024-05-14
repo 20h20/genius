@@ -1,0 +1,93 @@
+/* -------------------------------
+PARTNERS COMPONENT
+------------------------------- */
+.cbo-partners{
+    .partners-title{
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+    .partners-list{
+        &:not(.slick-slider){
+            display: flex;
+            justify-content: center;
+            overflow: hidden;
+
+            .list-el{
+                width: 20%;
+                min-width: 20%;
+                height: 3.75rem;
+                margin: 0 0.625rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                .el-inner{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    padding: 0 0.625rem;
+                    height: 100%;
+
+                    img{
+                        position: relative;
+                    }
+                }
+            }
+        }
+        .slick-list{
+            display: flex;
+            justify-content: center;
+
+            .slick-track{
+                .slick-slide{
+                    height: 3.75rem;
+                    margin: 0 0.625rem;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    .list-el{
+                        height: 100%;
+            
+                        .el-inner{
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            padding: 0 0.625rem;
+                            height: 100%;
+
+                            img{
+                                position: relative;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/* -------------------------------
+MEDIUM SCREENS
+------------------------------- */
+@media (min-width:$screen-md-min) {
+    .cbo-partners{
+        .partners-title{
+            margin-bottom: 5rem;
+        }
+        .partners-list{
+            .slick-list{
+                .slick-track{
+                    .slick-slide{
+                        height: 6.25rem;
+
+                        .list-el{
+                            .el-inner{
+                                padding: 0.875rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,161 @@
+/* -------------------------------
+ARTICLE BLOC MICRO COMPONENT
+------------------------------- */
+.articles-list{
+	margin: 2.5rem -0.625rem;
+
+	.list-el{
+		height: 100%;
+		padding: 0.625rem;
+
+		.el-inner{
+			padding: 3px;
+			position: relative;
+			color: $colorbluedark;
+			border-radius: 1.25rem;
+			overflow: hidden;
+			height: 100%;
+			display: flex;
+			flex-wrap: wrap;
+			flex-direction: column;
+			transition: all .4s;
+
+			.inner-border{
+				position: absolute;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				z-index: 1;
+				border-radius: 1.25rem;
+				overflow: hidden;
+				background: linear-gradient(to left,$colorbluemedium, $colorturquoise);
+			}
+			.el-picture{
+				position: relative;
+				z-index: 2;
+				display: block;
+				padding-bottom: 55%;
+				border-radius: 1.125rem 1.125rem 0 0;
+				overflow: hidden;
+
+				.picture-category{
+					background: linear-gradient(45deg, rgba($colorbluexlight,1) 0%, rgba($colorturquoise,1) 100%);
+					border-radius: 1584px;
+					display: flex;
+					align-items: center;
+					width: fit-content;
+					height: 2.5rem;
+					position: absolute;
+					z-index: 2;
+					top: 1rem;
+					right: 1rem;
+					color: $colorwhite;
+					padding: 0 1.25rem;
+					font-size: 1rem;
+					line-height: 1rem;
+					transition: all .4s;
+				}
+			}
+			.el-content{
+				position: relative;
+				z-index: 2;
+				background: $colorwhite;
+				display: flex;
+				flex-wrap: wrap;
+				flex-direction: column;
+				justify-content: space-between;
+				flex: 1;
+				padding: 1.25rem;
+				border-radius: 0 0 1.125rem 1.125rem;
+
+				.content-top{
+					display: block;
+
+					.content-title{
+						color: $colorblue;
+						margin: 0 0 1.5rem 0;
+						font-size: 26px;
+						line-height: 30px;
+						transition: all .4s;
+					}
+					.content-text{
+						display: block;
+					}
+				}
+				.content-link{
+					margin-top: 1.75rem;
+				}
+			}
+		}
+	}
+}
+/* -------------------------------
+SMALL SCREENS
+------------------------------- */
+@media (min-width: $screen-sm-min){
+	.articles-list{
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+	
+		.list-el{
+			width: 50%;
+			height: auto;
+		}
+	}
+}
+/* -------------------------------
+LARGE SCREENS
+------------------------------- */
+@media (min-width: $screen-lg-min){
+	.articles-list{
+		margin: 2.5rem -1.875rem;
+
+		.list-el{
+			width: 33.3333%;
+			padding: 1.875rem;
+
+			.el-inner{
+				.el-content{
+					padding: 1.875rem 1.25rem;
+				}
+			}
+			&:hover{
+				.el-inner{
+					.el-picture{
+						.picture-category{
+							top: 1.625rem;
+						}
+					}
+					.el-content{
+						.content-title{
+							color: $colorturquoise;
+						}
+						.content-link{
+							.cbo-button{
+								&:after{
+									margin-left: 16px;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+/* -------------------------------
+XLARGE SCREENS
+------------------------------- */
+@media (min-width: $screen-xl-min){
+	.articles-list{
+		.list-el{
+			.el-inner{
+				.el-content{
+					padding: 2.25rem;
+				}
+			}
+		}
+	}
+}

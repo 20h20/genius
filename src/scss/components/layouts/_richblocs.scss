@@ -1,0 +1,110 @@
+/* -------------------------------
+BLOCS RICH COMPONENT
+------------------------------- */
+.cbo-richblocs{
+  .richblocs-title{
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  .richblocs-list{
+    margin: 0 auto;
+    max-width: 37.5rem;
+
+    .list-el{
+      margin-top: 1.25rem;
+
+      .el-inner{
+        color: $colorwhite;
+        border-radius: 1.25rem;
+        padding: 2.125rem;
+
+        &.inner--darkblue{
+          background: linear-gradient(45deg, rgba(91,158,255,1) 0%, rgba(46,96,255,1) 100%);
+        }
+        &.inner--lightblue{
+          background: linear-gradient(45deg, rgba(118,243,255,1) 0%, rgba(46,217,250,1) 100%);
+        }
+        .inner-picture{
+          margin-bottom: 0.875rem;
+          width: 4.6875rem;
+          height: 3.4375rem;
+          display: block;
+        }
+        .inner-title{
+          margin-bottom: 0.75rem;
+        }
+        .cbo-button{
+          margin-top: 1.875rem;
+          color: $colorwhite;
+
+          &:after{
+            color: $colorwhite;
+          }
+        }
+      }
+    }
+  }
+}
+/* -------------------------------
+MEDIUM SCREENS
+------------------------------- */
+@media (min-width: $screen-md-min){
+  .cbo-richblocs{
+    .richblocs-title{
+      margin-bottom: 5rem;
+    }
+    .richblocs-list{
+      margin: 0 -0.9375rem;
+      max-width: inherit;
+      display: flex;
+      flex-wrap: wrap;
+
+      .list-el{
+        margin-top: 0;
+        max-width: 48.4375rem;
+        width: 50%;
+        padding: 0 0.9375rem;
+
+        &:nth-child(2n){
+          margin-top: 7.5rem;
+        }
+        .el-inner{
+          .cbo-button{
+            &:hover{
+              &:after{
+                margin-left: 30px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+/* -------------------------------
+LARGE SCREENS
+------------------------------- */
+@media (min-width: $screen-lg-min){
+  .cbo-richblocs{
+    .richblocs-list{
+      margin: 0 -2.1875rem;
+
+      .list-el{
+        padding: 0 2.1875rem;
+  
+        .el-inner{
+          padding: 3.125rem 4.125rem;
+
+          .inner-picture{
+            margin-bottom: 1.875rem;
+            width: 6.25rem;
+            height: 4.5rem;
+          }
+          .inner-title{
+            margin-bottom: 1.625rem;
+          }
+        }
+      }
+    }
+  }
+}

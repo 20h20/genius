@@ -1,0 +1,38 @@
+/* -------------------------------
+FULL PICTURE COMPONENT
+------------------------------- */
+.cbo-fullpicture {
+  .fullpicture-title{
+    text-align: center;
+    padding: 0 20px;
+  }
+  .fullpicture-picture{
+    &.picture--desktop{
+      display: none;
+    }
+    &.picture--mobile{
+      img{
+        position: relative;
+      }
+    }
+  }
+}
+/* -------------------------------
+SMALL SCREENS
+------------------------------- */
+@media (min-width: $screen-sm-min){
+  .cbo-fullpicture {
+    .fullpicture-title{
+      padding: 0 40px;
+    }
+    .fullpicture-picture{
+      &.picture--desktop{
+        display: block;
+        padding-bottom: 56%;
+      }
+      &.picture--mobile{
+        display: none;
+      }
+    }
+  }
+}

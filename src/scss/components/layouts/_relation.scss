@@ -1,0 +1,50 @@
+/* -------------------------------
+RELATION COMPONENT
+------------------------------- */
+.cbo-relation{
+    .relation-title{
+        text-align: center;
+        margin-bottom: 32px;
+    }
+    .relations-button{
+        text-align: center;
+        margin-top: 36px;
+    }
+}
+/* -------------------------------
+SMALL SCREENS
+------------------------------- */
+@media (min-width: $screen-sm-min){
+    .cbo-relation{
+        .articles-list{
+            .list-el{
+                height: 100%;
+            }
+            &:not(.slick-slider){
+                .list-el{
+                    width: 50%;
+                    min-width: 50%;
+                    height: auto;
+                }
+            }
+        }
+    }
+}
+/* -------------------------------
+MEDIUM SCREENS
+------------------------------- */
+@media (min-width: $screen-md-min){
+    .cbo-relation{
+        .relation-title{
+            margin-bottom: 50px;
+        }
+        .articles-list{
+            &:not(.slick-slider){
+                .list-el{
+                    width: 33.3333%;
+                    min-width: 33.3333%;
+                }
+            }
+        }
+    }
+}

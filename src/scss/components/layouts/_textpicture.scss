@@ -1,0 +1,56 @@
+/* -------------------------------
+TEXT PICTURE COMPONENT
+------------------------------- */
+.cbo-textpicture {
+  .textpicture-title{
+    text-align: center;
+    margin-bottom: 32px;
+    width: 100%;
+  }
+  .textpicture-picture{
+    max-width: 600px;
+    margin: 0 auto 20px auto;
+    padding-bottom: 70%;
+  }
+  .textpicture-content {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}
+/* -------------------------------
+MEDIUM SCREENS
+------------------------------- */
+@media (min-width: $screen-md-min) {
+  .cbo-textpicture {
+    .textpicture-inner{
+      &.textpicture--margetopnone{
+        margin-top: 0;
+      }
+      &.textpicture--margebotnone{
+        margin-bottom: 0;
+      }
+    }
+    .inner-container{
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .textpicture-picture{
+      width: 45%;
+      max-width: inherit;
+      margin: 0;
+      padding-bottom: 50%;
+    }
+    .textpicture-content {
+      width: 45%;
+      max-width: inherit;
+      margin: 0;
+    }
+    &.textpicture--right {
+      .inner-container{
+        flex-direction: row-reverse;
+      }
+    }
+  }
+}

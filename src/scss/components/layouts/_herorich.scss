@@ -1,0 +1,223 @@
+/* -------------------------------
+HERO RICH COMPONENT
+------------------------------- */
+.cbo-herorich{
+    overflow: hidden;
+
+    .herorich-inner{
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .herorich-picture{
+        position: relative;
+        margin: 0 -20px 20% auto;
+        width: calc(100% - 40px);
+
+        .picture-main{
+            padding-bottom: 100%;
+            border-radius: 20px 0 0 20px;
+            overflow: hidden;
+            min-height: 350px;
+            width: 90%;
+            right: -10%;
+
+            &.picture--left{
+                img{
+                    object-position: left center;
+                }
+            }
+            &.picture--right{
+                img{
+                    object-position: right center;
+                }
+            }
+        }
+        .picture-secondpic{
+            position: absolute;
+            bottom: -18%;
+            left: -10%;
+            z-index: 2;
+
+            img{
+                position: relative;
+            }
+        }
+    }
+    .herorich-content{
+        max-width: 600px;
+        margin: 0 auto;
+        padding-left: 20px;
+        padding-right: 20px;
+        position: relative;
+        z-index: 3;
+
+        .herorich-title{
+            margin-bottom: 28px;
+        }
+        .herorich-chapo{
+            margin-bottom: 40px;
+        }
+        .content-list{
+            .list-el{
+                margin: 30px 0;
+
+                .el-inner{
+                    display: flex;
+                    align-items: center;
+
+                    .inner-picture{
+                        min-width: 34px;
+                        height: 34px;
+                        margin-right: 18px;
+                    }
+                    .inner-text{
+                        margin: 0;
+                    }
+                }
+            }
+        }
+        .container-buttons{
+            margin-top: 30px;
+
+            .buttons-list{
+                .cbo-button{
+                    width: 100%;
+
+                    &:nth-child(2n){
+                        margin-top: 10px;
+                    }
+                }
+            }
+        }
+    }
+}
+/* -------------------------------
+SMALL SCREENS
+------------------------------- */
+@media (min-width: $screen-sm-min){
+    .cbo-herorich{
+        .herorich-picture{
+            margin: 0 -20px 15% auto;
+        }
+    }
+}
+/* -------------------------------
+MEDIUM SCREENS
+------------------------------- */
+@media (min-width: $screen-md-min){
+    .cbo-herorich{
+        overflow: visible;
+
+        .herorich-inner{
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row-reverse;
+            padding-left: 70px;
+        }
+        .herorich-picture{
+            max-width: 750px;
+            width: 45vw;
+            margin: 0;
+
+            .picture-main{
+                padding-bottom: 0;
+                height: 100%;
+                right: 0;
+                width: 100%;
+            }
+            .picture-secondpic{
+                bottom: inherit;
+                top: -30px;
+                width: 90%;
+                max-width: 380px;
+                left: -10%;
+            }
+        }
+        .herorich-content{
+            max-width: 800px;
+            margin: 0;
+            padding: 60px 0;
+            width: 50%;
+            margin: 0 auto 0 0;
+
+            .content-list{
+                .list-el{
+                    margin: 20px 0;
+                }
+            }
+            .container-buttons{
+                .buttons-list{
+                    display: flex;
+
+                    .cbo-button{
+                        width: fit-content;
+    
+                        &:nth-child(2n){
+                            margin: 0 0 0 15px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/* -------------------------------
+LARGE SCREENS
+------------------------------- */
+@media (min-width: $screen-lg-min){
+    .cbo-herorich{
+        .herorich-inner{
+            padding-left: 70px;
+        }
+        .herorich-picture{
+            position: absolute;
+            top: 0;
+            width: 40vw;
+            left: 60vw;
+            height: 100%;
+            max-width: inherit;
+
+            .picture-secondpic {
+                top: -50px;
+                max-width: 55%;
+                left: -20%;
+                min-width: 420px;
+            }
+        }
+        .herorich-content{
+            padding: 80px 0;
+
+            .herorich-title{
+                margin-bottom: 54px;
+            }
+            .container-buttons{
+                margin-top: 70px;
+    
+                .buttons-list{
+                    .cbo-button{
+                        &:nth-child(2n){
+                            margin: 0 0 0 30px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/* -------------------------------
+XLARGE SCREENS
+------------------------------- */
+@media (min-width: $screen-xl-min){
+    .cbo-herorich{
+        .herorich-content{
+            .herorich-title{
+                font-size: 92px;
+                line-height: 104px;
+            }
+        }
+        .herorich-picture{
+            width: 45vw;
+            left: 55vw;
+        }
+    }
+}

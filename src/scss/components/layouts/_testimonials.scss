@@ -1,0 +1,83 @@
+/* -------------------------------
+TESTIMONIALS LIST COMPONENT
+------------------------------- */
+.cbo-testimonials{
+    .testimonials-title{
+        text-align: center;
+        margin-bottom: 68px;
+    }
+    .testimonialslist-list{
+        margin: 0 auto;
+        max-width: 600px;
+
+        .list-el {
+            &:first-child{
+                margin: 72px 0;
+            }
+        }
+    }
+}
+/* -------------------------------
+MEDIUM SCREENS
+------------------------------- */
+@media (min-width:$screen-md-min) {
+    .cbo-testimonials{
+        .testimonials-title{
+            margin-bottom: 120px;
+        }
+        .testimonialslist-list{
+            margin: 0;
+            max-width: inherit;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+    
+            .list-el {
+                max-width: 760px;
+                width: 55%;
+
+                &:first-child{
+                    margin: 0;
+                }
+                &.el--video{
+                    width: 40%;
+                    max-width: 550px;
+                }
+                .el-inner{
+                    height: 100%;
+                    display: flex;
+                    flex-wrap: wrap;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    align-items: center;
+
+                    .inner-content{
+                        height: 100%;
+                        width: 100%;
+                        flex: 1;
+                        margin: 0;
+
+                        .content-text{
+                            font-size: 24px;
+                            line-height: 36px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/* -------------------------------
+XLARGE SCREENS
+------------------------------- */
+@media (min-width: $screen-xl-min) {
+    .cbo-testimonials{
+        .testimonialslist-list{
+            .list-el {
+                &.el--video{
+                    width: 35%;
+                }
+            }
+        }
+    }
+}

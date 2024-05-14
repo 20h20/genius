@@ -1,0 +1,144 @@
+/* -------------------------------
+MODALE MICRO COMPONENT
+------------------------------- */
+.cbo-modale{
+	visibility: hidden;
+	opacity: 0;
+	position: fixed;
+	z-index: 9;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	padding: 20px 20px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: all .6s cubic-bezier(.075,.82,.165,1);
+
+	.modale-overlay{
+		background:rgba(22, 12, 33, 0.8);
+		transition: all .6s cubic-bezier(.075,.82,.165,1);
+		position: fixed;
+		z-index: 5;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+	}
+	&.modale--open{
+		visibility: visible;
+		opacity: 1;
+
+		.modale-inner{
+			transform: scale(1);
+		}
+	}
+	.modale-inner{
+		background: $colorwhite;
+		position: relative;
+		border-radius: 20px;
+		padding: 40px 20px;
+		overflow-y: auto;
+		transform: scale(0);
+		z-index: 6;
+		max-height: 100%;
+		width: 100%;
+		max-width: 720px;
+		transition: all .6s cubic-bezier(.075,.82,.165,1);
+		min-height: 500px;
+
+		.modale-close{
+			width: 20px;
+			height: 20px;
+			padding: 0;
+			position: absolute;
+			top: 20px;
+			right: 20px;
+			cursor: pointer;
+			border-radius: 50%;
+
+			.top, .bottom{
+				background: $colorblack;
+				height:2px;
+				border-radius: 99rem;
+				width: 20px;
+				position:absolute;
+				left: 0;
+				transition:all .3s; 
+			}
+			.top{
+				transform: rotate(45deg);
+			}
+			.bottom{
+				transform: rotate(-45deg);
+			}
+		}
+		.modale-content{
+			text-align: center;
+			margin-bottom: 20px;
+
+			.modale-title{
+				color: $colorblue;
+				font-size: 36px;
+			}
+		}
+		.contact-form{
+			.form-inner{
+				form{
+					display: flex;
+					flex-wrap: wrap;
+					margin: 0 -10px;
+
+					.form-field {
+						padding: 0 10px;
+						margin-bottom: 10px;
+
+						&.field--half{
+							width: 50%;
+						}
+						textarea{
+							height: 100px;
+						}
+						&.field--input{
+							text-align: center;
+							margin-bottom: 0;
+
+							input[type="submit"]{
+								min-width: 300px;
+								height: 40px;
+							}
+						}
+					}
+				}
+				.form-appointment{
+					background: rgba($colorbluexlight, .3);
+					border-radius: 10px;
+					padding: 20px;
+					margin-top: 20px;
+					text-align: center;
+					font-weight:bold;
+
+					button{
+						margin-top: 20px;
+						color: $colorblue !important;
+						background-color: rgba(0,0,0,0) !important;
+						box-shadow: 0px 0px 0px 3px $colorblue inset;
+						border-radius: 99rem;
+						min-width: 200px;
+					}
+				}
+			}
+		}
+	}
+}
+/* -------------------------------
+LARGE SCREENS
+------------------------------- */
+@media (min-width: $screen-lg-min){
+	.cbo-modale{
+		.modale-inner{
+			padding: 40px;
+		}
+	}
+}
