@@ -21,6 +21,7 @@
     "jit-grunt": "^0.10.0",
     "load-grunt-tasks": "^3.5.2",
     "medium-button": "^1.1.4",
+    "sass": "^1.77.1",
     "time-grunt": "^1.4.0",
     "ttf2woff2": "^2.0.3"
   },
