@@ -1,6 +1,10 @@
 {
   "name": "genius",
   "version": "1.0.0",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "grunt watch"
+  },
   "devDependencies": {
     "autoprefixer": "^8.2.0",
     "cssnano": "^3.10.0",
