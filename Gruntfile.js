@@ -1,7 +1,7 @@
 module.exports = function (grunt) {
   require("time-grunt")(grunt);
   require("jit-grunt")(grunt, {
-    sass: 'grunt-sass',
+    sass: 'grunt-dart-sass',
   });
 
   grunt.initConfig({
