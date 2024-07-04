@@ -64,10 +64,10 @@ $(window).on( 'scroll', function(){
 				} else {
 					currentColor = interpolateColor(color2, color1, (colorProgress - 0.75) / 0.25);
 				}
-				halo.style.backgroundColor = `rgba(${currentColor.r}, ${currentColor.g}, ${currentColor.b}, ${currentColor.a})`;
+				halo.style.backgroundColor = 'rgba(' + currentColor.r + ', ' + currentColor.g + ', ' + currentColor.b + ', ' + currentColor.a + ')';
 			
 				var scaleProgress = progress;
-				var scale = 0.6 + (1 - 0.6) * (Math.sin(scaleProgress * Math.PI) ** 2);
+				var scale = 0.6 + (1 - 0.6) * (Math.sin(scaleProgress * Math.PI) * 2);
 				halo.style.transform += ' scale(' + scale + ')';
 			});
 			
@@ -128,12 +128,12 @@ $(window).on( 'scroll', function(){
 			});
 
 
-			const menuItems = document.querySelectorAll('.menu-item-has-children > a');
+			var menuItems = document.querySelectorAll('.menu-item-has-children > a');
 			menuItems.forEach(function(menuItem) {
 				menuItem.addEventListener('click', function(e) {
 					if (window.innerWidth <= 768) {
 						e.preventDefault();
-						const submenu = menuItem.nextElementSibling;
+						var submenu = menuItem.nextElementSibling;
 						
 						document.querySelectorAll('.sub-menu').forEach(function(sub) {
 							if (sub !== submenu) {
@@ -287,12 +287,12 @@ $(window).on( 'scroll', function(){
 			}).addClass('el--active');
 
 			/////////////////// ANCRE ///////////////////
-			document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+			document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
 				anchor.addEventListener('click', function (e) {
 					e.preventDefault();
 			
-					const targetId = this.getAttribute('href');
-					const targetElement = document.querySelector(targetId);
+					var targetId = this.getAttribute('href');
+					var targetElement = document.querySelector(targetId);
 			
 					if (targetElement) {
 						targetElement.scrollIntoView({
