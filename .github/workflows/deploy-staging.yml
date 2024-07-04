@@ -1,20 +1,21 @@
-on: 
+on:
   push:
-    branches: 
+    branches:
       - develop
-name: Deploy UC theme to Staging
+name: Deploy theme to staging
 jobs:
   FTP-Deploy-Action:
     name: FTP-Deploy-Action
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - name: Set up Node.js
-      uses: actions/setup-node@v2
+    - uses: actions/checkout@master
+    - name: Webpack-Build-Action
+      uses: actions/setup-node@master
       with:
-        node-version: '12.x'
+        node-version: '18.x'
+    - run: composer install
     - run: npm install
-    - run: npm run build 
+    - run: npm run build
     - name: RSync-Deploy-Action
       id: deploy_staging
       uses: Pendect/action-rsyncer@v1.1.0
@@ -22,7 +23,8 @@ jobs:
         DEPLOY_KEY: ${{ secrets.DEPLOY_KEY_STAGING }}
       with:
         flags: '-avzr --delete'
-        options: '--exclude "src" --exclude ".git" --exclude "README.md" --exclude "package.json" --exclude "package-lock.json" --exclude "webpack.config.js" --exclude "yarn.lock" --exclude ".github" --exclude "node_modules" --exclude ".gitignore"'
+        options: '
+          --exclude ".env" --exclude "web/app/debug.log" --exclude "web/app/themes/twentytwentyfour/" --exclude "web/.htaccess" --exclude "web/.htpasswd" --exclude "web/app/uploads" --exclude "web/app/upgrade" --exclude "web/app/cache" --exclude "web/app/advanced-cache.php" --exclude "web/app/autoptimize_404_handler.php" --exclude "webpack.config.js" --exclude "package.json" --exclude "package-lock.json" --exclude "webpack.config.js" --exclude "README.md" --exclude "postcss.config.js" --exclude ".gitignore"  --exclude ".git" --exclude ".github" --exclude "node_modules"'
         src: '.'
         dest: 'julienbrh@ftp.cluster015.hosting.ovh.net:~/www/genius/wp-content/themes/genius-immo'
     - name: Display status from deploy
