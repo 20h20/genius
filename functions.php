@@ -3,6 +3,7 @@
 		require_once( 'library/inc/custom-cleanup.php' );
 		require_once( 'library/inc/custom-admin.php' );
 		require_once( 'library/inc/custom-post/cpt-testimonial.php' );
+		require_once( 'library/inc/custom-post/cpt-news.php' );
 	}
 	add_action( 'after_setup_theme', 'bones_ahoy' );
 
@@ -57,6 +58,54 @@
 				'block' => 'a',
 				'classes' => 'cbo-button button--icon cbo-link button-modale',
 				'wrapper' => true,
+			),
+			array(
+				'title' => 'Bouton avec bordure',
+				'block' => 'a',
+				'classes' => 'cbo-button button--icon button--borderblue',
+				'wrapper' => true,
+				'attributes' => array(
+					'href' => '#'
+				)
+			),
+			array(
+				'title' => 'Bouton avec bordure - Modale',
+				'block' => 'a',
+				'classes' => 'cbo-button button--icon button--borderblue button-modale',
+				'wrapper' => true,
+			),
+			array(
+				'title' => 'Bouton bleu',
+				'block' => 'a',
+				'classes' => 'cbo-button button--icon button--blue',
+				'wrapper' => true,
+				'attributes' => array(
+					'href' => '#'
+				)
+			),
+			array(
+				'title' => 'Bouton bleu - Modale',
+				'block' => 'a',
+				'classes' => 'cbo-button button--icon button--blue button-modale',
+				'wrapper' => true,
+			),
+			array(
+				'title' => 'Mise en avant',
+				'block' => 'div',
+				'classes' => 'cbo-featuredtext',
+				'wrapper' => true,
+			),
+			array(
+				'title' => 'Bon à savoir',
+				'block' => 'div',
+				'classes' => 'cbo-goodtoknow',
+				'wrapper' => true,
+			),
+			array(
+				'title' => 'Soulignement',
+				'block' => 'strong',
+				'classes' => 'cbo-underline',
+				'wrapper' => false,
 			),
 		);
 		$init_array['style_formats'] = json_encode( $style_formats );
@@ -164,14 +213,47 @@
 	function my_mce4_options($init) {
 
 		$custom_colours = '
-			"2E60FF", "Bleu",
+			"2e60ff", "Bleu électrique",
+			"39d4f2", "Bleu turquoise",
+			"1a37a8", "Bleu foncé",
 		';
-	
 		$init['textcolor_map'] = '['.$custom_colours.']';
 		$init['textcolor_rows'] = 1;
 		return $init;
 	}
 	add_filter('tiny_mce_before_init', 'my_mce4_options');
+
+	
+
+
+
+	/* ************************* */
+	/* FONT SIZE */
+	/* ************************* */
+	function custom_mce_buttons_2($buttons) {
+		array_unshift($buttons, 'fontsizeselect');
+		return $buttons;
+	}
+	add_filter('mce_buttons_2', 'custom_mce_buttons_2');
+	
+	function custom_mce_text_sizes($initArray) {
+		$initArray['fontsize_formats'] = '5pt 6pt 7pt 8pt 9pt 10pt 11pt 12pt 14pt 16pt 18pt 20pt 22pt 24pt 26pt 28pt 32pt 36pt 40pt 44pt 48pt 52pt 56pt 60pt 64pt 68pt 72pt';
+		return $initArray;
+	}
+	add_filter('tiny_mce_before_init', 'custom_mce_text_sizes');
+	
+	function my_custom_fonts() {
+		echo '
+		<style>
+			.mce-content-body {
+				font-size: 10pt;
+			}
+		</style>
+		';
+	}
+	add_action('admin_head', 'my_custom_fonts');
+	
+	
 
 	/* ************************* */
 	/* DISABLE GUTEMBERG */
@@ -188,14 +270,34 @@
 	add_action('login_head', 'childtheme_custom_login');
 
 
-	/* ************************* */
-	/* LEXIQUE NUMBER OF POSTS */
-	/* ************************* */
-	function get_all_tat_posts($query) {
-		if(!is_admin() && $query->is_main_query() && is_post_type_archive('lexique')) {
-			$query->set('posts_per_page', '18');
-		}
-	}
-	add_action('pre_get_posts', 'get_all_tat_posts');
 
+	/* ************************* */
+	/* CALCUL TEMPS DE LECUTRE */
+	/* ************************* */
+	function reading_time($the_post_ID){
+		$total_word_count = 0; 
+		$all_fields = get_field('flexible_layout', $the_post_ID, false); 
+
+		foreach ($all_fields as $field) {
+			foreach ($field as $key => $value) {
+				if ($key === 'acf_fc_layout') {
+					continue;
+				}
+				$total_word_count = $total_word_count + str_word_count(strip_tags($value));
+			}
+		}
+		$readingtime = ceil($total_word_count / 200);
+		if ($readingtime <= 1) {
+			$timer = " min";
+		} else {
+			$timer = " mins";
+		}
+
+		if ($readingtime == 0) {
+			$totalreadingtime = "1" . $timer . " de lecture";
+		} else {
+			$totalreadingtime = $readingtime . $timer . " de lecture";
+		}
+		return $totalreadingtime;
+	  }
 ?>

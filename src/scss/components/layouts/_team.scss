@@ -1,0 +1,117 @@
+/* -------------------------------
+TEAM COMPONENT
+------------------------------- */
+.cbo-team{
+    .team-title{
+        text-align: center;
+    }
+    .team-list{
+        max-width: 600px;
+        margin: 50px auto 0 auto;
+
+        .list-el{
+            margin: 40px 0;
+
+            .el-inner{
+                font-weight: bold;
+
+                .el-picture{
+                    border-radius: 15px;
+                    overflow: hidden;
+                    margin-bottom: 30px;
+                    padding-bottom: 150%;
+
+                    .video-play {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        position: absolute;
+                        bottom: 20px;
+                        right: 20px;
+                        font-size: 18px;
+                        width: 80px;
+                        height: 80px;
+                        border-radius: 99rem;
+                        z-index: 3;
+                        background:$colorwhite;
+                        color: $colorbluemedium;
+                        transform: scale(1);
+                        transition: all .4s;
+                    }
+                }
+                .el-name{
+                    font-size: 24px;
+                    color: $colorblue;
+                    margin-bottom: 10px;
+                }
+                .el-function{
+                    font-size: 22px;
+                    color: $colorbluelight;
+                }
+            }
+            .video-modale{
+                .modale-inner{
+                    min-height: inherit;
+
+                    .modale-content{
+                        margin-bottom: 0;
+
+                        iframe{
+                            width: 100%;
+                            display: block;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/* -------------------------------
+SMALL SCREENS
+------------------------------- */
+@media (min-width:$screen-sm-min) {
+    .cbo-team{
+        .team-list{
+            max-width: inherit;
+            margin: 40px -10px -10px -10px;
+            display: flex;
+            flex-wrap: wrap;
+    
+            .list-el{
+                margin: 10px 0;
+                padding: 0 10px;
+                width: 50%;
+            }
+        }
+    }
+}
+/* -------------------------------
+MEDIUM SCREENS
+------------------------------- */
+@media (min-width:$screen-md-min) {
+    .cbo-team{
+        .team-list{
+            margin: 70px -10px -10px -10px;
+
+            .list-el{
+                width: 33.33333%;
+            }
+        }
+    }
+}
+/* -------------------------------
+LARGE SCREENS
+------------------------------- */
+@media (min-width:$screen-lg-min) {
+    .cbo-team{
+        .team-list{
+            margin: 50px -30px -30px -30px;
+    
+            .list-el{
+                margin: 30px 0;
+                width: 25%;
+                padding: 0 30px;
+            }
+        }
+    }
+}

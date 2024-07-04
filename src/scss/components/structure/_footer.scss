@@ -3,7 +3,7 @@ FOOTER COMPONENT
 ------------------------------- */
 footer{
    position: relative;
-   z-index: 3;
+   z-index: 2;
 
    &:after{
       content: '';
@@ -30,7 +30,7 @@ footer{
          font-size: 24px;
          line-height: 35px;
          font-weight: bold;
-         color: $colorbluemedium;
+         color: $colorblue;
          margin-bottom: 24px;
       }
       &.footer-logo{
@@ -49,12 +49,8 @@ footer{
             margin-top: 26px;
    
             i{
-               color: $colorblack;
+               color: $colorbluelight;
                margin-right: 10px;
-   
-               &.icon--phone{
-                  color: $colorbluexlight;
-               }
             }
          }
       }
@@ -72,7 +68,7 @@ footer{
                      min-width: 10px;
                      height: 10px;
                      border-radius: 99rem;
-                     background: $colorbluexlight;
+                     background: $colorbluelight;
                      margin: 4px 10px 0 0;
                   }
                }
@@ -81,7 +77,7 @@ footer{
       }
    }
    .footer-bottom{
-      background: linear-gradient(45deg, rgba($colorturquoise,1) 0%, rgba($colorblue,1) 100%);
+      background: linear-gradient(45deg, rgba($colorbluelight,1) 0%, rgba($colorblue,1) 100%);
       padding: 20px;
       color: $colorwhite;
       text-transform: uppercase;

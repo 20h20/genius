@@ -1,0 +1,91 @@
+/* -------------------------------
+KEYNUMBERS COMPONENT
+------------------------------- */
+.cbo-keynumbers{
+  .keynumbers-title{
+    text-align: center;
+  }
+  .keynumbers-list{
+    margin-top: 50px;
+
+    .list-el{
+      margin: 40px 0;
+
+      .el-inner{
+        padding-left: 16px;
+        position: relative;
+
+        &:before{
+          content: '';
+          background: linear-gradient(25deg, rgba(0,239,251,1) 0%, rgba(47,153,255,1) 57%, rgba(22,103,255,1) 100%);
+          width: 3px;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          border-radius: 4px;
+        }
+        .inner-number{
+          color: $colorblue;
+        }
+        .inner-chapo{
+          color: $colorblue;
+          margin-top: 14px;
+          font-weight: bold;
+          font-size: 24px;
+          line-height: 32px;
+        }
+        .inner-text{
+          margin-top: 14px;
+        }
+      }
+    }
+  }
+}
+/* -------------------------------
+SMALL SCREENS
+------------------------------- */
+@media (min-width: $screen-sm-min){
+  .cbo-keynumbers{
+    .keynumbers-list{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 50px -15px 0 -15px;
+  
+      .list-el{
+        margin: 0;
+        width: 33.33333%;
+        padding: 0 15px;
+      }
+    }
+  }
+}
+/* -------------------------------
+MEDIUM SCREENS
+------------------------------- */
+@media (min-width: $screen-md-min){
+  .cbo-keynumbers{
+    .keynumbers-list{
+      margin: 80px -15px 0 -15px;
+    }
+  }
+}
+/* -------------------------------
+LARGE SCREENS
+------------------------------- */
+@media (min-width: $screen-lg-min){
+  .cbo-keynumbers{
+    .keynumbers-list{
+      margin: 80px -30px 0 -30px;
+
+      .list-el{
+        padding: 0 30px;
+
+        .el-inner{
+          padding-left: 24px;
+        }
+      }
+    }
+  }
+}

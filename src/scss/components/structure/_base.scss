@@ -6,9 +6,8 @@ html {
 	}
 }
 body {
-	background: green !important;
 	font-family: 'Gilroy';
-	font-weight: 500;
+	font-weight: 500; 
 	background: $colorwhite;
 	color: $colorbluedark;
 	font-size: 18px;
@@ -24,18 +23,26 @@ body {
 		overflow: hidden;
 		width: 100vw;
 		height: 100vh;
-		overscroll-behavior: contain;
 	}
+}
+p::selection, h1::selection, h2::selection, h3::selection, h4::selection, h5::selection {
+	background:$colorbluelight;
+}
+.cbo-cms h1 strong::selection, .cbo-cms h2 strong::selection, .cbo-cms h3 strong::selection, .cbo-cms h4 strong::selection{
+	background:$colorbluelight;
 }
 *{
 	box-sizing: border-box;
 
 	&:focus {
 		outline:none;
-	}
+	} 
 	&::selection{
 		background: $colorblue;
 	}
+}
+.grecaptcha-badge{
+	display: none;
 }
 .cbo-main{
 	padding-top: 108px;
@@ -74,28 +81,12 @@ figure{
 		text-align: center;
 	}
 }
-
-@keyframes changeColor {
-    0% { background-color: #9bb1d6;opacity:0.6;}
-    25% { background-color: #91bdf2;opacity:0.8;}
-    50% { background-color: #a7ecf8;opacity:0.9;}
-	75% { background-color: #91bdf2;opacity:0.8;}
-	100% { background-color: #9bb1d6;opacity:0.6; }
-}
-@keyframes scaleAnimation {
-    0%, 100% {
-        transform: scale(0.6);
-    }
-    50% {
-        transform: scale(1);
-    }
-}
 .container-halo {
     position: fixed;
     top: 0;
     left: 0;
-    width: 80vh;
-    height: 80vh;
+    width: 100vh;
+    height: 100vh;
     z-index: 1;
 	animation: scaleAnimation 6s infinite;
 
@@ -104,8 +95,8 @@ figure{
 		position: fixed;
 		top: 0;
 		left: 0;
-		width: 80vh;
-		height: 80vh;
+		width: 60vh;
+		height: 60vh;
 		border-radius: 100%;
 		will-change: transform;
 		filter: blur(10vh);
@@ -114,6 +105,42 @@ figure{
 		transform: translateX(-50%);
 		transition: background-color 1s ease-out;
 		animation: changeColor 6s infinite
+	}
+}
+.page--news{
+	.archive-news{
+		.news-title{
+			text-align: center;
+		}
+		.news-month{
+			background: $colorbluelight;
+			color: $colorwhite;
+			border-radius: 10px;
+			height: 60px;
+			display: table;
+			align-items: center;
+			font-weight: bold;
+			margin: 80px auto 50px;
+			padding: 20px 40px;
+			text-transform: uppercase;
+		}
+	}
+}
+.single--sharebot{
+	text-align: center;
+	font-weight: bold;
+	color: $colorbluelight;
+
+	.sharebot-title{
+		span{
+			color: $colorblue;
+			font-size: 20px;
+			line-height: 20px;
+		}
+	}
+	.content-social{
+		margin-top: 30px;
+		justify-content: center;
 	}
 }
 /* -------------------------------
@@ -138,6 +165,18 @@ MEDIUM SCREENS
 					}
 				}
 			}
+		}
+	}
+	.cbo-sources{
+		padding: 40px 60px;
+	}
+	.container-halo {
+		width: 80vh;
+		height: 80vh;
+
+		.halo {
+			width: 80vh;
+			height: 80vh;
 		}
 	}
 }

@@ -133,7 +133,14 @@
 	function cf7_deregister_styles() {
 		wp_deregister_style( 'contact-form-7' );
 	}
-	
+
+	// Remove Social Warfare styles
+	function social_warfare_block_deregister_styles() {
+		wp_deregister_style( 'social_warfare' );
+	}
+
+	add_action( 'wp_print_styles', 'social_warfare_block_deregister_styles', 100 );
+		
 
 
 	/* --------------------------

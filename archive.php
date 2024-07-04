@@ -30,7 +30,7 @@
 						<img
 							decoding="async"
 							src="<?php echo $heropicture['sizes']['small']; ?>"
-							srcset="<?php echo $heropicture['sizes']['small']; ?> 320w, <?php echo $heropicture['sizes']['xlarge']; ?> 768w, <?php echo $picture['sizes']['xlarge']; ?> 1024w"
+							srcset="<?php echo $heropicture['sizes']['small']; ?> 320w, <?php echo $heropicture['sizes']['xlarge']; ?> 768w, <?php echo $heropicture['sizes']['xlarge']; ?> 1024w"
 							alt="<?php echo $heropicture['alt']; ?>" sizes="100vw"
 							loading="lazy"
 							width="1500" height="1500"
@@ -71,7 +71,6 @@
 				</div>
 			</div>
 		</section>
-
 
 		<div class="cbo-featured">
 			<div class="featured-inner cbo-container">

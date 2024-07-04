@@ -2,7 +2,7 @@
 ARTICLE BLOC MICRO COMPONENT
 ------------------------------- */
 .articles-list{
-	margin: 2.5rem -0.625rem;
+	margin: 40px -10px;
 
 	.list-el{
 		height: 100%;
@@ -29,7 +29,7 @@ ARTICLE BLOC MICRO COMPONENT
 				z-index: 1;
 				border-radius: 1.25rem;
 				overflow: hidden;
-				background: linear-gradient(to left,$colorbluemedium, $colorturquoise);
+				background: linear-gradient(to left,$colorbluemedium, $colorbluelight);
 			}
 			.el-picture{
 				position: relative;
@@ -40,7 +40,7 @@ ARTICLE BLOC MICRO COMPONENT
 				overflow: hidden;
 
 				.picture-category{
-					background: linear-gradient(45deg, rgba($colorbluexlight,1) 0%, rgba($colorturquoise,1) 100%);
+					background: linear-gradient(45deg, rgba($colorbluelight,1) 0%, rgba($colorbluelight,1) 100%);
 					border-radius: 1584px;
 					display: flex;
 					align-items: center;
@@ -110,7 +110,7 @@ LARGE SCREENS
 ------------------------------- */
 @media (min-width: $screen-lg-min){
 	.articles-list{
-		margin: 2.5rem -1.875rem;
+		margin: 40px -30px;
 
 		.list-el{
 			width: 33.3333%;
@@ -130,7 +130,7 @@ LARGE SCREENS
 					}
 					.el-content{
 						.content-title{
-							color: $colorturquoise;
+							color: $colorbluelight;
 						}
 						.content-link{
 							.cbo-button{

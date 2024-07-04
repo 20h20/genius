@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Calque_1" data-name="Calque 1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 512 512">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #010101;
+        fill-rule: evenodd;
+        stroke-width: 0px;
+      }
+    </style>
+  </defs>
+  <g id="Page-1">
+    <g id="Dribbble-Light-Preview">
+      <g id="icons">
+        <path id="facebook-_176_" data-name="facebook-[#176]" class="cls-1" d="M302.9,512.2v-230.4h69.9l11.4-102.4h-81.4v-49.9c0-26.4.7-52.5,37.5-52.5h37.3V3.8c0-1.1-32.1-3.6-64.5-3.6-67.7,0-110.1,42.4-110.1,120.3v58.9h-74.8v102.4h74.8v230.4h99.8Z"/>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -36,7 +36,7 @@ CTA COMPONENT
           font-weight: bold;
         }
         a{
-          color: $colorbluexlight;
+          color: $colorbluelight;
         }
       }
     }
@@ -52,7 +52,7 @@ CTA COMPONENT
       }
       &:before{
         content: '';
-        background: linear-gradient(45deg, rgba($colorturquoise,1) 0%, rgba($colorblue,1) 100%);
+        background: linear-gradient(45deg, rgba($colorbluelight,1) 0%, rgba($colorblue,1) 100%);
         position: absolute;
         top: 0;
         left: 0;

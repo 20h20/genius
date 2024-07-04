@@ -4,7 +4,10 @@ TESTIMONIALS LIST COMPONENT
 .cbo-testimonials{
     .testimonials-title{
         text-align: center;
-        margin-bottom: 68px;
+    }
+    .testimonials-button{
+        margin-top: 50px;
+        text-align: center;
     }
     .testimonialslist-list{
         margin: 0 auto;
@@ -24,6 +27,9 @@ MEDIUM SCREENS
     .cbo-testimonials{
         .testimonials-title{
             margin-bottom: 120px;
+        }
+        .testimonials-button{
+            margin-top: 80px;
         }
         .testimonialslist-list{
             margin: 0;
@@ -58,8 +64,8 @@ MEDIUM SCREENS
                         margin: 0;
 
                         .content-text{
-                            font-size: 24px;
-                            line-height: 36px;
+                            font-size: 20px;
+                            line-height: 30px;
                         }
                     }
                 }

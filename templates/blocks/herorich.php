@@ -58,40 +58,40 @@
 				</div>
 			<?php endif; ?>
 
-			<div class="content-list slide-up">
-				<?php
-					if( have_rows('herorich_content') ):
-					while ( have_rows('herorich_content') ) : the_row();
-					$picture	= get_sub_field('picture');
-					$text	= get_sub_field('text');
-				?>
-					<div class="list-el">
-						<div class="el-inner">
-							<?php if($picture): ?>
-								<span class="inner-picture cbo-picture-contain">
-									<img
-										decoding="async"
-										src="<?php echo $picture['sizes']['xsmall']; ?>"
-										srcset="<?php echo $picture['sizes']['xsmall']; ?> 320w, <?php echo $picture['sizes']['xsmall']; ?> 768w, <?php echo $picture['sizes']['xsmall']; ?> 1024w"
-										alt="<?php echo $picture['alt']; ?>" sizes="100vw"
-										loading="lazy"
-										width="40" height="40"
-									>
-								</span>
-							<?php endif; ?>
+			<?php if( have_rows('herorich_content') ): ?>
+				<div class="content-list slide-up">
+					<?php
+						while ( have_rows('herorich_content') ) : the_row();
+						$picture	= get_sub_field('picture');
+						$text	= get_sub_field('text');
+					?>
+						<div class="list-el">
+							<div class="el-inner">
+								<?php if($picture): ?>
+									<span class="inner-picture cbo-picture-contain">
+										<img
+											decoding="async"
+											src="<?php echo $picture['sizes']['xsmall']; ?>"
+											srcset="<?php echo $picture['sizes']['xsmall']; ?> 320w, <?php echo $picture['sizes']['xsmall']; ?> 768w, <?php echo $picture['sizes']['xsmall']; ?> 1024w"
+											alt="<?php echo $picture['alt']; ?>" sizes="100vw"
+											loading="lazy"
+											width="40" height="40"
+										>
+									</span>
+								<?php endif; ?>
 
-							<?php if($text): ?>
-								<div class="inner-text cbo-cms">
-									<?php echo $text ?>
-								</div>
-							<?php endif; ?>
+								<?php if($text): ?>
+									<div class="inner-text cbo-cms">
+										<?php echo $text ?>
+									</div>
+								<?php endif; ?>
+							</div>
 						</div>
-					</div>
-				<?php
-					endwhile;
-					endif;
-				?>
-			</div>
+					<?php
+						endwhile;
+					?>
+				</div>
+			<?php endif; ?>
 
 			<?php if($addbutton == 1): ?>
 				<div class="container-buttons slide-up">

@@ -4,7 +4,7 @@
 	$videoid	= get_field('testimonials_video');
 	$videocover	= get_field('testimonials_videocover');
 ?>
-<article <?php post_class('list-el el--video slide-up'); ?> itemprop="blogPosts" itemscope itemtype="http://schema.org/BlogPosting">
+<article <?php post_class('list-el el--video'); ?> itemprop="blogPosts" itemscope itemtype="http://schema.org/BlogPosting">
 	<div class="el-inner">
 		<div class="inner-content">
 			<div class="content-video">

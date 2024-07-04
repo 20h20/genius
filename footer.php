@@ -82,6 +82,7 @@
 			$title	= get_field('options_modaletitle', 'option');
 			$content	= get_field('options_modaletxt', 'option');
 			$appointment	= get_field('options_appointment', 'option');
+			$appointmenturl	= get_field('options_appointmenturl', 'option');
 		?>
 		<div class="cbo-modale modale--contact">
 			<div class="modale-inner">
@@ -92,9 +93,9 @@
 
 				<div class="modale-content">
 					<?php if($title): ?>
-						<h3 class="modale-title cbo-title-2">
+						<div class="modale-title cbo-title-2">
 							<?php echo $title ?>
-						</h3>
+						</div>
 					<?php endif; ?>
 
 					<?php if($content): ?>
@@ -125,10 +126,10 @@
 									var target = document.currentScript;
 									window.addEventListener('load', function() {
 										calendar.schedulingButton.load({
-										url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ0a7qb8TdWmQ_LtOwidOp5L41XDgJXtEp3xH17q6elSxNodrisCCYPvwMTHrPqepLKWdnN5Cisv?gv=true',
-										color: '#039BE5',
-										label: "C'est par ici",
-										target,
+											url: '<?php echo esc_js($appointmenturl); ?>',
+											color: '#039BE5',
+											label: "C'est par ici",
+											target,
 										});
 									});
 								})();
@@ -146,6 +147,5 @@
 		<?php wp_footer(); ?>
 		<script defer="defer" src="<?php echo get_template_directory_uri(); ?>/library/js/scripts.js"></script>
 		<script defer="defer" async src="https://calendar.google.com/calendar/scheduling-button-script.js"></script>
-
 	</body>
 </html>

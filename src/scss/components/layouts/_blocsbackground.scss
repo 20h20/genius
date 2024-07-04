@@ -1,0 +1,179 @@
+/* -------------------------------
+BLOCS BACKGROUND COMPONENT
+------------------------------- */
+.cbo-blocsbackground{
+  .blocsbackground-title{
+    text-align: center;
+    margin-bottom: 32px;
+  }
+  .blocsbackground-chapo{
+    text-align: center;
+  }
+  .blocsbackground-infotitle{
+    text-align: center;
+    margin-top: 30px;
+    position: relative;
+    z-index: 2;
+
+    .infotitle-uptitle{
+      color: $colorbluelight;
+      font-size: 22px;
+      font-weight: 600;
+      margin-bottom: 10px;
+      display: block;
+    }
+    .infotitle-title{
+      color: $colorblue;
+      font-size: 28px;
+      font-weight: 600;
+      position: relative;
+      z-index: 2;
+      display: inline;
+
+      .infotitle-content{
+        visibility: hidden;
+        width: auto;
+        max-width: 250px;
+        font-size: 10px;
+        line-height: 10px;
+        background:$colorwhite;
+        color: $colorbluedark;
+        border:2px solid $colorbluelight;
+        border-radius: 6px;
+        padding: 10px;
+        position: absolute;
+        z-index: 3;
+        text-align: left;
+        top: 30px;
+        right: 0;
+      }
+      &:hover{
+        .infotitle-content{
+            visibility: visible;
+        }
+      }
+    }
+  }
+  .blocsbackground-outro{
+    text-align: center;
+    margin-top: 50px;
+
+    .cbo-button{
+      margin-top: 0;
+    }
+  }
+  .blocsbackground-list{
+    position: relative;
+    z-index: 2;
+    max-width: 500px;
+    margin: 30px auto auto;
+
+    .list-el{
+      margin-bottom: 20px;
+
+      &.el--white{
+        .el-inner{
+          background: $colorwhite;
+        }
+      }
+      &.el--blue{
+        color: $colorwhite;
+
+        .el-inner{
+          background: linear-gradient(45deg,#2e60ff,#65a3f9);
+
+          .content-title{
+            color: $colorwhite;
+          }
+          .content-text{
+            border-left: 2px solid $colorwhite;
+            text-align: justify;
+          }
+        }
+      }
+      .el-inner{
+        padding: 20px;
+        border-radius: 20px;
+
+        .content-picture{
+          width: 50px;
+          height: 50px;
+          margin-bottom: 10px;
+          display: block;
+        }
+        .content-title{
+          color: $colorblue;
+          font-size: 22px;
+          line-height: 30px;
+        }
+        .content-text{
+          border-left: 2px solid $colorbluemedium;
+          margin-top: 20px;
+          padding-left: 16px;
+        }
+      }
+    }
+  }
+}
+/* -------------------------------
+SMALL SCREENS
+------------------------------- */
+@media (min-width: $screen-sm-min){
+  .cbo-blocsbackground{
+    .blocsbackground-list{
+      margin: 42px -8px -8px -8px;
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: inherit;
+      justify-content: center;
+      max-width: inherit;
+
+      .list-el{
+        margin: 0;
+        width: 50%;
+        padding: 8px;
+
+        .el-inner{
+          height: 100%;
+        }
+      }
+    }
+  }
+}
+/* -------------------------------
+MEDIUM SCREENS
+------------------------------- */
+@media (min-width: $screen-md-min){
+  .cbo-blocsbackground{
+    .blocsbackground-title{
+      margin-bottom: 50px;
+    }
+    .blocsbackground-list{
+      flex-wrap: nowrap;
+      margin: 80px -15px 0 -15px;
+
+      .list-el{
+        width: 100%;
+        padding: 0 15px;
+      }
+    }
+  }
+}
+/* -------------------------------
+LARGE SCREENS
+------------------------------- */
+@media (min-width: $screen-lg-min){
+  .cbo-blocsbackground{
+    .blocsbackground-list{
+      .list-el{
+        .el-inner{
+          .content-title{
+            hyphens: initial;
+            font-size: 30px;
+            line-height: 40px;
+          }
+        }
+      }
+    }
+  }
+}

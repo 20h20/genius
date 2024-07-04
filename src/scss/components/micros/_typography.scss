@@ -49,34 +49,43 @@ h1,h2,h3,h4,h5,h6{
 	strong{
 		font-weight: bold !important;
 		color: $colorblue;
-		background-image: linear-gradient(to right, $colorbluexlight 0%, $colorbluexlight 100%);
+		background-image: linear-gradient(to right, #39d4f2 0%, #39d4f2 100%);
 		background-repeat: repeat-x; 
 		background-position: 0 100%; 
 		background-size: 100% 7px;
+
+		&::selection{
+			background:$colorbluelight;
+		}
 	}
 }
 .cbo-title-1,
 .cbo-title-1 h2, .cbo-title-1 h3, .cbo-title-1 h4, .cbo-title-1 h5, .cbo-title-1 h6, .cbo-title-1 p{
-	font-size: 42px;
-	line-height: 50px;
+	font-size: 38px;
+	line-height: 48px;
 }
 .cbo-title-2,
 .cbo-title-2 h2, .cbo-title-2 h3, .cbo-title-2 h4, .cbo-title-2 h5, .cbo-title-2 h6, .cbo-title-2 p{
-	font-size: 38px;
-	line-height: 42px;
+	font-size: 34px;
+	line-height: 38px;
 }
 .cbo-title-3{
-	font-size: 36px;
-	line-height: 42px;
+	font-size: 32px;
+	line-height: 38px;
 }
 .cbo-title-4{
-	font-size: 32px;
-	line-height: 36px;
+	font-size: 28px;
+	line-height: 32px;
 }
 .cbo-title-5{
-	font-size: 30px;
-	line-height: 40px;
+	font-size: 26px;
+	line-height: 36px;
 	font-weight: bold;
+}
+.cbo-chapo{
+	font-weight: 600;
+    font-size: 22px;
+    line-height: 26px;
 }
 .cbo-cms{
 	p{
@@ -89,7 +98,7 @@ h1,h2,h3,h4,h5,h6{
 			margin-top: 0;
 		}
 	}
-	h2,h3,h4{
+	h1,h2,h3,h4{
 		margin:50px 0 20px 0;
 
 		&:first-child{
@@ -99,24 +108,24 @@ h1,h2,h3,h4,h5,h6{
 			color: $colorblue;
 		}
 	}
-	h2{
+	h1,h2{
 		font-size: 36px;
 		line-height: 46px;
 	}
 	h3{
-		font-size: 36px;
-		line-height: 42px;
+		font-size: 26px;
+		line-height: 32px;
 	}
 	h4{
-		font-size: 32px;
-		line-height: 36px;
+		font-size: 22px;
+		line-height: 66px;
 	}
 	.cbo-button{
 		margin-top: 34px;
 	}
 	a{
 		&:not(.cbo-button){
-			color: $colorblueregular;
+			color: $colorbluelight;
 			font-weight: bold;
 			transition: all .4s;
 
@@ -129,19 +138,20 @@ h1,h2,h3,h4,h5,h6{
 		li{
 			position: relative;
 			padding:0 0 0 30px;
-			display: block;
 			margin-bottom: 14px;
 
+			&:before{
+				content: '';
+				background: $colorbluelight;
+				width: 15px;
+				height: 15px;
+				border-radius: 15px;
+				position: absolute;
+				left: 0;
+				top: 5px;
+			}
 			&:last-child{
 				padding-bottom: 0;
-			}
-			&:before{
-				font-family:"icons";
-				content: '\f104';
-				color: $colorblue;
-				position: absolute;
-				top: 0;
-				left: 0;
 			}
 		}
 	}
@@ -171,7 +181,7 @@ h1,h2,h3,h4,h5,h6{
 
 		&:before{
 			font-family:"icons";
-			content:"\f108";
+			content:"\f10c";
 			position: absolute;
 			font-size: 26px;
 			left: 50%;
@@ -193,6 +203,12 @@ h1,h2,h3,h4,h5,h6{
 			margin: 0;
 		}
 	}
+	.cbo-underline{
+		background-image: linear-gradient(to right, $colorbluelight 0%, $colorbluelight 100%);
+		background-repeat: repeat-x; 
+		background-position: 0 100%; 
+		background-size: 100% 7px;
+	}
 	.wp-caption {
 		max-width: 100% ;
 		position: relative;
@@ -207,6 +223,67 @@ h1,h2,h3,h4,h5,h6{
 			left: 10px;
 			padding: 10px;
 			width: calc(100% - 20px);
+		}
+	}
+	&.cbo-sources{
+		border: 2px solid $colorbluemedium;
+		border-radius: 20px;
+		padding: 20px;
+		margin: 50px 0;
+	
+		.sources-title{
+			text-align: center;
+			color: $colorblue;
+			font-size: 24px;
+			margin-bottom: 20px;
+			font-weight: bold;
+		}
+	}
+	del{
+		background: $colorbluelight;
+		text-decoration: none;
+		padding: 10px;
+		color: $colorwhite;
+	}
+	.cbo-featuredtext{
+		background: $colorwhite;
+		padding: 20px;
+		text-align: center;
+		border-radius: 20px;
+		font-weight: bold;
+		display: block;
+		margin: 50px auto;
+		max-width: 900px;
+		position: relative;
+
+		&:after{
+			content: '';
+			position: absolute;
+			top: -4px;
+			right: -4px;
+			bottom: -4px;
+			left: -4px;
+			z-index: -1;
+			border-radius: 24px;
+			overflow: hidden;
+			background: linear-gradient(to left,$colorbluemedium, $colorbluelight);
+		}
+	}
+	.cbo-goodtoknow{
+		background: $colorbluelight;
+		border-radius: 20px;
+		padding: 20px;
+		color: $colorwhite;
+		text-align: center;
+		font-weight: bold;
+		display: block;
+		margin: 50px 0;
+
+		strong, a{
+			color: $colorblue;
+		}
+		a{
+			text-decoration: underline;
 		}
 	}
 	img{
@@ -250,8 +327,8 @@ LARGE SCREENS
 @media (min-width: $screen-lg-min){
 	.cbo-title-1,
 	.cbo-title-1 h2, .cbo-title-1 h3, .cbo-title-1 h4, .cbo-title-1 h5, .cbo-title-1 h6, .cbo-title-1 p{
-		font-size: 66px;
-		line-height: 72px;
+		font-size: 58px;
+		line-height: 68px;
 	}
 	.cbo-title-2,
 	.cbo-title-2 h2, .cbo-title-2 h3, .cbo-title-2 h4, .cbo-title-2 h5, .cbo-title-2 h6, .cbo-title-2 p{
@@ -259,8 +336,8 @@ LARGE SCREENS
 		line-height: 50px;
 	}
 	.cbo-cms{
-		h2{
-			font-size: 46px;
+		h1,h2{
+			font-size: 42px;
 			line-height: 50px;
 		}
 	}
@@ -269,19 +346,14 @@ LARGE SCREENS
 XLARGE SCREENS
 ------------------------------- */
 @media (min-width: $screen-xl-min){
-	.cbo-title-1,
-	.cbo-title-1 h2, .cbo-title-1 h3, .cbo-title-1 h4, .cbo-title-1 h5, .cbo-title-1 h6, .cbo-title-1 p{
-		font-size: 76px;
-		line-height: 82px;
-	}
 	.cbo-title-2,
 	.cbo-title-2 h2, .cbo-title-2 h3, .cbo-title-2 h4, .cbo-title-2 h5, .cbo-title-2 h6, .cbo-title-2 p{
 		font-size: 56px;
 		line-height: 66px;
 	}
 	.cbo-cms{
-		h2{
-			font-size: 56px;
+		h1,h2{
+			font-size: 54px;
 			line-height: 66px;
 		}
 	}

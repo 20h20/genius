@@ -1,0 +1,98 @@
+<?php
+	$title	= get_sub_field('blocsbackground_title');
+	$chapo	= get_sub_field('blocsbackground_chapo');
+	$outro	= get_sub_field('blocsbackground_outro');
+	$addinfobulle	= get_sub_field('blocsbackground_addinfobulle');
+	$infouptitle	= get_sub_field('blocsbackground_infobulleuptitle');
+	$infotitle	= get_sub_field('blocsbackground_infobulletitle');
+	$infocontent	= get_sub_field('blocsbackground_infobucontent');
+?>
+
+
+<section class="cbo-blocsbackground">
+	<div class="blocsbackground-inner cbo-container">
+
+		<?php if($title): ?>
+			<div class="blocsbackground-title cbo-title-1 slide-up">
+				<?php echo $title ?>
+			</div>
+		<?php endif; ?>
+
+		<?php if($chapo): ?>
+			<div class="blocsbackground-chapo cbo-chapo cbo-cms slide-up">
+				<?php echo $chapo ?>
+			</div>
+		<?php endif; ?>
+
+		<div class="blocsbackground-list slide-up">
+			<?php
+				if( have_rows('blocsbackground_list') ):
+				while ( have_rows('blocsbackground_list') ) : the_row();
+				$picture	= get_sub_field('icone');
+				$title	= get_sub_field('title');
+				$content	= get_sub_field('content');
+				$color	= get_sub_field('color');
+			?>
+				<div class="list-el el--<?php echo $color ?>">
+					<div class="el-inner">
+						<?php if($picture): ?>
+							<span class="content-picture cbo-picture-contain">
+								<img
+									decoding="async"
+									src="<?php echo $picture['sizes']['xsmall']; ?>"
+									srcset="<?php echo $picture['sizes']['xsmall']; ?> 320w, <?php echo $picture['sizes']['xsmall']; ?> 768w, <?php echo $picture['sizes']['xsmall']; ?> 1024w"
+									alt="<?php echo $picture['alt']; ?>" sizes="100vw"
+									loading="lazy"
+									width="100" height="75"
+								>
+							</span>
+						<?php endif; ?>
+
+						<?php if($title): ?>
+							<div class="content-title cbo-title-5">
+								<?php echo $title ?>
+							</div>
+						<?php endif; ?>
+
+						<?php if($content): ?>
+							<div class="content-text">
+								<?php echo $content ?>
+							</div>
+						<?php endif; ?>
+					</div>
+				</div>
+			<?php
+				endwhile;
+				endif;
+			?>
+		</div>
+
+		<?php if($addinfobulle == 1): ?>
+			<div class="blocsbackground-infotitle slide-up">
+				<?php if($infouptitle): ?>
+					<div class="infotitle-uptitle">
+						<?php echo $infouptitle ?>
+					</div>
+				<?php endif; ?>
+
+				<?php if($infotitle): ?>
+					<div class="infotitle-title">
+						<?php echo $infotitle ?>
+
+						<?php if($infocontent): ?>
+							<div class="infotitle-content">
+								<?php echo $infocontent ?>
+							</div>
+						<?php endif; ?>
+					</div>
+				<?php endif; ?>
+			</div>
+		<?php endif; ?>
+
+		<?php if($outro): ?>
+			<div class="blocsbackground-outro cbo-cms slide-up">
+				<?php echo $outro ?>
+			</div>
+		<?php endif; ?>
+	</div>
+</section>

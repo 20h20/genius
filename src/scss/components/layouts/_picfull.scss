@@ -5,14 +5,30 @@ FULL PICTURE COMPONENT
   .fullpicture-title{
     text-align: center;
     padding: 0 20px;
+    margin-bottom: 32px;
+  }
+  .fullpicture-chapo{
+    text-align: center;
+    padding: 0 20px;
+    margin-bottom: 50px;
   }
   .fullpicture-picture{
     &.picture--desktop{
       display: none;
     }
     &.picture--mobile{
+      padding: 0 20px;
+
       img{
         position: relative;
+        max-height: 500px;
+      }
+      &.mobile--cover{
+        padding: 0;
+
+        img{
+          max-height: inherit;
+        }
       }
     }
   }
@@ -25,10 +41,16 @@ SMALL SCREENS
     .fullpicture-title{
       padding: 0 40px;
     }
+    .fullpicture-chapo{
+      padding: 0 40px;
+    }
     .fullpicture-picture{
       &.picture--desktop{
         display: block;
-        padding-bottom: 56%;
+
+        img{
+          position: relative;
+        }
       }
       &.picture--mobile{
         display: none;

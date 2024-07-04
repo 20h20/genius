@@ -20,34 +20,48 @@ MICRO COMPONENTS
 *********************/
 @import "components/micros/appointment";
 @import "components/micros/blocarticle";
+@import "components/micros/blocnews";
 @import "components/micros/bloctestimonial";
+@import "components/micros/breadcrumb";
 @import "components/micros/buttons";
 @import "components/micros/connexion";
 @import "components/micros/container";
 @import "components/micros/featured";
 @import "components/micros/filters";
 @import "components/micros/modale";
+@import "components/micros/newsletter";
 @import "components/micros/pagination";
 @import "components/micros/pictures";
+@import "components/micros/share";
 @import "components/micros/slick";
+@import "components/micros/tableofcontent";
 @import "components/micros/typography";
+@import "components/micros/video";
 
 /*********************
 LAYOUTS COMPONENTS
 *********************/
 @import "components/layouts/blocs";
 @import "components/layouts/blocssimple";
+@import "components/layouts/blocsbackground";
 @import "components/layouts/context";
 @import "components/layouts/cta";
 @import "components/layouts/herorich";
+@import "components/layouts/keynumbers";
 @import "components/layouts/partners";
 @import "components/layouts/picfull";
 @import "components/layouts/relation";
 @import "components/layouts/richblocs";
+@import "components/layouts/team";
 @import "components/layouts/textpicture";
 @import "components/layouts/textpicturelist";
 @import "components/layouts/testimonials";
 @import "components/layouts/text";
+
+/*********************
+PAGES COMPONENTS
+*********************/
+@import "components/pages/testimonials";
 
 /*********************
 BACK END REMOVE

@@ -1,8 +1,6 @@
 module.exports = function (grunt) {
   require("time-grunt")(grunt);
-  require("jit-grunt")(grunt, {
-    sass: 'grunt-dart-sass',
-  });
+  require("jit-grunt")(grunt);
 
   grunt.initConfig({
     /* Edit theme name here */
@@ -23,7 +21,6 @@ module.exports = function (grunt) {
     sass: {
       options: {
         sourceMap: false,
-        implementation: require('sass'), // Utiliser dart-sass
         outputStyle: "nested" // nested, compressed
       },
       dist: {

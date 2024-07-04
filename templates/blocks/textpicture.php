@@ -6,7 +6,16 @@
 	$picture	= get_sub_field('textpicture_picture');
 	$cover	= get_sub_field('textpicture_picturecover');
 	$position	= get_sub_field('textpicture_position');
+
+	$addquote	= get_sub_field('textpicture_addquote');
+	$quotepicture	= get_sub_field('textpicture_quotepicture');
+	$quotename	= get_sub_field('textpicture_quotename');
+	$quotefunction	= get_sub_field('textpicture_quotefunction');
 ?>
+
+
+
+
 <section class="cbo-textpicture textpicture--<?php echo $position; ?>">
 	<div class="textpicture-inner cbo-container container--medium textpicture--margetop<?php echo $mtop; ?> textpicture--margebot<?php echo $mbot; ?>">
 		<?php if($title): ?>
@@ -27,7 +36,32 @@
 				>
 			</div>
 
-			<div class="textpicture-content slide-up">
+			<div class="textpicture-content">
+				<?php if($addquote == 1): ?>
+					<div class="content-quote">
+						<div class="quote-picture cbo-picture-cover">
+							<img
+								decoding="async"
+								src="<?php echo $quotepicture['sizes']['small']; ?>"
+								srcset="<?php echo $quotepicture['sizes']['small']; ?> 320w, <?php echo $quotepicture['sizes']['xlarge']; ?> 768w, <?php echo $quotepicture['sizes']['xlarge']; ?> 1024w"
+								alt="<?php echo $quotepicture['alt']; ?>" sizes="100vw"
+								loading="lazy"
+								width="768" height="768"
+							>
+						</div>
+						<div class="quote-informations">
+							<div class="informations-inner">
+								<span class="informations-name">
+									<?php echo $quotename ?>
+								</span>
+								<span class="informations-function">
+									<?php echo $quotefunction ?>
+								</span>
+							</div>
+						</div>
+					</div>
+				<?php endif; ?>
+
 				<?php if($content): ?>
 					<div class="cbo-cms">
 						<?php echo $content ?>

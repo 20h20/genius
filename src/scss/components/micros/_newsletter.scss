@@ -1,0 +1,114 @@
+/* -------------------------------
+NEWSLETTER MICRO COMPONENT
+------------------------------- */
+.cbo-newsletter{
+	&:before{
+		content: '';
+		background: url(../img/user-newsletter.png) no-repeat;
+		width: 300px;
+		height: 225px;
+		display: block;
+		background-size: contain;
+		margin: 0 auto -60px auto;
+		position: relative;
+		z-index: 2;
+	}
+	.newsletter-inner{
+		text-align: center;
+		color: $colorwhite;
+		border-radius: 20px;
+		background: $colorblue;
+		padding: 70px 20px 20px 20px;
+
+		.newsletter-title{
+			font-size: 24px;
+			line-height: 26px;
+			font-weight: bold;
+			margin-bottom: 20px;
+
+			strong{
+				color: $colorbluelight;
+			}
+		}
+		.newsletter-content{
+			margin-bottom: 20px;
+		}
+		.newsletter-form{
+			input[type="email"]{
+				height: 60px;
+				border: 1px solid $colorwhite;
+				color: $colorwhite;
+				border-radius: 99rem;
+			}
+			input[type="submit"]{
+				margin-top: 15px;
+				width: 100%;
+				border: 1px solid $colorwhite;
+				background: none;
+
+				&:hover{
+					color: $colorblue;
+					background: $colorwhite;
+				}
+			}
+		}
+	}
+}
+/* -------------------------------
+SMALL SCREENS
+------------------------------- */
+@media (min-width: $screen-sm-min) {
+	.cbo-newsletter{
+		.newsletter-inner{
+			.newsletter-form{
+				form{
+					display: flex;
+					flex-wrap: wrap;
+					justify-content: space-between;
+				}
+				input[type="email"]{
+					width: 100%;
+					margin-right: 30px;
+					flex: 1;
+				}
+				input[type="submit"]{
+					width: 245px;
+					margin-top: 0;
+				}
+			}
+		}
+	}
+}
+/* -------------------------------
+MEDIUM SCREENS
+------------------------------- */
+@media (min-width: $screen-md-min) {
+	.cbo-newsletter{
+		.newsletter-inner{
+			padding: 70px 40px 40px 40px;
+
+			.newsletter-title{
+				font-size: 40px;
+				line-height: 40px;
+			}
+			.newsletter-content{
+				margin-bottom: 40px;
+			}
+		}
+	}
+}
+/* -------------------------------
+LARGE SCREENS
+------------------------------- */
+@media (min-width: $screen-lg-min) {
+	.cbo-newsletter{
+		&:before{
+			width: 460px;
+			height: 346px;
+			margin: 0 auto -92px;
+		}
+		.newsletter-inner{
+			padding: 80px 120px 40px;
+		}
+	}
+}

@@ -1,0 +1,169 @@
+/* -------------------------------
+TESTIMONIALS PAGE COMPONENT
+------------------------------- */
+.page--testimonials{
+    .archive-testimonials{
+        .testimonials-title{
+            text-align: center;
+        }
+        .testimonials-list{
+            .list-el{
+                margin: 50px 0;
+
+                .el-inner{
+                    .inner-picture{
+                        height: 300px;
+                        margin-bottom: 15px;
+
+                        img{
+                            position: relative;
+                            object-position: bottom;
+                        }
+                    }
+                    .inner-content{
+                        .content-informations{
+                            font-size: 24px;
+                            line-height: 28px;
+                            position: relative;
+                            padding-left: 70px;
+                            font-weight: bold;
+                            margin-bottom: 20px;
+
+                            &:after{
+                                content: '';
+                                background: url(../img/quote.svg) no-repeat;
+                                width: 54px;
+                                height: 60px;
+                                top: 0;
+                                left: 0;
+                                position: absolute;
+                            }
+                            .informations-name{
+                                color: $colorblue;
+                                margin-bottom: 6px;
+                            }
+                            .informations-society{
+                                color: $colorbluelight;
+                            }
+                        }
+                        .content-chapo{
+                            margin-bottom: 40px;
+                        }
+                        .content-question{
+                            .list-el{
+                                padding-left: 16px;
+                                margin: 22px 0;
+                                position: relative;
+
+                                &:before{
+                                    content: '';
+                                    background: linear-gradient(25deg, rgba(0,239,251,1) 0%, rgba(47,153,255,1) 57%, rgba(22,103,255,1) 100%);
+                                    width: 2px;
+                                    height: 100%;
+                                    position: absolute;
+                                    top: 0;
+                                    left: 0;
+                                    border-radius: 4px;
+                                }
+                                .el-title{
+                                    font-size: 20px;
+                                    line-height: 22px;
+                                    color: $colorbluelight;
+                                    font-weight: bold;
+                                    position: relative;
+                                    display: flex;
+                                    align-items: center; 
+                                    justify-content: space-between;
+                                    cursor: pointer;
+                                    transition:.4s $easeinout;
+
+                                    i{
+                                        transition:.4s $easeinout;
+                                        margin-left: 20px;
+                                    }
+                                    &:hover,
+                                    &.title--open{
+                                        color:$colorblue ;
+                            
+                                        i{
+                                            transform: rotate(45deg);
+                                        }
+                                    }
+                                }
+                                .el-content{
+                                    overflow: hidden;
+                                    display: none;
+                                    margin-top: 20px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/* -------------------------------
+SMALL SCREENS
+------------------------------- */
+@media (min-width:$screen-sm-min) {
+    .page--testimonials{
+        .archive-testimonials{
+            .testimonials-list{
+                .list-el{
+                    .el-inner{
+                        display: flex;
+                        align-items: flex-end;
+
+                        .inner-picture{
+                            height: 380px;
+                            min-width: 112px;
+                            margin:0 60px 0 0;
+                        }
+                        .inner-content{
+                            width: 100%;
+                        }
+                    }
+                    &.el--video{
+                        .el-inner{
+                            flex-direction: row-reverse;
+
+                            .inner-picture{
+                                margin: 0 0 0 60px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/* -------------------------------
+MEDIUM SCREENS
+------------------------------- */
+@media (min-width:$screen-md-min) {
+    .page--testimonials{
+        .archive-testimonials{
+            .testimonials-list{
+                .list-el{
+                    margin: 110px;
+
+                    .el-inner{
+                        .inner-picture{
+                            height: 400px;
+                            min-width: 152px;
+                            margin:0 80px 0 0;
+                        }
+                    }
+                    &.el--video{
+                        .el-inner{
+                            .inner-picture{
+                                margin: 0 0 0 80px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

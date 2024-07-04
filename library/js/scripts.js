@@ -3436,26 +3436,82 @@ $(window).on( 'scroll', function(){
 	var Master = {
 		onready : function(){
 
-			/////////////////// SMOOTHSCOLL ///////////////////
+			/////////////////// SMOOTHSCROLL ///////////////////
 			CBO_Smoothscroll.init();
 
+			/////////////////// HALO ///////////////////
 			window.addEventListener('scroll', function() {
 				var scrollTop = window.scrollY;
 				var halo = document.querySelector('.halo');
 				var posX = (scrollTop / (document.body.scrollHeight - window.innerHeight)) * 100;
-				
-				var maxTranslateX = 200;
+			
+				// Définir maxTranslateX en fonction de la largeur de l'écran
+				var maxTranslateX;
+				if (window.innerWidth > 767) {
+					maxTranslateX = 100;
+				} else {
+					maxTranslateX = 40;
+				}
 				var range = maxTranslateX * 2;
 				var progress = (scrollTop / (document.body.scrollHeight - window.innerHeight)) % 1;
-				
+			
 				if (progress > 0.5) {
-					progress = 1 - progress; 
+					progress = 1 - progress;
 				}
-				
-				var translateX = progress * range;
+			
+				var accelerationFactor = 2; // Augmenter cette valeur pour accélérer davantage
+				var translateX = progress * range * accelerationFactor;
 				halo.style.transform = 'translateX(calc(-50% + ' + translateX + '%))';
-				halo.style.backgroundPosition = posX + '%';
+			
+				// Calculer la nouvelle couleur et l'opacité en fonction du défilement
+				var colorProgress = (scrollTop / (document.body.scrollHeight - window.innerHeight));
+				var color1 = { r: 155, g: 177, b: 214, a: 0.6 };
+				var color2 = { r: 145, g: 189, b: 242, a: 0.8 };
+				var color3 = { r: 167, g: 236, b: 248, a: 0.9 };
+			
+				var currentColor;
+				if (colorProgress < 0.25) {
+					currentColor = interpolateColor(color1, color2, colorProgress / 0.25);
+				} else if (colorProgress < 0.5) {
+					currentColor = interpolateColor(color2, color3, (colorProgress - 0.25) / 0.25);
+				} else if (colorProgress < 0.75) {
+					currentColor = interpolateColor(color3, color2, (colorProgress - 0.5) / 0.25);
+				} else {
+					currentColor = interpolateColor(color2, color1, (colorProgress - 0.75) / 0.25);
+				}
+				halo.style.backgroundColor = `rgba(${currentColor.r}, ${currentColor.g}, ${currentColor.b}, ${currentColor.a})`;
+			
+				var scaleProgress = progress;
+				var scale = 0.6 + (1 - 0.6) * (Math.sin(scaleProgress * Math.PI) ** 2);
+				halo.style.transform += ' scale(' + scale + ')';
 			});
+			
+			function interpolateColor(color1, color2, factor) {
+				var result = {
+					r: Math.round(color1.r + factor * (color2.r - color1.r)),
+					g: Math.round(color1.g + factor * (color2.g - color1.g)),
+					b: Math.round(color1.b + factor * (color2.b - color1.b)),
+					a: color1.a + factor * (color2.a - color1.a)
+				};
+				return result;
+			}
+
+			//////////////// ACCORDION ////////////////
+			$(".toggle").click(function (e) {
+				e.preventDefault();
+				var $this = $(this);
+				if ($this.next().hasClass("show")) {
+					$this.next().removeClass("show");
+					$this.next().slideUp(350);
+				} else {
+					$this.next().toggleClass("show");
+					$this.next().slideToggle(350);
+				}
+			});
+			$(".content-question .el-title").click(function () {
+				$(this).toggleClass("title--open");
+			});
+
 
 			//////////////// STICKY ////////////////
 			$(window).scroll(function(){
@@ -3486,6 +3542,28 @@ $(window).on( 'scroll', function(){
 				e.stopPropagation();
 			});
 
+
+			const menuItems = document.querySelectorAll('.menu-item-has-children > a');
+			menuItems.forEach(function(menuItem) {
+				menuItem.addEventListener('click', function(e) {
+					if (window.innerWidth <= 768) {
+						e.preventDefault();
+						const submenu = menuItem.nextElementSibling;
+						
+						document.querySelectorAll('.sub-menu').forEach(function(sub) {
+							if (sub !== submenu) {
+								sub.style.display = 'none';
+							}
+						});
+								if (submenu.style.display === 'block') {
+							submenu.style.display = 'none';
+						} else {
+							submenu.style.display = 'block';
+						}
+					}
+				});
+			});
+
 			/////////////////// HEADER - CLOSE MENU WHEN CLICKING OUTSIDE ///////////////////
 			$(document).on('click', function(e) {
 				var $target = $(e.target);
@@ -3510,17 +3588,19 @@ $(window).on( 'scroll', function(){
 			$('.button-modale').on('click', function(e) {
 				e.stopPropagation();
 				$('.cbo-modale').toggleClass('modale--open');
-				$('body').addClass('body-modale-open');
-				$('html').addClass('html--hidden');
 			});
 
 			$('.cbo-modale .modale-close, .cbo-modale .modale-overlay').on('click', function() {
 				$('.cbo-modale').removeClass('modale--open');
-				$('body').removeClass('body-modale-open');
-				$('html').removeClass('html--hidden');
+			});
+
+			/////////////////// MODALE VIDEO ///////////////////
+			$('.team-list .video-play').on('click', function(e) {
+				e.preventDefault();
+				e.stopPropagation(); 
+				$('.video-modale').toggleClass('modale--open');
 			});
 			
-
 			/////////////////// SLIDER ARTICLES ///////////////////
 			$('.cbo-relation .articles-list').slick({
 				arrows : false,
@@ -3590,7 +3670,7 @@ $(window).on( 'scroll', function(){
 
 			//////////////////// TESTIMONIALS VIDÉO ////////////////////
 			(function() {
-				$(".el--video .content-video").on("click", function() {
+				$(".el--video .content-video, .list-el .content-video").on("click", function() {
 					var $this = $(this);
 					var videoId = $this.find(".video-cover").data("video-id");
 					$this.addClass("video--open");
@@ -3648,6 +3728,38 @@ $(window).on( 'scroll', function(){
 				}
 				window.addEventListener('scroll', parallaxScrollHero);
 			}
+
+			///////////////////// SOMMAIRE ///////////////////
+			var headers = document.querySelectorAll("h2, h3, h4, h5");
+			var tocLists = document.getElementsByClassName("sommaire-list");
+
+			if (tocLists.length > 0) {
+				var tocList = tocLists[0];
+				headers.forEach(function(header, index) {
+					if (header.closest(".cbo-relation")) {
+						return; 
+					}
+					var id = "header-" + index;
+					header.id = id;
+					var li = document.createElement("li");
+					var level = parseInt(header.tagName.substring(1)) - 1;
+					li.style.marginLeft = level * 20 + "px"; 
+
+					if (level > 1) {
+						li.classList.add('sub-level');
+					}
+
+					var a = document.createElement("a");
+					a.href = "#" + id;
+					a.textContent = header.textContent;
+					li.appendChild(a);
+					tocList.appendChild(li);
+				});
+			}
+			$('.cbo-sommaire').on('click', function(e) {
+				e.stopPropagation();
+				$('.cbo-sommaire').toggleClass('sommaire--open');
+			});
 
 			//////////////// SCROLL ANIMATIONS ////////////////
 			var scroll = window.requestAnimationFrame || function(callback){ window.setTimeout(callback, 1000/60)};

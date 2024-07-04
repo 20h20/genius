@@ -1,10 +1,15 @@
 <?php
 	get_header();
-	$category = get_the_category();
-	$category_name = isset($category[0]) ? $category[0]->name : 'N.C';
-	$excerpt = get_the_excerpt();
-	$limited_excerpt = wp_trim_words($excerpt, 100, '...');
-	$limited_excerpt = str_replace('TweetezPartagezPartagez', '', $limited_excerpt);
+	$sources	= get_field('single_sources');
+	$newstitle	= get_field('options_newslettertitle', 'option');
+	$newschapo	= get_field('options_newsletterchapo', 'option');
+	$ctaicon	= get_field('options_testimonialsctapic', 'option');
+	$ctatitle	= get_field('options_testimonialsctatitle', 'option');
+	$ctacontent	= get_field('options_testimonialsctacontent', 'option');
+	$ctatxtbt	= get_field('options_testimonialsctatxtbt', 'option');
+	$ctaurlbt	= get_field('options_testimonialsctaurlbt', 'option');
+	$ctatypebt	= get_field('options_testimonialsctabttype', 'option');
+	$ctabg	= get_field('options_testimonialsctabg', 'option');
 ?>
 	<article id="post-<?php the_ID(); ?>" <?php post_class('cbo-page page--single'); ?> itemscope itemtype="http://schema.org/BlogPosting">
 		<section class="cbo-herorich">
@@ -20,27 +25,54 @@
 							yoast_breadcrumb('<div class="breadcrumb-inner">','</div>');
 						} ?>
 					</div>
+
+					<div class="content-social slide-up">
+						<?php echo do_shortcode( '<div class="share-title">Partager sur :</div>[social_warfare]' ); ?>
+					</div>
+
 					<h1 class="herorich-title cbo-title-1 slide-up">
 						<?php the_title(); ?>
 					</h1>
-					
-				</div>
-			</div>
-		</section>
 
-		<section class="cbo-text">
-			<div class="text-inner cbo-container container--small">
-				<div class="text-content">
-					<div class="cbo-cms">
-						<?php
-							if (function_exists('the_content')) {
-								the_content();
-							}
-						?>
+					<div class="content-infos">
+						<?php echo get_the_author(); ?> /
+						<time class="header-date" itemprop="dateCreated" datetime="<?php echo get_the_date(); ?>">
+							<?php echo get_the_date(); ?>
+						</time> / 
+						<?php echo reading_time(get_the_ID()); ?>
+					</div>
+
+					<div class="cbo-sommaire">
+						<div class="sommaire-inner">
+							<div class="sommaire-title">
+								Table des matières
+								<i class="icon icon--next-arrow"></i>
+							</div>
+							<ul class="sommaire-list"></ul>
+						</div>
+						
 					</div>
 				</div>
 			</div>
 		</section>
+
+		<?php
+			if (function_exists('the_content')) {
+		?>
+			<section class="cbo-text">
+				<div class="text-inner cbo-container container--medium">
+					<div class="text-content">
+						<div class="cbo-cms">
+							<?php
+								the_content();
+							?>
+						</div>
+					</div>
+				</div>
+			</section>
+		<?php 
+			}
+		?>
 
 		<?php
 			global $flexible_count;
@@ -118,14 +150,49 @@
 			endif;
 		?>
 
+		<div class="cbo-container container--medium container--nomargin">
+			<div class="single--sharebot">
+				<div class="sharebot-title cbo-title-3 slide-up">
+					Notre article vous a plu ?<br/>
+					<span>Restez connecté pour explorer nos dernières publications !<span>
+				</div>
+				<div class="content-social slide-up">
+					<?php echo do_shortcode( '[social_warfare]' ); ?>
+				</div>
+			</div>
+
+			<?php if($sources): ?>
+				<div class="cbo-sources cbo-cms slide-up">
+					<div class="sources-title">
+						Sources
+					</div>
+					<?php echo $sources ?>
+				</div>
+			<?php endif; ?>
+
+			<div class="cbo-newsletter slide-up">
+				<div class="newsletter-inner">
+					<div class="newsletter-title">
+						<?php echo $newstitle ?>
+					</div>
+					<div class="newsletter-content">
+						<?php echo $newschapo ?>
+					</div>
+					<div class="newsletter-form cbo-form">
+						<?php echo do_shortcode( '[contact-form-7 id="4ccd478" title="Newsletter"]' ); ?>
+					</div>
+				</div>
+			</div>
+		</div>
+
 		<section class="cbo-relation">
 			<div class="relation-inner cbo-container">
 
 				<div class="relation-title cbo-title-1 slide-up">
-					Articles sur le même sujet
+					<strong>D’autres articles</strong><br> sur le même sujet
 				</div>
 
-				<div class="articles-list">
+				<div class="articles-list slide-up">
 					<?php
 						$current_cat = get_queried_object();
 						$categories = get_the_terms($current_cat->ID, 'category');
@@ -134,7 +201,7 @@
 							$event_id = get_the_ID();
 							$args = array(
 								'post_type' => 'post',
-								'posts_per_page' => 9,
+								'posts_per_page' => 3,
 								'tax_query' => array(
 									array(
 										'taxonomy' => 'category',
@@ -161,13 +228,58 @@
 			</div>
 		</section>
 
-		
+		<section class="cbo-cta">
+			<div class="cta-inner cbo-container">
+				<div class="cta-box">
+					<div class="cta-content">
+						<?php if($ctaicon): ?>
+							<div class="content-icon cbo-picture-contain slide-up">
+								<img
+									decoding="async"
+									src="<?php echo $ctaicon['sizes']['xsmall']; ?>"
+									srcset="<?php echo $ctaicon['sizes']['xsmall']; ?> 320w, <?php echo $ctaicon['sizes']['xsmall']; ?> 768w, <?php echo $ctaicon['sizes']['xsmall']; ?> 1024w"
+									alt="<?php echo $ctaicon['alt']; ?>" sizes="100vw"
+									loading="lazy"
+									width="100" height="100"
+								>
+							</div>
+						<?php endif; ?>
 
+						<?php if($ctatitle): ?>
+							<div class="content-title cbo-title-2 slide-up">
+								<?php echo $ctatitle ?>
+							</div>
+						<?php endif; ?>
 
+						<?php if($ctacontent): ?>
+							<div class="content-text cbo-cms slide-up">
+								<?php echo $ctacontent ; ?>
+							</div>
+						<?php endif; ?>
 
+						<a
+							class="cbo-button button--border button--icon slide-up <?php if($ctatypebt == 'modale'): ?>button-modale<?php endif; ?>"
+							href="<?php if($ctatypebt == 'url'): ?><?php echo $ctaurlbt; ?><?php endif; ?><?php if($ctatypebt == 'modale'): ?>#<?php endif; ?>"
+						>
+							<?php echo $ctatxtbt; ?>
+						</a>
+					</div>
+					<?php if($ctabg): ?>
+						<div class="box-picture cbo-picture-cover">
+							<img
+								decoding="async"
+								src="<?php echo $ctabg['sizes']['xsmall']; ?>"
+								srcset="<?php echo $ctabg['sizes']['small']; ?> 320w, <?php echo $ctabg['sizes']['xlarge']; ?> 768w, <?php echo $ctabg['sizes']['xlarge']; ?> 1024w"
+								alt="<?php echo $ctabg['alt']; ?>" sizes="100vw"
+								loading="lazy"
+								width="1600" height="700"
+							>
+						</div>
+					<?php endif; ?>
+				</div>
+			</div>
+		</section>
 
-
-		
 	</article>
 <?php
 	get_footer();

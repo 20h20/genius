@@ -15,6 +15,47 @@ TEXT PICTURE COMPONENT
   .textpicture-content {
     max-width: 600px;
     margin: 0 auto;
+
+    .content-quote{
+      display: flex;
+      margin-bottom: 30px;
+
+      .quote-picture{
+        min-width: 100px;
+        height: 100px;
+        border-radius: 99rem;
+        overflow: hidden;
+        background: linear-gradient(0deg, rgba(118,243,255,1) 0%, rgba(255,255,255,1) 100%);
+      }
+      .quote-informations{
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        width: 100%;
+        padding-left: 50px;
+
+        &:before{
+          content: '';
+          background: url(../img/quote.svg) no-repeat;
+          background-size: contain;
+          width: 60px;
+          height: 67px;
+          position: absolute;
+          left: -30px;
+        }
+        .informations-name{
+          font-size: 24px;
+          color: $colorblue;
+          width: 100%;
+          display: block;
+        }
+        .informations-function{
+          font-size: 20px;
+          color: $colorbluelight;
+        }
+      }
+    }
   }
 }
 /* -------------------------------

@@ -9,11 +9,11 @@
 				</div>
 
 				<div class="text-content">
-					<div class="cbo-cms">
+					<div class="cbo-cms slide-up">
 						<p>
 							La page que vous recherchez n'existe pas.<br />Vous pouvez toujours revenir sur vos pas.
 						</p>
-						<a class="cbo-button" href="<?php echo home_url(); ?>">
+						<a class="cbo-button slide-up" href="<?php echo home_url(); ?>">
 							Revenir à l'accueil
 						</a>
 					</div>

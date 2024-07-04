@@ -1,0 +1,98 @@
+/* -------------------------------
+TABLE DES MATIERES MICRO COMPONENT
+------------------------------- */
+.cbo-sommaire{
+	&.sommaire--open{
+		.sommaire-inner{
+			border-radius: 20px 20px 0 0;
+
+			.sommaire-title{
+				i{
+					transform: rotate(-90deg);
+				}
+			}
+			.sommaire-list{
+				opacity: 1;
+				visibility: visible;
+				pointer-events: all;
+				transform: translateY(0px);
+			}
+		}
+	}
+	.sommaire-inner{
+		border-radius: 20px;
+		border: 1px solid $colorblue;
+		width: 100%;
+		color: $colorblue;
+		transition: all .4s;
+
+		.sommaire-title{
+			padding: 0 20px;
+			height: 60px;
+			width: 100%;
+			display: inline-flex;
+			align-items: center;
+			justify-content: space-between;
+
+			i{
+				color: $colorbluelight;
+				transform: rotate(90deg);
+				transition: all .4s;
+			}
+		}
+		.sommaire-list{
+			font-size: 16px;
+			position: absolute;
+			width: 100%;
+			left: 0;
+			background: $colorwhite;
+			border: 1px solid $colorblue;
+			border-radius: 0 0 20px 20px;
+			opacity: 0;
+			visibility: hidden;
+			pointer-events: none;
+			transform: translateY(50px);
+			transition: all .4s;
+
+			li{
+				padding: 10px 0;
+
+				a{
+					color: $colorbluedark;
+					transition: all .4s;
+
+					&:hover{
+						color: $colorbluemedium;
+					}
+				}
+				&.sub-level{
+					a{
+						color: $colorbluelight;
+
+						&:hover{
+							color: $colorbluemedium;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+/* -------------------------------
+SMALL SCREENS
+------------------------------- */
+@media (min-width: $screen-sm-min){
+	
+}
+/* -------------------------------
+LARGE SCREENS
+------------------------------- */
+@media (min-width: $screen-lg-min){
+	
+}
+/* -------------------------------
+XLARGE SCREENS
+------------------------------- */
+@media (min-width: $screen-xl-min){
+	
+}

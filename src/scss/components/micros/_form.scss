@@ -25,6 +25,18 @@ FORMS & FIELDS
 		border: none;
 		font-size: 18px;
 	}
+	::-webkit-input-placeholder {
+		opacity: .9;
+		color: $colorwhite;
+	}
+	::-moz-placeholder {
+		opacity: .9;
+		color: $colorwhite;
+	}
+	:-ms-input-placeholder {
+		opacity: .9;
+		color: $colorwhite;
+	}
 	input.wpcf7-not-valid{
 		border-color: $colorerror;
 	}

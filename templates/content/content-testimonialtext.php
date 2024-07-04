@@ -2,7 +2,7 @@
 	$name	= get_field('testimonials_user');
 	$society	= get_field('testimonials_enterprise');
 ?>
-<article <?php post_class('list-el slide-up'); ?> itemprop="blogPosts" itemscope itemtype="http://schema.org/BlogPosting">
+<article <?php post_class('list-el'); ?> itemprop="blogPosts" itemscope itemtype="http://schema.org/BlogPosting">
 	<div class="el-inner">
 		<div class="inner-content">
 			<div class="content-container">

@@ -6,7 +6,7 @@ header{
 	top: 0;
 	width: 100%;
 	z-index: 5;
-	height: 88px;
+	height: 74px;
 	transition: all .4s;
 	animation: headerdown 1s ease forwards;
 
@@ -22,15 +22,15 @@ header{
 	}
 	&.header-scroll{
 		&:after{
-			height: 100px;
+			height: 100%;
 		}
 	}
 	.header-inner{
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		padding-top: 20px;
-		padding-bottom: 20px;
+		padding-top: 13px;
+		padding-bottom: 13px;
 
 		.header-logo{
 			min-width: 110px;
@@ -47,7 +47,7 @@ header{
 			z-index: 2;
 
 			.cbo-button{
-				color: $colorbluexlight;
+				height: 40px;
 			}
 			.button--icon{
 				display: none;
@@ -65,7 +65,7 @@ header{
 				.top,
 				.middle,
 				.bottom{
-					background-color:$colorgrey;
+					background-color:$colorbluemedium;
 					width:26px;
 					height:3px;
 					border-radius: 7px;
@@ -140,6 +140,7 @@ header{
 					position: relative;
 
 					a{
+						display: block;
 						color:$colorbluedark;
 						position:relative;
 						font-weight: 600;
@@ -147,16 +148,7 @@ header{
 					}
 					&.current-menu-item{
 						a{
-							&:after{
-								content: '';
-								background: $colorbluexlight;
-								width: 100%;
-								height: 6px;
-								position: absolute;
-								bottom: -10px;
-								left: 0;
-								border-radius: 99rem;
-							}
+							color: $colorbluelight;
 						}
 					}
 					&.menu-item-has-children{
@@ -187,6 +179,10 @@ header{
 						}
 						li{
 							padding: 10px 0;
+
+							a{
+								color: $colorbluelight;
+							}
 						}
 					}
 				}
@@ -235,10 +231,10 @@ LARGE SCREENS
 					}
 					&.button--icon{
 						&:hover{
-							color: $colorbluexlight;
+							color: $colorbluelight;
 
 							&:after{
-								color:$colorbluexlight;
+								color:$colorbluelight;
 							}
 						}
 					}
@@ -246,7 +242,7 @@ LARGE SCREENS
 			}
 			.header-nav{
 				padding: 0;
-				height: 100%;
+				height: 68px;
 				width: auto;
 				flex: 1;
 				position: initial;
@@ -270,14 +266,14 @@ LARGE SCREENS
 
 								&:before{
 									font-family:"icons";
-									content:"\f102";
+									content:"\f103";
 									font-size: 18px;
-									color: $colorblack;
+									color: $colorbluemedium;
 									transition: all .4s;
 								}
 								&:hover{
 									&:before{
-										color: $colorbluexlight;
+										color: $colorbluelight;
 									}
 								}
 							}
@@ -287,9 +283,16 @@ LARGE SCREENS
 						display: flex;
 						align-items: center;
 						padding: 0 15px;
+						height: 100%;
 
 						a{
 							transition: all .4s;
+							height: 100%;
+							display: flex;
+							align-items: center;
+						}
+						&.current-menu-item a::after {
+							bottom: 10px;
 						}
 						&.menu-item-has-children{
 							&:after{
@@ -299,8 +302,14 @@ LARGE SCREENS
 								transform: rotate(0deg);
 								font-size: 12px;
 							}
+							&:hover{
+								.sub-menu{
+									visibility: visible;
+									opacity: 1;
+									top: calc(100% - 16px);
+									pointer-events: all;
+								}							}
 						}
-						&.active,
 						&:hover{
 							a{
 								color: $colorbluelight;
@@ -308,14 +317,6 @@ LARGE SCREENS
 							&:after{
 								color: $colorbluelight;
 								transform: rotate(180deg);
-							}
-						}
-						&.active{
-							.sub-menu{
-								visibility: visible;
-								opacity: 1;
-								top: calc(100% - -8px);
-								pointer-events: all;
 							}
 						}
 						.sub-menu{
@@ -381,11 +382,6 @@ XLARGE SCREENS
 @media (min-width: $screen-xl-min) {
 	header{
 		.header-inner{
-			.header-logo{
-				margin-right: 80px;
-				width: 180px;
-    			height: 80px;
-			}
 			.header-buttons{
 				.button--icon{
 					margin-left: 28px;

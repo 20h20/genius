@@ -1,0 +1,59 @@
+/* -------------------------------
+VIDEO MICRO COMPONENT
+------------------------------- */
+.content-video {
+	position: relative;
+	padding-bottom: 60%;
+	cursor: pointer;
+	border-radius: 15px;
+	overflow: hidden;
+	height: 100%;
+
+	.video-play {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		position: absolute;
+		font-size: 18px;
+		width: 80px;
+		height: 80px;
+		border-radius: 99rem;
+		top: 50%;
+		left: 50%;
+		z-index: 3;
+		margin-top: -40px;
+		margin-left: -40px;
+		background:$colorwhite;
+		color: $colorbluemedium;
+		transform: scale(1);
+		transition: all .4s;
+	}
+	.video-cover{
+		background-position: center center;
+		background-size: cover;
+		background-repeat: no-repeat;
+		position:absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 2;
+	}
+	&.video--open{
+		.video-play {
+			display: none;
+		}
+	}
+	iframe {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+	}
+	&:hover{
+		.video-play {
+			transform: scale(1.2);
+		}
+	}
+}

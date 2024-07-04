@@ -22,7 +22,7 @@ BLOCS RICH COMPONENT
           background: linear-gradient(45deg, rgba(91,158,255,1) 0%, rgba(46,96,255,1) 100%);
         }
         &.inner--lightblue{
-          background: linear-gradient(45deg, rgba(118,243,255,1) 0%, rgba(46,217,250,1) 100%);
+          background: $colorbluelight;
         }
         .inner-picture{
           margin-bottom: 0.875rem;
@@ -91,7 +91,7 @@ LARGE SCREENS
 
       .list-el{
         padding: 0 2.1875rem;
-  
+
         .el-inner{
           padding: 3.125rem 4.125rem;
 

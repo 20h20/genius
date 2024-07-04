@@ -25,9 +25,24 @@
 						get_template_part( 'templates/blocks/richblocs');
 
 					///////////////////
+					// SECTION TEAM
+					elseif( get_row_layout() == 'team' ):
+						get_template_part( 'templates/blocks/team');
+
+					///////////////////
+					// SECTION CHIFFRES CLES
+					elseif( get_row_layout() == 'keynumbers' ):
+						get_template_part( 'templates/blocks/keynumbers');
+
+					///////////////////
 					// SECTION BLOCS
 					elseif( get_row_layout() == 'blocs' ):
 						get_template_part( 'templates/blocks/blocs');
+
+					///////////////////
+					// SECTION BLOCS BACKGROUND
+					elseif( get_row_layout() == 'blocsbackground' ):
+						get_template_part( 'templates/blocks/blocsbackground');
 
 					///////////////////
 					// SECTION TEXT PICTURE LIST

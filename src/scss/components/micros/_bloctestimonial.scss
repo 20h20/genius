@@ -4,34 +4,36 @@ TESTIMONIAL BLOC MICRO COMPONENT
 .testimonialslist-list{
 	.list-el{
 		.el-inner{
-			text-align: center;
-
 			.inner-content{
 				padding: 0.1875rem;
 				position: relative;
+				font-weight: bold;
 
 				&:before{
 					content: '';
 					background: url(../img/quote.svg) no-repeat;
-					width: 5.75rem;
-					height: 6.4375rem;
+					width: 60px;
+					height: 68px;
 					position: absolute;
 					z-index: 3;
-					top: -2.25rem;
+					top: -23px;
 					left: 50%;
-					margin-left: -2.875rem;
+					margin-left: -30px;
 				}
 				.content-container{
 					border-radius: 1rem;
-					padding: 5rem 0.875rem 3.75rem 0.875rem;
+					padding: 46px 14px 20px 14px;
 					position: relative;
 					z-index: 2;
 					background: $colorwhite;
 					height: 100%;
 
 					.content-title{
-						color: $colorblueregular;
+						color: $colorbluelight;
 						margin:0 0 26px 0;
+						font-size: 24px;
+						line-height: 32px;
+						text-align: center;
 					}
 				}
 				.inner-border{
@@ -43,20 +45,21 @@ TESTIMONIAL BLOC MICRO COMPONENT
 					z-index: 1;
 					border-radius: 1.125rem;
 					overflow: hidden;
-					background: linear-gradient(to left,$colorbluemedium, $colorturquoise);
+					background: linear-gradient(to left,$colorbluemedium, $colorbluelight);
 				}
 			}
 			.inner-informations{
 				margin-top: 1.75rem;
 				font-weight: bold;
+				text-align: center;
 
 				.informations-name{
 					color: $colorblue;
 				}
 				.informations-society{
-					color: $colorblueregular;
-					font-size: 1.25rem;
-					line-height: 1.625rem;
+					color: $colorbluelight;
+					font-size: 16px;
+					line-height: 24px;
 				}
 			}
 		}
@@ -66,53 +69,11 @@ TESTIMONIAL BLOC MICRO COMPONENT
 					padding: 3px;
 
 					.content-video {
-						position: relative;
 						padding-bottom: 138%;
-						cursor: pointer;
-						border-radius: 15px;
-						overflow: hidden;
-						height: 100%;
 
 						.video-play {
-							display: flex;
-							align-items: center;
-							justify-content: center;
 							color: $colorwhite;
-							position: absolute;
-							font-size: 1.125rem;
-							width: 5rem;
-							height: 5rem;
-							border-radius: 3.125rem;
-							top: 50%;
-							left: 50%;
-							z-index: 3;
-							margin-top: -2.5rem;
-							margin-left: -2.5rem;
 							background:$colorblue;
-							transition: all .4s;
-						}
-						.video-cover{
-							background-position: center center;
-							background-size: cover;
-							background-repeat: no-repeat;
-							position:absolute;
-							top: 0;
-							left: 0;
-							width: 100%;
-							height: 100%;
-							z-index: 2;
-						}
-						&.video--open{
-							.video-play {
-								display: none;
-							}
-						}
-						iframe {
-							position: absolute;
-							top: 0;
-							right: 0;
-							bottom: 0;
-							left: 0;
 						}
 					}
 				}
@@ -127,18 +88,48 @@ TESTIMONIAL BLOC MICRO COMPONENT
 	}
 }
 /* -------------------------------
+MEDIUM SCREENS
+------------------------------- */
+@media (min-width: $screen-md-min) {
+	.testimonialslist-list{
+		.list-el{
+			.el-inner{	
+				.inner-content{
+					.content-container{
+						display: flex;
+						align-items: center;
+					}
+				}
+			}
+		}
+	}
+}
+/* -------------------------------
 LARGE SCREENS
 ------------------------------- */
 @media (min-width: $screen-lg-min) {
 	.testimonialslist-list{
 		.list-el{
+			.el-inner{
+				.inner-content {
+					&:before{
+						width: 92px;
+						height: 103px;
+						top: -36px;
+						margin-left: -46px;
+					}
+					.content-container{
+						padding: 80px 50px 30px;
+					}
+				}
+			}
 			&.el--video {
 				.el-inner {
 					.inner-content {
 						.content-video{
 							padding-bottom: 0;
 							height: 100%;
-							min-height: 37.5rem;
+							min-height: 34.5rem;
 						}
 					}
 				}
