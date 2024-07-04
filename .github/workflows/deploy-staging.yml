@@ -13,7 +13,7 @@ jobs:
       uses: actions/setup-node@master
       with:
         node-version: '18.x'
-    - run: npm install
+    - run: npm install --legacy-peer-deps
     - run: npm run build 
     - name: RSync-Deploy-Action
       id: deploy_staging
