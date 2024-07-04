@@ -2,17 +2,17 @@ on:
   push:
     branches: 
       - develop
-name: Deploy UC theme to Staging
+name: Deploy theme to Staging
 jobs:
   FTP-Deploy-Action:
     name: FTP-Deploy-Action
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - name: Set up Node.js
-      uses: actions/setup-node@v2
+    - uses: actions/checkout@master
+    - name: Webpack-Build-Action
+      uses: actions/setup-node@master
       with:
-        node-version: '12.x'
+        node-version: '18.x'
     - run: npm install
     - run: npm run build 
     - name: RSync-Deploy-Action
