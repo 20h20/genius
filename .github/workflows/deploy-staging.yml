@@ -12,7 +12,7 @@ jobs:
     - name: Set up Node.js
       uses: actions/setup-node@master
       with:
-        node-version: '18.x'
+        node-version: '12.x'
     - run: npm install --legacy-peer-deps
     - run: npm run build 
     - name: RSync-Deploy-Action
