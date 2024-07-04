@@ -23,5 +23,8 @@
   "dependencies": {
     "grunt-cli": "^1.4.3",
     "locomotive-scroll": "^4.1.4"
+  },
+  "scripts": {
+    "build": "grunt build"
   }
 }
