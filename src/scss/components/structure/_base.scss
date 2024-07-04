@@ -80,6 +80,15 @@ figure{
 	&.page-404{
 		text-align: center;
 	}
+	&.page--single{
+		.cbo-herorich{
+			overflow: visible;
+
+			.herorich-picture {
+				margin: 0 0px 40px auto;
+			}
+		}
+	}
 }
 .container-halo {
     position: fixed;

@@ -140,8 +140,12 @@ CONTEXT LAYOUT COMPONENT
             .list-el{
                 margin-top: 54px;
                 position: relative;
-                z-index: 2;
+                z-index: 3;
 
+                &:first-child{
+                    position: relative;
+                    z-index: 9;
+                }
                 .el-inner{
                     border-radius: 20px;
                     box-shadow: 0 0 0 3px $colorwhite inset;

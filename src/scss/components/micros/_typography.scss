@@ -230,6 +230,7 @@ h1,h2,h3,h4,h5,h6{
 		border-radius: 20px;
 		padding: 20px;
 		margin: 50px 0;
+		hyphens: auto;
 	
 		.sources-title{
 			text-align: center;
@@ -237,6 +238,15 @@ h1,h2,h3,h4,h5,h6{
 			font-size: 24px;
 			margin-bottom: 20px;
 			font-weight: bold;
+		}
+		ul{
+			li{
+				overflow: hidden;
+				white-space: nowrap;
+				text-overflow: ellipsis;
+				width: 100%;
+				box-sizing: border-box;
+			}
 		}
 	}
 	del{
