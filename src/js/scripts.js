@@ -3,6 +3,28 @@
 /*include /libs/smoothscroll.js*/
 /*include /libs/move.js*/
 
+
+jQuery.event.special.touchstart = {
+    setup: function( _, ns, handle ) {
+        this.addEventListener("touchstart", handle, { passive: !ns.includes("noPreventDefault") });
+    }
+};
+jQuery.event.special.touchmove = {
+    setup: function( _, ns, handle ) {
+        this.addEventListener("touchmove", handle, { passive: !ns.includes("noPreventDefault") });
+    }
+};
+jQuery.event.special.wheel = {
+    setup: function( _, ns, handle ){
+        this.addEventListener("wheel", handle, { passive: true });
+    }
+};
+jQuery.event.special.mousewheel = {
+    setup: function( _, ns, handle ){
+        this.addEventListener("mousewheel", handle, { passive: true });
+    }
+};
+
 var Master = {
     onready : function(){
         cg_Move.init_wavy();
@@ -20,6 +42,7 @@ $(window).on( 'scroll', function(){
 (function($) { 
 	var Master = {
 		onready : function(){
+			
 
 			/////////////////// SMOOTHSCROLL ///////////////////
 			CBO_Smoothscroll.init();

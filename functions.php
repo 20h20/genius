@@ -223,9 +223,6 @@
 	}
 	add_filter('tiny_mce_before_init', 'my_mce4_options');
 
-	
-
-
 
 	/* ************************* */
 	/* FONT SIZE */
