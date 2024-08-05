@@ -17,10 +17,16 @@
 				$picture	= get_sub_field('icon');
 				$title		= get_sub_field('title');
 				$content		= get_sub_field('content');
+				$addlink		= get_sub_field('addlink');
+				$link		= get_sub_field('link');
 			?>
 				<div class="list-el">
-					<div class="el-inner">
-						<div class="inner-top">
+					<?php if($addlink): ?>
+						<a class="el-inner slide-up" href="<?php echo $link ?>">
+					<?php else: ?>
+						<span class="el-inner slide-up">
+					<?php endif; ?>
+						<span class="inner-top">
 							<?php if($picture): ?>
 								<div class="inner-picture cbo-picture-contain slide-up">
 									<img
@@ -35,18 +41,22 @@
 							<?php endif; ?>
 
 							<?php if($title): ?>
-								<div class="content-title cbo-title-5 slide-up">
+								<span class="content-title cbo-title-5 slide-up">
 									<?php echo $title ?>
-								</div>
+								</span>
 							<?php endif; ?>
-						</div>
+						</span>
 
 						<?php if($content): ?>
-							<div class="content-text slide-up">
+							<span class="content-text slide-up">
 								<?php echo $content ?>
-							</div>
+							</span>
 						<?php endif; ?>
-					</div>
+					<?php if($addlink): ?>
+						</a>
+					<?php else: ?>
+						</span>
+					<?php endif; ?>
 				</div>
 			<?php
 				endwhile;
