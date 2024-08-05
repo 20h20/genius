@@ -50,7 +50,6 @@
 							</div>
 							<ul class="sommaire-list"></ul>
 						</div>
-						
 					</div>
 				</div>
 			</div>
