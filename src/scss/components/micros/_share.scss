@@ -1,7 +1,7 @@
 /* -------------------------------
 SOCIAL SHARE MICRO COMPONENT
 ------------------------------- */
-.content-social{
+.cbo-social{
 	color: $colorbluedark;
 	display: flex;
 	align-items: center;
@@ -11,73 +11,20 @@ SOCIAL SHARE MICRO COMPONENT
 		margin-right: 10px;
 		font-weight: bold;
 	}
-	.swp_social_panel{
+	.social-icon{
 		display: flex;
 		align-items: center;
+		justify-content: center;
+		position: relative;
+		margin: 0 4px;
+		width: 40px;
+		height: 40px;
+		border-radius: 99rem;
+		color: $colorbluedark;
+		box-shadow: 0 0 0 1px $colorblue inset;
 
-		.swp_share_button{
-			flex: inherit !important;
-			position: relative;
-			margin: 0 4px;
-			width: 40px;
-			height: 40px;
-			border-radius: 99rem;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			box-shadow: 0 0 0 1px $colorblue inset;
-
-			.swp_share_link{
-				z-index: 2;
-				position: absolute;
-				background-size: 0px;
-				height: 100%;
-				width: 100%;
-				left: 0;
-			}
-			&:after{
-				font-family:"icons";
-				font-size: 15px;
-				color: $colorbluedark;
-				z-index: -1;
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				transition: all .4s;
-			}
-			&:hover{
-				&:after{
-					color: $colorblue;
-				}
-			}
-			&.swp_twitter,
-			&.swp_facebook,
-			&.swp_linkedin{
-				color:$colorbluedark;
-				transition: .5s $easeinout;
-
-				&:hover{
-					z-index: 1;
-				}
-				&.swp_twitter{
-					&:after{
-						content: '\f105';
-					}
-				}
-				&.swp_linkedin{
-					&:after{
-						content: '\f104';
-					}
-				}
-				&.swp_facebook{
-					&:after{
-						content: '\f102';
-					}
-				}
-				.swp_share{
-					display: none;
-				}
-			}
+		&:hover{
+			color: $colorblue;
 		}
 	}
 }

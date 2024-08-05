@@ -5,7 +5,7 @@
 	<div class="blocssimple-inner cbo-container">
 
 		<?php if($title): ?>
-			<div class="blocssimple-title cbo-title-1 slide-up">
+			<div class="blocssimple-title cbo-title-1 slide-up" itemprop="headline">
 				<?php echo $title ?>
 			</div>
 		<?php endif; ?>
@@ -28,7 +28,7 @@
 					<?php endif; ?>
 						<span class="inner-top">
 							<?php if($picture): ?>
-								<div class="inner-picture cbo-picture-contain slide-up">
+								<span class="inner-picture cbo-picture-contain slide-up">
 									<img
 										decoding="async"
 										src="<?php echo $picture['sizes']['xsmall']; ?>"
@@ -37,7 +37,7 @@
 										loading="lazy"
 										width="80" height="80"
 									>
-								</div>
+								</span>
 							<?php endif; ?>
 
 							<?php if($title): ?>

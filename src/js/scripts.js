@@ -369,6 +369,33 @@ $(window).on( 'scroll', function(){
 				$('.cbo-sommaire').toggleClass('sommaire--open');
 			});
 
+
+			/////////////////// SOCIAL SHARE ///////////////////
+			var shareButton = document.getElementById('linkedin-share-button');
+            if (shareButton) {
+                shareButton.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    var pageUrl = window.location.href;
+                    var pageTitle = document.title;
+                    var linkedinUrl = 'https://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(pageUrl) + '&title=' + encodeURIComponent(pageTitle);
+                    window.open(linkedinUrl, 'linkedin-share-dialog', 'width=800,height=600');
+                    return false;
+                });
+            }
+        
+			
+			var twitterShareButton = document.getElementById('twitter-share-button');
+			if (twitterShareButton) {
+				twitterShareButton.addEventListener('click', function(event) {
+					event.preventDefault();
+					var pageUrl = window.location.href;
+					var pageTitle = document.title;
+					var twitterUrl = 'https://twitter.com/intent/tweet?url=' + encodeURIComponent(pageUrl) + '&text=' + encodeURIComponent(pageTitle);
+					window.open(twitterUrl, 'twitter-share-dialog', 'width=800,height=600');
+					return false;
+				});
+			}
+
 			//////////////// SCROLL ANIMATIONS ////////////////
 			var scroll = window.requestAnimationFrame || function(callback){ window.setTimeout(callback, 1000/60)};
 			var elementsToShow = document.querySelectorAll('.slide-up, .slide-up, .slide-right, .slide-left, .scale-up, .scale-down'); 

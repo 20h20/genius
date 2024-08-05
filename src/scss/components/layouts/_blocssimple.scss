@@ -4,44 +4,45 @@ BLOCS SIMPLE 3 COLS COMPONENT
 .cbo-blocssimple{
   .blocssimple-title{
     text-align: center;
-    margin-bottom: 32px;
+    margin-bottom: 2rem;
   }
   .blocssimple-list{
     position: relative;
     z-index: 2;
-    max-width: 500px;
-    margin: 50px auto 0 auto;
+    max-width: 31.25rem;
+    margin: 3.125rem auto 0 auto;
 
     .list-el{
-      margin: 20px 0;
+      margin: 1.25rem 0;
 
       .el-inner{
         display: block;
         color: $colorbluedark;
         background: $colorwhite;
-        border-radius: 10px;
-        padding: 20px;
+        border-radius: 0.625rem;
+        padding: 1.25rem;
 
         .inner-top{
           display: flex;
           align-items: center;
 
           .inner-picture{
-            min-width: 40px;
-            height: 40px;
+            min-width: 2.5rem;
+            height: 2.5rem;
+            display: block;
 
             img{
               object-position: left;
             }
           }
           .content-title{
-            font-size: 22px;
-            line-height: 24px;
-            padding-left: 10px;
+            font-size: 1.375rem;
+            line-height: 1.5rem;
+            padding-left: 0.625rem;
           }
         }
         .content-text{
-          margin-top: 16px;
+          margin-top: 1rem;
           text-align: justify;
           display: block;
         }
@@ -55,7 +56,7 @@ SMALL SCREENS
 @media (min-width: $screen-sm-min){
   .cbo-blocssimple{
     .blocssimple-list{
-      margin: -10px;
+      margin: -0.625rem;
       display: flex;
       justify-content: center;
       max-width: inherit;
@@ -64,7 +65,7 @@ SMALL SCREENS
       .list-el{
         margin: 0;
         width: 50%;
-        padding: 10px;
+        padding: 0.625rem;
       }
     }
   }
@@ -75,11 +76,11 @@ MEDIUM SCREENS
 @media (min-width: $screen-md-min){
   .cbo-blocssimple{
     .blocssimple-list{
-      margin: 80px -15px 0 -15px;
+      margin: 5rem -0.9375rem 0 -0.9375rem;
 
       .list-el{
         width: 33.33333%;
-        padding: 15px;
+        padding: 0.9375rem;
 
         .el-inner{
           transition: all .4s;
@@ -87,11 +88,11 @@ MEDIUM SCREENS
           .inner-top{
             .content-title{
               hyphens: initial;
-              padding-left: 20px;
+              padding-left: 1.25rem;
             }
           }
           &:hover{
-            box-shadow: -0 10px 20px 0 rgba($colorbluedark, .3);
+            box-shadow: -0 0.625rem 1.25rem 0 rgba($colorbluedark, .3);
           }
         }
       }
@@ -108,12 +109,12 @@ LARGE SCREENS
         .el-inner{
           .inner-top{
             .inner-picture{
-              min-width: 60px;
-              height: 60px;
+              min-width: 3.75rem;
+              height: 3.75rem;
             }
             .content-title{
-              font-size: 28px;
-              line-height: 28px;
+              font-size: 1.75rem;
+              line-height: 1.75rem;
             }
           }
         }

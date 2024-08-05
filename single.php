@@ -26,8 +26,17 @@
 						} ?>
 					</div>
 
-					<div class="content-social slide-up">
-						<?php echo do_shortcode( '<div class="share-title">Partager sur :</div>[social_warfare]' ); ?>
+					<div class="cbo-social slide-up">
+						<div class="share-title cbo-small">
+							Partager sur :
+						</div>
+						<a href="#" id="linkedin-share-button" class="social-icon" target="_blank">
+							<i class="icon icon--icon-linkedin"></i>
+						</a>
+
+						<a href="#" id="twitter-share-button" class="social-icon" target="_blank">
+							<i class="icon icon--icon-twitter"></i>
+						</a>
 					</div>
 
 					<h1 class="herorich-title cbo-title-1 slide-up">
