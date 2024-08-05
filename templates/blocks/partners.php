@@ -5,7 +5,7 @@
 	<div class="partners-inner cbo-container">
 
 		<?php if($title): ?>
-			<div class="partners-title cbo-title-1 slide-up">
+			<div class="partners-title cbo-title-1 slide-up" itemprop="headline">
 				<?php echo $title ?>
 			</div>
 		<?php endif; ?>
@@ -17,13 +17,14 @@
 				$picture = get_sub_field('picture');
 			?>
 				<div class="list-el">
-					<div class="el-inner cbo-picture-contain">
+					<div class="el-inner cbo-picture-contain" itemscope itemtype="https://schema.org/Organization">
 						<img
 							src="<?php echo $picture['sizes']['small']; ?>"
 							srcset="<?php echo $picture['sizes']['small'] ?> 320w, <?php echo $picture['sizes']['small'] ?> 768w, <?php echo $picture['sizes']['small'] ?> 1024w"
 							alt="<?php echo $picture["alt"]; ?>"
 							loading="lazy"
 							width="290" height="140"
+							itemprop="logo"
 						>
 					</div>
 				</div>
