@@ -158,6 +158,8 @@ LARGE SCREENS
 ------------------------------- */
 @media (min-width: $screen-lg-min){
     .cbo-herorich{
+        margin-top: -70px;
+
         .herorich-inner{
             padding-left: 70px;
         }
