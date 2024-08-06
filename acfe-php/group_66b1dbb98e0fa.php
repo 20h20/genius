@@ -53,6 +53,34 @@ acf_add_local_field_group(array(
 			'ui_on_text' => '',
 			'ui_off_text' => '',
 		),
+		array(
+			'key' => 'field_66b245e5a07b9',
+			'label' => 'Nombre de colonnes',
+			'name' => 'nbr_col',
+			'aria-label' => '',
+			'type' => 'select',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'choices' => array(
+				'three' => '3',
+				'four' => '4 ou plus',
+			),
+			'default_value' => false,
+			'return_format' => 'value',
+			'multiple' => 0,
+			'allow_null' => 0,
+			'ui' => 0,
+			'ajax' => 0,
+			'placeholder' => '',
+			'allow_custom' => 0,
+			'search_placeholder' => '',
+		),
 	),
 	'location' => array(
 		array(
@@ -79,7 +107,7 @@ acf_add_local_field_group(array(
 	'acfe_form' => 0,
 	'acfe_meta' => '',
 	'acfe_note' => '',
-	'modified' => 1722935092,
+	'modified' => 1722960166,
 ));
 
 endif;

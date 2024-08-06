@@ -209,8 +209,8 @@ header{
 								align-items: flex-start;
 
 								.nav-icon{
-									min-width: 36px;
-									height: 36px;
+									min-width: 32px;
+									height: 32px;
 									margin-right: 10px;
 									transition: all .4;
 								}
@@ -235,6 +235,15 @@ header{
 							&:last-child{
 								& > a{
 									border-bottom:0px;
+								}
+							}
+						}
+					}
+					&.three-cols{
+						.sub-menu{
+							.submenu-inner{
+								li{
+									width: 33.333%;
 								}
 							}
 						}

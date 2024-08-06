@@ -306,6 +306,7 @@
 		foreach ($items as &$item) {
 			$megamenu = get_field('megamenu', $item);
 			$icon = get_field('menu_icon', $item);
+			$col = get_field('nbr_col', $item);
 			$description = $item->description;
 	
 			$item_content = '<span class="menuitem-content">' . $item->title . '</span>';
@@ -334,6 +335,10 @@
 	
 			if ($megamenu) {
 				$item->classes[] = 'megamenu';
+			}
+
+			if ($col == 'three') {
+				$item->classes[] = 'three-cols';
 			}
 		}
 		return $items;
