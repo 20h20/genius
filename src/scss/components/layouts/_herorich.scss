@@ -183,11 +183,6 @@ LARGE SCREENS
 
             .herorich-title{
                 margin-bottom: 40px;
-
-                p{
-                    font-size: 58px;
-                    line-height: 68px;
-                }
             }
             .container-buttons{    
                 .buttons-list{
@@ -206,14 +201,6 @@ XLARGE SCREENS
 ------------------------------- */
 @media (min-width: $screen-xl-min){
     .cbo-herorich{
-        .herorich-content{
-            .herorich-title{
-                p{
-                    font-size: 66px;
-                    line-height: 76px;
-                }
-            }
-        }
         .herorich-picture{
             width: 45vw;
             left: 55vw;
