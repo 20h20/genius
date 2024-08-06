@@ -13,7 +13,7 @@
 	<div class="blocsbackground-inner cbo-container">
 
 		<?php if($title): ?>
-			<div class="blocsbackground-title cbo-title-1 slide-up">
+			<div class="blocsbackground-title cbo-title-1 slide-up" itemprop="headline">
 				<?php echo $title ?>
 			</div>
 		<?php endif; ?>
@@ -32,9 +32,15 @@
 				$title	= get_sub_field('title');
 				$content	= get_sub_field('content');
 				$color	= get_sub_field('color');
+				$addlink	= get_sub_field('addlink');
+				$link		= get_sub_field('link');
 			?>
 				<div class="list-el el--<?php echo $color ?>">
-					<div class="el-inner">
+					<?php if($addlink): ?>
+						<a class="el-inner slide-up" href="<?php echo $link ?>">
+					<?php else: ?>
+						<span class="el-inner slide-up">
+					<?php endif; ?>
 						<?php if($picture): ?>
 							<span class="content-picture cbo-picture-contain">
 								<img
@@ -49,17 +55,21 @@
 						<?php endif; ?>
 
 						<?php if($title): ?>
-							<div class="content-title cbo-title-5">
+							<span class="content-title cbo-title-5">
 								<?php echo $title ?>
-							</div>
+							</span>
 						<?php endif; ?>
 
 						<?php if($content): ?>
-							<div class="content-text">
+							<span class="content-text">
 								<?php echo $content ?>
-							</div>
+							</span>
 						<?php endif; ?>
-					</div>
+					<?php if($addlink): ?>
+						</a>
+					<?php else: ?>
+						</span>
+					<?php endif; ?>
 				</div>
 			<?php
 				endwhile;

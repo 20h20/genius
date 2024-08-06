@@ -9,7 +9,7 @@ BLOCS SIMPLE 3 COLS COMPONENT
   .blocssimple-list{
     position: relative;
     z-index: 2;
-    max-width: 31.25rem;
+    max-width: 40.625rem;
     margin: 3.125rem auto 0 auto;
 
     .list-el{
@@ -76,7 +76,7 @@ MEDIUM SCREENS
 @media (min-width: $screen-md-min){
   .cbo-blocssimple{
     .blocssimple-list{
-      margin: 5rem -0.9375rem 0 -0.9375rem;
+      margin: 4.0625rem -0.9375rem 0 -0.9375rem;
 
       .list-el{
         width: 33.33333%;

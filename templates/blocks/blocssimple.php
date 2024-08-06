@@ -16,8 +16,8 @@
 				while ( have_rows('blocssimple_list') ) : the_row();
 				$picture	= get_sub_field('icon');
 				$title		= get_sub_field('title');
-				$content		= get_sub_field('content');
-				$addlink		= get_sub_field('addlink');
+				$content	= get_sub_field('content');
+				$addlink	= get_sub_field('addlink');
 				$link		= get_sub_field('link');
 			?>
 				<div class="list-el">

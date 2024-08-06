@@ -4,27 +4,29 @@ BLOCS BACKGROUND COMPONENT
 .cbo-blocsbackground{
   .blocsbackground-title{
     text-align: center;
-    margin-bottom: 32px;
+    margin-bottom: 2rem;
   }
   .blocsbackground-chapo{
     text-align: center;
+    max-width: 40.625rem;
+    margin: 0 auto;
   }
   .blocsbackground-infotitle{
     text-align: center;
-    margin-top: 30px;
+    margin-top: 1.875rem;
     position: relative;
     z-index: 2;
 
     .infotitle-uptitle{
       color: $colorbluelight;
-      font-size: 22px;
+      font-size: 1.375rem;
       font-weight: 600;
-      margin-bottom: 10px;
+      margin-bottom: 0.625rem;
       display: block;
     }
     .infotitle-title{
       color: $colorblue;
-      font-size: 28px;
+      font-size: 1.75rem;
       font-weight: 600;
       position: relative;
       z-index: 2;
@@ -33,18 +35,18 @@ BLOCS BACKGROUND COMPONENT
       .infotitle-content{
         visibility: hidden;
         width: auto;
-        max-width: 250px;
-        font-size: 10px;
-        line-height: 10px;
+        max-width: 15.625rem;
+        font-size: 0.625rem;
+        line-height: 0.625rem;
         background:$colorwhite;
         color: $colorbluedark;
-        border:2px solid $colorbluelight;
-        border-radius: 6px;
-        padding: 10px;
+        border:0.125rem solid $colorbluelight;
+        border-radius: 0.375rem;
+        padding: 0.625rem;
         position: absolute;
         z-index: 3;
         text-align: left;
-        top: 30px;
+        top: 1.875rem;
         right: 0;
       }
       &:hover{
@@ -56,7 +58,7 @@ BLOCS BACKGROUND COMPONENT
   }
   .blocsbackground-outro{
     text-align: center;
-    margin-top: 50px;
+    margin-top: 3.125rem;
 
     .cbo-button{
       margin-top: 0;
@@ -65,12 +67,38 @@ BLOCS BACKGROUND COMPONENT
   .blocsbackground-list{
     position: relative;
     z-index: 2;
-    max-width: 500px;
-    margin: 30px auto auto;
+    max-width: 40.625rem;
+    margin: 3.125rem auto auto;
 
     .list-el{
-      margin-bottom: 20px;
+      margin: 1.25rem 0;
 
+      .el-inner{
+        padding: 1.25rem;
+        border-radius: 0.625rem;
+        display: block;
+        height: 100%;
+
+        .content-picture{
+          min-width: 2.5rem;
+          height: 2.5rem;
+          margin-bottom: 0.625rem;
+          display: table;
+        }
+        .content-title{
+          color: $colorblue;
+          font-size: 1.375rem;
+          line-height: 1.875rem;
+        }
+        .content-text{
+          border-left: 0.125rem solid $colorbluemedium;
+          margin-top: 1.25rem;
+          padding-left: 1rem;
+          color: $colorbluedark;
+          display: block;
+          text-align: justify;
+        }
+      }
       &.el--white{
         .el-inner{
           background: $colorwhite;
@@ -86,30 +114,9 @@ BLOCS BACKGROUND COMPONENT
             color: $colorwhite;
           }
           .content-text{
-            border-left: 2px solid $colorwhite;
-            text-align: justify;
+            color: $colorwhite;
+            border-left: 0.125rem solid $colorwhite;
           }
-        }
-      }
-      .el-inner{
-        padding: 20px;
-        border-radius: 20px;
-
-        .content-picture{
-          width: 50px;
-          height: 50px;
-          margin-bottom: 10px;
-          display: block;
-        }
-        .content-title{
-          color: $colorblue;
-          font-size: 22px;
-          line-height: 30px;
-        }
-        .content-text{
-          border-left: 2px solid $colorbluemedium;
-          margin-top: 20px;
-          padding-left: 16px;
         }
       }
     }
@@ -121,21 +128,16 @@ SMALL SCREENS
 @media (min-width: $screen-sm-min){
   .cbo-blocsbackground{
     .blocsbackground-list{
-      margin: 42px -8px -8px -8px;
+      margin: 2.5rem -0.625rem -0.625rem -0.625rem;
       display: flex;
-      flex-wrap: wrap;
-      flex-direction: inherit;
       justify-content: center;
       max-width: inherit;
+      flex-wrap: wrap;
 
       .list-el{
         margin: 0;
         width: 50%;
-        padding: 8px;
-
-        .el-inner{
-          height: 100%;
-        }
+        padding: 0.625rem;
       }
     }
   }
@@ -145,16 +147,23 @@ MEDIUM SCREENS
 ------------------------------- */
 @media (min-width: $screen-md-min){
   .cbo-blocsbackground{
-    .blocsbackground-title{
-      margin-bottom: 50px;
+    .blocsbackground-chapo{
+      max-width: 50rem;
     }
     .blocsbackground-list{
-      flex-wrap: nowrap;
-      margin: 80px -15px 0 -15px;
+      margin: 4.0625rem -0.9375rem 0 -0.9375rem;
 
       .list-el{
-        width: 100%;
-        padding: 0 15px;
+        width: 33.33333%;
+        padding: 0.9375rem;
+
+        .el-inner{
+          transition: all .4s;
+
+          &:hover{
+            box-shadow: -0 0.625rem 1.25rem 0 rgba($colorbluedark, .3);
+          }
+        }
       }
     }
   }
@@ -169,8 +178,8 @@ LARGE SCREENS
         .el-inner{
           .content-title{
             hyphens: initial;
-            font-size: 30px;
-            line-height: 40px;
+            font-size: 1.75rem;
+            line-height: 1.75rem;
           }
         }
       }
