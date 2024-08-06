@@ -267,9 +267,8 @@
 	add_action('login_head', 'childtheme_custom_login');
 
 
-
 	/* ************************* */
-	/* CALCUL TEMPS DE LECUTRE */
+	/* CALCUL TEMPS DE LECTURE */
 	/* ************************* */
 	function reading_time($the_post_ID){
 		$total_word_count = 0; 
@@ -296,5 +295,42 @@
 			$totalreadingtime = $readingtime . $timer . " de lecture";
 		}
 		return $totalreadingtime;
-	  }
+	}
+
+
+	/* ************************* */
+	/* Custom nav markup */
+	/* ************************* */
+	add_filter('wp_nav_menu_objects', 'cbo_wp_nav_menu_objects', 10, 2);
+	function cbo_wp_nav_menu_objects($items, $args) {
+    foreach ($items as &$item) {
+        $megamenu = get_field('megamenu', $item);
+        $icon = get_field('menu_icon', $item);
+        $description = $item->description;
+        
+        if ($icon) {
+            $item_picture = '
+            <span class="nav-icon cbo-picture-contain">
+                <img
+                    src="' . esc_url($icon["url"]) . '"
+                    sizes="20vw"
+                    alt="Optifluides"
+                    loading="lazy"
+                    width="20" height="20"
+                />
+            </span>';
+            $item->title = $item_picture . '<span class="menuitem-content">' . $item->title . '</span>';
+        }
+
+        if ($description) {
+            $item->title .= '<span class="menuitem-description">' . esc_html($description) . '</span>';
+        }
+
+        if ($megamenu) {
+            $item->classes[] = 'megamenu';
+        }
+    }
+    return $items;
+}
+
 ?>

@@ -30,8 +30,8 @@
 <body <?php body_class(($pgetype == 'landing') ? 'cbo-landing' : ''); ?> itemscope itemtype="http://schema.org/WebPage">
 	<header role="banner" itemscope itemtype="http://schema.org/WPHeader">
 		<div class="header-inner cbo-container container--nomargin">
-			
-			<a class="header-logo cbo-picture-contain" title="<?php echo get_bloginfo('description'); ?>" href="<?php echo home_url(); ?>">
+
+			<a class="header-logo cbo-picture-contain" title="<?php echo get_bloginfo('description'); ?>" href="<?php echo home_url(); ?>" itemprop="url">
 				<img
 					decoding="async"
 					src="<?php bloginfo('template_directory'); ?>/library/img/logo-genius.png"
@@ -45,7 +45,7 @@
 			<?php
 				if ($pgetype == 'standard' || is_home() || is_archive() || is_single()) :
 			?>
-				<nav class="header-nav" role="navigation"  itemscope="" itemtype="http://schema.org/SiteNavigationElement">
+				<nav class="header-nav" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement" aria-label="Navigation principale">
 					<?php wp_nav_menu( array(
 						'container' => false,
 						'container_class' => '',
@@ -59,17 +59,17 @@
 						'fallback_cb' => ''
 					));?>
 					<div class="nav-button">
-						<button class="cbo-button button--icon cbo-link button-modale" aria-label="Demander une démo">
+						<button class="cbo-button button--icon cbo-link button-modale" aria-label="Demander une démo" >
 							Demander une démo
 						</button>
 					</div>
 				</nav>
 
 				<div class="header-buttons">
-					<a class="cbo-button" href="https://app.genius.immo/s/login/?ec=302&startURL=%2Fs%2F&_gl=1*10ip4ka*_gcl_au*MTY0MzA5NzA1NS4xNzA4NDQ3NTE3" target="_blank">
-						Accès client
+					<a class="button-user" href="https://app.genius.immo/s/login/?ec=302&startURL=%2Fs%2F&_gl=1*10ip4ka*_gcl_au*MTY0MzA5NzA1NS4xNzA4NDQ3NTE3" target="_blank" itemprop="url">
+						<i class="icon icon--user"></i>
 					</a>
-					<button class="cbo-button button--icon cbo-link button-modale" aria-label="Demander une démo">
+					<button class="cbo-button button--icon button--blue button-modale" aria-label="Demander une démo">
 						Demander une démo
 					</button>
 					<button type="button" class="burger-menu" aria-label="Ouvrir la navigation principale">
@@ -82,4 +82,6 @@
 		</div>
 	</header>
 
-	<main class="cbo-main" role="main">
+	<div class="overlay-menu"></div>
+
+	<main class="cbo-main" role="main" itemscope itemtype="http://schema.org/WebPageElement">

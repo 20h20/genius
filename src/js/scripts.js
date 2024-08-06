@@ -133,43 +133,52 @@ $(window).on( 'scroll', function(){
 
 			/////////////////// SMARTPHONE NAVIGATION ///////////////////
 			$('header .burger-menu').on('click', function(){
+				$('header').toggleClass('header--active');
 				$('.header-nav').toggleClass('nav--open');
 				$('.burger-menu').toggleClass('burger-menu-cross');
 				$('body').toggleClass('body--menuopen');
 				$('html').toggleClass('html--hidden');
 			});
 
-			$('header .menu-item-has-children').on('click', function(e){
-				var $this = $(this);
-				$this.siblings().removeClass('active');
-				$this.toggleClass('active');
+			// Smartphone submenu
+			$('header .menu-item-has-children > a').on('click', function(e) {
+				if (window.innerWidth <= 1284) {
+					e.preventDefault();
+
+					var $this = $(this);
+					var $submenu = $this.next('.sub-menu');
+
+					$this.parent().siblings().find('.sub-menu').slideUp().removeClass('sub-menu_open');
+					$this.parent().siblings().removeClass('active');
+
+					$submenu.slideToggle().toggleClass('sub-menu_open');
+					$this.parent().toggleClass('active');
+				}
 			});
 
-			$('header .menu-item-has-children').on('click', function(e){
-				$(this).find('.sub-menu').toggleClass('sub-menu_open');
-				e.stopPropagation();
-			});
+			// Add class to .overlay-menu on hover
+			var $overlayMenu = $('.overlay-menu');
+			$('header .menu-item-has-children').hover(
+				function() {
+					$overlayMenu.addClass('active');
+				},
+				function() {
+					$overlayMenu.removeClass('active');
+				}
+			);
 
 
-			var menuItems = document.querySelectorAll('.menu-item-has-children > a');
-			menuItems.forEach(function(menuItem) {
-				menuItem.addEventListener('click', function(e) {
-					if (window.innerWidth <= 768) {
-						e.preventDefault();
-						var submenu = menuItem.nextElementSibling;
-						
-						document.querySelectorAll('.sub-menu').forEach(function(sub) {
-							if (sub !== submenu) {
-								sub.style.display = 'none';
-							}
-						});
-								if (submenu.style.display === 'block') {
-							submenu.style.display = 'none';
-						} else {
-							submenu.style.display = 'block';
-						}
-					}
-				});
+
+
+			// Add div under .sub-menu
+			var subMenus = document.querySelectorAll('header ul.sub-menu');
+			subMenus.forEach(function(subMenu) {
+				var submenuInner = document.createElement('span');
+				submenuInner.className = 'submenu-inner';
+				while (subMenu.firstChild) {
+					submenuInner.appendChild(subMenu.firstChild);
+				}
+				subMenu.appendChild(submenuInner);
 			});
 
 			/////////////////// HEADER - CLOSE MENU WHEN CLICKING OUTSIDE ///////////////////
@@ -382,8 +391,7 @@ $(window).on( 'scroll', function(){
                     return false;
                 });
             }
-        
-			
+
 			var twitterShareButton = document.getElementById('twitter-share-button');
 			if (twitterShareButton) {
 				twitterShareButton.addEventListener('click', function(event) {

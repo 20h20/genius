@@ -4225,9 +4225,9 @@ acf_add_local_field_group(array(
 									'label' => 'Titre',
 									'name' => 'title',
 									'aria-label' => '',
-									'type' => 'text',
+									'type' => 'textarea',
 									'instructions' => '',
-									'required' => false,
+									'required' => 0,
 									'conditional_logic' => 0,
 									'wrapper' => array(
 										'width' => '',
@@ -4235,10 +4235,11 @@ acf_add_local_field_group(array(
 										'id' => '',
 									),
 									'default_value' => '',
+									'acfe_textarea_code' => 0,
 									'maxlength' => '',
+									'rows' => '',
 									'placeholder' => '',
-									'prepend' => '',
-									'append' => '',
+									'new_lines' => 'br',
 									'parent_repeater' => 'field_661e6b497b82c',
 								),
 								array(
@@ -4501,7 +4502,7 @@ acf_add_local_field_group(array(
 	'acfe_form' => 0,
 	'acfe_meta' => '',
 	'acfe_note' => '',
-	'modified' => 1722924019,
+	'modified' => 1722926473,
 ));
 
 endif;

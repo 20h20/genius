@@ -18,8 +18,10 @@ header{
 		position: absolute;
 		top: 0;
 		left: 0;
+		z-index: 2;
 		transition: all .4s;
 	}
+	&.header--active,
 	&.header-scroll{
 		&:after{
 			height: 100%;
@@ -44,10 +46,18 @@ header{
 			display: flex;
 			align-items: center;
 			position: relative;
-			z-index: 2;
+			z-index: 3;
 
-			.cbo-button{
-				height: 40px;
+			.button-user{
+				box-shadow: 0 0 0 2px $colorbluemedium inset;
+				min-width: 50px;
+				height: 50px;
+				font-size: 22px;
+				border-radius: 99rem;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				color: $colorblue;
 			}
 			.button--icon{
 				display: none;
@@ -105,7 +115,7 @@ header{
 			overflow-y: auto;
 			align-items: flex-start;
 			flex-flow: column;
-			padding: 100px 0 0 0;
+			padding: 90px 0 0 0;
 			width: 100%;
 			position: fixed;
 			top: 0;
@@ -122,7 +132,6 @@ header{
 				background: $colorbluemedium;
 				width: 100%;
 				padding: 50px 20px;
-				border-radius: 10px 10px 0 0;
 				text-align: center;
 
 				button{
@@ -133,18 +142,25 @@ header{
 				flex-grow: 1;
 				height: 100%;
 				width: 100%;
-				padding: 0 20px 20px 20px;
-	
-				li{
-					padding: 20px 0;
-					position: relative;
+				margin-bottom: 50px;
 
-					a{
-						display: block;
+				li{
+					& > a{
+						padding: 30px 20px;
+						position: relative;
+						border-top: 1px solid $colorbluelight;
+						display: flex;
+						align-items: center;
+						flex-wrap: wrap;
 						color:$colorbluedark;
 						position:relative;
-						font-weight: 600;
+						font-weight: bold;
 						transition: all .4s;
+					}
+					&:last-child{
+						& > a{
+							border-bottom: 1px solid $colorbluelight;
+						}
 					}
 					&.current-menu-item{
 						a{
@@ -152,36 +168,172 @@ header{
 						}
 					}
 					&.menu-item-has-children{
-						&:after{
-							font-family:"icons";
-							content:"\f101";
-							position: absolute;
-							top: 20px;
-							right: 0;
-							font-size: 14px;
-							font-weight: bold;
-							transform: rotate(0deg);
-							transition: .4s ease-in-out;
+						a{
+							&:after{
+								font-family:"icons";
+								content:"\f101";
+								position: absolute;
+								right: 20px;
+								font-size: 14px;
+								font-weight: bold;
+								transform: rotate(0deg);
+								transition: .4s ease-in-out;
+							}
 						}
 						&.active{
-							&:after{
-								transform: rotate(180deg);
+							& > a{
+								background: $colorbluelight;
+								color: $colorwhite;
+
+								&:after{
+									transform: rotate(180deg);
+								}
 							}
 						}
 					}
 					.sub-menu{
 						display: none;
 						font-size: 16px;
-						padding-top: 16px;
-	
+						padding: 16px 0;
+
 						&.sub-menu_open{
 							display: block;
 						}
 						li{
-							padding: 10px 0;
-
 							a{
-								color: $colorbluelight;
+								padding: 10px 20px;
+								border-top: 0;
+								font-size: 18px;
+								font-weight: bold;
+
+								.nav-icon{
+									min-width: 36px;
+									height: 36px;
+									margin-right: 10px;
+								}
+								&:after{
+									display: none;
+								}
+								.menuitem-description{
+									font-size: 14px;
+									display: block;
+									margin-top: 10px;
+									font-weight: normal;
+									width: 100%;
+									color: $colorbluedark;
+								}
+							}
+							&:last-child{
+								& > a{
+									border-bottom:0px;
+								}
+							}
+						}
+					}
+					&.megamenu{
+						.sub-menu{
+							padding: 0;
+
+							li{
+								a{
+									background: rgba($colorbluelight, .2);
+									border-top: 1px solid $colorbluedark;
+									padding: 12px 20px;
+
+									&:after{
+										display: block;
+									}
+								}
+								&.active{
+									a{
+										color: $colorbluelight;
+									}
+								}
+								.sub-menu{
+									padding: 10px 0;
+
+									li{
+										a{
+											color: $colorbluedark;
+											border: 0px;
+											background: none;
+											font-size: 16px;
+
+											&:after{
+												display: none;
+											}
+										}
+										&.current-menu-item{
+											a{
+												color: $colorbluelight;
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+/* -------------------------------
+SMALL SCREENS
+------------------------------- */
+@media (min-width: $screen-sm-min) {
+	header {
+		.header-inner {
+			.header-nav {
+				.cbo-menu {
+					li{
+						& > a{
+							padding: 30px 40px;
+						}
+						&.menu-item-has-children{
+							a:after{
+								right: 40px;
+							}
+						}
+					}
+					li.megamenu {
+						.sub-menu {
+							li {
+								a{
+									padding: 12px 40px;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+/* -------------------------------
+MEDIUM SCREENS
+------------------------------- */
+@media (min-width: $screen-md-min) {
+	header {
+		.header-inner {
+			.header-nav {
+				.cbo-menu {
+					li{
+						& > a{
+							padding: 30px 70px;
+						}
+						&.menu-item-has-children{
+							a:after{
+								right: 70px;
+							}
+						}
+					}
+					li.megamenu {
+						.sub-menu {
+							li {
+								a{
+									padding: 12px 70px;
+								}
 							}
 						}
 					}
@@ -208,6 +360,7 @@ LARGE SCREENS
 		}
 		.header-inner{
 			transition: all .4s;
+			z-index: 3;
 
 			.header-logo{
 				margin-right: 15px;
@@ -215,29 +368,16 @@ LARGE SCREENS
 				height: 68px;
 			}
 			.header-buttons{
+				flex-direction: row-reverse;
+
 				.burger-menu{
 					display:none;
 				}
-				.button--icon{
-					display: inline-flex;
-					margin-left: 15px;
-					color: $colorblue;
-				}
 				.cbo-button{
-					min-width: inherit;
+					min-width: max-content;
+					display: inline-flex;
+					margin: 0 15px;
 
-					&:hover{
-						color: $colorblue;
-					}
-					&.button--icon{
-						&:hover{
-							color: $colorbluelight;
-
-							&:after{
-								color:$colorbluelight;
-							}
-						}
-					}
 				}
 			}
 			.header-nav{
@@ -255,10 +395,12 @@ LARGE SCREENS
 				}
 				.cbo-menu{
 					padding: 0;
+					margin-bottom: 0;
 					display: flex;
 					align-items: center;
 					justify-content: center;
-					
+					position: initial;
+
 					& > li{
 						&:first-child{
 							a{
@@ -282,90 +424,182 @@ LARGE SCREENS
 					li{
 						display: flex;
 						align-items: center;
-						padding: 0 15px;
+						padding: 0 24px;
 						height: 100%;
+						position: initial;
 
 						a{
 							transition: all .4s;
 							height: 100%;
-							display: flex;
-							align-items: center;
+							border: 0px;
+							padding: 0;
 						}
-						&.current-menu-item a::after {
-							bottom: 10px;
+						&:last-child {
+							& > a{
+								border: 0px;
+							}
 						}
 						&.menu-item-has-children{
-							&:after{
-								position: relative;
-								top: 0;
-								margin: 0 0 0 6px;
-								transform: rotate(0deg);
-								font-size: 12px;
+							a{
+								&:after{
+									position: relative;
+									top: 0;
+									right: 0;
+									margin: 0 0 0 6px;
+									transform: rotate(0deg);
+									font-size: 12px;
+								}
 							}
 							&:hover{
+								a{
+									&:after{
+										color: $colorbluelight;
+										transform: rotate(180deg);
+									}
+								}
 								.sub-menu{
 									visibility: visible;
 									opacity: 1;
-									top: calc(100% - 16px);
+									top: calc(100% - 10px);
 									pointer-events: all;
-								}							}
+								}
+							}
 						}
 						&:hover{
 							a{
 								color: $colorbluelight;
 							}
-							&:after{
-								color: $colorbluelight;
-								transform: rotate(180deg);
-							}
 						}
 						.sub-menu{
-							background: $colorwhite;
-							box-shadow: 0 0 0 2px $colorbluelight inset;
-							border-radius: 20px;
-							display: block;
 							visibility: hidden;
 							opacity: 0;
 							top: calc(100% - -100px);
-							min-width: 300px;
-							padding: 0;
+							width: 1332px;
+							left: -138px;
 							pointer-events: none;
 							position: absolute;
+							display: block;
+							padding: 24px 0 0 0;
 							transition: all .4s;
 
+							.submenu-inner{
+								background: $colorwhite;
+								box-shadow: 0 0 0 2px $colorbluelight inset;
+								border-radius: 20px;
+								display: flex;
+								flex-wrap: wrap;
+								padding: 40px 20px;
+								width: 100%;
+							}
 							li{
-								padding: 0;
+								padding: 0 20px;
+								width: 25%;
 
 								a{
-									padding: 24px;
+									padding: 0;
 									color: $colorbluedark;
-									width: 100%;
-									position: relative;
 									transition: all .4s;
 
 									&:hover{
-										color: $colorwhite;
-										background: linear-gradient(45deg, rgba(118,243,255,1) 0%, rgba(46,217,250,1) 100%);
+										color: $colorbluelight;
 									}
 								}
 								&.current-menu-item{
 									a{
-										color: $colorwhite;
-										background: linear-gradient(45deg, rgba(118,243,255,1) 0%, rgba(46,217,250,1) 100%);
+										color: $colorbluelight;
+									}
+								}
+							}
+						}
 
-										&:after{
-											display: none;
+
+
+
+
+
+
+
+
+
+
+						&.megamenu{
+							.sub-menu{
+								padding: 24px 0 0 0;
+
+								.submenu-inner{
+									padding-top: 2px;
+									padding-bottom: 2px;
+
+									li{
+										width: 70%;
+										position: relative;
+										padding-top: 40px;
+										padding-bottom: 40px;
+										display: block;
+
+										&:first-child{
+											width: 30%;
+
+											&:before{
+												content: '';
+												background: $colorbluelight;
+												width: 2px;
+												height: 100%;
+												position: absolute;
+												top: 0;
+												right: 0;
+											}
+											.sub-menu{
+												display: block;
+
+												li{
+													width: 100%;
+												}
+											}
 										}
-									}
-								}
-								&:first-child{
-									a{
-										border-radius: 20px 20px 0 0;
-									}
-								}
-								&:last-child{
-									a{
-										border-radius: 0 0 20px 20px;
+										a{
+											background: none;
+											border: 0px;
+											padding: 0;
+											color: $colorbluelight;
+											width: 100%;
+											margin-bottom: 30px;
+
+											&:after{
+												display: none;
+											}
+										}
+										.sub-menu{
+											position: relative;
+											padding: 0;
+											width: 100%;
+											top: 0;
+											left: 0;
+
+											.submenu-inner{
+												background: none;
+												box-shadow: none;
+												padding: 0;
+												border-radius: 0;
+												display: block;
+												width: 100%;
+												display: flex;
+												flex-wrap: wrap;
+											}
+											li{
+												width: 50%;
+												padding: 0;
+
+												&:before{
+													display: none;
+												}
+												a{
+													&:hover{
+														color: $colorbluelight;
+													}
+												}
+											}
+										}
 									}
 								}
 							}
@@ -376,6 +610,21 @@ LARGE SCREENS
 		}
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* -------------------------------
 XLARGE SCREENS
 ------------------------------- */
