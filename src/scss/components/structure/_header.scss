@@ -212,6 +212,7 @@ header{
 									min-width: 36px;
 									height: 36px;
 									margin-right: 10px;
+									transition: all .4;
 								}
 								&:after{
 									display: none;
@@ -224,6 +225,11 @@ header{
 									font-weight: normal;
 									width: 100%;
 									color: $colorbluedark;
+								}
+								&:hover{
+									.nav-icon{
+										filter: invert(63%) sepia(83%) saturate(594%) hue-rotate(158deg) brightness(106%) contrast(90%);
+									}
 								}
 							}
 							&:last-child{
