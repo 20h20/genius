@@ -206,7 +206,7 @@ header{
 								font-size: 18px;
 								font-weight: bold;
 								flex-wrap: nowrap;
-								align-items: flex-start;
+								align-items: center;
 
 								.nav-icon{
 									min-width: 32px;
@@ -244,6 +244,7 @@ header{
 							.submenu-inner{
 								li{
 									width: 33.333%;
+									justify-content: center;
 								}
 							}
 						}
