@@ -45,7 +45,7 @@
 
 		<div class="herorich-content">
 			<?php if($title): ?>
-				<h1 class="herorich-title cbo-title-1 slide-up">
+				<h1 class="herorich-title cbo-title-1 slide-up" itemprop="headline">
 					<?php echo $title; ?>
 				</h1>
 			<?php endif; ?>
@@ -97,6 +97,7 @@
 						<a
 							class="cbo-button <?php echo $buttoncolor; ?> <?php if($buttoncolor == 'bleu'): ?>button--icon<?php endif; ?> <?php if($buttontype == 'modale'): ?>button-modale<?php endif; ?>"
 							href="<?php if($buttontype == 'url'): ?><?php echo $buttonturl; ?><?php endif; ?><?php if($buttontype == 'modale'): ?>#<?php endif; ?> "
+							itemprop="url"
 						>
 							<?php echo $buttontxt; ?>
 						</a>
@@ -104,6 +105,7 @@
 							<a
 								class="cbo-button <?php echo $buttoncolor2; ?> <?php if($buttoncolor2 == 'bleu'): ?>button--icon<?php endif; ?> <?php if($buttontype2 == 'modale'): ?>button-modale<?php endif; ?>"
 								href="<?php if($buttontype2 == 'url'): ?><?php echo $buttonturl2; ?><?php endif; ?><?php if($buttontype2 == 'modale'): ?>#<?php endif; ?> "
+								itemprop="url"
 							>
 								<?php echo $buttontxt2; ?>
 							</a>

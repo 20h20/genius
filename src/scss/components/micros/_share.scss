@@ -5,10 +5,10 @@ SOCIAL SHARE MICRO COMPONENT
 	color: $colorbluedark;
 	display: flex;
 	align-items: center;
-	margin: 0 auto 30px auto;
+	margin: 0 auto 1.875rem auto;
 
 	.share-title{
-		margin-right: 10px;
+		margin-right: 0.625rem;
 		font-weight: bold;
 	}
 	.social-icon{
@@ -16,9 +16,9 @@ SOCIAL SHARE MICRO COMPONENT
 		align-items: center;
 		justify-content: center;
 		position: relative;
-		margin: 0 4px;
-		width: 40px;
-		height: 40px;
+		margin: 0 0.25rem;
+		width: 2.5rem;
+		height: 2.5rem;
 		border-radius: 99rem;
 		color: $colorbluedark;
 		box-shadow: 0 0 0 1px $colorblue inset;
