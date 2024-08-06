@@ -4,15 +4,15 @@ TEXT PICTURE LIST COMPONENT
 .cbo-textpicturelist {
   .textpicturelist-title{
     text-align: center;
-    margin-bottom: 32px;
+    margin-bottom: 2rem;
   }
   .textpicturelist-picture{
-    max-width: 650px;
-    margin: 0 auto 20px auto;
+    max-width: 40.625rem;
+    margin: 0 auto 1.25rem auto;
     padding-bottom: 70%;
   }
   .textpicturelist-content {
-    max-width: 650px;
+    max-width: 40.625rem;
     margin: 0 auto;
 
      &.content--timeline{
@@ -22,11 +22,11 @@ TEXT PICTURE LIST COMPONENT
           &:after{
             content: '';
             background: $colorgrey;
-            width: 5px;
-            height: calc(100% - -45px);
+            width: 0.3125rem;
+            height: calc(100% - -2.8125rem);
             position: absolute;
-            top: 3px;
-            left: 28px;
+            top: 0.1875rem;
+            left: 1.75rem;
           }
           &:last-child{
             &:after{
@@ -40,19 +40,19 @@ TEXT PICTURE LIST COMPONENT
         z-index: 2;
         position: relative;
         display: flex;
-        margin-top: 45px;
+        margin-top: 2.8125rem;
 
         .inner-picture{
-          margin-right:24px;
-          min-width: 60px;
-          height: 80px;
+          margin-right:1.5rem;
+          min-width: 3.75rem;
+          height: 5rem;
           display: block;
         }
         .inner-title {
           color: $colorblue;
-          margin-bottom: 12px;
-          font-size: 26px;
-          line-height: 26px;
+          margin-bottom: 0.75rem;
+          font-size: 1.625rem;
+          line-height: 1.625rem;
           font-weight: bold;
         }
       }
@@ -105,8 +105,8 @@ LARGE SCREENS
       .list-el{
         .el-inner{
           .inner-title {
-            font-size: 32px;
-            line-height: 32px;
+            font-size: 2rem;
+            line-height: 2rem;
           }
         }
       }
