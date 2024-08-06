@@ -53,24 +53,11 @@ LARGE SCREENS
 ------------------------------- */
 @media (min-width: $screen-lg-min) {
   .cbo-container {
-    margin: 140px auto;
+    margin: 120px auto;
 
     &.container--padding {
-      padding-top: 140px;
-      padding-bottom: 140px;
-    }
-  }
-}
-/* -------------------------------
-XLARGE SCREENS
-------------------------------- */
-@media (min-width: $screen-xl-min) {
-  .cbo-container {
-    margin: 180px auto;
-
-    &.container--padding {
-      padding-top: 180px;
-      padding-bottom: 1480px;
+      padding-top: 120px;
+      padding-bottom: 120px;
     }
   }
 }
