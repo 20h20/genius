@@ -5,7 +5,7 @@
 	<div class="blocssimple-inner cbo-container">
 
 		<?php if($title): ?>
-			<div class="blocssimple-title cbo-title-1 slide-up" itemprop="headline">
+			<div class="blocssimple-title cbo-title-2 slide-up" itemprop="headline">
 				<?php echo $title ?>
 			</div>
 		<?php endif; ?>
@@ -41,7 +41,7 @@
 							<?php endif; ?>
 
 							<?php if($title): ?>
-								<span class="content-title cbo-title-5 slide-up">
+								<span class="content-title cbo-title-3 slide-up">
 									<?php echo $title ?>
 								</span>
 							<?php endif; ?>

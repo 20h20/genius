@@ -7,13 +7,11 @@
 	$infotitle	= get_sub_field('blocsbackground_infobulletitle');
 	$infocontent	= get_sub_field('blocsbackground_infobucontent');
 ?>
-
-
 <section class="cbo-blocsbackground">
 	<div class="blocsbackground-inner cbo-container">
 
 		<?php if($title): ?>
-			<div class="blocsbackground-title cbo-title-1 slide-up" itemprop="headline">
+			<div class="blocsbackground-title cbo-title-2 slide-up" itemprop="headline">
 				<?php echo $title ?>
 			</div>
 		<?php endif; ?>
@@ -55,7 +53,7 @@
 						<?php endif; ?>
 
 						<?php if($title): ?>
-							<span class="content-title cbo-title-5">
+							<span class="content-title cbo-title-3">
 								<?php echo $title ?>
 							</span>
 						<?php endif; ?>

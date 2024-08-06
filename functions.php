@@ -221,35 +221,7 @@
 		$init['textcolor_rows'] = 1;
 		return $init;
 	}
-	add_filter('tiny_mce_before_init', 'my_mce4_options');
-
-
-	/* ************************* */
-	/* FONT SIZE */
-	/* ************************* */
-	function custom_mce_buttons_2($buttons) {
-		array_unshift($buttons, 'fontsizeselect');
-		return $buttons;
-	}
-	add_filter('mce_buttons_2', 'custom_mce_buttons_2');
-	
-	function custom_mce_text_sizes($initArray) {
-		$initArray['fontsize_formats'] = '5pt 6pt 7pt 8pt 9pt 10pt 11pt 12pt 14pt 16pt 18pt 20pt 22pt 24pt 26pt 28pt 32pt 36pt 40pt 44pt 48pt 52pt 56pt 60pt 64pt 68pt 72pt';
-		return $initArray;
-	}
-	add_filter('tiny_mce_before_init', 'custom_mce_text_sizes');
-	
-	function my_custom_fonts() {
-		echo '
-		<style>
-			.mce-content-body {
-				font-size: 10pt;
-			}
-		</style>
-		';
-	}
-	add_action('admin_head', 'my_custom_fonts');
-	
+	add_filter('tiny_mce_before_init', 'my_mce4_options');	
 	
 
 	/* ************************* */

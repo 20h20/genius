@@ -5,7 +5,7 @@
 	<div class="partners-inner cbo-container">
 
 		<?php if($title): ?>
-			<div class="partners-title cbo-title-1 slide-up" itemprop="headline">
+			<div class="partners-title cbo-title-2 slide-up" itemprop="headline">
 				<?php echo $title ?>
 			</div>
 		<?php endif; ?>

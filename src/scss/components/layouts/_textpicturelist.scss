@@ -51,9 +51,6 @@ TEXT PICTURE LIST COMPONENT
         .inner-title {
           color: $colorblue;
           margin-bottom: 0.75rem;
-          font-size: 1.625rem;
-          line-height: 1.625rem;
-          font-weight: bold;
         }
       }
     }
@@ -92,23 +89,6 @@ MEDIUM SCREENS
     &.textpicturelist--right {
       .inner-container{
         flex-direction: row-reverse;
-      }
-    }
-  }
-}
-/* -------------------------------
-LARGE SCREENS
-------------------------------- */
-@media (min-width: $screen-lg-min) {
-  .cbo-textpicturelist {
-    .textpicturelist-content {
-      .list-el{
-        .el-inner{
-          .inner-title {
-            font-size: 2rem;
-            line-height: 2rem;
-          }
-        }
       }
     }
   }

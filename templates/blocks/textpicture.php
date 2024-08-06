@@ -31,7 +31,7 @@
 		<?php endif; ?>
 
 		<?php if($title): ?>
-			<div class="textpicture-title cbo-title-1 slide-up" itemprop="headline">
+			<div class="textpicture-title cbo-title-2 slide-up" itemprop="headline">
 				<?php echo $title ?>
 			</div>
 		<?php endif; ?>

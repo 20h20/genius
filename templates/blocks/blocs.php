@@ -5,7 +5,7 @@
 	<div class="blocs-inner cbo-container">
 
 		<?php if($title): ?>
-			<div class="blocs-title cbo-title-1 slide-up">
+			<div class="blocs-title cbo-title-2 slide-up" itemprop="headline">
 				<?php echo $title ?>
 			</div>
 		<?php endif; ?>
@@ -17,11 +17,17 @@
 				$picture	= get_sub_field('icon');
 				$title		= get_sub_field('title');
 				$content	= get_sub_field('content');
+				$addlink	= get_sub_field('addlink');
+				$link		= get_sub_field('link');
 			?>
 				<div class="list-el slide-right">
-					<div class="el-inner">
+					<?php if($addlink): ?>
+						<a class="el-inner slide-up" href="<?php echo $link ?>">
+					<?php else: ?>
+						<span class="el-inner slide-up">
+					<?php endif; ?>
 						<?php if($picture): ?>
-							<div class="inner-picture cbo-picture-contain">
+							<span class="inner-picture cbo-picture-contain">
 								<img
 									decoding="async"
 									src="<?php echo $picture['sizes']['xsmall']; ?>"
@@ -30,23 +36,27 @@
 									loading="lazy"
 									width="150" height="98"
 								>
-							</div>
+							</span>
 						<?php endif; ?>
 
 						<div class="inner-content">
 							<?php if($title): ?>
-								<div class="content-title cbo-title-2">
+								<span class="content-title cbo-title-3">
 									<?php echo $title ?>
-								</div>
+								</span>
 							<?php endif; ?>
 
 							<?php if($content): ?>
-								<div class="content-text">
+								<span class="content-text">
 									<?php echo $content ?>
-								</div>
+								</span>
 							<?php endif; ?>
 						</div>
-					</div>
+					<?php if($addlink): ?>
+						</a>
+					<?php else: ?>
+						</span>
+					<?php endif; ?>
 				</div>
 			<?php
 				endwhile;

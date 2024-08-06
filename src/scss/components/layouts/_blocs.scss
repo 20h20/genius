@@ -4,7 +4,7 @@ BLOCS SIMPLE COMPONENT
 .cbo-blocs{
   .blocs-title{
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 3.125rem;
   }
   .blocs-list{
     .list-el{
@@ -15,18 +15,22 @@ BLOCS SIMPLE COMPONENT
         align-items: center;
 
         .inner-picture{
-          min-width: 6.875rem;
-          height: 4.5rem;
+          min-width: 2.5rem;
+          height: 2.5rem;
+          display: block;
 
           img{
-            object-position: left;
+            position: relative;
           }
         }
         .inner-content{
           padding-left: 0.75rem;
+          display: block;
+          color: $colorbluedark;
 
           .content-title{
             color: $colorblue;
+            display: block;
           }
         }
       }
@@ -67,11 +71,12 @@ LARGE SCREENS
 @media (min-width: $screen-lg-min){
   .cbo-blocs{
     .blocs-list{
-      margin: -2.5rem -0.625rem;
+      margin: -2.5rem -1.875rem;
 
       .list-el{
         width: 45%;
         margin: 2.5rem 0;
+        padding: 0 1.875rem;
 
         &:nth-child(3n){
           margin-left: 10%;

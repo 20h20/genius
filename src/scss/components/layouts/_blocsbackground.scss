@@ -87,8 +87,6 @@ BLOCS BACKGROUND COMPONENT
         }
         .content-title{
           color: $colorblue;
-          font-size: 1.375rem;
-          line-height: 1.875rem;
         }
         .content-text{
           border-left: 0.125rem solid $colorbluemedium;
@@ -178,8 +176,6 @@ LARGE SCREENS
         .el-inner{
           .content-title{
             hyphens: initial;
-            font-size: 1.75rem;
-            line-height: 1.75rem;
           }
         }
       }

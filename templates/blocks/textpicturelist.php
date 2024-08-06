@@ -8,7 +8,7 @@
 <section class="cbo-textpicturelist textpicturelist--<?php echo $position; ?>">
 	<div class="textpicturelist-inner cbo-container">
 		<?php if($title): ?>
-			<div class="textpicturelist-title cbo-title-1 slide-up">
+			<div class="textpicturelist-title cbo-title-2 slide-up">
 				<?php echo $title ?>
 			</div>
 		<?php endif; ?>
@@ -50,7 +50,7 @@
 
 							<div class="inner-content">
 								<?php if($title): ?>
-									<div class="inner-title">
+									<div class="inner-title cbo-title-3">
 										<?php echo $title ?>
 									</div>
 								<?php endif; ?>
