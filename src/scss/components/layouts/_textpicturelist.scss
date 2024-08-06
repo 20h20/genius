@@ -7,12 +7,12 @@ TEXT PICTURE LIST COMPONENT
     margin-bottom: 32px;
   }
   .textpicturelist-picture{
-    max-width: 600px;
+    max-width: 650px;
     margin: 0 auto 20px auto;
     padding-bottom: 70%;
   }
   .textpicturelist-content {
-    max-width: 600px;
+    max-width: 650px;
     margin: 0 auto;
 
      &.content--timeline{
@@ -51,6 +51,9 @@ TEXT PICTURE LIST COMPONENT
         .inner-title {
           color: $colorblue;
           margin-bottom: 12px;
+          font-size: 26px;
+          line-height: 26px;
+          font-weight: bold;
         }
       }
     }
@@ -99,37 +102,12 @@ LARGE SCREENS
 @media (min-width: $screen-lg-min) {
   .cbo-textpicturelist {
     .textpicturelist-content {
-      &.content--timeline{
-        .list-el{
-          &:after{
-            height: calc(100% - -60px);
-          }
-        }
-      }
       .list-el{
         .el-inner{
-          margin-top: 60px;
-        }
-      }
-    }
-  }
-}
-/* -------------------------------
-XLARGE SCREENS
-------------------------------- */
-@media (min-width: $screen-xl-min) {
-  .cbo-textpicturelist {
-    .textpicturelist-content {
-      &.content--timeline{
-        .list-el{
-          &:after{
-            height: calc(100% - -100px);
+          .inner-title {
+            font-size: 32px;
+            line-height: 32px;
           }
-        }
-      }
-      .list-el{
-        .el-inner{
-          margin-top: 100px;
         }
       }
     }

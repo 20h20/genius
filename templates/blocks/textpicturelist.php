@@ -50,7 +50,7 @@
 
 							<div class="inner-content">
 								<?php if($title): ?>
-									<div class="inner-title cbo-title-2">
+									<div class="inner-title">
 										<?php echo $title ?>
 									</div>
 								<?php endif; ?>

@@ -4,31 +4,31 @@ TEXT PICTURE COMPONENT
 .cbo-textpicture {
   .textpicture-icon{
     display: block;
-    margin: 0 auto 20px auto;
-    width: 70px;
-    height: 70px;
+    margin: 0 auto 1.25rem auto;
+    width: 4.375rem;
+    height: 4.375rem;
   }
   .textpicture-title{
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 3.125rem;
     width: 100%;
   }
   .textpicture-picture{
-    max-width: 650px;
-    margin: 0 auto 20px auto;
+    max-width: 40.625rem;
+    margin: 0 auto 1.25rem auto;
     padding-bottom: 70%;
   }
   .textpicture-content {
-    max-width: 650px;
+    max-width: 40.625rem;
     margin: 0 auto;
 
     .content-quote{
       display: flex;
-      margin-bottom: 30px;
+      margin-bottom: 1.875rem;
 
       .quote-picture{
-        min-width: 100px;
-        height: 100px;
+        min-width: 6.25rem;
+        height: 6.25rem;
         border-radius: 99rem;
         overflow: hidden;
         background: linear-gradient(0deg, rgba(118,243,255,1) 0%, rgba(255,255,255,1) 100%);
@@ -39,25 +39,25 @@ TEXT PICTURE COMPONENT
         flex-wrap: wrap;
         align-items: center;
         width: 100%;
-        padding-left: 50px;
+        padding-left: 3.125rem;
 
         &:before{
           content: '';
           background: url(../img/quote.svg) no-repeat;
           background-size: contain;
-          width: 60px;
-          height: 67px;
+          width: 3.75rem;
+          height: 4.1875rem;
           position: absolute;
-          left: -30px;
+          left: -1.875rem;
         }
         .informations-name{
-          font-size: 24px;
+          font-size: 1.5rem;
           color: $colorblue;
           width: 100%;
           display: block;
         }
         .informations-function{
-          font-size: 20px;
+          font-size: 1.25rem;
           color: $colorbluelight;
         }
       }
@@ -70,7 +70,7 @@ MEDIUM SCREENS
 @media (min-width: $screen-md-min) {
   .cbo-textpicture {
     .textpicture-icon{
-      margin-bottom: 40px;
+      margin-bottom: 2.5rem;
     }
     .textpicture-inner{
       &.textpicture--margetopnone{
