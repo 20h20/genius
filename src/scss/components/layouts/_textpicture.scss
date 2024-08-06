@@ -2,18 +2,24 @@
 TEXT PICTURE COMPONENT
 ------------------------------- */
 .cbo-textpicture {
+  .textpicture-icon{
+    display: block;
+    margin: 0 auto 20px auto;
+    width: 70px;
+    height: 70px;
+  }
   .textpicture-title{
     text-align: center;
-    margin-bottom: 32px;
+    margin-bottom: 50px;
     width: 100%;
   }
   .textpicture-picture{
-    max-width: 600px;
+    max-width: 650px;
     margin: 0 auto 20px auto;
     padding-bottom: 70%;
   }
   .textpicture-content {
-    max-width: 600px;
+    max-width: 650px;
     margin: 0 auto;
 
     .content-quote{
@@ -63,6 +69,9 @@ MEDIUM SCREENS
 ------------------------------- */
 @media (min-width: $screen-md-min) {
   .cbo-textpicture {
+    .textpicture-icon{
+      margin-bottom: 40px;
+    }
     .textpicture-inner{
       &.textpicture--margetopnone{
         margin-top: 0;

@@ -3722,6 +3722,33 @@ acf_add_local_field_group(array(
 							'selected' => 0,
 						),
 						array(
+							'key' => 'field_66b24c3a9c0fd',
+							'label' => 'Icône',
+							'name' => 'textpicture_icon',
+							'aria-label' => '',
+							'type' => 'image',
+							'instructions' => '',
+							'required' => 0,
+							'conditional_logic' => 0,
+							'wrapper' => array(
+								'width' => '',
+								'class' => '',
+								'id' => '',
+							),
+							'uploader' => '',
+							'return_format' => 'array',
+							'library' => 'all',
+							'acfe_thumbnail' => 0,
+							'min_width' => '',
+							'min_height' => '',
+							'min_size' => '',
+							'max_width' => '',
+							'max_height' => '',
+							'max_size' => '',
+							'mime_types' => '',
+							'preview_size' => 'thumbnail',
+						),
+						array(
 							'key' => 'field_661e170a463de',
 							'label' => 'Titre principal',
 							'name' => 'textpicture_title',
@@ -4502,7 +4529,7 @@ acf_add_local_field_group(array(
 	'acfe_form' => 0,
 	'acfe_meta' => '',
 	'acfe_note' => '',
-	'modified' => 1722926473,
+	'modified' => 1722960986,
 ));
 
 endif;

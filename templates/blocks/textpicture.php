@@ -2,6 +2,7 @@
 	$mtop	= get_sub_field('textpicture_margetop');
 	$mbot	= get_sub_field('textpicture_margebot');
 	$title	= get_sub_field('textpicture_title');
+	$icon	= get_sub_field('textpicture_icon');
 	$content	= get_sub_field('textpicture_content');
 	$picture	= get_sub_field('textpicture_picture');
 	$cover	= get_sub_field('textpicture_picturecover');
@@ -12,14 +13,25 @@
 	$quotename	= get_sub_field('textpicture_quotename');
 	$quotefunction	= get_sub_field('textpicture_quotefunction');
 ?>
-
-
-
-
 <section class="cbo-textpicture textpicture--<?php echo $position; ?>">
 	<div class="textpicture-inner cbo-container container--medium textpicture--margetop<?php echo $mtop; ?> textpicture--margebot<?php echo $mbot; ?>">
+
+		<?php if($icon): ?>
+			<div class="textpicture-icon cbo-picture-contain slide-up">
+				<img
+					decoding="async"
+					src="<?php echo $icon['sizes']['small']; ?>"
+					srcset="<?php echo $icon['sizes']['small']; ?> 320w, <?php echo $icon['sizes']['xlarge']; ?> 768w, <?php echo $icon['sizes']['xlarge']; ?> 1024w"
+					alt="<?php echo $icon['alt']; ?>" sizes="100vw"
+					loading="lazy"
+					width="70" height="70"
+					itemprop="image"
+				>
+			</div>
+		<?php endif; ?>
+
 		<?php if($title): ?>
-			<div class="textpicture-title cbo-title-1 slide-up">
+			<div class="textpicture-title cbo-title-1 slide-up" itemprop="headline">
 				<?php echo $title ?>
 			</div>
 		<?php endif; ?>
@@ -33,6 +45,7 @@
 					alt="<?php echo $picture['alt']; ?>" sizes="100vw"
 					loading="lazy"
 					width="768" height="768"
+					itemprop="image"
 				>
 			</div>
 
@@ -47,6 +60,7 @@
 								alt="<?php echo $quotepicture['alt']; ?>" sizes="100vw"
 								loading="lazy"
 								width="768" height="768"
+								itemprop="image"
 							>
 						</div>
 						<div class="quote-informations">

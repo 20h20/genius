@@ -6,7 +6,7 @@ header{
 	top: 0;
 	width: 100%;
 	z-index: 5;
-	height: 74px;
+	height: 4.625rem;
 	transition: all .4s;
 	animation: headerdown 1s ease forwards;
 
@@ -31,16 +31,16 @@ header{
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		padding-top: 13px;
-		padding-bottom: 13px;
+		padding-top: 0.8125rem;
+		padding-bottom: 0.8125rem;
 
 		.header-logo{
-			min-width: 110px;
-			height: 48px;
+			min-width: 6.875rem;
+			height: 3rem;
 			z-index: 3;
 		}
 		button{
-			font-size: 18px;
+			font-size: 1.125rem;
 		}
 		.header-buttons{
 			display: flex;
@@ -49,10 +49,10 @@ header{
 			z-index: 3;
 
 			.button-user{
-				box-shadow: 0 0 0 2px $colorbluemedium inset;
-				min-width: 50px;
-				height: 50px;
-				font-size: 22px;
+				box-shadow: 0 0 0 0.125rem $colorbluemedium inset;
+				min-width: 3.125rem;
+				height: 3.125rem;
+				font-size: 1.375rem;
 				border-radius: 99rem;
 				display: flex;
 				justify-content: center;
@@ -64,21 +64,21 @@ header{
 			}
 			.burger-menu{
 				padding: 0;
-				min-width: 30px;
-				height: 22px;
+				min-width: 1.875rem;
+				height: 1.375rem;
 				position: relative;
-				margin-left: 28px;
+				margin-left: 1.75rem;
 				z-index: 4;
 				display: flex;
 				justify-content: center;
-		
+
 				.top,
 				.middle,
 				.bottom{
 					background-color:$colorbluemedium;
-					width:26px;
-					height:3px;
-					border-radius: 7px;
+					width:1.625rem;
+					height:0.1875rem;
+					border-radius: 0.4375rem;
 					position:absolute;
 					transition:all .3s;
 				}
@@ -86,15 +86,15 @@ header{
 					top:0;
 				}
 				.middle{
-					top:8px;
+					top:0.5rem;
 				}
 				.bottom{
-					top:17px;
+					top:1.0625rem;
 				}
 				&.burger-menu-cross{
 					.top,.bottom{
-						top: 8px;
-						transform-origin: 50% 50% 0px;
+						top: 0.5rem;
+						transform-origin: 50% 50% 0rem;
 					}
 					.top{
 						transform: rotate3d(0, 0, 1, 45deg);
@@ -115,7 +115,7 @@ header{
 			overflow-y: auto;
 			align-items: flex-start;
 			flex-flow: column;
-			padding: 90px 0 0 0;
+			padding: 5.625rem 0 0 0;
 			width: 100%;
 			position: fixed;
 			top: 0;
@@ -131,7 +131,7 @@ header{
 			.nav-button{
 				background: $colorbluemedium;
 				width: 100%;
-				padding: 50px 20px;
+				padding: 3.125rem 1.25rem;
 				text-align: center;
 
 				button{
@@ -142,13 +142,13 @@ header{
 				flex-grow: 1;
 				height: 100%;
 				width: 100%;
-				margin-bottom: 50px;
+				margin-bottom: 3.125rem;
 
 				li{
 					& > a{
-						padding: 30px 20px;
+						padding: 1.875rem 1.25rem;
 						position: relative;
-						border-top: 1px solid $colorbluelight;
+						border-top: 0.0625rem solid $colorbluelight;
 						display: flex;
 						align-items: center;
 						flex-wrap: wrap;
@@ -159,7 +159,7 @@ header{
 					}
 					&:last-child{
 						& > a{
-							border-bottom: 1px solid $colorbluelight;
+							border-bottom: 0.0625rem solid $colorbluelight;
 						}
 					}
 					&.current-menu-item{
@@ -173,8 +173,8 @@ header{
 								font-family:"icons";
 								content:"\f101";
 								position: absolute;
-								right: 20px;
-								font-size: 14px;
+								right: 1.25rem;
+								font-size: 0.875rem;
 								font-weight: bold;
 								transform: rotate(0deg);
 								transition: .4s ease-in-out;
@@ -193,35 +193,35 @@ header{
 					}
 					.sub-menu{
 						display: none;
-						font-size: 16px;
-						padding: 16px 0;
+						font-size: 1rem;
+						padding: 1rem 0;
 
 						&.sub-menu_open{
 							display: block;
 						}
 						li{
 							a{
-								padding: 10px 20px;
+								padding: 0.625rem 1.25rem;
 								border-top: 0;
-								font-size: 18px;
+								font-size: 1.125rem;
 								font-weight: bold;
 								flex-wrap: nowrap;
 								align-items: center;
 
 								.nav-icon{
-									min-width: 32px;
-									height: 32px;
-									margin-right: 10px;
+									min-width: 2rem;
+									height: 2rem;
+									margin-right: 0.625rem;
 									transition: all .4;
 								}
 								&:after{
 									display: none;
 								}
 								.menuitem-description{
-									font-size: 14px;
-									line-height: 14px;
+									font-size: 0.875rem;
+									line-height: 0.875rem;
 									display: block;
-									margin-top: 8px;
+									margin-top: 0.5rem;
 									font-weight: normal;
 									width: 100%;
 									color: $colorbluedark;
@@ -234,7 +234,7 @@ header{
 							}
 							&:last-child{
 								& > a{
-									border-bottom:0px;
+									border-bottom:0rem;
 								}
 							}
 						}
@@ -256,8 +256,8 @@ header{
 							li{
 								a{
 									background: rgba($colorbluelight, .2);
-									border-top: 1px solid $colorbluedark;
-									padding: 12px 20px;
+									border-top: 0.0625rem solid $colorbluedark;
+									padding: 0.75rem 1.25rem;
 
 									&:after{
 										display: block;
@@ -269,14 +269,14 @@ header{
 									}
 								}
 								.sub-menu{
-									padding: 10px 0;
+									padding: 0.625rem 0;
 
 									li{
 										a{
 											color: $colorbluedark;
-											border: 0px;
+											border: 0rem;
 											background: none;
-											font-size: 16px;
+											font-size: 1rem;
 
 											&:after{
 												display: none;
@@ -307,11 +307,11 @@ SMALL SCREENS
 				.cbo-menu {
 					li{
 						& > a{
-							padding: 30px 40px;
+							padding: 1.875rem 2.5rem;
 						}
 						&.menu-item-has-children{
 							a:after{
-								right: 40px;
+								right: 2.5rem;
 							}
 						}
 					}
@@ -319,7 +319,7 @@ SMALL SCREENS
 						.sub-menu {
 							li {
 								a{
-									padding: 12px 40px;
+									padding: 0.75rem 2.5rem;
 								}
 							}
 						}
@@ -339,11 +339,11 @@ MEDIUM SCREENS
 				.cbo-menu {
 					li{
 						& > a{
-							padding: 30px 70px;
+							padding: 1.875rem 4.375rem;
 						}
 						&.menu-item-has-children{
 							a:after{
-								right: 70px;
+								right: 4.375rem;
 							}
 						}
 					}
@@ -351,7 +351,7 @@ MEDIUM SCREENS
 						.sub-menu {
 							li {
 								a{
-									padding: 12px 70px;
+									padding: 0.75rem 4.375rem;
 								}
 							}
 						}
@@ -366,15 +366,15 @@ LARGE SCREENS
 ------------------------------- */
 @media (min-width: $screen-lg-min) {
 	header{
-		height: 80px;
+		height: 5rem;
 
 		&.header-scroll{
 			&:after{
-				height: 80px;
+				height: 5rem;
 			}
 			.header-inner{
-				padding-top: 6px;
-				padding-bottom: 6px;
+				padding-top: 0.375rem;
+				padding-bottom: 0.375rem;
 			}
 		}
 		.header-inner{
@@ -382,9 +382,9 @@ LARGE SCREENS
 			z-index: 3;
 
 			.header-logo{
-				margin-right: 15px;
-				width: 122px;
-				height: 68px;
+				margin-right: 0.9375rem;
+				width: 7.625rem;
+				height: 4.25rem;
 			}
 			.header-buttons{
 				flex-direction: row-reverse;
@@ -395,13 +395,13 @@ LARGE SCREENS
 				.cbo-button{
 					min-width: max-content;
 					display: inline-flex;
-					margin: 0 15px;
+					margin: 0 0.9375rem;
 
 				}
 			}
 			.header-nav{
 				padding: 0;
-				height: 68px;
+				height: 4.25rem;
 				width: auto;
 				flex: 1;
 				position: initial;
@@ -423,12 +423,12 @@ LARGE SCREENS
 					& > li{
 						&:first-child{
 							a{
-								font-size: 0px;
+								font-size: 0rem;
 
 								&:before{
 									font-family:"icons";
 									content:"\f103";
-									font-size: 18px;
+									font-size: 1.125rem;
 									color: $colorbluemedium;
 									transition: all .4s;
 								}
@@ -443,19 +443,19 @@ LARGE SCREENS
 					li{
 						display: flex;
 						align-items: center;
-						padding: 0 24px;
+						padding: 0 1.5rem;
 						height: 100%;
 						position: initial;
 
 						a{
 							transition: all .4s;
 							height: 100%;
-							border: 0px;
+							border: 0rem;
 							padding: 0;
 						}
 						&:last-child {
 							& > a{
-								border: 0px;
+								border: 0rem;
 							}
 						}
 						&.menu-item-has-children{
@@ -464,9 +464,9 @@ LARGE SCREENS
 									position: relative;
 									top: 0;
 									right: 0;
-									margin: 0 0 0 6px;
+									margin: 0 0 0 0.375rem;
 									transform: rotate(0deg);
-									font-size: 12px;
+									font-size: 0.75rem;
 								}
 							}
 							&:hover{
@@ -479,7 +479,7 @@ LARGE SCREENS
 								.sub-menu{
 									visibility: visible;
 									opacity: 1;
-									top: calc(100% - 10px);
+									top: calc(100% - 0.625rem);
 									pointer-events: all;
 								}
 							}
@@ -492,26 +492,26 @@ LARGE SCREENS
 						.sub-menu{
 							visibility: hidden;
 							opacity: 0;
-							top: calc(100% - -100px);
-							width: 1332px;
-							left: -138px;
+							top: calc(100% - -6.25rem);
+							width: 83.25rem;
+							left: -8.625rem;
 							pointer-events: none;
 							position: absolute;
 							display: block;
-							padding: 24px 0 0 0;
+							padding: 1.5rem 0 0 0;
 							transition: all .4s;
 
 							.submenu-inner{
 								background: $colorwhite;
-								box-shadow: 0 0 0 2px $colorbluelight inset;
-								border-radius: 20px;
+								box-shadow: 0 0 0 0.125rem $colorbluelight inset;
+								border-radius: 1.25rem;
 								display: flex;
 								flex-wrap: wrap;
-								padding: 40px 20px;
+								padding: 2.5rem 1.25rem;
 								width: 100%;
 							}
 							li{
-								padding: 0 20px;
+								padding: 0 1.25rem;
 								width: 25%;
 
 								a{
@@ -523,7 +523,7 @@ LARGE SCREENS
 										color: $colorbluelight;
 									}
 									.menuitem-description{
-										line-height: 18px;
+										line-height: 1.125rem;
 									}
 								}
 								&.current-menu-item{
@@ -533,30 +533,19 @@ LARGE SCREENS
 								}
 							}
 						}
-
-
-
-
-
-
-
-
-
-
-
 						&.megamenu{
 							.sub-menu{
-								padding: 24px 0 0 0;
+								padding: 1.5rem 0 0 0;
 
 								.submenu-inner{
-									padding-top: 2px;
-									padding-bottom: 2px;
+									padding-top: 0.125rem;
+									padding-bottom: 0.125rem;
 
 									li{
 										width: 70%;
 										position: relative;
-										padding-top: 40px;
-										padding-bottom: 40px;
+										padding-top: 2.5rem;
+										padding-bottom: 2.5rem;
 										display: block;
 										height: auto;
 
@@ -566,7 +555,7 @@ LARGE SCREENS
 											&:before{
 												content: '';
 												background: $colorbluelight;
-												width: 2px;
+												width: 0.125rem;
 												height: 100%;
 												position: absolute;
 												top: 0;
@@ -582,11 +571,11 @@ LARGE SCREENS
 										}
 										a{
 											background: none;
-											border: 0px;
+											border: 0rem;
 											padding: 0;
 											color: $colorbluelight;
 											width: 100%;
-											margin-bottom: 30px;
+											margin-bottom: 1.875rem;
 											height: auto;
 
 											&:after{
@@ -628,42 +617,6 @@ LARGE SCREENS
 								}
 							}
 						}
-					}
-				}
-			}
-		}
-	}
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* -------------------------------
-XLARGE SCREENS
-------------------------------- */
-@media (min-width: $screen-xl-min) {
-	header{
-		.header-inner{
-			.header-buttons{
-				.button--icon{
-					margin-left: 28px;
-				}
-			}
-			.header-nav{
-				.cbo-menu{
-					li{
-						padding: 0 20px;
 					}
 				}
 			}

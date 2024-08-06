@@ -167,9 +167,6 @@ $(window).on( 'scroll', function(){
 				}
 			);
 
-
-
-
 			// Add div under .sub-menu
 			var subMenus = document.querySelectorAll('header ul.sub-menu');
 			subMenus.forEach(function(subMenu) {
@@ -180,6 +177,7 @@ $(window).on( 'scroll', function(){
 				}
 				subMenu.appendChild(submenuInner);
 			});
+
 
 			/////////////////// HEADER - CLOSE MENU WHEN CLICKING OUTSIDE ///////////////////
 			$(document).on('click', function(e) {

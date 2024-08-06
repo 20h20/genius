@@ -343,6 +343,4 @@
 		}
 		return $items;
 	}
-	
-
 ?>
