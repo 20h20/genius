@@ -47,7 +47,8 @@
 									srcset="<?php echo $picture['sizes']['xsmall']; ?> 320w, <?php echo $picture['sizes']['xsmall']; ?> 768w, <?php echo $picture['sizes']['xsmall']; ?> 1024w"
 									alt="<?php echo $picture['alt']; ?>" sizes="100vw"
 									loading="lazy"
-									width="100" height="75"
+									width="80" height="80"
+									itemprop="image"
 								>
 							</span>
 						<?php endif; ?>

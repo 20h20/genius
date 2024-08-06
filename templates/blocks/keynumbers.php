@@ -5,7 +5,7 @@
 	<div class="keynumbers-inner cbo-container container--medium">
 
 		<?php if($title): ?>
-			<div class="keynumbers-title cbo-title-1 slide-up">
+			<div class="keynumbers-title cbo-title-2 slide-up" itemprop="headline">
 				<?php echo $title ?>
 			</div>
 		<?php endif; ?>
@@ -21,13 +21,13 @@
 				<div class="list-el">
 					<div class="el-inner">
 						<?php if($keynumber): ?>
-							<div class="inner-number cbo-title-1 slide-up">
+							<div class="inner-number slide-up">
 								<?php echo $keynumber ?>
 							</div>
 						<?php endif; ?>
 
 						<?php if($chapo): ?>
-							<div class="inner-chapo slide-up">
+							<div class="inner-chapo cbo-chapo slide-up">
 								<?php echo $chapo ?>
 							</div>
 						<?php endif; ?>

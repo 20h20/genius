@@ -6,37 +6,38 @@ KEYNUMBERS COMPONENT
     text-align: center;
   }
   .keynumbers-list{
-    margin-top: 50px;
+    margin-top: 3.125rem;
 
     .list-el{
-      margin: 40px 0;
+      margin: 2.5rem 0;
 
       .el-inner{
-        padding-left: 16px;
+        padding-left: 1rem;
         position: relative;
 
         &:before{
           content: '';
           background: linear-gradient(25deg, rgba(0,239,251,1) 0%, rgba(47,153,255,1) 57%, rgba(22,103,255,1) 100%);
-          width: 3px;
+          width: 0.1875rem;
           height: 100%;
           position: absolute;
           top: 0;
           left: 0;
-          border-radius: 4px;
+          border-radius: 0.25rem;
         }
         .inner-number{
           color: $colorblue;
+          font-size: 1.5rem;
+          line-height: 1.5rem;
+          font-weight: 700;
         }
         .inner-chapo{
           color: $colorblue;
-          margin-top: 14px;
+          margin-top: 0.875rem;
           font-weight: bold;
-          font-size: 24px;
-          line-height: 32px;
         }
         .inner-text{
-          margin-top: 14px;
+          margin-top: 0.875rem;
         }
       }
     }
@@ -51,12 +52,12 @@ SMALL SCREENS
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      margin: 50px -15px 0 -15px;
+      margin: 3.125rem -0.9375rem 0 -0.9375rem;
   
       .list-el{
         margin: 0;
         width: 33.33333%;
-        padding: 0 15px;
+        padding: 0 0.9375rem;
       }
     }
   }
@@ -67,7 +68,16 @@ MEDIUM SCREENS
 @media (min-width: $screen-md-min){
   .cbo-keynumbers{
     .keynumbers-list{
-      margin: 80px -15px 0 -15px;
+      margin: 5rem -0.9375rem 0 -0.9375rem;
+
+      .list-el{  
+        .el-inner{
+          .inner-number{
+            font-size: 1.8125rem;
+            line-height: 1.8125rem;
+          }
+        }
+      }
     }
   }
 }
@@ -77,13 +87,18 @@ LARGE SCREENS
 @media (min-width: $screen-lg-min){
   .cbo-keynumbers{
     .keynumbers-list{
-      margin: 80px -30px 0 -30px;
+      margin: 5rem -1.875rem 0 -1.875rem;
 
       .list-el{
-        padding: 0 30px;
+        padding: 0 1.875rem;
 
         .el-inner{
-          padding-left: 24px;
+          padding-left: 1.5rem;
+
+          .inner-number{
+            font-size: 2rem;
+            line-height: 2rem;
+          }
         }
       }
     }

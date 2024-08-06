@@ -36,6 +36,7 @@
 										alt="<?php echo $picture['alt']; ?>" sizes="100vw"
 										loading="lazy"
 										width="80" height="80"
+										itemprop="image"
 									>
 								</span>
 							<?php endif; ?>
