@@ -4,7 +4,7 @@
 <section class="cbo-richblocs">
 	<div class="richblocs-inner cbo-container">
 		<?php if($title): ?>
-			<div class="richblocs-title cbo-title-1 slide-up">
+			<div class="richblocs-title cbo-title-2 slide-up" itemprop="headline">
 				<?php echo $title ?>
 			</div>
 		<?php endif; ?>
@@ -32,12 +32,13 @@
 									alt="<?php echo $picture['alt']; ?>" sizes="100vw"
 									loading="lazy"
 									width="100" height="75"
+									itemprop="image"
 								>
 							</span>
 						<?php endif; ?>
 
 						<?php if($title): ?>
-							<div class="inner-title cbo-title-2 slide-up">
+							<div class="inner-title cbo-title-3 slide-up">
 								<?php echo $title ?>
 							</div>
 						<?php endif; ?>
