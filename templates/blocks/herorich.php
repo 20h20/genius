@@ -3,6 +3,7 @@
 	$pictureblocpos	= get_sub_field('herorich_pictureblocpos');
 	$picture2	= get_sub_field('herorich_picture2');
 	$title	= get_sub_field('herorich_title');
+	$subtitle	= get_sub_field('herorich_subtitle');
 	$chapo	= get_sub_field('herorich_chapo');
 
 	$addbutton	= get_sub_field('herorich_addbt');
@@ -47,6 +48,12 @@
 			<?php if($title): ?>
 				<h1 class="herorich-title cbo-title-1 slide-up" itemprop="headline">
 					<?php echo $title; ?>
+				</h1>
+			<?php endif; ?>
+
+			<?php if($subtitle): ?>
+				<h1 class="herorich-subtitle slide-up">
+					<?php echo $subtitle; ?>
 				</h1>
 			<?php endif; ?>
 

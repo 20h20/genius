@@ -89,6 +89,26 @@ acf_add_local_field_group(array(
 							'delay' => 0,
 						),
 						array(
+							'key' => 'field_66b3599dfe060',
+							'label' => 'Sous-titre',
+							'name' => 'herorich_subtitle',
+							'aria-label' => '',
+							'type' => 'wysiwyg',
+							'instructions' => '',
+							'required' => 0,
+							'conditional_logic' => 0,
+							'wrapper' => array(
+								'width' => '',
+								'class' => '',
+								'id' => '',
+							),
+							'default_value' => '',
+							'tabs' => 'all',
+							'toolbar' => 'full',
+							'media_upload' => 0,
+							'delay' => 0,
+						),
+						array(
 							'key' => 'field_661feeedcc597',
 							'label' => 'Introduction',
 							'name' => 'herorich_chapo',
@@ -4621,7 +4641,7 @@ acf_add_local_field_group(array(
 	'acfe_form' => 0,
 	'acfe_meta' => '',
 	'acfe_note' => '',
-	'modified' => 1723029500,
+	'modified' => 1723030067,
 ));
 
 endif;
