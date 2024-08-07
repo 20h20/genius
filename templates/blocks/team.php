@@ -1,11 +1,11 @@
 <?php
 	$title	= get_sub_field('team_title');
 ?>
-<section class="cbo-team">
+<section class="cbo-team" itemscope itemtype="http://schema.org/Organization">
 	<div class="team-inner cbo-container">
 
 		<?php if($title): ?>
-			<div class="team-title cbo-title-1 slide-up">
+			<div class="team-title cbo-title-2 slide-up">
 				<?php echo $title ?>
 			</div>
 		<?php endif; ?>
@@ -20,9 +20,9 @@
 				$addvideo = get_sub_field('addvideo');
 				$videoid = get_sub_field('videoid');
 			?>
-				<div class="list-el">
+				<div class="list-el" itemscope itemtype="http://schema.org/Person">
 					<div class="el-inner">
-						<div class="el-picture cbo-picture-cover slide-up">
+						<div class="el-picture cbo-picture-cover slide-up" itemprop="image">
 							<?php if($addvideo == 1): ?>
 								<span class="video-play">
 									<i class="icon icon--player"></i>
@@ -34,12 +34,13 @@
 								alt="<?php echo $picture["alt"]; ?>"
 								loading="lazy"
 								width="500" height="500"
+								itemprop="image"
 							>
 						</div>
-						<div class="el-name slide-up">
+						<div class="el-name slide-up" itemprop="name">
 							<?php echo $name ?>
 						</div>
-						<div class="el-function slide-up">
+						<div class="el-function slide-up" itemprop="jobTitle">
 							<?php echo $function ?>
 						</div>
 					</div>

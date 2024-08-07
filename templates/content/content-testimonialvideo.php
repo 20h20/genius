@@ -4,7 +4,7 @@
 	$videoid	= get_field('testimonials_video');
 	$videocover	= get_field('testimonials_videocover');
 ?>
-<article <?php post_class('list-el el--video'); ?> itemprop="blogPosts" itemscope itemtype="http://schema.org/BlogPosting">
+<article <?php post_class('list-el el--video'); ?> itemscope itemtype="http://schema.org/Review">
 	<div class="el-inner">
 		<div class="inner-content">
 			<div class="content-video">
@@ -16,10 +16,10 @@
 			<span class="inner-border"></span>
 		</div>
 		<div class="inner-informations">
-			<div class="informations-name cbo-title-4">
+			<div class="informations-name cbo-title-4" itemscope itemtype="http://schema.org/Person">
 				<?php echo $name ?>
 			</div>
-			<div class="informations-society">
+			<div class="informations-society" itemscope itemtype="http://schema.org/Organization">
 				<?php echo $society ?>
 			</div>
 		</div>

@@ -13,7 +13,7 @@
 	<div class="testimonials-inner cbo-container container--medium">
 
 		<?php if($title): ?>
-			<div class="testimonials-title cbo-title-1">
+			<div class="testimonials-title cbo-title-2">
 				<?php echo $title ?>
 			</div>
 		<?php endif; ?>
@@ -47,7 +47,7 @@
 						<span class="inner-border"></span>
 					</div>
 					<div class="inner-informations">
-						<div class="informations-name cbo-title-4">
+						<div class="informations-name cbo-title-3">
 							<?php echo $namequote ?>
 						</div>
 						<div class="informations-society">
