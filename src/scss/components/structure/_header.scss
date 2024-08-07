@@ -140,7 +140,7 @@ header{
 			}
 			.cbo-menu{
 				flex-grow: 1;
-				height: 100%;
+				height: auto;
 				width: 100%;
 				margin-bottom: 3.125rem;
 
@@ -394,7 +394,7 @@ LARGE SCREENS
 				}
 			}
 			.header-nav{
-				margin-right: 1.25rem;
+				margin-right: 2.5rem;
 				padding: 0;
 				height: 4.25rem;
 				width: auto;
