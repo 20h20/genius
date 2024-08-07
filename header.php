@@ -60,7 +60,7 @@
 					));?>
 					<div class="nav-button">
 						<button class="cbo-button button--icon cbo-link button-modale" aria-label="Demander une démo" >
-							Demander une démo
+							Demandez une démo
 						</button>
 					</div>
 				</nav>
@@ -70,7 +70,7 @@
 						<i class="icon icon--user"></i>
 					</a>
 					<button class="cbo-button button--icon button--blue button-modale" aria-label="Demander une démo">
-						Demander une démo
+						Demandez une démo
 					</button>
 					<button type="button" class="burger-menu" aria-label="Ouvrir la navigation principale">
 						<span class="top"></span>
