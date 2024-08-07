@@ -10,7 +10,7 @@
 			</div>
 		<?php endif; ?>
 
-		<div class="blocssimple-list slide-up">
+		<div class="blocssimple-list">
 			<?php
 				if( have_rows('blocssimple_list') ):
 				while ( have_rows('blocssimple_list') ) : the_row();
