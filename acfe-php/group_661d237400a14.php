@@ -1173,6 +1173,33 @@ acf_add_local_field_group(array(
 							'delay' => 0,
 						),
 						array(
+							'key' => 'field_66b34efec15d5',
+							'label' => 'Icône',
+							'name' => 'team_icon',
+							'aria-label' => '',
+							'type' => 'image',
+							'instructions' => '',
+							'required' => 0,
+							'conditional_logic' => 0,
+							'wrapper' => array(
+								'width' => '',
+								'class' => '',
+								'id' => '',
+							),
+							'uploader' => '',
+							'return_format' => 'array',
+							'library' => 'all',
+							'acfe_thumbnail' => 0,
+							'min_width' => '',
+							'min_height' => '',
+							'min_size' => '',
+							'max_width' => '',
+							'max_height' => '',
+							'max_size' => '',
+							'mime_types' => '',
+							'preview_size' => 'thumbnail',
+						),
+						array(
 							'key' => 'field_6661bf485622c',
 							'label' => 'Liste des membres',
 							'name' => '',
@@ -4594,7 +4621,7 @@ acf_add_local_field_group(array(
 	'acfe_form' => 0,
 	'acfe_meta' => '',
 	'acfe_note' => '',
-	'modified' => 1723024274,
+	'modified' => 1723027219,
 ));
 
 endif;

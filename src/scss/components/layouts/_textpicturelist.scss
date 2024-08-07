@@ -78,11 +78,21 @@ MEDIUM SCREENS
       max-width: inherit;
       margin: 0;
 
+      &.content--timeline{
+        .list-el{
+            &:after{
+              height: calc(100% - -3.75rem);
+            }
+        }
+      }
       .list-el{
         &:first-child{
           .el-inner{
               margin-top: 0;
           }
+        }
+        .el-inner{
+          margin-top: 3.75rem;
         }
       }
     }
