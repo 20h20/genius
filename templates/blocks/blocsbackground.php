@@ -22,7 +22,7 @@
 			</div>
 		<?php endif; ?>
 
-		<div class="blocsbackground-list slide-up">
+		<div class="blocsbackground-list">
 			<?php
 				if( have_rows('blocsbackground_list') ):
 				while ( have_rows('blocsbackground_list') ) : the_row();
