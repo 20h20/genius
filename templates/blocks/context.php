@@ -23,7 +23,7 @@
 	<div class="context-inner">
 		<div class="cbo-container container--small container--nomargin">
 			<?php if($videotitle): ?>
-				<div class="context-title cbo-title-1 slide-up">
+				<div class="context-title cbo-title-2 slide-up">
 					<?php echo $videotitle ?>
 				</div>
 			<?php endif; ?>
@@ -61,7 +61,7 @@
 						<div class="video-content content-list">	
 							<div class="list-el slide-up">
 								<?php if($titlecol1): ?>
-									<h3 class="el-title cbo-title-2">
+									<h3 class="el-title cbo-title-3">
 										<?php echo $titlecol1 ?>
 									</h3>
 								<?php endif; ?>
@@ -74,7 +74,7 @@
 
 							<div class="list-el slide-up">
 								<?php if($titlecol2): ?>
-									<h3 class="el-title cbo-title-2">
+									<h3 class="el-title cbo-title-3">
 										<?php echo $titlecol2 ?>
 									</h3>
 								<?php endif; ?>
@@ -134,7 +134,7 @@
 											<div class="content-text">
 												<div class="text-head">
 													<?php if($title): ?>
-														<h3 class="content-title cbo-title-4">
+														<h3 class="content-title cbo-title-3">
 															<?php echo $title ?>
 														</h3>
 													<?php endif; ?>

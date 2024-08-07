@@ -8,7 +8,7 @@
 	<div class="relation-inner cbo-container">
 
 		<?php if($title): ?>
-			<div class="relation-title cbo-title-1 slide-up">
+			<div class="relation-title cbo-title-2 slide-up">
 				<?php echo $title ?>
 			</div>
 		<?php endif; ?>

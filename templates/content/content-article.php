@@ -4,7 +4,7 @@
 	$excerpt = get_the_excerpt();
 	$limited_excerpt = wp_trim_words($excerpt, 25, '...');
 ?>
-<article <?php post_class('list-el'); ?> itemprop="blogPosts" itemscope itemtype="http://schema.org/BlogPosting">
+<article <?php post_class('list-el'); ?> itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
 	<a class="el-inner" href="<?php the_permalink(); ?>" itemprop="url">
 		<span class="inner-border"></span>
 		<span class="el-picture cbo-picture-cover">
@@ -16,10 +16,10 @@
 
 		<span class="el-content">
 			<span class="content-top">
-				<h3 class="content-title cbo-title-4">
+				<h3 class="content-title cbo-title-3" itemprop="headline">
 					<?php the_title(); ?>
 				</h3>
-				<span class="content-text">
+				<span class="content-text" itemprop="description">
 					<?php echo $limited_excerpt; ?>
 				</span>
 			</span>
