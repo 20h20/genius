@@ -1,8 +1,23 @@
 <?php
 	$title	= get_sub_field('team_title');
+	$icon	= get_sub_field('team_icon');
 ?>
 <section class="cbo-team" itemscope itemtype="http://schema.org/Organization">
 	<div class="team-inner cbo-container">
+
+		<?php if($icon): ?>
+			<div class="team-icon cbo-picture-contain slide-up">
+				<img
+					decoding="async"
+					src="<?php echo $icon['sizes']['small']; ?>"
+					srcset="<?php echo $icon['sizes']['small']; ?> 320w, <?php echo $icon['sizes']['xlarge']; ?> 768w, <?php echo $icon['sizes']['xlarge']; ?> 1024w"
+					alt="<?php echo $icon['alt']; ?>" sizes="100vw"
+					loading="lazy"
+					width="70" height="70"
+					itemprop="image"
+				>
+			</div>
+		<?php endif; ?>
 
 		<?php if($title): ?>
 			<div class="team-title cbo-title-2 slide-up">
