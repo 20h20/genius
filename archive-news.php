@@ -36,7 +36,7 @@
 		<section class="archive-news">
 			<div class="news-inner cbo-container container--medium">
 
-				<div class="news-title cbo-title-1 slide-up">
+				<div class="news-title cbo-title-2 slide-up">
 					<strong>Nos actualités</strong>
 				</div>
 				<div class="news-list">
@@ -69,16 +69,16 @@
 										</div>
 									<?php else : ?>
 										<div class="inner-picture cbo-picture-cover slide-up">
-											<?php the_post_thumbnail( 'small', array( 'sizes' => '(max-width:320px) 145px, (max-width:425px) 220px, 500px' ) );?>
+											<?php the_post_thumbnail( 'small', array( 'sizes' => '(max-width:320px) 145px, (max-width:425px) 220px, 500px' , 'itemprop' => 'image') );?>
 										</div>
 									<?php endif; ?>
 
 									<div class="inner-content">
 										<div class="content-text slide-up">
-											<h3 class="content-title cbo-title-5 slide-up">
+											<h3 class="content-title cbo-title-3 slide-up" itemprop="headline">
 												<?php the_title(); ?>
 											</h3>
-											<div class="cbo-cms slide-up">
+											<div class="cbo-cms slide-up" itemprop="description">
 												<?php the_content(); ?>
 											</div>
 										</div>

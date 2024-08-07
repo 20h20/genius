@@ -11,7 +11,7 @@
 <section class="cbo-fullpicture">
 	<div class="fullpicture-inner">
 		<?php if($title): ?>
-			<div class="fullpicture-title cbo-title-1 slide-up">
+			<div class="fullpicture-title cbo-title-2 slide-up">
 				<?php echo $title ?>
 			</div>
 		<?php endif; ?>
