@@ -64,6 +64,10 @@ SMALL SCREENS
         margin: 0;
         width: 50%;
         padding: 0.625rem;
+
+        .el-inner{
+          height: 100%;
+        }
       }
     }
   }
