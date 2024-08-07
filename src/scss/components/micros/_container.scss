@@ -38,13 +38,13 @@ MEDIUM SCREENS
 ------------------------------- */
 @media (min-width: $screen-md-min) {
   .cbo-container {
-    margin: 5rem auto;
+    margin: 6.25rem auto;
     padding-left: 4.375rem;
     padding-right: 4.375rem;
 
     &.container--padding {
-      padding-top: 5rem;
-      padding-bottom: 5rem;
+      padding-top: 6.25rem;
+      padding-bottom: 6.25rem;
     }
   }
 }

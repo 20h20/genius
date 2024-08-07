@@ -91,6 +91,14 @@ MEDIUM SCREENS
       max-width: inherit;
       margin: 0;
       padding-bottom: 50%;
+
+      &.cbo-picture-contain{
+        padding: 0;
+
+        img{
+          position: relative;
+        }
+      }
     }
     .textpicture-content {
       width: 45%;
