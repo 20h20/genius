@@ -8,6 +8,7 @@ header{
 	z-index: 5;
 	height: 4.625rem;
 	transition: all .4s;
+	font-size: 1rem;
 	animation: headerdown 1s ease forwards;
 
 	&:after{
@@ -361,6 +362,7 @@ LARGE SCREENS
 @media (min-width: $screen-lg-min) {
 	header{
 		height: 5rem;
+		font-size: 1.125rem;
 
 		&.header-scroll{
 			&:after{
