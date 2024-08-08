@@ -68,6 +68,10 @@ h1,h2,h3,h4,h5,h6{
 .cbo-title-2 h2, .cbo-title-2 h3, .cbo-title-2 h4, .cbo-title-2 h5, .cbo-title-2 h6, .cbo-title-2 p{
 	font-size: 26px;
 	line-height: 30px;
+
+	.cbo-underline{
+		background-size: 100% 4px;
+	}
 }
 .cbo-title-3{
 	font-size: 19px;
