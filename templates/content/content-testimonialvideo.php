@@ -16,7 +16,7 @@
 			<span class="inner-border"></span>
 		</div>
 		<div class="inner-informations">
-			<div class="informations-name cbo-title-4" itemscope itemtype="http://schema.org/Person">
+			<div class="informations-name cbo-title-3" itemscope itemtype="http://schema.org/Person">
 				<?php echo $name ?>
 			</div>
 			<div class="informations-society" itemscope itemtype="http://schema.org/Organization">

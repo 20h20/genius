@@ -61,13 +61,13 @@ h1,h2,h3,h4,h5,h6{
 }
 .cbo-title-1,
 .cbo-title-1 h2, .cbo-title-1 h3, .cbo-title-1 h4, .cbo-title-1 h5, .cbo-title-1 h6, .cbo-title-1 p{
-	font-size: 26px;
-	line-height: 34px;
+	font-size: 30px;
+	line-height: 38px;
 }
 .cbo-title-2,
 .cbo-title-2 h2, .cbo-title-2 h3, .cbo-title-2 h4, .cbo-title-2 h5, .cbo-title-2 h6, .cbo-title-2 p{
-	font-size: 22px;
-	line-height: 26px;
+	font-size: 26px;
+	line-height: 30px;
 }
 .cbo-title-3{
 	font-size: 19px;
@@ -79,27 +79,6 @@ h1,h2,h3,h4,h5,h6{
     font-size: 19px;
     line-height: 24px;
 }
-
-
-
-
-
-
-
-
-
-
-
-.cbo-title-4{
-	font-size: 28px;
-	line-height: 32px;
-}
-.cbo-title-5{
-	font-size: 26px;
-	line-height: 36px;
-	font-weight: bold;
-}
-
 .cbo-cms{
 	p{
 		margin: 14px 0;
@@ -122,8 +101,8 @@ h1,h2,h3,h4,h5,h6{
 		}
 	}
 	h1,h2{
-		font-size: 22px;
-		line-height: 26px;
+		font-size: 26px;
+		line-height: 30px;
 	}
 	h3{
 		font-size: 19px;
@@ -350,13 +329,13 @@ MEDIUM SCREENS
 @media (min-width: $screen-md-min){
 	.cbo-title-1,
 	.cbo-title-1 h2, .cbo-title-1 h3, .cbo-title-1 h4, .cbo-title-1 h5, .cbo-title-1 h6, .cbo-title-1 p{
-		font-size: 32px;
-		line-height: 42px;
+		font-size: 36px;
+		line-height: 46px;
 	}
 	.cbo-title-2,
 	.cbo-title-2 h2, .cbo-title-2 h3, .cbo-title-2 h4, .cbo-title-2 h5, .cbo-title-2 h6, .cbo-title-2 p{
-		font-size: 25px;
-		line-height: 29px;
+		font-size: 29px;
+		line-height: 33px;
 	}
 	.cbo-title-3{
 		font-size: 21px;
@@ -368,8 +347,8 @@ MEDIUM SCREENS
 	}
 	.cbo-cms{
 		h1,h2{
-			font-size: 25px;
-			line-height: 29px;
+			font-size: 36px;
+			line-height: 46px;
 		}
 		h3{
 			font-size: 21px;
@@ -398,5 +377,11 @@ LARGE SCREENS
 	.cbo-chapo{
 		font-size: 22px;
 		line-height: 28px;
+	}
+	.cbo-cms{
+		h1,h2{
+			font-size: 40px;
+			line-height: 54px;
+		}
 	}
 }
