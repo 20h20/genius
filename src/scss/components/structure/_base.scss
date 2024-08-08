@@ -10,8 +10,8 @@ body {
 	font-weight: 500; 
 	background: $colorwhite;
 	color: $colorbluedark;
-	font-size: 18px;
-	line-height: 24px;
+	font-size: 16px;
+	line-height: 22px;
 	width: 100%;
 	min-height: 100%;
 	text-rendering: geometricPrecision;
@@ -158,6 +158,8 @@ MEDIUM SCREENS
 @media (min-width: $screen-md-min){
 	body{
 		hyphens: auto;
+		font-size: 18px;
+		line-height: 24px;
 
 		&.cbo-landing{
 			.cbo-main{
