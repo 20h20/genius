@@ -21,7 +21,7 @@
 				<div class="list-el">
 					<div class="el-inner">
 						<?php if($keynumber): ?>
-							<div class="inner-number slide-up">
+							<div class="inner-number cbo-title-1 slide-up">
 								<?php echo $keynumber ?>
 							</div>
 						<?php endif; ?>
