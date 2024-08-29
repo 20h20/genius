@@ -5,8 +5,12 @@ TEXT PICTURE COMPONENT
   .textpicture-icon{
     display: block;
     margin: 0 auto 1.25rem auto;
-    width: 4.375rem;
-    height: 4.375rem;
+    width: 7.5rem;
+    height: auto;
+
+    img{
+      position: relative;
+    }
   }
   .textpicture-title{
     text-align: center;
