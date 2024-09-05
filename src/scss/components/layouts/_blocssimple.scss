@@ -22,6 +22,9 @@ BLOCS SIMPLE 3 COLS COMPONENT
         border-radius: 0.625rem;
         padding: 1.25rem;
 
+        &.inner--transparent{
+          background: none;
+        }
         .inner-top{
           display: flex;
           align-items: center;

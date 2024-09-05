@@ -14,6 +14,7 @@
 			<?php
 				if( have_rows('blocssimple_list') ):
 				while ( have_rows('blocssimple_list') ) : the_row();
+				$color	= get_sub_field('color');
 				$picture	= get_sub_field('icon');
 				$title		= get_sub_field('title');
 				$content	= get_sub_field('content');
@@ -22,9 +23,9 @@
 			?>
 				<div class="list-el">
 					<?php if($addlink): ?>
-						<a class="el-inner slide-up" href="<?php echo $link ?>">
+						<a class="el-inner slide-up inner--<?php echo $color ?>" href="<?php echo $link ?>">
 					<?php else: ?>
-						<span class="el-inner slide-up">
+						<span class="el-inner slide-up inner--<?php echo $color ?>">
 					<?php endif; ?>
 						<span class="inner-top">
 							<?php if($picture): ?>
