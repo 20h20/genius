@@ -24,10 +24,50 @@
 
 	<?php
 		$pgetype	= get_field('page_type');
+		$popinactive	= get_field('options_popinactive', 'option');
+		$popinuptitle	= get_field('options_popinuptitle', 'option');
+		$popintitle	= get_field('options_popintitle', 'option');
+		$popinpicture	= get_field('options_popinpicture', 'option');
+		$popincolor	= get_field('options_popincolor', 'option');
 	?>
 </head>
 
 <body <?php body_class(($pgetype == 'landing') ? 'cbo-landing' : ''); ?> itemscope itemtype="http://schema.org/WebPage">
+	<?php if($popinactive){ ?>
+		<div id="myModal" class="cbo-modale modale--infos" role="dialog">
+			<div class="modale-inner modale--<?php echo $popincolor ?>">
+				<button type="button" class="modale-close" id="myModal-close" aria-label="Fermer la fenêtre">
+					<span class="top"></span>
+					<span class="bottom"></span>
+				</button>
+				<div class="modale-picture cbo-picture-contain">
+					<img
+						decoding="async"
+						src="<?php echo $popinpicture['sizes']['small']; ?>"
+						srcset="<?php echo $popinpicture['sizes']['small']; ?> 320w, <?php echo $popinpicture['sizes']['xlarge']; ?> 768w, <?php echo $popinpicture['sizes']['xlarge']; ?> 1024w"
+						alt="<?php echo $popinpicture['alt']; ?>" sizes="100vw"
+						loading="lazy"
+						width="400" height="400"
+					>
+				</div>
+				<div class="modale-content">
+					<?php if($popinuptitle): ?>
+						<span class="content-uptitle cbo-title-3">
+							<?php echo $popinuptitle ?>
+						</span>
+					<?php endif; ?>
+
+					<?php if($popintitle): ?>
+						<span class="content-title cbo-title-1">
+							<strong><?php echo $popintitle ?></strong>
+						</span>
+					<?php endif; ?>
+				</div>
+			</div>
+			<div class="modale-overlay" id="myModal-close"></div>
+		</div>
+	<?php } ?>
+
 	<header role="banner" itemscope itemtype="http://schema.org/WPHeader">
 		<div class="header-inner cbo-container container--nomargin">
 
@@ -66,6 +106,17 @@
 				</nav>
 
 				<div class="header-buttons">
+					<div class="buttons-search">
+						<i class="icon icon--search search-button"></i>
+
+						<form role="search" method="get" class="search-form" action="<?php echo home_url( '/' ); ?>">
+							<input class="search-input" name="s" id="search" type="text" placeholder="<?php _e( 'Que recherchez-vous ?', 'global' ); ?>" data-provide="typeahead" data-items="4">
+							<button class="search-submit" type="submit" aria-label="Lancer la recherche">
+								<i class="icon icon--search"></i>
+							</button>
+						</form>
+					</div>
+
 					<a class="button-user" href="https://app.genius.immo/s/login/?ec=302&startURL=%2Fs%2F&_gl=1*10ip4ka*_gcl_au*MTY0MzA5NzA1NS4xNzA4NDQ3NTE3" target="_blank" itemprop="url">
 						<i class="icon icon--user"></i>
 					</a>

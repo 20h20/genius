@@ -10,7 +10,7 @@ MODALE MICRO COMPONENT
 	left: 0;
 	height: 100%;
 	width: 100%;
-	padding: 20px 20px;
+	padding: 1.25rem;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -37,24 +37,24 @@ MODALE MICRO COMPONENT
 	.modale-inner{
 		background: $colorwhite;
 		position: relative;
-		border-radius: 20px;
-		padding: 40px 20px;
+		border-radius: 1.25rem;
+		padding: 2.5rem 1.25rem;
 		overflow-y: auto;
 		transform: scale(0);
 		z-index: 6;
 		max-height: 100%;
 		width: 100%;
-		max-width: 720px;
+		max-width: 45rem;
 		transition: all .6s cubic-bezier(.075,.82,.165,1);
-		min-height: 500px;
+		min-height: 31.25rem;
 
 		.modale-close{
-			width: 20px;
-			height: 20px;
+			width: 1.25rem;
+			height: 1.25rem;
 			padding: 0;
 			position: absolute;
-			top: 20px;
-			right: 20px;
+			top: 1.25rem;
+			right: 1.25rem;
 			cursor: pointer;
 			border-radius: 50%;
 
@@ -62,7 +62,7 @@ MODALE MICRO COMPONENT
 				background: $colorblack;
 				height:2px;
 				border-radius: 99rem;
-				width: 20px;
+				width: 1.25rem;
 				position:absolute;
 				left: 0;
 				transition:all .3s; 
@@ -81,11 +81,11 @@ MODALE MICRO COMPONENT
 		}
 		.modale-content{
 			text-align: center;
-			margin-bottom: 20px;
+			margin-bottom: 1.25rem;
 
 			.modale-title{
 				color: $colorblue;
-				font-size: 36px;
+				font-size: 2.25rem;
 			}
 		}
 		.contact-form{
@@ -93,44 +93,116 @@ MODALE MICRO COMPONENT
 				form{
 					display: flex;
 					flex-wrap: wrap;
-					margin: 0 -10px;
+					margin: 0 -0.625rem;
 
 					.form-field {
-						padding: 0 10px;
-						margin-bottom: 10px;
+						padding: 0 0.625rem;
+						margin-bottom: 0.625rem;
 
 						&.field--half{
 							width: 50%;
 						}
 						textarea{
-							height: 100px;
+							height: 6.25rem;
 						}
 						&.field--input{
 							text-align: center;
 							margin-bottom: 0;
 
 							input[type="submit"]{
-								min-width: 300px;
-								height: 40px;
+								min-width: 18.75rem;
+								height: 2.5rem;
 							}
 						}
 					}
 				}
 				.form-appointment{
 					background: rgba($colorbluelight, .3);
-					border-radius: 10px;
-					padding: 20px;
-					margin-top: 20px;
+					border-radius: 0.625rem;
+					padding: 1.25rem;
+					margin-top: 1.25rem;
 					text-align: center;
 					font-weight:bold;
 
 					button{
-						margin-top: 20px;
+						margin-top: 1.25rem;
 						color: $colorblue !important;
 						background-color: rgba(0,0,0,0) !important;
 						box-shadow: 0px 0px 0px 3px $colorblue inset;
 						border-radius: 99rem;
-						min-width: 200px;
+						min-width: 12.5rem;
+					}
+				}
+			}
+		}
+	}
+	&.modale--infos{
+		visibility: visible;
+		opacity: 1;
+
+		.modale-inner{
+			transform: scale(1);
+			max-width: 26.5625rem;
+			min-height: auto;
+			text-align: center;
+			overflow: visible;
+
+			&:before{
+				content: '';
+				background: url(../img/modale-deco.svg) no-repeat center top;
+				height: 18.75rem;
+				width: 100%;
+				background-size: contain;
+				position: absolute;
+				top: -6.875rem;
+				left: 0;
+			}
+			.modale-picture{
+				max-width: 14.5rem;
+				height: 17rem;
+				margin: -6.25rem auto 0.625rem;
+			}
+			.modale-content{
+				margin-bottom: 0;
+
+				.content-uptitle{
+					margin-bottom: 0.875rem;
+					font-size: 1.5625rem;
+					display: block;
+				}
+				.content-title{
+					color: $colorbluemedium;
+					display: block;
+				}
+			}
+			&.modale--lightbluegradient{
+				background: linear-gradient(180deg, rgba(173,242,255,1) 0%, rgba(87,228,255,1) 48%);
+
+				.modale-content{
+					.content-title{
+						strong{
+							background-image: linear-gradient(90deg,$colorwhite 0,$colorwhite);
+						}
+					}
+				}
+			}
+			&.modale--bluegradient{
+				background: linear-gradient(0deg, rgba(0,239,251,1) 0%, rgba(47,153,255,1) 48%, rgba(22,103,255,1) 80%);
+
+				.modale-close{
+					.bottom,
+					.top{
+						background: $colorwhite;
+					}
+				}
+				.modale-content{
+					color: $colorwhite;
+
+					.content-title{
+						strong{
+							color: $colorwhite;
+							background-image: linear-gradient(90deg,$colorwhite 0,$colorwhite);
+						}
 					}
 				}
 			}
@@ -143,7 +215,7 @@ LARGE SCREENS
 @media (min-width: $screen-lg-min){
 	.cbo-modale{
 		.modale-inner{
-			padding: 40px;
+			padding: 2.5rem;
 		}
 	}
 }

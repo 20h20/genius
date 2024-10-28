@@ -52,9 +52,9 @@
 			<?php endif; ?>
 
 			<?php if($subtitle): ?>
-				<h1 class="herorich-subtitle slide-up">
+				<div class="herorich-subtitle slide-up">
 					<?php echo $subtitle; ?>
-				</h1>
+				</div>
 			<?php endif; ?>
 
 			<?php if($chapo): ?>

@@ -16,26 +16,31 @@
 			<div class="herorich-inner cbo-container">
 
 				<div class="herorich-picture">
-					<div class="picture-secondpic cbo-picture-contain slide-up">
-						<img
-							decoding="async"
-							src="<?php echo $heropicture2['sizes']['small']; ?>"
-							srcset="<?php echo $heropicture2['sizes']['small']; ?> 320w, <?php echo $heropicture2['sizes']['xlarge']; ?> 768w, <?php echo $heropicture2['sizes']['xlarge']; ?> 1024w"
-							alt="<?php echo $heropicture2['alt']; ?>" sizes="100vw"
-							loading="lazy"
-							width="1500" height="1500"
-						>
-					</div>
-					<div class="picture-main cbo-picture-cover slide-up">
-						<img
-							decoding="async"
-							src="<?php echo $heropicture['sizes']['small']; ?>"
-							srcset="<?php echo $heropicture['sizes']['small']; ?> 320w, <?php echo $heropicture['sizes']['xlarge']; ?> 768w, <?php echo $heropicture['sizes']['xlarge']; ?> 1024w"
-							alt="<?php echo $heropicture['alt']; ?>" sizes="100vw"
-							loading="lazy"
-							width="1500" height="1500"
-						>
-					</div>
+					<?php if($heropicture2): ?>
+						<div class="picture-secondpic cbo-picture-contain slide-up">
+							<img
+								decoding="async"
+								src="<?php echo $heropicture2['sizes']['small']; ?>"
+								srcset="<?php echo $heropicture2['sizes']['small']; ?> 320w, <?php echo $heropicture2['sizes']['xlarge']; ?> 768w, <?php echo $heropicture2['sizes']['xlarge']; ?> 1024w"
+								alt="<?php echo $heropicture2['alt']; ?>" sizes="100vw"
+								loading="lazy"
+								width="1500" height="1500"
+							>
+						</div>
+					<?php endif; ?>
+
+					<?php if($heropicture): ?>
+						<div class="picture-main cbo-picture-cover slide-up">
+							<img
+								decoding="async"
+								src="<?php echo $heropicture['sizes']['small']; ?>"
+								srcset="<?php echo $heropicture['sizes']['small']; ?> 320w, <?php echo $heropicture['sizes']['xlarge']; ?> 768w, <?php echo $heropicture['sizes']['xlarge']; ?> 1024w"
+								alt="<?php echo $heropicture['alt']; ?>" sizes="100vw"
+								loading="lazy"
+								width="1500" height="1500"
+							>
+						</div>
+					<?php endif; ?>
 				</div>
 
 				<div class="herorich-content">

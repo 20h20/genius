@@ -45,7 +45,9 @@ LAYOUTS COMPONENTS
 @import "components/layouts/blocssimple";
 @import "components/layouts/blocsbackground";
 @import "components/layouts/context";
+@import "components/layouts/contact";
 @import "components/layouts/cta";
+@import "components/layouts/ctasimple";
 @import "components/layouts/herorich";
 @import "components/layouts/keynumbers";
 @import "components/layouts/partners";
@@ -61,6 +63,7 @@ LAYOUTS COMPONENTS
 /*********************
 PAGES COMPONENTS
 *********************/
+@import "components/pages/faq";
 @import "components/pages/testimonials";
 
 /*********************

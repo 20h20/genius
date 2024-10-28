@@ -2,11 +2,11 @@
 
 @font-face {
     font-family:"icons";
-    src: url("../iconfont/icons.eot?9293f840a52ab81c5ebd42155940ff53");
-    src: url("../iconfont/icons.eot?9293f840a52ab81c5ebd42155940ff53#iefix") format("embedded-opentype"),
-		url("../iconfont/icons.woff?9293f840a52ab81c5ebd42155940ff53") format("woff"),
-		url("../iconfont/icons.ttf?9293f840a52ab81c5ebd42155940ff53") format("truetype"),
-		url("../iconfont/icons.svg?9293f840a52ab81c5ebd42155940ff53#icons") format("svg");
+    src: url("../iconfont/icons.eot?5f816e7075af0b091d219326e27c854a");
+    src: url("../iconfont/icons.eot?5f816e7075af0b091d219326e27c854a#iefix") format("embedded-opentype"),
+		url("../iconfont/icons.woff?5f816e7075af0b091d219326e27c854a") format("woff"),
+		url("../iconfont/icons.ttf?5f816e7075af0b091d219326e27c854a") format("truetype"),
+		url("../iconfont/icons.svg?5f816e7075af0b091d219326e27c854a#icons") format("svg");
     font-weight:normal;
     font-style:normal;
     font-display:swap;
@@ -35,5 +35,6 @@
 .icon--phone:before { content:"\f109"; }
 .icon--pin:before { content:"\f10a"; }
 .icon--player:before { content:"\f10b"; }
-.icon--top-quote:before { content:"\f10c"; }
-.icon--user:before { content:"\f10d"; }
+.icon--search:before { content:"\f10c"; }
+.icon--top-quote:before { content:"\f10d"; }
+.icon--user:before { content:"\f10e"; }

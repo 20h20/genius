@@ -1,0 +1,157 @@
+/* -------------------------------
+FAQ PAGE COMPONENT
+------------------------------- */
+.page--faq{
+    .faq-taxonomies{
+        .taxonomies-list{
+            .list-el{
+                display: block;
+
+                .el-inner{
+                    display: block;
+                    text-align: center;
+                    background: $colorwhite;
+                    border-radius: 0.9375rem;
+                    padding: 1.25rem;
+                    margin: 1.25rem 0;
+
+                    .content-picture{
+                        width: 7.5rem;
+                        height: 7.5rem;
+                        margin: 0 auto 2.25rem auto;
+                        display: block;
+                    }
+                    .content-title{
+                        margin-bottom: 0.9375rem;
+                    }
+                }
+            }
+        }
+    }
+    .archive-faq{
+        .faq-list{
+            .list-el{
+                margin: 1.25rem 0;
+    
+                .el-inner{
+                    background: $colorwhite;
+                    border-radius: 0.9375rem;
+                    box-shadow: 0 0 0 1px $colorbluelight;
+                    transition:.4s $easeinout;
+                    
+                    .el-title{
+                        padding: 1.25rem;
+                        position: relative;
+                        display: flex;
+                        align-items: center; 
+                        justify-content: space-between;
+                        cursor: pointer;
+                        transition:.4s $easeinout;
+
+                        i{
+                            transition:.4s $easeinout;
+                            margin-left: 1.25rem;
+                            font-size: 1rem;
+                            transform: rotate(0deg);
+                        }
+                    }
+                    .el-content{
+                        display: none;
+                        padding: 1.25rem;
+                    }
+                    &.title--open,
+                    &:hover{
+                        box-shadow: 0 16px 40px 0 rgba($colorbluelight, .4);
+
+                        .el-title{
+                            i{
+                                transform: rotate(180deg);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }  
+}
+/* -------------------------------
+SMALL SCREENS
+------------------------------- */
+@media (min-width:$screen-sm-min) {
+    .page--faq{
+        .faq-taxonomies{
+            .taxonomies-list{
+                display: flex;
+                flex-wrap: wrap;
+                margin: -0.625rem;
+
+                .list-el{
+                    width: 50%;
+    
+                    .el-inner{
+                        margin: 0.625rem;
+                    }
+                }
+            }
+        }
+    }
+}
+/* -------------------------------
+MEDIUM SCREENS
+------------------------------- */
+@media (min-width:$screen-md-min) {
+    .page--faq{
+        .faq-taxonomies{
+            .taxonomies-list{
+                .list-el{
+                    width: 33.33333%;
+
+                    .el-inner{
+                        box-shadow: 0 0 0 0 $colorbluelight;
+                        transition: all .4s;
+                    }
+                    &:hover{
+                        .el-inner{
+                            box-shadow: 0 16px 40px 0 rgba($colorbluelight, .4);
+                        }
+                    }
+                }
+            }
+        }
+        .archive-faq{
+            .faq-list{
+                .list-el{
+                    margin: 2.5rem 0;
+        
+                    .el-inner{
+                     
+                        .el-title{
+                            padding: 2.5rem;
+                        }
+                        .el-content{
+                            padding: 2.5rem;
+                        }
+                    }
+                }
+            }
+        }  
+    }
+}
+/* -------------------------------
+LARGE SCREENS
+------------------------------- */
+@media (min-width:$screen-lg-min) {
+    .page--faq{
+        .faq-taxonomies{
+            .taxonomies-list{
+                margin: -1.5625rem;
+
+                .list-el{
+                    .el-inner{
+                        margin: 1.5625rem;
+                    }
+                }
+            }
+        }
+    }
+}

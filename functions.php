@@ -4,6 +4,7 @@
 		require_once( 'library/inc/custom-admin.php' );
 		require_once( 'library/inc/custom-post/cpt-testimonial.php' );
 		require_once( 'library/inc/custom-post/cpt-news.php' );
+		require_once( 'library/inc/custom-post/cpt-faq.php' );
 	}
 	add_action( 'after_setup_theme', 'bones_ahoy' );
 
@@ -88,6 +89,15 @@
 				'block' => 'a',
 				'classes' => 'cbo-button button--icon button--blue button-modale',
 				'wrapper' => true,
+			),
+			array(
+				'title' => 'Bouton bleu clair',
+				'block' => 'a',
+				'classes' => 'cbo-button button--icon button--bluelight',
+				'wrapper' => true,
+				'attributes' => array(
+					'href' => '#'
+				)
 			),
 			array(
 				'title' => 'Mise en avant',
@@ -315,4 +325,17 @@
 		}
 		return $items;
 	}
+
+
+	/* ************************* */
+	/* DÉSACTIVATION DES FLUX RSS */
+	/* ************************* */
+	function disable_all_feeds() {
+		wp_die( __('Les flux RSS sont désactivés sur ce site.') );
+	}
+	add_action('do_feed', 'disable_all_feeds', 1);
+	add_action('do_feed_rdf', 'disable_all_feeds', 1);
+	add_action('do_feed_rss', 'disable_all_feeds', 1);
+	add_action('do_feed_rss2', 'disable_all_feeds', 1);
+	add_action('do_feed_atom', 'disable_all_feeds', 1);
 ?>

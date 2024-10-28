@@ -1,0 +1,37 @@
+/* -------------------------------
+CONTACT MICRO COMPONENT
+------------------------------- */
+.cbo-contact{
+	.contact-title{
+		text-align: center;
+		margin-bottom: 3.125rem;
+		width: 100%;
+	}
+	.contact-chapo{
+		text-align: center;
+		margin-bottom: 3.125rem;
+	}
+	.contact-content{
+		.cbo-form{
+			.wpcf7{
+				width: 100%;
+			}
+		}
+	}
+}
+/* -------------------------------
+SMALL SCREENS
+------------------------------- */
+@media (min-width: $screen-sm-min) {
+	.cbo-contact{
+		.contact-content{
+			.cbo-form{
+				form{
+					display: flex;
+					flex-wrap: wrap;
+					margin: 0 -.625rem;
+				}
+			}
+		}
+	}
+}

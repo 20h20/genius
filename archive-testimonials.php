@@ -37,17 +37,14 @@
 			<div class="testimonials-inner cbo-container container--medium container--nomargin">
 				<div class="testimonials-list">
 					<?php
-					if (have_posts()) :
-						$post_counter = 0;
+						if (have_posts()) :
 						while (have_posts()) : the_post();
 						$name	= get_field('testimonials_user');
 						$society	= get_field('testimonials_enterprise');
 						$videoid	= get_field('testimonials_video');
 						$videocover	= get_field('testimonials_videocover');
-							$post_counter++;
-							if ($post_counter % 2 == 1) :
 					?>
-						<article <?php post_class('list-el el--testimonialtext slide-up'); ?> itemprop="blogPosts" itemscope itemtype="http://schema.org/BlogPosting">
+						<article <?php post_class('list-el slide-up'); ?> itemprop="blogPosts" itemscope itemtype="http://schema.org/BlogPosting">
 							<div class="el-inner">
 								<div class="inner-picture cbo-picture-contain slide-up">
 									<?php the_post_thumbnail( 'small', array( 'sizes' => '(max-width:320px) 145px, (max-width:425px) 220px, 500px' ) );?>
@@ -55,73 +52,64 @@
 
 								<div class="inner-content">
 									<div class="content-informations">
-										<div class="informations-name slide-up">
-											<?php echo $name ?>
-										</div>
-										<div class="informations-society slide-up">
-											<?php echo $society ?>
-										</div>
-									</div>
-									<div class="content-chapo">
-										<?php the_content(); ?>
-									</div>
-									<div class="content-question">
-										<?php
-											if( have_rows('testimonials_accordion') ):
-											while ( have_rows('testimonials_accordion') ) : the_row();
-											$question	= get_sub_field('question');
-											$answer	= get_sub_field('reponse');
-										?>
-											<div class="list-el slide-up">
-												<span class="el-title toggle">
-													<?php echo $question ?>
-													<i class="icon icon--more"></i>
-												</span>
-
-												<div class="el-content cbo-cms">
-													<?php echo $answer ?>
-												</div>
+										<?php if($name): ?>
+											<div class="informations-name slide-up">
+												<?php echo $name ?>
 											</div>
-										<?php
-											endwhile;
-											endif;
-										?>
+										<?php endif; ?>
+
+										<?php if($society): ?>
+											<div class="informations-society slide-up">
+												<?php echo $society ?>
+											</div>
+										<?php endif; ?>
 									</div>
+
+									<?php if (get_the_content()) : ?>
+										<div class="content-chapo">
+											<?php the_content(); ?>
+										</div>
+									<?php endif; ?>
+
+									<?php
+										if( have_rows('testimonials_accordion') ):
+									?>
+										<div class="content-question">
+											<?php
+												while ( have_rows('testimonials_accordion') ) : the_row();
+												$question	= get_sub_field('question');
+												$answer	= get_sub_field('reponse');
+											?>
+												<div class="list-el slide-up">
+													<span class="el-title toggle">
+														<?php echo $question ?>
+														<i class="icon icon--more"></i>
+													</span>
+
+													<div class="el-content cbo-cms">
+														<?php echo $answer ?>
+													</div>
+												</div>
+											<?php
+												endwhile;
+											?>
+										</div>
+									<?php
+										endif;
+									?>
+
+									<?php if($videoid): ?>
+										<div class="content-video slide-up">
+											<span class="video-play">
+												<i class="icon icon--player"></i>
+											</span>
+											<div class="video-cover" data-video-id="<?php echo $videoid; ?>" style="background-image:url(<?php echo $videocover["url"]; ?>);"></div>
+										</div>
+									<?php endif; ?>
 								</div>
 							</div>
 						</article>
 					<?php
-						else :
-					?>
-						<article <?php post_class('list-el el--video slide-up'); ?> itemprop="blogPosts" itemscope itemtype="http://schema.org/BlogPosting">
-							<div class="el-inner">
-
-								<div class="inner-picture cbo-picture-contain slide-up">
-									<?php the_post_thumbnail( 'small', array( 'sizes' => '(max-width:320px) 145px, (max-width:425px) 220px, 500px' ) );?>
-								</div>
-								
-								<div class="inner-content">
-									<div class="content-informations">
-										<div class="informations-name slide-up">
-											<?php echo $name ?>
-										</div>
-										<div class="informations-society slide-up">
-											<?php echo $society ?>
-										</div>
-									</div>
-
-									<div class="content-video slide-up">
-										<span class="video-play">
-											<i class="icon icon--player"></i>
-										</span>
-										<div class="video-cover" data-video-id="<?php echo $videoid; ?>" style="background-image:url(<?php echo $videocover["url"]; ?>);"></div>
-									</div>
-								</div>
-								
-							</div>
-						</article>
-					<?php
-						endif;
 						endwhile;
 						echo page_navi();
 						endif;

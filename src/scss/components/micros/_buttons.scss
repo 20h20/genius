@@ -79,6 +79,17 @@ input[type="submit"]{
 			color: $colorblue;
 		}
 	}
+	&.button--bluelight{
+		background: $colorbluelight;
+		color: $colorwhite;
+
+		&:after{
+			color: $colorwhite;
+		}
+		&:hover{
+			background: $colorblue;
+		}
+	}
 	&.cbo-link{
 		color: $colorblue;
 		background: none;

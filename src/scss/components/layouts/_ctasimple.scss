@@ -1,0 +1,46 @@
+/* -------------------------------
+CTA SIMPLE COMPONENT
+------------------------------- */
+.cbo-ctasimple{
+  .ctasimple-title{
+    text-align: center;
+    margin-bottom: 3.125rem;
+  }
+  .ctasimple-box{
+    border: 2px solid $colorbluelight;
+    padding: 1.25rem;
+    border-radius: 0.9375rem;
+
+    .box-picture{
+      padding-bottom: 45%;
+      border-radius: 0.9375rem;
+      overflow: hidden;
+      margin-bottom: 1.25rem;
+    }
+  }
+}
+/* -------------------------------
+MEDIUM SCREENS
+------------------------------- */
+@media (min-width: $screen-md-min){
+  .cbo-ctasimple{
+    .ctasimple-title{
+      margin-bottom: 5rem;
+    }
+    .ctasimple-box{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      padding: 1.625rem;
+  
+      .box-picture{
+        width: 48%;
+        padding-bottom: 0;
+        margin-bottom: 0;
+      }
+      .box-content{
+        width: 48%;
+      }
+    }
+  }
+}

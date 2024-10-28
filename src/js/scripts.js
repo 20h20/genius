@@ -116,10 +116,9 @@ $(window).on( 'scroll', function(){
 					$this.next().slideToggle(350);
 				}
 			});
-			$(".content-question .el-title").click(function () {
+			$(".content-question .el-title, .archive-faq .faq-list .el-inner").click(function () {
 				$(this).toggleClass("title--open");
 			});
-
 
 			//////////////// STICKY ////////////////
 			$(window).scroll(function(){
@@ -215,7 +214,45 @@ $(window).on( 'scroll', function(){
 				e.stopPropagation(); 
 				$('.video-modale').toggleClass('modale--open');
 			});
+
+
+			//////////////// MODALE INFOS COOKIES ////////////////
+			(function($) {
+				function getCookie(name) {
+					var setPos = document.cookie.indexOf(name + '='), stopPos = document.cookie.indexOf(';', setPos);
+					return ~setPos ? document.cookie.substring(setPos, ~stopPos ? stopPos : undefined).split('=')[1] : null;
+				}
+
+				function setCookie(name, val, days, path) {
+					var cookie = name + "=" + escape(val) + "";
+					if (days) {
+						var date = new Date();
+						date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+						cookie += ";expires=" + date.toGMTString();
+					}
+					cookie += ";" + (path || "path=/");
+					document.cookie = cookie;
+				}
+				$(document).ready(function(){
+					var bandeauCookie = getCookie("bandeauCookie");
+					$("#myModal").hide();
+					if (!bandeauCookie) {
+						setTimeout(function() {
+							$('body').addClass('body-modale-open');
+							$('#myModal').addClass('infos--open').show();
+						}, 5000);
+
+						$("#myModal-close").click(function(){
+							setCookie("bandeauCookie", 1, 1);
+							$("#myModal").fadeOut('fast', function() {
+								$('body').removeClass('body-modale-open');
+							});
+						});
+					}
+				});
+			})(jQuery);
 			
+
 			/////////////////// SLIDER ARTICLES ///////////////////
 			$('.cbo-relation .articles-list').slick({
 				arrows : false,
@@ -315,6 +352,13 @@ $(window).on( 'scroll', function(){
 			$('.cbo-filters .filters-inner a').filter(function(){
 				return this.href === location.href;
 			}).addClass('el--active');
+
+
+			/////////////////// SEARCH ///////////////////
+			$('header .buttons-search .search-button').on('click', function(){
+				$('.buttons-search').toggleClass('active');
+			});
+
 
 			/////////////////// ANCRE ///////////////////
 			document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {

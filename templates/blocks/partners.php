@@ -15,9 +15,14 @@
 				if( have_rows('partners_list') ):
 				while( have_rows('partners_list') ): the_row();
 				$picture = get_sub_field('picture');
+				$link = get_sub_field('link');
 			?>
-				<div class="list-el">
-					<div class="el-inner cbo-picture-contain" itemscope itemtype="https://schema.org/Organization">
+				<?php if($link): ?>
+					<a class="list-el" href="<?php echo $link ?>" target="_blank">
+				<?php else : ?>
+					<span class="list-el">
+				<?php endif; ?>
+					<span class="el-inner cbo-picture-contain" itemscope itemtype="https://schema.org/Organization">
 						<img
 							src="<?php echo $picture['sizes']['small']; ?>"
 							srcset="<?php echo $picture['sizes']['small'] ?> 320w, <?php echo $picture['sizes']['small'] ?> 768w, <?php echo $picture['sizes']['small'] ?> 1024w"
@@ -26,8 +31,12 @@
 							width="290" height="140"
 							itemprop="logo"
 						>
-					</div>
-				</div>
+					</span>
+				<?php if($link): ?>
+					</a>
+				<?php else : ?>
+					</span>
+				<?php endif; ?>
 			<?php
 				endwhile;
 				endif;

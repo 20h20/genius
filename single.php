@@ -134,6 +134,11 @@
 						get_template_part( 'templates/blocks/cta');
 
 					///////////////////
+					// CALL TO ACTION SIMPLE
+					elseif( get_row_layout() == 'ctasimple' ):
+						get_template_part( 'templates/blocks/ctasimple');
+
+					///////////////////
 					// SECTION TEXT
 					elseif( get_row_layout() == 'text' ):
 						get_template_part( 'templates/blocks/text');
@@ -152,6 +157,11 @@
 					// SECTION BLOCS SIMPLE
 					elseif( get_row_layout() == 'blocssimple' ):
 						get_template_part( 'templates/blocks/blocssimple');
+
+					///////////////////
+					// SECTION CONTACT
+					elseif( get_row_layout() == 'contact' ):
+						get_template_part( 'templates/blocks/contact');
 
 					endif;
 				endwhile;
