@@ -12,9 +12,23 @@ CONTACT MICRO COMPONENT
 		margin-bottom: 3.125rem;
 	}
 	.contact-content{
-		.cbo-form{
+		.content-picture{
+			max-width: 40.625rem;
+			margin: 0 auto 1.25rem auto;
+			padding-bottom: 70%;
+		}
+		.content-form{
+			max-width: 40.625rem;
+			margin: 0 auto;
+
 			.wpcf7{
 				width: 100%;
+
+				.form-field{
+					&.field--input{
+						margin-bottom: 0;
+					}
+				}
 			}
 		}
 	}
@@ -31,6 +45,32 @@ SMALL SCREENS
 					flex-wrap: wrap;
 					margin: 0 -.625rem;
 				}
+			}
+		}
+	}
+}
+/* -------------------------------
+MEDIUM SCREENS
+------------------------------- */
+@media (min-width: $screen-md-min) {
+	.cbo-contact{
+		.contact-content{
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			flex-direction: row-reverse;
+
+			.content-picture{
+				max-width: inherit;
+				margin: 0 ;
+				padding-bottom: 0%;
+				width: 45%;
+			}
+			.content-form{
+				width: 45%;
+				max-width: inherit;
+				margin: 0;
+				padding: 3.125rem 0;
 			}
 		}
 	}
