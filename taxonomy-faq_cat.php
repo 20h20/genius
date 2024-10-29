@@ -6,9 +6,9 @@
 	$ctaicon	= get_field('options_faqctapic', 'option');
 	$ctatitle	= get_field('options_faqctatitle', 'option');
 	$ctacontent	= get_field('options_faqctacontent', 'option');
-	$ctatxtbt	= get_field('options_faqctabttype', 'option');
-	$ctaurlbt	= get_field('options_faqctatxtbt', 'option');
-	$ctatypebt	= get_field('options_faqctaurlbt', 'option');
+	$ctatxtbt	= get_field('options_faqctatxtbt', 'option');
+	$ctaurlbt	= get_field('options_faqctaurlbt', 'option');
+	$ctatypebt	= get_field('options_faqctabttype', 'option');
 	$ctabg	= get_field('options_faqctabg', 'option');
 ?>
 	<div class="cbo-page page--archive page--faq">
@@ -42,6 +42,9 @@
 		<section class="archive-faq">
 			<div class="faq-inner cbo-container container--medium">
 			
+				<div class="cbo-title-1">
+					<strong><?php single_cat_title(); ?></strong>
+				</div>
 				<div class="faq-list">
 					<?php
 						if (have_posts()) :

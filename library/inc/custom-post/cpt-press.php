@@ -1,38 +1,38 @@
 <?php
-	function cbo_faq() { 
-		register_post_type( 'faq',
+	function cbo_press() { 
+		register_post_type( 'press',
 		array( 'labels' => array(
-			'name' => __( 'FAQ', 'bonestheme' ),
-			'singular_name' => __( 'FAQ', 'bonestheme' ),
-			'all_items' => __( 'Toutes les FAQ', 'bonestheme' ), 
+			'name' => __( 'Articles de presse', 'bonestheme' ),
+			'singular_name' => __( 'Article de presse', 'bonestheme' ),
+			'all_items' => __( 'Tous les articles de presse', 'bonestheme' ), 
 			'add_new' => __( 'Ajouter', 'bonestheme' ), 
-			'add_new_item' => __( 'Ajouter une FAQ', 'bonestheme' ),
+			'add_new_item' => __( 'Ajouter un article de presse', 'bonestheme' ),
 			'edit' => __( 'Modifier', 'bonestheme' ),
-			'edit_item' => __( 'Modifier une FAQ', 'bonestheme' ),
-			'new_item' => __( 'Nouvelle FAQ', 'bonestheme' ),
-			'view_item' => __( 'Voir la FAQ', 'bonestheme' ),
+			'edit_item' => __( 'Modifier un article de presse', 'bonestheme' ),
+			'new_item' => __( 'Nouvel article de presse', 'bonestheme' ),
+			'view_item' => __( 'Voir l\'article de presse', 'bonestheme' ),
 			'search_items' => __( 'Rechercher', 'bonestheme' ),
-			'not_found' =>  __( 'Aucune FAQ trouvée.', 'bonestheme' ),
-			'not_found_in_trash' => __( 'Aucune FAQ dans la corbeille', 'bonestheme' ),
+			'not_found' =>  __( 'Aucun article de presse trouvé.', 'bonestheme' ),
+			'not_found_in_trash' => __( 'Aucun article de presse dans la corbeille', 'bonestheme' ),
 			'parent_item_colon' => ''
 		),
-		'public' => false,
+		'public' => true,
 		'publicly_queryable' => true,
 		'exclude_from_search' => false,
 		'show_ui' => true,
 		'query_var' => true,
 		'menu_position' => 3, 
-		'menu_icon' => 'dashicons-admin-comments',
-		'rewrite'	=> array( 'slug' => 'faq', 'with_front'   => false ), // slug du single
-		'has_archive' => 'nos-faq', // slug de la page d'archive
+		'menu_icon' => 'dashicons-welcome-write-blog',
+		'rewrite'	=> array( 'slug' => 'article-de-presse', 'with_front'   => false ), // slug du single
+		'has_archive' => 'nos-articles-de-presse', // slug de la page d'archive
 		'capability_type' => 'post',
 		'hierarchical' => true,
 		'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'trackbacks', 'custom-fields', 'comments', 'revisions', 'sticky')
 	)); }
-	add_action( 'init', 'cbo_faq');
+	add_action( 'init', 'cbo_press');
 
-	register_taxonomy( 'faq_cat', 
-		array('faq'),
+	register_taxonomy( 'press_cat', 
+		array('press'),
 		array('hierarchical' => true,
 			'labels' => array(
 				'name' => __( 'Catégories', 'bonestheme' ),
@@ -49,7 +49,7 @@
 			'show_admin_column' => true, 
 			'show_ui' => true,
 			'query_var' => true,
-			'rewrite' => array( 'slug' => 'nos-faq' ),
+			'rewrite' => array( 'slug' => 'nos-articles-de-presse' ),
 		)
 	);
 ?>

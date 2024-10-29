@@ -42,24 +42,6 @@
 					<h1 class="herorich-title cbo-title-1 slide-up">
 						<?php the_title(); ?>
 					</h1>
-
-					<div class="content-infos">
-						<?php echo get_the_author(); ?> /
-						<time class="header-date" itemprop="dateCreated" datetime="<?php echo get_the_date(); ?>">
-							<?php echo get_the_date(); ?>
-						</time> / 
-						<?php echo reading_time(get_the_ID()); ?>
-					</div>
-
-					<div class="cbo-sommaire">
-						<div class="sommaire-inner">
-							<div class="sommaire-title">
-								Table des matières
-								<i class="icon icon--next-arrow"></i>
-							</div>
-							<ul class="sommaire-list"></ul>
-						</div>
-					</div>
 				</div>
 			</div>
 		</section>
@@ -187,16 +169,6 @@
 					</a>
 				</div>
 			</div>
-
-			<?php if($sources): ?>
-				<div class="cbo-sources cbo-cms slide-up">
-					<div class="sources-title">
-						Sources
-					</div>
-					<?php echo $sources ?>
-				</div>
-			<?php endif; ?>
-
 			<div class="cbo-newsletter slide-up">
 				<div class="newsletter-inner">
 					<div class="newsletter-title">
@@ -211,49 +183,6 @@
 				</div>
 			</div>
 		</div>
-
-		<section class="cbo-relation">
-			<div class="relation-inner cbo-container">
-
-				<div class="relation-title cbo-title-1 slide-up">
-					<strong>D’autres articles</strong><br> sur le même sujet
-				</div>
-
-				<div class="articles-list slide-up">
-					<?php
-						$current_cat = get_queried_object();
-						$categories = get_the_terms($current_cat->ID, 'category');
-						if ($categories && !is_wp_error($categories) && !empty($categories)) {
-							$current_category = $categories[0]->slug;
-							$event_id = get_the_ID();
-							$args = array(
-								'post_type' => 'post',
-								'posts_per_page' => 3,
-								'tax_query' => array(
-									array(
-										'taxonomy' => 'category',
-										'field'    => 'slug',
-										'terms'    => $current_category,
-									),
-								),
-								'post__not_in' => array($event_id), 
-							);
-							$query = new WP_Query($args);
-							if ($query->have_posts()) :
-								while ($query->have_posts()) : $query->the_post();
-									get_template_part('templates/content/content', 'article');
-								endwhile;
-								wp_reset_postdata();
-							else :
-								echo 'Aucun article similaire';
-							endif;
-						} else {
-							echo 'Aucune catégorie associée à cet article.';
-						}
-					?>
-				</div>
-			</div>
-		</section>
 
 		<section class="cbo-cta">
 			<div class="cta-inner cbo-container">

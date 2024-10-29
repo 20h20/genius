@@ -1,16 +1,16 @@
 <?php
 	get_header();
-	$title	= get_field('options_faqtitle', 'option');
-	$picture	= get_field('options_faqpicture', 'option');
-	$ctaicon	= get_field('options_faqctapic', 'option');
-	$ctatitle	= get_field('options_faqctatitle', 'option');
-	$ctacontent	= get_field('options_faqctacontent', 'option');
-	$ctatxtbt	= get_field('options_faqctatxtbt', 'option');
-	$ctaurlbt	= get_field('options_faqctaurlbt', 'option');
-	$ctatypebt	= get_field('options_faqctabttype', 'option');
-	$ctabg	= get_field('options_faqctabg', 'option');
+	$title	= get_field('options_presstitle', 'option');
+	$picture	= get_field('options_presspicture', 'option');
+	$ctaicon	= get_field('options_pressctapic', 'option');
+	$ctatitle	= get_field('options_pressctatitle', 'option');
+	$ctacontent	= get_field('options_pressctacontent', 'option');
+	$ctatxtbt	= get_field('options_pressctatxtbt', 'option');
+	$ctaurlbt	= get_field('options_pressctaurlbt', 'option');
+	$ctatypebt	= get_field('options_pressctabttype', 'option');
+	$ctabg	= get_field('options_pressctabg', 'option');
 ?>
-	<div class="cbo-page page--archive page--faq">
+	<div class="cbo-page page--archive page--press">
 		<section class="cbo-herorich">
 			<div class="herorich-inner cbo-container">
 				<div class="herorich-picture">
@@ -38,42 +38,29 @@
 			</div>
 		</section>
 
-		<section class="faq-taxonomies">
-			<div class="taxonomies-inner cbo-container">
-				<div class="taxonomies-list">
+
+
+
+
+
+
+
+
+
+
+		<section class="archive-press">
+			<div class="press-inner cbo-container container--medium">
+				<div class="press-list">
+					<h3 class="press-title cbo-title-1">
+						<strong><?php single_cat_title(); ?></strong>
+					</h3>
 					<?php
-						$categories = get_terms(array(
-							'taxonomy' => 'faq_cat',
-							'hide_empty' => false,
-						));
-						if (!empty($categories) && !is_wp_error($categories)) {
-							foreach ($categories as $category) {
-								global $term;
-								$term = $category;
-								$picture  = get_field('faq_taxopicture', $term);
-								$category_link = get_term_link($term);
-					?>
-						<a <?php post_class('list-el'); ?> href="<?php echo esc_url($category_link); ?>">
-							<span class="el-inner">
-								<span class="content-picture cbo-picture-contain slide-up">
-									<img
-										src="<?php echo esc_url($picture['sizes']['small']); ?>"
-										srcset="<?php echo esc_url($picture['sizes']['small']); ?> 320w, <?php echo esc_url($picture['sizes']['small']); ?> 768w, <?php echo esc_url($picture['sizes']['small']); ?> 1024w"
-										alt="<?php echo esc_attr($picture["alt"]); ?>"
-										loading="lazy"
-										width="200" height="200"
-									>
-								</span>
-								<h3 class="content-title cbo-title-2 slide-up">
-									<?php echo esc_html($term->name); ?>
-								</h3>
-								<span class="content-text slide-up">
-									<?php echo term_description($term); ?>
-								</span>
-							</span>
-						</a>
-					<?php
-						}}
+						if ( have_posts() ) :
+						while ( have_posts() ) : the_post();
+						get_template_part('templates/content/content','press');
+						endwhile;
+							echo page_navi();
+						endif;
 					?>
 				</div>
 			</div>

@@ -1,0 +1,148 @@
+/* -------------------------------
+PRESS BLOC MICRO COMPONENT
+------------------------------- */
+.press-list{
+	.press-title{
+		text-align: center;
+		margin: 60px 0 40px 0;
+		width: 100%;
+	}
+	.press-button{
+		text-align: center;
+		margin-top: 3.125rem;
+		width: 100%;
+	}
+	.list-el{
+		height: 100%;
+		padding: 0.625rem 0;
+
+		.el-inner{
+			padding: 3px;
+			position: relative;
+			border-radius: 1.25rem;
+			overflow: hidden;
+			height: 100%;
+			display: flex;
+			flex-wrap: wrap;
+			flex-direction: column;
+			transition: all .4s;
+
+			.inner-border{
+				position: absolute;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				z-index: 1;
+				border-radius: 1.25rem;
+				overflow: hidden;
+				background: linear-gradient(to left,$colorbluemedium, $colorbluelight);
+			}
+			.inner-content{
+				background: $colorwhite;
+				position: relative;
+				z-index: 2;
+				border-radius: 1.25rem;
+				padding: 1.25rem;
+
+				.content-date{
+					display: flex;
+					width: 100%;
+					justify-content: end;
+
+					.date-inner{
+						background: $colorbluelight;
+						border-radius: 99rem;
+						display: flex;
+						align-items: center;
+						width: fit-content;
+						height: 2.5rem;
+						color: $colorwhite;
+						padding: 0 1.25rem;
+						line-height: 1rem;
+						transition: all .4s;
+					}
+				}
+				.el-picture{
+					display: block;
+					overflow: hidden;
+					width: 12.125rem;
+					height: 3.75rem;
+					margin: 1.875rem auto;
+				}
+				.el-content{
+					display: flex;
+					flex-wrap: wrap;
+					flex-direction: column;
+					justify-content: space-between;
+					flex: 1;
+
+					.content-top{
+						display: block;
+						color: $colorbluedark;
+						margin: 0 0 1.5rem 0;
+						transition: all .4s;
+					}
+					.content-link{
+						margin-top: 1.75rem;
+					}
+				}
+			}
+		}
+	}
+}
+/* -------------------------------
+SMALL SCREENS
+------------------------------- */
+@media (min-width: $screen-sm-min){
+	.press-list{
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		margin: -0.625rem;
+
+		.list-el{
+			padding: 0.625rem;
+			width: 50%;
+		}
+	}
+}
+/* -------------------------------
+MEDIUM SCREENS
+------------------------------- */
+@media (min-width: $screen-md-min){
+	.press-list{
+		.list-el{
+			width: 33.333333%;
+
+			&:hover{
+				.el-inner {
+					.inner-content {
+						.content-date {
+							.date-inner{
+								background: $colorbluedark;
+							}
+						}
+						.el-content {
+							.content-top{
+								color: $colorbluelight;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+/* -------------------------------
+LARGE SCREENS
+------------------------------- */
+@media (min-width: $screen-lg-min){
+	.press-list{
+		margin: 0 -1.5625rem;
+
+		.list-el{
+			padding: 0 1.5625rem;
+		}
+	}
+}

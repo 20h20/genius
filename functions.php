@@ -3,6 +3,7 @@
 		require_once( 'library/inc/custom-cleanup.php' );
 		require_once( 'library/inc/custom-admin.php' );
 		require_once( 'library/inc/custom-post/cpt-testimonial.php' );
+		require_once( 'library/inc/custom-post/cpt-press.php' );
 		require_once( 'library/inc/custom-post/cpt-news.php' );
 		require_once( 'library/inc/custom-post/cpt-faq.php' );
 	}

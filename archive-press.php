@@ -1,16 +1,16 @@
 <?php
 	get_header();
-	$title	= get_field('options_faqtitle', 'option');
-	$picture	= get_field('options_faqpicture', 'option');
-	$ctaicon	= get_field('options_faqctapic', 'option');
-	$ctatitle	= get_field('options_faqctatitle', 'option');
-	$ctacontent	= get_field('options_faqctacontent', 'option');
-	$ctatxtbt	= get_field('options_faqctatxtbt', 'option');
-	$ctaurlbt	= get_field('options_faqctaurlbt', 'option');
-	$ctatypebt	= get_field('options_faqctabttype', 'option');
-	$ctabg	= get_field('options_faqctabg', 'option');
+	$title	= get_field('options_presstitle', 'option');
+	$picture	= get_field('options_presspicture', 'option');
+	$ctaicon	= get_field('options_pressctapic', 'option');
+	$ctatitle	= get_field('options_pressctatitle', 'option');
+	$ctacontent	= get_field('options_pressctacontent', 'option');
+	$ctatxtbt	= get_field('options_pressctatxtbt', 'option');
+	$ctaurlbt	= get_field('options_pressctaurlbt', 'option');
+	$ctatypebt	= get_field('options_pressctabttype', 'option');
+	$ctabg	= get_field('options_pressctabg', 'option');
 ?>
-	<div class="cbo-page page--archive page--faq">
+	<div class="cbo-page page--archive page--press">
 		<section class="cbo-herorich">
 			<div class="herorich-inner cbo-container">
 				<div class="herorich-picture">
@@ -38,42 +38,46 @@
 			</div>
 		</section>
 
-		<section class="faq-taxonomies">
-			<div class="taxonomies-inner cbo-container">
-				<div class="taxonomies-list">
+		<section class="archive-press">
+			<div class="press-inner cbo-container container--medium">
+				<div class="press-list">
 					<?php
+						if ( is_post_type_archive('press') ) :
 						$categories = get_terms(array(
-							'taxonomy' => 'faq_cat',
-							'hide_empty' => false,
+							'taxonomy' => 'press_cat',
+							'hide_empty' => true,
 						));
-						if (!empty($categories) && !is_wp_error($categories)) {
-							foreach ($categories as $category) {
-								global $term;
-								$term = $category;
-								$picture  = get_field('faq_taxopicture', $term);
-								$category_link = get_term_link($term);
-					?>
-						<a <?php post_class('list-el'); ?> href="<?php echo esc_url($category_link); ?>">
-							<span class="el-inner">
-								<span class="content-picture cbo-picture-contain slide-up">
-									<img
-										src="<?php echo esc_url($picture['sizes']['small']); ?>"
-										srcset="<?php echo esc_url($picture['sizes']['small']); ?> 320w, <?php echo esc_url($picture['sizes']['small']); ?> 768w, <?php echo esc_url($picture['sizes']['small']); ?> 1024w"
-										alt="<?php echo esc_attr($picture["alt"]); ?>"
-										loading="lazy"
-										width="200" height="200"
-									>
-								</span>
-								<h3 class="content-title cbo-title-2 slide-up">
-									<?php echo esc_html($term->name); ?>
-								</h3>
-								<span class="content-text slide-up">
-									<?php echo term_description($term); ?>
-								</span>
-							</span>
-						</a>
-					<?php
-						}}
+
+						if ( !empty($categories) && !is_wp_error($categories) ) :
+						foreach ( $categories as $category ) : 
+						echo '<h3 class="press-title cbo-title-1"><strong>' . esc_html($category->name) . '</strong></h3>';
+
+						$query = new WP_Query(array(
+							'post_type' => 'press',
+							'posts_per_page' => 3,
+							'tax_query' => array(
+								array(
+									'taxonomy' => 'press_cat',
+									'field'    => 'term_id',
+									'terms'    => $category->term_id,
+								),
+							),
+						));
+
+						if ( $query->have_posts() ) :
+							while ( $query->have_posts() ) : $query->the_post();
+								get_template_part('templates/content/content', 'press');
+							endwhile;
+						else :
+							echo '<p>Aucun article trouvé dans cette catégorie.</p>';
+						endif;
+							echo '<div class="press-button"><a class="cbo-button" href="' . esc_url(get_term_link($category)) . '">Lire tous les articles</a></div>';
+								wp_reset_postdata();
+							endforeach;
+						endif;
+						else :
+							echo '<p>Cette page n\'est pas configurée pour afficher les archives du CPT "press".</p>';
+						endif;
 					?>
 				</div>
 			</div>

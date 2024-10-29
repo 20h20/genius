@@ -57,7 +57,7 @@ FAQ PAGE COMPONENT
                     }
                     .el-content{
                         display: none;
-                        padding: 1.25rem;
+                        padding: 0 1.25rem 1.25rem 1.25rem;
                     }
                     &.title--open,
                     &:hover{
@@ -129,7 +129,7 @@ MEDIUM SCREENS
                             padding: 2.5rem;
                         }
                         .el-content{
-                            padding: 2.5rem;
+                            padding: 0 2.5rem 2.5rem 2.5rem;
                         }
                     }
                 }
