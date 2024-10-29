@@ -350,4 +350,6 @@
 		}
 	}
 	add_action('pre_get_posts', 'exclude_testimonials_from_search');
+
+	
 ?>

@@ -1,4 +1,5 @@
 <?php
+	$picturesize	= get_sub_field('herorich_picturefull');
 	$picture	= get_sub_field('herorich_picture');
 	$pictureblocpos	= get_sub_field('herorich_pictureblocpos');
 	$picture2	= get_sub_field('herorich_picture2');
@@ -18,7 +19,7 @@
 	$buttonturl2	= get_sub_field('herorich_urlbt2');
 	$buttontype2	= get_sub_field('herorich_typebt2');
 ?>
-<section class="cbo-herorich">
+<section class="cbo-herorich <?php if($picturesize == 1): ?>herorich--full<?php endif; ?>">
 	<div class="herorich-inner cbo-container">
 
 		<div class="herorich-picture">

@@ -51,6 +51,44 @@ acf_add_local_field_group(array(
 					'display' => 'block',
 					'sub_fields' => array(
 						array(
+							'key' => 'field_6720d183f332c',
+							'label' => 'Fonctionnalités',
+							'name' => '',
+							'aria-label' => '',
+							'type' => 'tab',
+							'instructions' => '',
+							'required' => 0,
+							'conditional_logic' => 0,
+							'wrapper' => array(
+								'width' => '',
+								'class' => '',
+								'id' => '',
+							),
+							'placement' => 'top',
+							'endpoint' => 0,
+							'selected' => 0,
+						),
+						array(
+							'key' => 'field_6720d19cf332d',
+							'label' => 'Mettre l\'image en pleine largeur',
+							'name' => 'herorich_picturefull',
+							'aria-label' => '',
+							'type' => 'true_false',
+							'instructions' => '',
+							'required' => 0,
+							'conditional_logic' => 0,
+							'wrapper' => array(
+								'width' => '',
+								'class' => '',
+								'id' => '',
+							),
+							'message' => '',
+							'default_value' => 0,
+							'ui' => 0,
+							'ui_on_text' => '',
+							'ui_off_text' => '',
+						),
+						array(
 							'key' => 'field_661fa4b31668c',
 							'label' => 'Contenu',
 							'name' => '',
@@ -283,7 +321,15 @@ acf_add_local_field_group(array(
 							'type' => 'image',
 							'instructions' => '',
 							'required' => 0,
-							'conditional_logic' => 0,
+							'conditional_logic' => array(
+								array(
+									array(
+										'field' => 'field_6720d19cf332d',
+										'operator' => '!=',
+										'value' => '1',
+									),
+								),
+							),
 							'wrapper' => array(
 								'width' => '',
 								'class' => '',
@@ -291,6 +337,7 @@ acf_add_local_field_group(array(
 							),
 							'uploader' => '',
 							'return_format' => 'array',
+							'library' => 'all',
 							'acfe_thumbnail' => 0,
 							'min_width' => '',
 							'min_height' => '',
@@ -300,7 +347,6 @@ acf_add_local_field_group(array(
 							'max_size' => '',
 							'mime_types' => '',
 							'preview_size' => 'thumbnail',
-							'library' => 'all',
 						),
 						array(
 							'key' => 'field_661fa28116688',
@@ -5124,7 +5170,7 @@ acf_add_local_field_group(array(
 	'acfe_form' => 0,
 	'acfe_meta' => '',
 	'acfe_note' => '',
-	'modified' => 1730202307,
+	'modified' => 1730204129,
 ));
 
 endif;

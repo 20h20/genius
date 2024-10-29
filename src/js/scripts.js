@@ -355,10 +355,16 @@ $(window).on( 'scroll', function(){
 
 
 			/////////////////// SEARCH ///////////////////
-			$('header .buttons-search .search-button').on('click', function(){
+			$('header .buttons-search .search-button').on('click', function(e) {
+				e.stopPropagation();
 				$('.buttons-search').toggleClass('active');
 			});
-
+			 			$(document).on('click', function(e) {
+				if (!$(e.target).closest('.buttons-search').length) {
+					$('.buttons-search').removeClass('active');
+				}
+			});
+			
 
 			/////////////////// ANCRE ///////////////////
 			document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {

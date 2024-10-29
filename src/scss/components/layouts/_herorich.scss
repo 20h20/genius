@@ -2,6 +2,21 @@
 HERO RICH COMPONENT
 ------------------------------- */
 .cbo-herorich{
+    &.herorich--full{
+        .herorich-picture{
+            width: 100%;
+            overflow: hidden;
+
+            .picture-secondpic{
+                display: none;
+            }
+            .picture-main{
+                border-radius: 0;
+                min-height: inherit;
+                padding-bottom: 45%;
+            }
+        }
+    }
     .herorich-inner{
         padding-left: 0;
         padding-right: 0;
@@ -105,6 +120,31 @@ MEDIUM SCREENS
 ------------------------------- */
 @media (min-width: $screen-md-min){
     .cbo-herorich{
+        &.herorich--full{
+            .herorich-inner{
+                padding-left: 0;
+            }
+            .herorich-picture{
+                max-width: inherit;
+                max-height: 500px;
+            }
+            .herorich-content{
+                padding: 60px 70px;
+                max-width: inherit;
+                width: 100%;
+                text-align: center;
+
+                .content-list{
+                    margin-left: auto;
+                    margin-right: auto;
+                    width: fit-content;
+                }
+                .container-buttons{
+                    display: flex;
+                    justify-content: center;
+                }
+            }
+        }
         .herorich-inner{
             display: flex;
             flex-wrap: wrap;
@@ -163,6 +203,13 @@ LARGE SCREENS
     .cbo-herorich{
         margin-top: -70px;
 
+        &.herorich--full{
+            .herorich-picture{
+               position: relative;
+               left: 0;
+               min-height: inherit;
+            }
+        }
         .herorich-inner{
             padding-left: 70px;
         }
