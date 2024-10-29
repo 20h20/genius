@@ -15,10 +15,12 @@
 						<div class="articles-list">
 							<?php
 								if ( have_posts() ) :
-								while ( have_posts() ) : the_post();
-								get_template_part('templates/content/content','article');
-								endwhile;
+									while ( have_posts() ) : the_post();
+										get_template_part('templates/content/content', 'article');
+									endwhile;
 									echo page_navi();
+								else :
+									echo '<p>Aucun article trouvé pour votre recherche.</p>';
 								endif;
 							?>
 						</div>

@@ -339,4 +339,15 @@
 	add_action('do_feed_rss', 'disable_all_feeds', 1);
 	add_action('do_feed_rss2', 'disable_all_feeds', 1);
 	add_action('do_feed_atom', 'disable_all_feeds', 1);
+
+
+	/* ************************* */
+	/* ON EXCLUE LES TÉMOIGNAGES DE LA RECHERCHE */
+	/* ************************* */
+	function exclude_testimonials_from_search($query) {
+		if ($query->is_search() && $query->is_main_query()) {
+			$query->set('post_type', ['post', 'page']);
+		}
+	}
+	add_action('pre_get_posts', 'exclude_testimonials_from_search');
 ?>

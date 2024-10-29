@@ -52,9 +52,9 @@ header{
 			.buttons-search,
 			.button-user{
 				box-shadow: 0 0 0 0.125rem $colorbluemedium inset;
-				min-width: 3.125rem;
-				height: 3.125rem;
-				font-size: 1.375rem;
+				min-width: 2.5rem;
+				height: 2.5rem;
+				font-size: 1.25rem;
 				border-radius: 99rem;
 				display: flex;
 				justify-content: center;
@@ -93,8 +93,8 @@ header{
 					.search-submit{
 						color: $colorblue;
 						position: absolute;
-						right: 0.875rem;
-						top: 0.75rem;
+						top: 0.4375rem;
+						right: 0.5625rem;
 						font-size: 1.375rem;
 						padding: 0;
 						transition: all .4s;
@@ -108,6 +108,8 @@ header{
 						border: none;
 						background: none;
 						transition: all .4s;
+						font-family: 'Gilroy';
+						font-weight: 500;
 					}
 				}
 				&.active{
@@ -115,6 +117,8 @@ header{
 
 					.search-button{
 						opacity: 0;
+						visibility: hidden;
+						pointer-events: none;
 					}
 					.search-form{
 						box-shadow: inset 0 0 0 .125rem $colorbluemedium;
@@ -463,11 +467,19 @@ LARGE SCREENS
 					min-width: max-content;
 					display: inline-flex;
 					margin: 0 0.9375rem;
-					height: 3.125rem;
+					height: 2.5rem;
 					order: 1;
 				}
 				.buttons-search{
 					order: 2;
+
+					&.active{
+						.search-form {
+							input{
+								width: 17rem;
+							}
+						}
+					}
 				}
 				.button-user{
 					order: 3;
@@ -547,8 +559,8 @@ LARGE SCREENS
 							visibility: hidden;
 							opacity: 0;
 							top: calc(100% - -6.25rem);
-							width: calc(100vw - 140px);
-							max-width: 1558px;
+							width: calc(100vw - 8.75rem);
+							max-width: 99rem;
 							left: -8.625rem;
 							pointer-events: none;
 							position: absolute;
@@ -562,13 +574,13 @@ LARGE SCREENS
 								border-radius: 1.25rem;
 								display: flex;
 								flex-wrap: wrap;
-								padding: 30px 20px;
+								padding: 1.875rem 1.25rem;
 								width: 100%;
 							}
 							li{
 								padding: 0 1.25rem;
 								width: 25%;
-								margin: 10px 0;
+								margin: 0.625rem 0;
 
 								a{
 									padding: 0;
