@@ -8,10 +8,10 @@ acf_add_local_field_group(array(
 	'fields' => array(
 		array(
 			'key' => 'field_6720c146fac7c',
-			'label' => 'Document à télécharger',
+			'label' => 'Lien vers le fichier ou le site',
 			'name' => 'press_download',
 			'aria-label' => '',
-			'type' => 'file',
+			'type' => 'url',
 			'instructions' => '',
 			'required' => 0,
 			'conditional_logic' => 0,
@@ -20,12 +20,8 @@ acf_add_local_field_group(array(
 				'class' => '',
 				'id' => '',
 			),
-			'uploader' => '',
-			'return_format' => 'array',
-			'min_size' => '',
-			'max_size' => '',
-			'mime_types' => '',
-			'library' => 'all',
+			'default_value' => '',
+			'placeholder' => '',
 		),
 	),
 	'location' => array(
@@ -65,7 +61,7 @@ acf_add_local_field_group(array(
 	'acfe_form' => 0,
 	'acfe_meta' => '',
 	'acfe_note' => '',
-	'modified' => 1730199963,
+	'modified' => 1730203640,
 ));
 
 endif;

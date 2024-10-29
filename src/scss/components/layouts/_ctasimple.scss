@@ -4,8 +4,8 @@ CTA SIMPLE COMPONENT
 .cbo-ctasimple{
   .ctasimple-box{
     box-shadow: 0 0 0 2px $colorbluelight inset;
-    padding: 20px;
-    border-radius: 15px;
+    padding: 1.25rem;
+    border-radius: 0.9375rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -15,23 +15,23 @@ CTA SIMPLE COMPONENT
       flex: 1;
 
       .content-title{
-        font-size: 18px;
-        line-height: 18px;
+        font-size: 1.125rem;
+        line-height: 1.125rem;
         font-weight: 700;
-        margin-bottom: 14px;
+        margin-bottom: 0.875rem;
         display: flex;
         align-items: center;
   
         i{
-          font-size: 26px;
-          margin-right: 12px;
+          font-size: 1.625rem;
+          margin-right: 0.75rem;
         }
       }
     }
     .icon--next-arrow{
-      margin-left: 20px;
+      margin-left: 1.25rem;
       color: $colorbluelight;
-      font-size: 24px;
+      font-size: 1.5rem;
     }
   }
 }

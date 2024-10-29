@@ -4,7 +4,7 @@
 	$file	= get_field('press_download');
 ?>
 <article <?php post_class('list-el'); ?> >
-	<a class="el-inner" href="<?php echo $file['url']; ?>" target="_blank">
+	<a class="el-inner" href="<?php echo $file; ?>" target="_blank">
 		<span class="inner-border"></span>
 		<span class="inner-content">
 			<span class="content-date">
