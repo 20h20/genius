@@ -2,11 +2,11 @@
 
 @font-face {
     font-family:"icons";
-    src: url("../iconfont/icons.eot?5f816e7075af0b091d219326e27c854a");
-    src: url("../iconfont/icons.eot?5f816e7075af0b091d219326e27c854a#iefix") format("embedded-opentype"),
-		url("../iconfont/icons.woff?5f816e7075af0b091d219326e27c854a") format("woff"),
-		url("../iconfont/icons.ttf?5f816e7075af0b091d219326e27c854a") format("truetype"),
-		url("../iconfont/icons.svg?5f816e7075af0b091d219326e27c854a#icons") format("svg");
+    src: url("../iconfont/icons.eot?881c1137bbd4face8ab888f1202ae7b5");
+    src: url("../iconfont/icons.eot?881c1137bbd4face8ab888f1202ae7b5#iefix") format("embedded-opentype"),
+		url("../iconfont/icons.woff?881c1137bbd4face8ab888f1202ae7b5") format("woff"),
+		url("../iconfont/icons.ttf?881c1137bbd4face8ab888f1202ae7b5") format("truetype"),
+		url("../iconfont/icons.svg?881c1137bbd4face8ab888f1202ae7b5#icons") format("svg");
     font-weight:normal;
     font-style:normal;
     font-display:swap;
@@ -24,17 +24,18 @@
     }
 
 // Icons
-.icon--chevron:before { content:"\f101"; }
-.icon--facebook:before { content:"\f102"; }
-.icon--home:before { content:"\f103"; }
-.icon--icon-linkedin:before { content:"\f104"; }
-.icon--icon-twitter:before { content:"\f105"; }
-.icon--infos:before { content:"\f106"; }
-.icon--more:before { content:"\f107"; }
-.icon--next-arrow:before { content:"\f108"; }
-.icon--phone:before { content:"\f109"; }
-.icon--pin:before { content:"\f10a"; }
-.icon--player:before { content:"\f10b"; }
-.icon--search:before { content:"\f10c"; }
-.icon--top-quote:before { content:"\f10d"; }
-.icon--user:before { content:"\f10e"; }
+.icon--book:before { content:"\f101"; }
+.icon--chevron:before { content:"\f102"; }
+.icon--facebook:before { content:"\f103"; }
+.icon--home:before { content:"\f104"; }
+.icon--icon-linkedin:before { content:"\f105"; }
+.icon--icon-twitter:before { content:"\f106"; }
+.icon--infos:before { content:"\f107"; }
+.icon--more:before { content:"\f108"; }
+.icon--next-arrow:before { content:"\f109"; }
+.icon--phone:before { content:"\f10a"; }
+.icon--pin:before { content:"\f10b"; }
+.icon--player:before { content:"\f10c"; }
+.icon--search:before { content:"\f10d"; }
+.icon--top-quote:before { content:"\f10e"; }
+.icon--user:before { content:"\f10f"; }

@@ -139,6 +139,11 @@
 						get_template_part( 'templates/blocks/ctasimple');
 
 					///////////////////
+					// CALL TO ACTION TEXT PICTURE
+					elseif( get_row_layout() == 'ctatextpicture' ):
+						get_template_part( 'templates/blocks/ctatextpicture');
+
+					///////////////////
 					// SECTION TEXT
 					elseif( get_row_layout() == 'text' ):
 						get_template_part( 'templates/blocks/text');

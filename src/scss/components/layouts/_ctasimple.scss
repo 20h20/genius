@@ -2,20 +2,36 @@
 CTA SIMPLE COMPONENT
 ------------------------------- */
 .cbo-ctasimple{
-  .ctasimple-title{
-    text-align: center;
-    margin-bottom: 3.125rem;
-  }
   .ctasimple-box{
-    border: 2px solid $colorbluelight;
-    padding: 1.25rem;
-    border-radius: 0.9375rem;
+    box-shadow: 0 0 0 2px $colorbluelight inset;
+    padding: 20px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: $colorbluedark;
 
-    .box-picture{
-      padding-bottom: 45%;
-      border-radius: 0.9375rem;
-      overflow: hidden;
-      margin-bottom: 1.25rem;
+    .box-content{
+      flex: 1;
+
+      .content-title{
+        font-size: 18px;
+        line-height: 18px;
+        font-weight: 700;
+        margin-bottom: 14px;
+        display: flex;
+        align-items: center;
+  
+        i{
+          font-size: 26px;
+          margin-right: 12px;
+        }
+      }
+    }
+    .icon--next-arrow{
+      margin-left: 20px;
+      color: $colorbluelight;
+      font-size: 24px;
     }
   }
 }
@@ -24,22 +40,17 @@ MEDIUM SCREENS
 ------------------------------- */
 @media (min-width: $screen-md-min){
   .cbo-ctasimple{
-    .ctasimple-title{
-      margin-bottom: 5rem;
-    }
     .ctasimple-box{
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      padding: 1.625rem;
-  
-      .box-picture{
-        width: 48%;
-        padding-bottom: 0;
-        margin-bottom: 0;
-      }
-      .box-content{
-        width: 48%;
+      padding: 26px;
+      transition: all .4s;
+
+      &:hover{
+        background: $colorbluelight;
+        color: $colorwhite;
+
+        .icon--next-arrow{
+          color: $colorwhite;
+        }
       }
     }
   }
