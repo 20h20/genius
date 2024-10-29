@@ -1,13 +1,11 @@
 <?php
-	$category = get_the_category();
-	$category_name = isset($category[0]) ? $category[0]->name : 'N.C';
 	$excerpt = get_the_excerpt();
 	$limited_excerpt = wp_trim_words($excerpt, 25, '...');
+	$file	= get_field('press_download');
 ?>
-<article <?php post_class('list-el'); ?> itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-	<a class="el-inner" href="<?php the_permalink(); ?>" itemprop="url">
+<article <?php post_class('list-el'); ?> >
+	<a class="el-inner" href="<?php echo $file['url']; ?>" target="_blank">
 		<span class="inner-border"></span>
-
 		<span class="inner-content">
 			<span class="content-date">
 				<span class="date-inner">

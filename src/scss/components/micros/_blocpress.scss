@@ -15,6 +15,7 @@ PRESS BLOC MICRO COMPONENT
 	.list-el{
 		height: 100%;
 		padding: 0.625rem 0;
+		height: auto;
 
 		.el-inner{
 			padding: 3px;
@@ -44,6 +45,7 @@ PRESS BLOC MICRO COMPONENT
 				z-index: 2;
 				border-radius: 1.25rem;
 				padding: 1.25rem;
+				height: 100%;
 
 				.content-date{
 					display: flex;

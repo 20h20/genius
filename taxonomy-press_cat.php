@@ -38,16 +38,6 @@
 			</div>
 		</section>
 
-
-
-
-
-
-
-
-
-
-
 		<section class="archive-press">
 			<div class="press-inner cbo-container container--medium">
 				<div class="press-list">

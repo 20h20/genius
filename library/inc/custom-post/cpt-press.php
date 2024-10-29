@@ -16,7 +16,7 @@
 			'not_found_in_trash' => __( 'Aucun article de presse dans la corbeille', 'bonestheme' ),
 			'parent_item_colon' => ''
 		),
-		'public' => true,
+		'public' => false,
 		'publicly_queryable' => true,
 		'exclude_from_search' => false,
 		'show_ui' => true,
