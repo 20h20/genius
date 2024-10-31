@@ -654,8 +654,7 @@ LARGE SCREENS
 											padding: 0;
 											color: $colorbluelight;
 											width: 100%;
-											margin: 0.9375rem 0;
-											padding: 0 0.9375rem;
+											margin-bottom: 1.875rem;
 											height: auto;
 
 											&:after{
@@ -678,15 +677,18 @@ LARGE SCREENS
 												width: 100%;
 												display: flex;
 												flex-wrap: wrap;
+												margin: -15px;
 											}
 											li{
 												width: 50%;
-												padding: 0;
+												padding: 0 15px;
 
 												&:before{
 													display: none;
 												}
 												a{
+													margin: 15px 0;
+
 													&:hover{
 														color: $colorbluelight;
 													}
