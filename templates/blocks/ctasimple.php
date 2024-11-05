@@ -5,7 +5,7 @@
 ?>
 <section class="cbo-ctasimple">
 	<div class="ctasimple-inner cbo-container container--medium">
-		<a class="ctasimple-box" url="<?php echo $title ?>">
+		<a class="ctasimple-box" href="<?php echo $url ?>">
 			<span class="box-content">
 				<?php if($title): ?>
 					<span class="content-title">

@@ -643,8 +643,12 @@ LARGE SCREENS
 											.sub-menu{
 												display: block;
 
-												li{
-													width: 100%;
+												.submenu-inner{
+													display: block;
+
+													li{
+														width: 100%;
+													}
 												}
 											}
 										}
@@ -678,19 +682,20 @@ LARGE SCREENS
 												display: flex;
 												flex-wrap: wrap;
 												margin: -15px;
-											}
-											li{
-												width: 50%;
-												padding: 0 15px;
 
-												&:before{
-													display: none;
-												}
-												a{
-													margin: 15px 0;
-
-													&:hover{
-														color: $colorbluelight;
+												li{
+													width: 50%;
+													padding: 0 15px;
+	
+													&:before{
+														display: none;
+													}
+													a{
+														margin: 15px 0;
+	
+														&:hover{
+															color: $colorbluelight;
+														}
 													}
 												}
 											}

@@ -5,7 +5,7 @@
 		<section>
 			<div class="cbo-container">
 				<h1 class="search-title cbo-title-1 slide-up" itemprop="headline">
-					<?php _e( 'Votre rechecher pour', 'global' ); ?><br/>
+					<?php _e( 'Votre recherche pour', 'global' ); ?><br/>
 					<strong>
 						<?php printf( __( '%s'), get_search_query() ); ?>
 					</strong>

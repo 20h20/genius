@@ -1,6 +1,12 @@
 <?php
 	$category = get_the_category();
-	$category_name = isset($category[0]) ? $category[0]->name : 'N.C';
+	
+	if ( get_post_type() == 'page' ) {
+	    $category_name = 'Page';
+	} else {
+	    $category_name = isset($category[0]) ? $category[0]->name : 'N.C';
+	}
+	
 	$excerpt = get_the_excerpt();
 	$limited_excerpt = wp_trim_words($excerpt, 25, '...');
 ?>
