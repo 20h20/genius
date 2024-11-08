@@ -3,6 +3,10 @@ HERO RICH COMPONENT
 ------------------------------- */
 .cbo-herorich{
     &.herorich--full{
+        .herorich-inner{
+            padding-left: 1.25rem;
+            padding-right: 1.25rem;
+        }
         .herorich-picture{
             width: 100%;
             overflow: hidden;
@@ -14,6 +18,20 @@ HERO RICH COMPONENT
                 border-radius: 0;
                 min-height: inherit;
                 padding-bottom: 45%;
+            }
+        }
+        .herorich-content{
+            text-align: center;
+        }
+    }
+    &.herorich--contain{
+        .herorich-picture {
+            .picture-main{
+                padding-bottom: 0;
+
+                img{
+                    position: relative;
+                }
             }
         }
     }
@@ -70,7 +88,6 @@ HERO RICH COMPONENT
             margin-bottom: 28px;
             hyphens: initial;
         }
-
         .herorich-subtitle{
             font-size: 22px;
             line-height: 28px;
@@ -116,23 +133,36 @@ HERO RICH COMPONENT
     }
 }
 /* -------------------------------
+SMALL SCREENS
+------------------------------- */
+@media (min-width: $screen-sm-min){
+    .cbo-herorich{
+        &.herorich--full{
+            .herorich-inner{
+                padding-left: 2.5rem;
+                padding-right: 2.5rem;
+            }
+        }
+    }
+}
+/* -------------------------------
 MEDIUM SCREENS
 ------------------------------- */
 @media (min-width: $screen-md-min){
     .cbo-herorich{
         &.herorich--full{
             .herorich-inner{
-                padding-left: 0;
+                padding-left: 4.375rem;
+                padding-right: 4.375rem;
             }
             .herorich-picture{
                 max-width: inherit;
                 max-height: 500px;
             }
             .herorich-content{
-                padding: 60px 70px;
+                padding: 60px 70px 0 70px;
                 max-width: inherit;
                 width: 100%;
-                text-align: center;
 
                 .content-list{
                     margin-left: auto;
@@ -204,6 +234,8 @@ LARGE SCREENS
         margin-top: -70px;
 
         &.herorich--full{
+            margin-top: 0px;
+
             .herorich-picture{
                position: relative;
                left: 0;

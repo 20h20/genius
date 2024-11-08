@@ -1300,7 +1300,7 @@ acf_add_local_field_group(array(
 							'acfe_repeater_stylised_button' => 0,
 							'layout' => 'table',
 							'min' => 0,
-							'max' => 4,
+							'max' => 0,
 							'collapsed' => '',
 							'button_label' => 'Ajouter un bloc',
 							'rows_per_page' => 20,
@@ -5166,11 +5166,12 @@ acf_add_local_field_group(array(
 	'acfe_display_title' => '',
 	'acfe_autosync' => array(
 		0 => 'php',
+		1 => 'json',
 	),
 	'acfe_form' => 0,
 	'acfe_meta' => '',
 	'acfe_note' => '',
-	'modified' => 1730204129,
+	'modified' => 1730890269,
 ));
 
 endif;

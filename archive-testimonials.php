@@ -11,23 +11,23 @@
 	$ctabg	= get_field('options_testimonialsctabg', 'option');
 ?>
 	<div class="cbo-page page--archive page--testimonials">
-		<section class="cbo-textpicture textpicture--right">
-			<div class="textpicture-inner cbo-container container--medium">
-				<div class="inner-container">
-					<div class="textpicture-picture cbo-picture-contain slide-up">
+		<section class="cbo-herorich herorich--full herorich--contain">
+			<div class="herorich-inner cbo-container">
+				<div class="herorich-picture">
+					<div class="picture-main cbo-picture-contain">
 						<img
 							decoding="async"
 							src="<?php echo $picture['sizes']['small']; ?>"
 							srcset="<?php echo $picture['sizes']['small']; ?> 320w, <?php echo $picture['sizes']['xlarge']; ?> 768w, <?php echo $picture['sizes']['xlarge']; ?> 1024w"
 							alt="<?php echo $picture['alt']; ?>" sizes="100vw"
-							loading="lazy"
-							width="768" height="768"
+							width="1500" height="1500"
 						>
 					</div>
-					<div class="textpicture-content slide-up">
-						<div class="cbo-cms">
-							<?php echo $content ?>
-						</div>
+				</div>
+
+				<div class="herorich-content">
+					<div class="herorich-chapo cbo-cms slide-up">
+						<?php echo $content; ?>
 					</div>
 				</div>
 			</div>

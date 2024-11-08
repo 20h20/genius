@@ -43,42 +43,48 @@
 				<div class="press-list">
 					<?php
 						if ( is_post_type_archive('press') ) :
-						$categories = get_terms(array(
-							'taxonomy' => 'press_cat',
-							'hide_empty' => true,
-						));
+							$categories = get_terms(array(
+								'taxonomy' => 'press_cat',
+								'hide_empty' => true,
+							));
 
-						if ( !empty($categories) && !is_wp_error($categories) ) :
-						foreach ( $categories as $category ) : 
-						echo '<h3 class="press-title cbo-title-1"><strong>' . esc_html($category->name) . '</strong></h3>';
+							if ( !empty($categories) && !is_wp_error($categories) ) :
+								foreach ( $categories as $category ) : 
+									echo '<h3 class="press-title cbo-title-1"><strong>' . esc_html($category->name) . '</strong></h3>';
 
-						$query = new WP_Query(array(
-							'post_type' => 'press',
-							'posts_per_page' => 3,
-							'tax_query' => array(
-								array(
-									'taxonomy' => 'press_cat',
-									'field'    => 'term_id',
-									'terms'    => $category->term_id,
-								),
-							),
-						));
+									// Définir le nombre de posts à afficher en fonction de la catégorie
+									$posts_per_page = ($category->slug === 'medias') ? 6 : 3;
 
-						if ( $query->have_posts() ) :
-							while ( $query->have_posts() ) : $query->the_post();
-								get_template_part('templates/content/content', 'press');
-							endwhile;
-						else :
-							echo '<p>Aucun article trouvé dans cette catégorie.</p>';
-						endif;
-							echo '<div class="press-button"><a class="cbo-button" href="' . esc_url(get_term_link($category)) . '">Lire tous les articles</a></div>';
-								wp_reset_postdata();
-							endforeach;
-						endif;
+									$query = new WP_Query(array(
+										'post_type' => 'press',
+										'posts_per_page' => $posts_per_page,
+										'tax_query' => array(
+											array(
+												'taxonomy' => 'press_cat',
+												'field'    => 'term_id',
+												'terms'    => $category->term_id,
+											),
+										),
+									));
+
+									if ( $query->have_posts() ) :
+										while ( $query->have_posts() ) : $query->the_post();
+											get_template_part('templates/content/content', 'press');
+										endwhile;
+									else :
+										echo '<p>Aucun article trouvé dans cette catégorie.</p>';
+									endif;
+									
+									echo '<div class="press-button"><a class="cbo-button" href="' . esc_url(get_term_link($category)) . '">Lire tous les articles</a></div>';
+									
+									wp_reset_postdata();
+								endforeach;
+							endif;
 						else :
 							echo '<p>Cette page n\'est pas configurée pour afficher les archives du CPT "press".</p>';
 						endif;
 					?>
+
 				</div>
 			</div>
 		</section>

@@ -25,13 +25,21 @@ MODALE MICRO COMPONENT
 		left: 0;
 		height: 100%;
 		width: 100%;
+		visibility: hidden;
+		opacity: 0;
 	}
 	&.modale--open{
 		visibility: visible;
 		opacity: 1;
 
+		.modale-overlay{
+			visibility: visible;
+			opacity: 1;
+		}
 		.modale-inner{
 			transform: scale(1);
+			visibility: visible;
+			opacity: 1;
 		}
 	}
 	.modale-inner{
@@ -137,15 +145,27 @@ MODALE MICRO COMPONENT
 		}
 	}
 	&.modale--infos{
-		visibility: visible;
-		opacity: 1;
+		&.infos--open{
+			visibility: visible;
+			opacity: 1;
 
+			.modale-overlay{
+				visibility: visible;
+				opacity: 1;
+			}
+			.modale-inner{
+				visibility: visible;
+				opacity: 1;
+			}
+		}
 		.modale-inner{
 			transform: scale(1);
 			max-width: 26.5625rem;
 			min-height: auto;
 			text-align: center;
 			overflow: visible;
+			visibility: hidden;
+			opacity: 0;
 
 			&:before{
 				content: '';

@@ -1,5 +1,7 @@
 <?php
 	$picturesize	= get_sub_field('herorich_picturefull');
+	$picturecover	= get_sub_field('herorich_picover');
+
 	$picture	= get_sub_field('herorich_picture');
 	$pictureblocpos	= get_sub_field('herorich_pictureblocpos');
 	$picture2	= get_sub_field('herorich_picture2');
@@ -19,7 +21,7 @@
 	$buttonturl2	= get_sub_field('herorich_urlbt2');
 	$buttontype2	= get_sub_field('herorich_typebt2');
 ?>
-<section class="cbo-herorich <?php if($picturesize == 1): ?>herorich--full<?php endif; ?>">
+<section class="cbo-herorich <?php if($picturesize == 1): ?>herorich--full<?php endif; ?> <?php if($picturecover == 0): ?>herorich--contain<?php endif; ?>">
 	<div class="herorich-inner cbo-container">
 
 		<div class="herorich-picture">
@@ -34,7 +36,7 @@
 					>
 				</div>
 			<?php endif; ?>
-			<div class="picture-main cbo-picture-cover picture--<?php echo $pictureblocpos; ?> slide-up">
+			<div class="picture-main cbo-picture-cover picture--<?php echo $pictureblocpos; ?> <?php if($picturesize == 0): ?>slide-up<?php endif; ?>">
 				<img
 					decoding="async"
 					src="<?php echo $picture['sizes']['small']; ?>"
