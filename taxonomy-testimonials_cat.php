@@ -1,7 +1,6 @@
 <?php
 	get_header();
 	$content	= get_field('options_testimonialscontent', 'option');
-	$picture	= get_field('options_testimonialspicture', 'option');
 	$ctaicon	= get_field('options_testimonialsctapic', 'option');
 	$ctatitle	= get_field('options_testimonialsctatitle', 'option');
 	$ctacontent	= get_field('options_testimonialsctacontent', 'option');
@@ -11,22 +10,10 @@
 	$ctabg	= get_field('options_testimonialsctabg', 'option');
 ?>
 	<div class="cbo-page page--archive page--testimonials">
-		<section class="cbo-herorich herorich--full herorich--contain">
-			<div class="herorich-inner cbo-container">
-				<div class="herorich-picture">
-					<div class="picture-main cbo-picture-contain">
-						<img
-							decoding="async"
-							src="<?php echo $picture['sizes']['small']; ?>"
-							srcset="<?php echo $picture['sizes']['small']; ?> 320w, <?php echo $picture['sizes']['xlarge']; ?> 768w, <?php echo $picture['sizes']['xlarge']; ?> 1024w"
-							alt="<?php echo $picture['alt']; ?>" sizes="100vw"
-							width="1500" height="1500"
-						>
-					</div>
-				</div>
-
-				<div class="herorich-content">
-					<div class="herorich-chapo cbo-cms slide-up">
+		<section class="cbo-text">
+			<div class="text-inner cbo-container">
+				<div class="text-content">
+					<div class="cbo-cms">
 						<?php echo $content; ?>
 					</div>
 				</div>
