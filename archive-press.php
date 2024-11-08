@@ -52,9 +52,7 @@
 								foreach ( $categories as $category ) : 
 									echo '<h3 class="press-title cbo-title-1"><strong>' . esc_html($category->name) . '</strong></h3>';
 
-									// Définir le nombre de posts à afficher en fonction de la catégorie
 									$posts_per_page = ($category->slug === 'medias') ? 6 : 3;
-
 									$query = new WP_Query(array(
 										'post_type' => 'press',
 										'posts_per_page' => $posts_per_page,
@@ -81,10 +79,9 @@
 								endforeach;
 							endif;
 						else :
-							echo '<p>Cette page n\'est pas configurée pour afficher les archives du CPT "press".</p>';
+							echo '<p>Aucun article de presse pour le moment</p>';
 						endif;
 					?>
-
 				</div>
 			</div>
 		</section>
