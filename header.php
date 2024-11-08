@@ -46,7 +46,6 @@
 						src="<?php echo $popinpicture['sizes']['small']; ?>"
 						srcset="<?php echo $popinpicture['sizes']['small']; ?> 320w, <?php echo $popinpicture['sizes']['xlarge']; ?> 768w, <?php echo $popinpicture['sizes']['xlarge']; ?> 1024w"
 						alt="<?php echo $popinpicture['alt']; ?>" sizes="100vw"
-						loading="lazy"
 						width="400" height="400"
 					>
 				</div>
@@ -76,7 +75,6 @@
 					decoding="async"
 					src="<?php bloginfo('template_directory'); ?>/library/img/logo-genius.png"
 					alt="Devenez un génie de la copropriété" sizes="100vw"
-					loading="lazy"
 					width="210" height="92"
 					itemprop="logo"
 				>

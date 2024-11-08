@@ -1,5 +1,10 @@
 		</div><!-- End main -->
 
+		<?php
+			$qualiopifile	= get_field('options_footerqualiopifile', 'option');
+			$qualiopitext	= get_field('options_footerqualiopitext', 'option');
+		?>
+
 		<footer>
 			<div class="footer-inner cbo-container container--nomargin">
 				<div class="footer-col footer-logo">
@@ -73,8 +78,22 @@
 					</div>
 				</div>
 			</div>
-			<div class="footer-bottom">
-				Copyright <?php echo date("Y"); ?> © - <a href="<?php echo home_url(); ?>/mentions-legales/">Mentions légales</a>
+			<div class="footer-bottom cbo-container container--nomargin">
+				<div class="bottom-qualiopi">
+					<a class="qualiopi-logo cbo-picture-contain" href="<?php echo $qualiopifile['url']; ?>" target="_blank">
+						<img
+							decoding="async"
+							src="<?php bloginfo('template_directory'); ?>/library/img/logo-qualiopi.png"
+							alt="Qualiopi" sizes="100vw"
+							loading="lazy"
+							width="210" height="92"
+						>
+					</a>
+					<?php echo $qualiopitext ?>
+				</div>
+				<div class="bottom-mentions">
+					Copyright <?php echo date("Y"); ?> © - <a href="<?php echo home_url(); ?>/mentions-legales/">Mentions légales</a>
+				</div>
 			</div>
 		</footer>
 
