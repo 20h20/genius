@@ -83,7 +83,7 @@
 					<a class="qualiopi-logo cbo-picture-contain" href="<?php echo $qualiopifile['url']; ?>" target="_blank">
 						<img
 							decoding="async"
-							src="<?php bloginfo('template_directory'); ?>/library/img/logo-qualiopi.png"
+							src="<?php bloginfo('template_directory'); ?>/library/img/logo-qualiopi.svg"
 							alt="Qualiopi" sizes="100vw"
 							loading="lazy"
 							width="210" height="92"
