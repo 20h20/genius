@@ -17,8 +17,8 @@
 				<div class="box-picture cbo-picture-cover">
 					<img
 						decoding="async"
-						src="<?php echo $picture['sizes']['xsmall']; ?>"
-						srcset="<?php echo $picture['sizes']['xsmall']; ?> 320w, <?php echo $picture['sizes']['xsmall']; ?> 768w, <?php echo $picture['sizes']['xsmall']; ?> 1024w"
+						src="<?php echo $picture['sizes']['small']; ?>"
+						srcset="<?php echo $picture['sizes']['small']; ?> 320w, <?php echo $picture['sizes']['medium']; ?> 768w, <?php echo $picture['sizes']['medium']; ?> 1024w"
 						alt="<?php echo $picture['alt']; ?>" sizes="100vw"
 						loading="lazy"
 						width="800" height="800"

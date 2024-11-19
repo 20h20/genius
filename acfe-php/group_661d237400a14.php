@@ -5154,11 +5154,10 @@ acf_add_local_field_group(array(
 	'instruction_placement' => 'label',
 	'hide_on_screen' => array(
 		0 => 'block_editor',
-		1 => 'excerpt',
-		2 => 'discussion',
-		3 => 'comments',
-		4 => 'revisions',
-		5 => 'slug',
+		1 => 'discussion',
+		2 => 'comments',
+		3 => 'revisions',
+		4 => 'slug',
 	),
 	'active' => true,
 	'description' => '',
@@ -5171,7 +5170,7 @@ acf_add_local_field_group(array(
 	'acfe_form' => 0,
 	'acfe_meta' => '',
 	'acfe_note' => '',
-	'modified' => 1730890269,
+	'modified' => 1731082334,
 ));
 
 endif;
