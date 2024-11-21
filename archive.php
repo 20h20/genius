@@ -93,7 +93,7 @@
 					<article <?php post_class('featured-article slide-up'); ?> itemprop="blogPosts" itemscope itemtype="http://schema.org/BlogPosting">
 						<a class="article-inner" href="<?php the_permalink(); ?>" itemprop="url">
 							<span class="article-picture cbo-picture-cover">
-								<?php the_post_thumbnail( 'xlarge', array( 'sizes' => '(max-width:320px) 145px, (max-width:425px) 220px, 500px' ) );?>
+								<?php the_post_thumbnail( 'xlarge', array( 'sizes' => '(max-width:320px) 145px, (max-width:425px) 220px, 1000px' ) );?>
 							</span>
 
 							<span class="article-content">
