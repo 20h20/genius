@@ -18,6 +18,15 @@
 							itemprop="logo"
 						>
 					</a>
+
+					<div class="social-list">
+						<span class="social-title">
+							Nous suivre
+						</span>
+						<a class="list-el" href="https://www.linkedin.com/company/genius-immo" target="_blank">
+							<i class="icon icon--icon-linkedin"></i>
+						</a>
+					</div>
 				</div>
 
 				<div class="footer-col footer-contact">

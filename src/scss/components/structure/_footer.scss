@@ -40,7 +40,27 @@ footer{
             display: block;
             width: 170px;
             height: 75px;
-            margin-bottom: 48px;
+            margin-bottom: 20px;
+         }
+      }
+      .social-list{
+         margin-bottom: 48px;
+
+         .social-title{
+            font-weight: bold;
+            margin-bottom: 14px;
+            width: 100%;
+            display: block;
+         }
+         .list-el{
+            background: $colorblue;
+            color: $colorwhite;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
          }
       }
       &.footer-contact{
@@ -199,10 +219,17 @@ LARGE SCREENS
          }
          &.footer-logo{
             width: 300px;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            justify-content: space-between;
 
             .logo-picture{
                margin-bottom: 0;
             }
+         }
+         .social-list{
+            margin-bottom: 0;
          }
          &.footer-contact{
             width: 30%;
