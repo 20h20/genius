@@ -21,7 +21,13 @@
 
 					<div class="social-list">
 						<a class="list-el" href="https://www.linkedin.com/company/genius-immo" target="_blank">
-							<i class="icon icon--icon-linkedin"></i>
+							<img
+								decoding="async"
+								src="<?php bloginfo('template_directory'); ?>/library/img/linkedin.svg"
+								alt="Linkedin" sizes="100vw"
+								loading="lazy"
+								width="40" height="40"
+							>
 						</a>
 					</div>
 				</div>
