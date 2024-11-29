@@ -52,7 +52,7 @@
 								foreach ( $categories as $category ) : 
 									echo '<h3 class="press-title cbo-title-1"><strong>' . esc_html($category->name) . '</strong></h3>';
 
-									$posts_per_page = ($category->slug === 'medias') ? 12 : 3;
+									$posts_per_page = ($category->slug === 'medias') ? 9 : 3;
 									$query = new WP_Query(array(
 										'post_type' => 'press',
 										'posts_per_page' => $posts_per_page,
