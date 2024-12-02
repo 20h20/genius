@@ -17,11 +17,8 @@ FULL PICTURE COMPONENT
       display: none;
     }
     &.picture--mobile{
-      padding: 0 20px;
-
       img{
         position: relative;
-        max-height: 500px;
       }
       &.mobile--cover{
         padding: 0;
