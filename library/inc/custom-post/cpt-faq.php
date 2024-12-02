@@ -35,8 +35,8 @@
 		array('faq'),
 		array('hierarchical' => true,
 			'labels' => array(
-				'name' => __( 'Catégories', 'bonestheme' ),
-				'singular_name' => __( 'Catégorie', 'bonestheme' ),
+				'name' => __( 'Catégories FAQ', 'bonestheme' ),
+				'singular_name' => __( 'Catégories FAQ', 'bonestheme' ),
 				'search_items' =>  __( 'Rechercher', 'bonestheme' ),
 				'all_items' => __( 'Toutes les catégories', 'bonestheme' ),
 				'parent_item' => __( 'Catégories parentes', 'bonestheme' ),

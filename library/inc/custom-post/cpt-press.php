@@ -35,8 +35,8 @@
 		array('press'),
 		array('hierarchical' => true,
 			'labels' => array(
-				'name' => __( 'Catégories', 'bonestheme' ),
-				'singular_name' => __( 'Catégorie', 'bonestheme' ),
+				'name' => __( 'Catégories articles de presse', 'bonestheme' ),
+				'singular_name' => __( 'Catégories articles de presse', 'bonestheme' ),
 				'search_items' =>  __( 'Rechercher', 'bonestheme' ),
 				'all_items' => __( 'Toutes les catégories', 'bonestheme' ),
 				'parent_item' => __( 'Catégories parentes', 'bonestheme' ),
