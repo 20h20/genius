@@ -124,6 +124,22 @@ LARGE SCREENS
                 margin: 30px 0;
                 width: 25%;
                 padding: 0 30px;
+
+                .cbo-modale {
+                    .modale-inner{
+                        max-width: 50rem;
+                        min-height: 31.25rem;
+                        display: flex;
+
+                        .modale-content{
+                            width: 100%;
+                        }
+                        iframe{
+                            height: 100%;
+                            width: 100%;
+                        }
+                    }
+                }
             }
         }
     }
