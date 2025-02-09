@@ -183,8 +183,11 @@
 		echo $before.'<ul class="cbo-pagination">'."";
 
 		$prevposts = get_previous_posts_link('Précédent');
-		if($prevposts) { echo '<li class="cbo-paginate-prev">' . $prevposts  . '</li>'; }
-		else { echo '<li class="disabled"><a href="#">Précédent</a></li>'; }
+		if($prevposts) {
+			$prevposts = str_replace('<a ', '<a rel="prev" ', $prevposts);
+			echo '<li class="cbo-paginate-prev">' . $prevposts  . '</li>';
+		}
+		else { echo '<li class="disabled"><a href="#" rel="prev">Précédent</a></li>'; }
 
 		for($i = $start_page; $i  <= $end_page; $i++) {
 			if($i == $paged) {
@@ -195,8 +198,11 @@
 		}
 
 		$nextposts = get_next_posts_link('Suivant');
-		if($nextposts) { echo '<li class="cbo-paginate-next">' . $nextposts  . '</li>'; }
-		else { echo '<li class="disabled"><a href="#">Suivant</a></li>'; }
+		if($nextposts) {
+			$nextposts = str_replace('<a ', '<a rel="next" ', $nextposts);
+			echo '<li class="cbo-paginate-next">' . $nextposts  . '</li>';
+		}
+		else { echo '<li class="disabled"><a href="#" rel="next">Suivant</a></li>'; }
 		
 		echo '</ul>'.$after."";
 	}
