@@ -27,15 +27,7 @@
 	add_image_size('medium', 1200, 1200, false);
 	add_image_size('xlarge', 1920, 1920, false);
 
-	/* ************************* */
-	// Add `loading="lazy"` attribute to images output by the_post_thumbnail().
-	/* ************************* */
-	add_filter( 'post_thumbnail_html', 'wpdd_modify_post_thumbnail_html', 10, 5 );
 	
-	function wpdd_modify_post_thumbnail_html( $html, $post_id, $post_thumbnail_id, $size, $attr ) {
-		return str_replace( '<img', '<img loading="lazy"', $html );
-	}
-
 	/* ************************* */
 	/* Add styles to wysiwyg editor */
 	/* ************************* */

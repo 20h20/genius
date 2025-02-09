@@ -209,10 +209,17 @@ $(window).on( 'scroll', function(){
 			});
 
 			/////////////////// MODALE VIDEO ///////////////////
-			$('.team-list .video-play').on('click', function(e) {
+			 $('.team-list .video-play').on('click', function(e) {
 				e.preventDefault();
-				e.stopPropagation(); 
-				$('.video-modale').toggleClass('modale--open');
+				e.stopPropagation();
+				var targetId = $(this).data('target');
+				var targetModal = $('#' + targetId);
+				$('.video-modale').removeClass('modale--open');
+				targetModal.addClass('modale--open');
+			});
+
+			$('.modale-close, .modale-overlay').on('click', function() {
+				$('.video-modale').removeClass('modale--open');
 			});
 
 
@@ -451,6 +458,42 @@ $(window).on( 'scroll', function(){
 					return false;
 				});
 			}
+
+
+
+
+
+
+
+			//////////////// PRICES ////////////////
+			document.querySelectorAll(".el-title").forEach(function (title) {
+				title.addEventListener("click", function () {
+					this.closest(".list-el").classList.toggle("active");
+				});
+			});
+
+			var toggleCheckbox = document.querySelector(".button-checkbox");
+			var pricesContainer = document.querySelector(".prices-list");
+
+    toggleCheckbox.addEventListener("change", function () {
+        pricesContainer.classList.toggle("annual-active", this.checked);
+    });
+			
+	var toggleCheckbox = document.querySelector(".button-checkbox");
+    var toggleContainer = document.querySelector(".prices-toggle");
+
+    toggleCheckbox.addEventListener("change", function () {
+        toggleContainer.classList.toggle("annual-active", this.checked);
+    });
+
+
+
+
+
+
+
+
+
 
 			//////////////// SCROLL ANIMATIONS ////////////////
 			var scroll = window.requestAnimationFrame || function(callback){ window.setTimeout(callback, 1000/60)};

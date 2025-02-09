@@ -104,6 +104,11 @@
 					elseif( get_row_layout() == 'contact' ):
 						get_template_part( 'templates/blocks/contact');
 
+					///////////////////
+					// SECTION PRICES
+					elseif( get_row_layout() == 'prices' ):
+						get_template_part( 'templates/blocks/prices');
+
 					endif;
 				endwhile;
 			endif;

@@ -1,0 +1,319 @@
+/* -------------------------------
+PRICES COMPONENT
+------------------------------- */
+.cbo-prices {
+    .prices-toggle{
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: flex-end;
+
+        &.annual-active{
+            .toggle-button {
+                .button-annual{
+                    opacity: 1;
+                }
+                .button-mensual{
+                    opacity: .6;
+                }
+            }
+        }
+        .toggle-button {
+            position: relative;
+            display: flex;
+            align-items: center;
+            font-weight: bold;
+
+            .button-annual{
+                opacity: .6;
+            }
+            .checkbox-container{
+                position: relative;
+                width: 72px;
+                height: 40px;
+                box-shadow: 0 0 0 2px $colorbluedark inset;
+                border-radius: 99rem;
+                margin: 0 10px;
+                z-index: 2;
+
+                .button-checkbox {
+                    position: relative;
+                    width: 100%;
+                    height: 100%;
+                    padding: 0;
+                    margin: 0;
+                    opacity: 0;
+                    cursor: pointer;
+                    z-index: 3;
+
+                    &:active + .checkbox-cursor {
+                        &:before{
+                            width: 46px;
+                            border-radius: 100px;
+                        }
+                    }
+                    &:checked + .checkbox-cursor:before {
+                        left: 42px;
+                      }
+                }
+                .checkbox-cursor{
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    align-items: center;
+    
+                    &:before {
+                        content: '';
+                        position: relative;
+                        left: 8px;
+                        width: 20px;
+                        height: 20px;
+                        background-color: $colorbluedark;
+                        border-radius: 99rem;
+                        transition: 0.3s ease all, left 0.3s cubic-bezier(0.18, 0.89, 0.35, 1.15);
+                    }
+                }
+            }
+        }
+    }
+    .prices-list{
+        &.annual-active {
+            .list-el .el-inner .inner-bottom .bottom-prices .prices-el .el-price .price.price--annual{
+                display: inline;
+            }
+            .list-el .el-inner .inner-bottom .bottom-prices .prices-el .el-price .price{
+                display: none;
+            }
+        }
+        .list-el{
+            max-width: 500px;
+            margin: 0 auto;
+
+            .el-inner {
+                background: $colorwhite;
+                border-radius: 20px;
+                margin: 20px 0;
+
+                &.inner--lightblue{
+                    .inner-titlecontainer{
+                        color: $colorbluelight;
+                    }
+                    .offers-list {
+                        .list-el {
+                            .el-title {
+                                .icon--check-circle{
+                                    color: $colorbluelight;
+                                }
+                            }
+                        }
+                    }
+                }
+                &.inner--darkblue{
+                    .inner-bottom {
+                        .cbo-button{
+                            background: $colorwhite;
+                            color: $colorblue;
+                            box-shadow: 0px 0px 0px 3px $colorblue inset;
+
+                            &:after{
+                                color: $colorblue;
+                            }
+                        }
+                    }
+                }
+                .inner-titlecontainer{
+                    display: flex;
+                    align-items: center;
+                    border-bottom: 1px solid #9AAAE0;
+                    padding: 20px;
+                    margin-bottom: 20px;
+
+                    .titlecontainer-picture{
+                        min-width: 60px;
+                        height: 60px;
+                        margin-right: 22px;
+                    }
+                }
+                .inner-introduction{
+                    color: $colorbluelight;
+                    padding: 20px;
+                }
+                .offers-list{
+                    padding: 0 20px;
+
+                    .list-el{
+                        margin: 30px 0;
+                        width: 100%;
+
+                        .el-title{
+                            display: flex;
+                            align-items: center;
+                            position: relative;
+                            padding-right: 20px;
+                            cursor: pointer;
+                            font-weight: bold;
+
+                            .icon--check-circle{
+                                margin-right: 16px;
+                                color: $colorblue;
+                            }
+                            .icon--chevron{
+                                position: absolute;
+                                right: 0;
+                                font-size: 14px;
+                                transition: all .4s;
+                            }
+                        }
+                        .el-content{
+                            display: none;
+                            padding: 20px 0 0 36px;
+                        }
+                        &.active{
+                            .el-title {
+                                .icon--chevron{
+                                    transform: rotate(-180deg);
+                                }
+                            }
+                            .el-content{
+                                display: block;
+                            }
+                        }
+                    }
+                }
+                .inner-bottom{
+                    padding: 20px;
+                    border-top: 1px dashed #9AAAE0;
+
+                    .bottom-top{
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+
+                        .top-title{
+                            color: $colorblue;
+                        }
+                        .top-tag{
+                            background: $colorbluedark;
+                            color: $colorwhite;
+                            font-weight: bold;
+                            border-radius: 99rem;
+                            padding: 0 20px;
+                            height: 40px;
+                            display: flex;
+                            align-items: center;
+                        }
+                    }
+                    .bottom-prices{
+                        margin-bottom: 40px;
+
+                        .prices-el{
+                            margin: 30px 0;
+                            display: flex;
+                            justify-content: space-between;
+
+                            .el-text{
+                                font-weight: bold;
+                                font-size: 16px;
+                            }
+                            .el-price{
+                                .price{
+                                    color: $colorblue;
+                                    font-weight: bold;
+                                    font-size: 30px;
+
+                                    &.price--annual {
+                                        display: none;
+                                    }
+                                }
+                                small{
+                                    color: #9AAAE0;
+                                    font-size: 16px;
+                                    margin-left: 10px;
+                                }
+                            }
+                        }
+                    }
+                    .cbo-button{
+                        width: 100%;
+                    }
+                    .inner-mention{
+                        color: #9ABFE0;
+                        margin-top: 10px;
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+}
+/* -------------------------------
+MEDIUM SCREENS
+------------------------------- */
+@media (min-width: $screen-md-min){
+    .cbo-prices {
+        .prices-list{
+            display: flex;
+            justify-content: space-between;
+            margin: 0 -20px;
+
+            .list-el{
+                max-width: inherit;
+                margin: 0;
+                width: 50%;
+    
+                .el-inner {
+                   margin: 0 20px;
+                }
+            }
+        }
+    }
+}
+/* -------------------------------
+LARGE SCREENS
+------------------------------- */
+@media (min-width: $screen-lg-min){
+    .cbo-prices {
+        .prices-list{
+            .list-el{
+                .el-inner {
+                    .inner-titlecontainer{
+                        padding: 40px 20px;
+                        margin-bottom: 40px;
+                    }
+                    .inner-introduction{
+                        padding: 0 20px;
+                    }
+                    .offers-list{
+                        padding: 0 20px;
+
+                        .list-el{
+                            .el-title{
+                                font-size: 20px;
+                            }
+                        }
+                    }
+                    .inner-bottom{
+                        padding: 40px 20px;
+
+                        .bottom-prices{
+                            .prices-el{
+                                margin: 40px 0;
+
+                                .el-text{
+                                    font-size: 26px;
+                                }
+                                .el-price{
+                                    .price{
+                                        font-size: 50px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

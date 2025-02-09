@@ -27,8 +27,10 @@
 
 		<div class="team-list">
 			<?php
+				$counter = 0;
 				if( have_rows('team_list') ):
 				while( have_rows('team_list') ): the_row();
+				$counter++;
 				$picture = get_sub_field('picture');
 				$name = get_sub_field('name');
 				$function = get_sub_field('function');
@@ -39,7 +41,7 @@
 					<div class="el-inner">
 						<div class="el-picture cbo-picture-cover slide-up" itemprop="image">
 							<?php if($addvideo == 1): ?>
-								<span class="video-play">
+								<span class="video-play" data-target="modale-<?php echo $counter; ?>">
 									<i class="icon icon--player"></i>
 								</span>
 							<?php endif; ?>
@@ -61,18 +63,17 @@
 					</div>
 
 					<?php if($addvideo == 1): ?>
-						<div class="cbo-modale video-modale">
+						<div class="cbo-modale video-modale" id="modale-<?php echo $counter; ?>">
 							<div class="modale-inner">
 								<button type="button" class="modale-close" aria-label="Fermer la modale">
 									<span class="top"></span>
 									<span class="bottom"></span>
 								</button>
-
 								<div class="modale-content">
 									<?php echo $videoid ?>
 								</div>
 							</div>
-							<div class="modale-overlay" id="myModal-close"></div>
+							<div class="modale-overlay"></div>
 						</div>
 					<?php endif; ?>
 				</div>

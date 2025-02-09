@@ -95,6 +95,8 @@
 				// 'jquery-migrate' !== $handle &&
 				'bones-scripts' !== $handle &&
 				'contact-form-7' !== $handle &&
+				'wpcf7-redirect-script' !== $handle &&
+				'google-recaptcha' !== $handle &&
 				'wp-polyfill' !== $handle &&
 				'regenerator-runtime' !== $handle ))
 			return $tag;

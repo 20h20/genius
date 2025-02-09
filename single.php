@@ -16,7 +16,12 @@
 			<div class="herorich-inner cbo-container">
 				<div class="herorich-picture">
 					<div class="picture-main cbo-picture-cover slide-up">
-						<?php the_post_thumbnail( 'small', array( 'sizes' => '(max-width:320px) 145px, (max-width:425px) 220px, 500px' ) );?>
+						<?php
+							the_post_thumbnail( 'full', array(
+							'sizes' => '(max-width: 320px) 145px, (max-width: 425px) 220px, (max-width: 768px) 500px, (max-width: 1024px) 768px, 100vw',
+							'fetchpriority' => 'high',
+							'decoding' => 'async'
+						) );?>
 					</div>
 				</div>
 				<div class="herorich-content">

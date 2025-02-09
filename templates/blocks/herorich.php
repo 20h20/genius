@@ -32,7 +32,8 @@
 						src="<?php echo $picture2['sizes']['small']; ?>"
 						srcset="<?php echo $picture2['sizes']['small']; ?> 320w, <?php echo $picture2['sizes']['xlarge']; ?> 768w, <?php echo $picture2['sizes']['xlarge']; ?> 1024w"
 						alt="<?php echo $picture2['alt']; ?>" sizes="100vw"
-						width="1500" height="1500"
+						width="900" height="900"
+						fetchpriority="high"
 					>
 				</div>
 			<?php endif; ?>
@@ -42,7 +43,8 @@
 					src="<?php echo $picture['sizes']['small']; ?>"
 					srcset="<?php echo $picture['sizes']['small']; ?> 320w, <?php echo $picture['sizes']['xlarge']; ?> 768w, <?php echo $picture['sizes']['xlarge']; ?> 1024w"
 					alt="<?php echo $picture['alt']; ?>" sizes="100vw"
-					width="1500" height="1500"
+					width="900" height="900"
+					fetchpriority="high"
 				>
 			</div>
 		</div>
