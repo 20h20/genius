@@ -88,9 +88,11 @@ SMALL SCREENS
 
                 .list-el{
                     width: 50%;
+                    padding: .625rem;
     
                     .el-inner{
-                        margin: 0.625rem;
+                        height: 100%;
+                        margin: 0;
                     }
                 }
             }
