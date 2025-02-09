@@ -460,12 +460,7 @@ $(window).on( 'scroll', function(){
 			}
 
 
-
-
-
-
-
-			//////////////// PRICES ////////////////
+			//////////////// PRICES - ACCORDION ////////////////
 			document.querySelectorAll(".el-title").forEach(function (title) {
 				title.addEventListener("click", function () {
 					this.closest(".list-el").classList.toggle("active");
@@ -475,24 +470,18 @@ $(window).on( 'scroll', function(){
 			var toggleCheckbox = document.querySelector(".button-checkbox");
 			var pricesContainer = document.querySelector(".prices-list");
 
-    toggleCheckbox.addEventListener("change", function () {
-        pricesContainer.classList.toggle("annual-active", this.checked);
-    });
-			
-	var toggleCheckbox = document.querySelector(".button-checkbox");
-    var toggleContainer = document.querySelector(".prices-toggle");
 
-    toggleCheckbox.addEventListener("change", function () {
-        toggleContainer.classList.toggle("annual-active", this.checked);
-    });
+			//////////////// PRICES - TOGGLE ////////////////
+			toggleCheckbox.addEventListener("change", function () {
+				pricesContainer.classList.toggle("annual-active", this.checked);
+			});
+					
+			var toggleCheckbox = document.querySelector(".button-checkbox");
+			var toggleContainer = document.querySelector(".prices-toggle");
 
-
-
-
-
-
-
-
+			toggleCheckbox.addEventListener("change", function () {
+				toggleContainer.classList.toggle("annual-active", this.checked);
+			});
 
 
 			//////////////// SCROLL ANIMATIONS ////////////////
