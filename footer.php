@@ -148,24 +148,6 @@
 								endforeach;
 							endif;
 						?>
-						<div class="form-appointment">
-							<div class="cbo-cms">
-								<?php echo $appointment ?>
-							</div>
-							<script>
-								(function() {
-									var target = document.currentScript;
-									window.addEventListener('load', function() {
-										calendar.schedulingButton.load({
-											url: '<?php echo esc_js($appointmenturl); ?>',
-											color: '#039BE5',
-											label: "C'est par ici",
-											target,
-										});
-									});
-								})();
-							</script>
-						</div>
 					</div>
 				</div>
 			</div>
@@ -177,6 +159,5 @@
 		</div>
 		<?php wp_footer(); ?>
 		<script defer="defer" src="<?php echo get_template_directory_uri(); ?>/library/js/scripts.js"></script>
-		<script defer="defer" async src="https://calendar.google.com/calendar/scheduling-button-script.js"></script>
 	</body>
 </html>

@@ -504,6 +504,52 @@ $(window).on( 'scroll', function(){
 			}
 
 
+			/////////////////// ADD CHECK TO ACCEPTANCE ///////////////////
+			var cbo_forms = {
+				init: function () {
+				  this.bind_checked();
+				  this.check_checked();
+				},
+				
+				bind_checked: function () {
+				  $(".contact-form")
+					.find('input[type="radio"], input[type="checkbox"]')
+					.on("change", function () {
+					  cbo_forms.check_checked();
+					});
+				},
+				
+				check_checked: function () {
+				  $(".cbo-form")
+					.find('input[type="radio"], input[type="checkbox"]')
+					.each(function () {
+					  if ($(this).is(":checked")) {
+						$(this).closest(".form-field").find(".field-inner").addClass("checked");
+					  } else {
+						$(this).closest(".form-field").find(".field-inner").removeClass("checked");
+					  }
+					});
+				},
+			};
+			cbo_forms.init()
+
+
+			//////////////// FORM INPUT FILE ////////////////
+			var fileInput = document.querySelector('.wpcf7-file');
+			var fileReturn = document.querySelector('.file-return');
+
+			if (fileInput && fileReturn) {
+				fileInput.addEventListener('change', function() {
+					if (fileInput.files.length > 0) {
+						var fileName = fileInput.files[0].name;
+						fileReturn.textContent = fileName;
+					} else {
+						fileReturn.textContent = '';
+					}
+				});
+			}
+
+
 			//////////////// SCROLL ANIMATIONS ////////////////
 			var scroll = window.requestAnimationFrame || function(callback){ window.setTimeout(callback, 1000/60)};
 			var elementsToShow = document.querySelectorAll('.slide-up, .slide-up, .slide-right, .slide-left, .scale-up, .scale-down'); 

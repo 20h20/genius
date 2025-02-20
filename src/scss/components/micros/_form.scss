@@ -11,12 +11,12 @@ FORMS & FIELDS
 	select,
 	textarea {
 		background: none;
-		border: 1px solid $colorblack;
+		border: 1px solid $colorblue;
 		height: 40px;
-		border-radius: 5px;
+		border-radius: 99rem;
 		width: 100%;
 		padding: 0 10px;
-		color: $colorblack;
+		color: $colorblue;
 		transition: all 0.5s cubic-bezier(0.85, 0, 0.15, 1) 0s;
 	}
 	input[type="submit"]{
@@ -27,18 +27,21 @@ FORMS & FIELDS
 	}
 	::-webkit-input-placeholder {
 		opacity: .9;
-		color: $colorwhite;
+		color: $colorblue;
 	}
 	::-moz-placeholder {
 		opacity: .9;
-		color: $colorwhite;
+		color: $colorblue;
 	}
 	:-ms-input-placeholder {
 		opacity: .9;
-		color: $colorwhite;
+		color: $colorblue;
 	}
 	input.wpcf7-not-valid{
 		border-color: $colorerror;
+	}
+	[data-class="wpcf7cf_group"] {
+		width: 100%;
 	}
 	.form-field{
 		margin-bottom: 18px;
@@ -48,6 +51,7 @@ FORMS & FIELDS
 			resize: none;
 			height: 150px;
 			padding: 10px;
+			border-radius: 20px;
 		}
 		.field-inner {
 			width: 100%;
@@ -109,6 +113,12 @@ FORMS & FIELDS
 			}
 		}
 		&.form-acceptance {
+			margin-bottom: 10px;
+
+			.field-inner{
+				display: flex;
+				align-items: center;
+			}
 			.wpcf7-form-control{
 				margin-bottom: 0;
 			}
@@ -123,10 +133,9 @@ FORMS & FIELDS
 				align-items: flex-start;
 				justify-content: flex-start;
 				position: relative;
-				font-size: 12px;
-				line-height: 16px;
 				left: 0;
 				top:0;
+				line-height: 27px;
 				position: relative;
 				text-transform: none;
 				cursor: pointer;
@@ -134,45 +143,123 @@ FORMS & FIELDS
 				&:before {
 					content: "";
 					display: block;
-					width: 16px;
-					min-width: 16px;
-					height: 16px;
+					width: 20px;
+					min-width: 20px;
+					height: 20px;
 					border-radius: 4px;
-					background: rgba($colorblue, .1);
-					border: 1px solid  rgba($colorblue, .2);
+					background: rgba($colorblue, 0);
+					border: 2px solid $colorblue;
 					margin: 0 10px 0 1px;
 					cursor: pointer;
 				}
 				&:after {
-					content: "";
+					font-family:"icons";
+					content: "\f103";
 					display: block;
-					width: 10px;
-					min-width: 10px;
-					height: 10px;
-					border-radius: 2px;
-					background: $colorblue;
+					color: $colorwhite;
 					position: absolute;
-					top: 4px;
-					left: 5px;
+					top: 0;
+					left: 7px;
+					font-size: 12px;
 					transform: scale(0);
 					transition: all 0.3s $easeinout;
 				}
 			}
-			&:not(.checked) label:hover {
-				&:after{
-					transform: scale(1);
-					opacity: 0.5;
-				}
-			}
-			&.checked label {
+			.checked label {
 				&:after {
 					transform: scale(1);
 				}
+				&:before{
+					background: rgba($colorblue, 1);
+				}
 			}
-			&:focus-within label,
-			&.filled label {
-				font-size: 14px;
-				transform: translate(0, 0);
+		}
+
+
+
+
+
+
+
+
+
+
+		&.form-file{
+			margin-top: 14px;
+
+			.field-inner{
+				position: relative;
+
+				.wpcf7-file {
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 100%;
+					opacity: 0;
+					cursor: pointer;
+				}
+				.file-button {
+					color: rgba($colorblue, .6);
+					background: $colorwhite;
+					border: 2px dashed $colorblue;
+					height: 200px;
+					border-radius: 10px;
+					text-align: center;
+					padding: 0 16px;
+					transition: all 0.2s cubic-bezier(0.85, 0, 0.15, 1) 0s;
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+					align-items: center;
+					cursor: pointer;
+					font-size: 16px;
+					transition: all .4s;
+
+					i{
+						margin-bottom: 12px;
+						font-size: 30px;
+						transition: all .4s;
+					}
+					.button-inner{
+						width: 250px;
+						height: 60px;
+						border-radius: 99rem;
+						display: inline-flex;
+						justify-content: center;
+						align-items: center;
+						margin-top: 12px;
+						border: 1px solid rgba($colorblue, .6);
+					}
+				}
+				.file-mention{
+					color: rgba($colorblue, .6);
+					text-align: right;
+					font-size: 14px;
+				}
+
+
+
+
+				.wpcf7-file:hover + .file-button,
+				.wpcf7-file:focus + .file-button,
+				.file-button:hover,
+				.file-button:focus {
+					background: rgba($colorblue, .1);
+
+					i{
+						color: $colorblue;
+					}
+				}
+				.file-return {
+					margin: 0;
+					font-style: italic;
+					font-weight: bold;
+					font-size: 12px;
+				}
+				.file-return:not(:empty) {
+					margin: 12px 0 0 0;
+				}
 			}
 		}
 	}
