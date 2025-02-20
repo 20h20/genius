@@ -550,6 +550,18 @@ $(window).on( 'scroll', function(){
 			}
 
 
+			document.addEventListener('DOMContentLoaded', function() {
+				var fileInput = document.querySelector('input[name="file-636"]');
+				if (fileInput && !fileInput.hasAttribute('multiple')) {
+					fileInput.setAttribute('multiple', 'multiple');
+				}
+			});
+			
+			
+
+
+
+
 			//////////////// SCROLL ANIMATIONS ////////////////
 			var scroll = window.requestAnimationFrame || function(callback){ window.setTimeout(callback, 1000/60)};
 			var elementsToShow = document.querySelectorAll('.slide-up, .slide-up, .slide-right, .slide-left, .scale-up, .scale-down'); 

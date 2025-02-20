@@ -349,4 +349,13 @@
 	}
 	add_action('pre_get_posts', 'exclude_testimonials_from_search');
 	
+
+	add_filter('wpcf7_form_elements', 'add_multiple_to_file_field', 10, 1);
+	function add_multiple_to_file_field($form) {
+		// Ajout de l'attribut multiple à un champ de fichier spécifique
+		if (strpos($form, 'name="file-636"') !== false) {
+			$form = preg_replace('/(<input[^>]*name="file-636"[^>]*>)/', '$1 multiple', $form);
+		}
+		return $form;
+	}
 ?>
