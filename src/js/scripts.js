@@ -484,23 +484,24 @@ $(window).on( 'scroll', function(){
 
 				toggleCheckbox.addEventListener("change", function () {
 					toggleContainer.classList.toggle("annual-active", this.checked);
-				});
-			}
+				}); 
+			
 
-			// Annual / Mensual label change
-			var toggleCheckbox = document.querySelector(".button-checkbox");
-			var pricesContainer = document.querySelector(".prices-list");
-			var topTagElements = document.querySelectorAll(".top-tag");
+				// Annual / Mensual label change
+				var toggleCheckbox = document.querySelector(".button-checkbox");
+				var pricesContainer = document.querySelector(".prices-list");
+				var topTagElements = document.querySelectorAll(".top-tag");
 
-			function updatePricingText() {
-				var isChecked = toggleCheckbox.checked;
-				pricesContainer.classList.toggle("annual-active", isChecked);
-				topTagElements.forEach(function (tag) {
-					tag.textContent = isChecked ? "Facturé annuellement" : "Facturé mensuellement";
-				});
+				function updatePricingText() {
+					var isChecked = toggleCheckbox.checked;
+					pricesContainer.classList.toggle("annual-active", isChecked);
+					topTagElements.forEach(function (tag) {
+						tag.textContent = isChecked ? "Facturé annuellement" : "Facturé mensuellement";
+					});
+				}
+				updatePricingText();
+				toggleCheckbox.addEventListener("change", updatePricingText);
 			}
-			updatePricingText();
-			toggleCheckbox.addEventListener("change", updatePricingText);
 
 
 			//////////////// SCROLL ANIMATIONS ////////////////
