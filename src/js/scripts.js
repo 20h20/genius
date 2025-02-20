@@ -534,34 +534,6 @@ $(window).on( 'scroll', function(){
 			cbo_forms.init()
 
 
-			//////////////// FORM INPUT FILE ////////////////
-			var fileInput = document.querySelector('.wpcf7-file');
-			var fileReturn = document.querySelector('.file-return');
-
-			if (fileInput && fileReturn) {
-				fileInput.addEventListener('change', function() {
-					if (fileInput.files.length > 0) {
-						var fileName = fileInput.files[0].name;
-						fileReturn.textContent = fileName;
-					} else {
-						fileReturn.textContent = '';
-					}
-				});
-			}
-
-
-			document.addEventListener('DOMContentLoaded', function() {
-				var fileInput = document.querySelector('input[name="file-636"]');
-				if (fileInput && !fileInput.hasAttribute('multiple')) {
-					fileInput.setAttribute('multiple', 'multiple');
-				}
-			});
-			
-			
-
-
-
-
 			//////////////// SCROLL ANIMATIONS ////////////////
 			var scroll = window.requestAnimationFrame || function(callback){ window.setTimeout(callback, 1000/60)};
 			var elementsToShow = document.querySelectorAll('.slide-up, .slide-up, .slide-right, .slide-left, .scale-up, .scale-down'); 
