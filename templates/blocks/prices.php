@@ -25,6 +25,7 @@
 				$icon	= get_sub_field('icon');
 				$introduction	= get_sub_field('introduction');
 				$bttxt	= get_sub_field('bt_txt');
+				$type	= get_sub_field('bt_type');	
 				$bturl	= get_sub_field('bt_url');
 				$mention	= get_sub_field('mention');
 			?>
@@ -123,7 +124,10 @@
 								endif;
 							?>
 
-							<a class="cbo-button button--icon button--bluelight" href="<?php echo $bturl ?>">
+							<a
+								class="cbo-button button--icon button--bluelight <?php if($type == 'modale'): ?>button-modale<?php endif; ?>"
+								<?php if($type == 'url'): ?>href="<?php echo $bturl ?>"<?php endif; ?>
+							>
 								<?php echo $bttxt ?>
 							</a>
 

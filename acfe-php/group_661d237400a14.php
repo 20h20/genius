@@ -5431,6 +5431,36 @@ acf_add_local_field_group(array(
 									'parent_repeater' => 'field_67a5fc9763398',
 								),
 								array(
+									'key' => 'field_67b756d62c468',
+									'label' => 'Type de bouton',
+									'name' => 'bt_type',
+									'aria-label' => '',
+									'type' => 'select',
+									'instructions' => '',
+									'required' => 0,
+									'conditional_logic' => 0,
+									'wrapper' => array(
+										'width' => '',
+										'class' => '',
+										'id' => '',
+									),
+									'choices' => array(
+										'modale' => 'Ouverture modale',
+										'url' => 'URL',
+									),
+									'default_value' => false,
+									'return_format' => 'value',
+									'multiple' => 0,
+									'allow_null' => 0,
+									'allow_in_bindings' => 0,
+									'ui' => 0,
+									'ajax' => 0,
+									'placeholder' => '',
+									'allow_custom' => 0,
+									'search_placeholder' => '',
+									'parent_repeater' => 'field_67a5fc9763398',
+								),
+								array(
 									'key' => 'field_67a5fdc8633a1',
 									'label' => 'Url du bouton',
 									'name' => 'bt_url',
@@ -5438,7 +5468,15 @@ acf_add_local_field_group(array(
 									'type' => 'text',
 									'instructions' => '',
 									'required' => 0,
-									'conditional_logic' => 0,
+									'conditional_logic' => array(
+										array(
+											array(
+												'field' => 'field_67b756d62c468',
+												'operator' => '==',
+												'value' => 'url',
+											),
+										),
+									),
 									'wrapper' => array(
 										'width' => '',
 										'class' => '',
@@ -5543,7 +5581,7 @@ acf_add_local_field_group(array(
 	'acfe_form' => 0,
 	'acfe_meta' => '',
 	'acfe_note' => '',
-	'modified' => 1739642069,
+	'modified' => 1740068680,
 ));
 
 endif;
