@@ -1,6 +1,5 @@
 /*include /libs/jquery.core.js*/
 /*include /libs/slick.js*/
-/*include /libs/smoothscroll.js*/
 /*include /libs/move.js*/
 
 
@@ -42,10 +41,6 @@ $(window).on( 'scroll', function(){
 (function($) { 
 	var Master = {
 		onready : function(){
-			
-
-			/////////////////// SMOOTHSCROLL ///////////////////
-			CBO_Smoothscroll.init();
 
 			/////////////////// HALO ///////////////////
 			window.addEventListener('scroll', function() {
@@ -202,10 +197,12 @@ $(window).on( 'scroll', function(){
 			$('.button-modale').on('click', function(e) {
 				e.stopPropagation();
 				$('.cbo-modale').toggleClass('modale--open');
+				$('body').addClass('body-modale-open');
 			});
 
 			$('.cbo-modale .modale-close, .cbo-modale .modale-overlay').on('click', function() {
 				$('.cbo-modale').removeClass('modale--open');
+				$('body').removeClass('body-modale-open');
 			});
 
 			/////////////////// MODALE VIDEO ///////////////////
