@@ -41,9 +41,9 @@
 		<section class="archive-press">
 			<div class="press-inner cbo-container container--medium">
 				<div class="press-list">
-					<h3 class="press-title cbo-title-1">
+					<h2 class="press-title cbo-title-1">
 						<strong><?php single_cat_title(); ?></strong>
-					</h3>
+					</h2>
 					<?php
 						if ( have_posts() ) :
 						while ( have_posts() ) : the_post();

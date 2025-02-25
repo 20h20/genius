@@ -79,9 +79,9 @@
 
 		<div class="cbo-featured">
 			<div class="featured-inner cbo-container">
-				<div class="featured-title cbo-title-1 slide-up">
+				<h2 class="featured-title cbo-title-1 slide-up">
 					Découvrez <b>nos articles</b>
-				</div>
+				</h2>
 
 				<?php
 					query_posts('showposts=1&orderby=date&order=DESC');

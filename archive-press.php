@@ -50,7 +50,7 @@
 
 							if ( !empty($categories) && !is_wp_error($categories) ) :
 								foreach ( $categories as $category ) : 
-									echo '<h3 class="press-title cbo-title-1"><strong>' . esc_html($category->name) . '</strong></h3>';
+									echo '<h2 class="press-title cbo-title-1"><strong>' . esc_html($category->name) . '</strong></h2>';
 
 									$posts_per_page = ($category->slug === 'medias') ? 9 : 3;
 									$query = new WP_Query(array(

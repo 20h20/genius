@@ -64,9 +64,9 @@
 										width="200" height="200"
 									>
 								</span>
-								<h3 class="content-title cbo-title-2 slide-up">
+								<h2 class="content-title cbo-title-2 slide-up">
 									<?php echo esc_html($term->name); ?>
-								</h3>
+								</h2>
 								<span class="content-text slide-up">
 									<?php echo term_description($term); ?>
 								</span>

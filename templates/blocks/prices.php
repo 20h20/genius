@@ -44,9 +44,9 @@
 									>
 								</div>
 							<?php endif; ?>
-							<h3 class="titlecontainer-title cbo-title-2">
+							<h2 class="titlecontainer-title cbo-title-2">
 								<?php echo $title ?>
-							</h3>
+							</h2>
 						</div>
 
 						<?php if($introduction): ?>

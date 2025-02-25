@@ -36,9 +36,9 @@
 		<section class="archive-news">
 			<div class="news-inner cbo-container container--medium">
 
-				<div class="news-title cbo-title-2 slide-up">
+				<h2 class="news-title cbo-title-2 slide-up">
 					<strong>Nos actualités</strong>
-				</div>
+				</h2>
 				<div class="news-list">
 				<?php
 					if (have_posts()) :

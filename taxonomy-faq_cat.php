@@ -52,10 +52,10 @@
 					?>
 						<article <?php post_class('list-el'); ?>>
 							<div class="el-inner slide-up">
-								<h3 class="el-title toggle cbo-title-3" itemprop="headline">
+								<h2 class="el-title toggle cbo-title-3" itemprop="headline">
 									<?php the_title(); ?>
 									<i class="icon icon--chevron"></i>
-								</h3>
+								</h2>
 
 								<div class="el-content cbo-cms">
 									<?php the_content(); ?>
