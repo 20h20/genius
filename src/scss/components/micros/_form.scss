@@ -18,6 +18,10 @@ FORMS & FIELDS
 		padding: 0 10px;
 		color: $colorblue;
 		transition: all 0.5s cubic-bezier(0.85, 0, 0.15, 1) 0s;
+
+		&:focus{
+			border: 1px solid $colorbluelight;
+		}
 	}
 	input[type="submit"]{
 		margin: 0 auto;
@@ -52,6 +56,7 @@ FORMS & FIELDS
 			height: 150px;
 			padding: 10px;
 			border-radius: 20px;
+			font-family: 'Gilroy';
 		}
 		.field-inner {
 			width: 100%;
@@ -135,7 +140,7 @@ FORMS & FIELDS
 				position: relative;
 				left: 0;
 				top:0;
-				line-height: 27px;
+				line-height: 23px;
 				position: relative;
 				text-transform: none;
 				cursor: pointer;
@@ -143,9 +148,9 @@ FORMS & FIELDS
 				&:before {
 					content: "";
 					display: block;
-					width: 20px;
-					min-width: 20px;
-					height: 20px;
+					width: 16px;
+					min-width: 16px;
+					height: 16px;
 					border-radius: 4px;
 					background: rgba($colorblue, 0);
 					border: 2px solid $colorblue;
@@ -159,7 +164,7 @@ FORMS & FIELDS
 					color: $colorwhite;
 					position: absolute;
 					top: 0;
-					left: 7px;
+					left: 5px;
 					font-size: 12px;
 					transform: scale(0);
 					transition: all 0.3s $easeinout;
@@ -174,16 +179,6 @@ FORMS & FIELDS
 				}
 			}
 		}
-
-
-
-
-
-
-
-
-
-
 		&.form-file{
 			margin-top: 14px;
 
@@ -279,24 +274,56 @@ FORMS & FIELDS
 			}
 		}
 	}
-	.wpcf7-response-output {
-		color: $colorwhite;
-		display:none;
-		width: 100%;
-		font-weight: 700;
-		margin-top: 30px;
-		padding: 16px;
-		text-align: center;
-		border-radius: 10px;
-	}
-	form.invalid .wpcf7-response-output {
-		background: $colorerror;
-		display: block;
-	}
-	form.unaccepted .wpcf7-response-output{
-		background: $colorerror;
-	}
 	form{
+		.wpcf7-response-output {
+			color: $colorwhite;
+			display:none;
+			width: 100%;
+			font-weight: 700;
+			margin-top: 30px;
+			padding: 16px;
+			text-align: center;
+			border-radius: 10px;
+			background: $colorblue;
+		}
+		.form-send{
+			display: none;
+		}
+		&.failed{
+			.form-send{
+				background: $colorwhite;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: 100%;
+				height: 100%;
+				z-index: 1;
+
+				.send-inner{
+					text-align: center;
+				}
+				.send-picture{
+					width: 80px;
+					height: 80px;
+					margin: 0 auto 40px auto;
+					display: block;
+				}
+				.send-title{
+					display: block;
+					font-size: 30px;
+					color: $colorblue;
+					margin-bottom: 20px;
+				}
+				.send-uptitle{
+					display: block;
+					font-size: 24px;
+					color: $colorbluelight;
+				}
+			}
+		}
 		&:after {
 			background: rgba($colorwhite, 0);
 			transition: all .4s;
@@ -304,6 +331,11 @@ FORMS & FIELDS
 		&.invalid{
 			.wpcf7-validates-as-required{
 				border: 1px solid $colorerror;
+			}
+		}
+		&.sent{
+			.wpcf7-response-output{
+				display: block;
 			}
 		}
 		&.submitting{
@@ -331,11 +363,18 @@ FORMS & FIELDS
 				background: rgba($colorwhite, .8);
 			}
 		}
+		@keyframes spin {
+			from { transform: rotate(0deg); }
+			to { transform: rotate(360deg); }
+		}
 	}
-	@keyframes spin {
-		from { transform: rotate(0deg); }
-		to { transform: rotate(360deg); }
-	}	
+	form.invalid .wpcf7-response-output {
+		background: $colorerror;
+		display: block;
+	}
+	form.unaccepted .wpcf7-response-output{
+		background: $colorerror;
+	}
 }
 .screen-reader-response{
 	clip: rect(1px,1px,1px,1px);
