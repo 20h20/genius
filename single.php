@@ -10,6 +10,8 @@
 	$ctaurlbt	= get_field('options_testimonialsctaurlbt', 'option');
 	$ctatypebt	= get_field('options_testimonialsctabttype', 'option');
 	$ctabg	= get_field('options_testimonialsctabg', 'option');
+
+	$updated_date = get_the_modified_date('d/m/Y'); 
 ?>
 	<article id="post-<?php the_ID(); ?>" <?php post_class('cbo-page page--single'); ?> itemscope itemtype="http://schema.org/BlogPosting">
 		<section class="cbo-herorich">
@@ -53,7 +55,12 @@
 						<time class="header-date" itemprop="dateCreated" datetime="<?php echo get_the_date(); ?>">
 							<?php echo get_the_date(); ?>
 						</time> / 
-						<?php echo reading_time(get_the_ID()); ?>
+						<?php echo reading_time(get_the_ID()); ?> /
+						<?php 
+							if ($updated_date) {
+								echo '<p><strong>Article mis à jour le : </strong> ' . esc_html($updated_date) . '</p>';
+							}
+						?>
 					</div>
 
 					<div class="cbo-sommaire">
