@@ -40,6 +40,15 @@ NEWSLETTER MICRO COMPONENT
 				color: $colorwhite;
 				border-radius: 99rem;
 			}
+			::-webkit-input-placeholder {
+				color: $colorwhite;
+			}
+			::-moz-placeholder {
+				color: $colorwhite;
+			}
+			:-ms-input-placeholder {
+				color: $colorwhite;
+			}
 			input[type="submit"]{
 				margin-top: 15px;
 				width: 100%;
