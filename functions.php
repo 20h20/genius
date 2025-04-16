@@ -349,4 +349,22 @@
 	}
 	add_action('pre_get_posts', 'exclude_testimonials_from_search');
 
+
+	/* ************************* */
+	/* CAPTCHA */
+	/* ************************* */
+	add_filter('wpcf7_validate_text*', 'custom_cf7_captcha_validation', 20, 2);
+	function custom_cf7_captcha_validation($result, $tag) {
+		if ($tag->name === 'captcha_cf7') {
+			if (!session_id()) {
+				session_start();
+			}
+			$user_captcha = isset($_POST['captcha_cf7']) ? strtoupper(trim($_POST['captcha_cf7'])) : '';
+			$session_captcha = $_SESSION['cf7_captcha_text'] ?? '';
+			if (empty($user_captcha) || $user_captcha !== $session_captcha) {
+				$result->invalidate($tag, "CAPTCHA incorrect.");
+			}
+		}
+		return $result;
+	}
 ?>
