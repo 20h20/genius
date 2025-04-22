@@ -212,9 +212,18 @@
 	/* ************************* */
 	add_filter('wpcf7_autop_or_not', '__return_false');
 	add_filter('wpcf7_form_elements', function($content) {
-		$content = preg_replace('/<(span).*?class="\s*(?:.*\s)?wpcf7-form-control-wrap(?:\s[^"]+)?\s*"[^\>]*>(.*)<\/\1>/i', '\2', $content);
-		return $content;
+		return preg_replace_callback(
+			'/<span([^>]*)class="([^"]*wpcf7-form-control-wrap[^"]*)"([^>]*)>(.*?)<\/span>/is',
+			function ($matches) {
+				if (strpos($matches[2], 'g-recaptcha') !== false || strpos($matches[4], 'g-recaptcha') !== false) {
+					return $matches[0];
+				}
+				return $matches[4];
+			},
+			$content
+		);
 	});
+
 
 	/* ************************* */
 	// Add Color choices
@@ -349,22 +358,4 @@
 	}
 	add_action('pre_get_posts', 'exclude_testimonials_from_search');
 
-
-	/* ************************* */
-	/* CAPTCHA */
-	/* ************************* */
-	add_filter('wpcf7_validate_text*', 'custom_cf7_captcha_validation', 20, 2);
-	function custom_cf7_captcha_validation($result, $tag) {
-		if ($tag->name === 'captcha_cf7') {
-			if (!session_id()) {
-				session_start();
-			}
-			$user_captcha = isset($_POST['captcha_cf7']) ? strtoupper(trim($_POST['captcha_cf7'])) : '';
-			$session_captcha = $_SESSION['cf7_captcha_text'] ?? '';
-			if (empty($user_captcha) || $user_captcha !== $session_captcha) {
-				$result->invalidate($tag, "CAPTCHA incorrect.");
-			}
-		}
-		return $result;
-	}
 ?>
