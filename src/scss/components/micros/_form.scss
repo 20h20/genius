@@ -41,6 +41,9 @@ FORMS & FIELDS
 		opacity: .9;
 		color: $colorblue;
 	}
+	.h-captcha{
+		margin-bottom: 20px !important;
+	}
 	input.wpcf7-not-valid{
 		border-color: $colorerror;
 	}
