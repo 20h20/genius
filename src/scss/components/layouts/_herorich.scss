@@ -49,6 +49,11 @@ HERO RICH COMPONENT
             width: 100%;
             right: 0%;
 
+            &.main--nocrop{
+                img{
+                    position: relative;
+                }
+            }
             &.picture--left{
                 img{
                     object-position: left center;

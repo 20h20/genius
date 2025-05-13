@@ -3,6 +3,7 @@
 	$picturecover	= get_sub_field('herorich_picover');
 
 	$picture	= get_sub_field('herorich_picture');
+	$crop	= get_sub_field('herorich_picturecrop');
 	$pictureblocpos	= get_sub_field('herorich_pictureblocpos');
 	$picture2	= get_sub_field('herorich_picture2');
 	$title	= get_sub_field('herorich_title');
@@ -37,7 +38,7 @@
 					>
 				</div>
 			<?php endif; ?>
-			<div class="picture-main cbo-picture-cover picture--<?php echo $pictureblocpos; ?> <?php if($picturesize == 0): ?>slide-up<?php endif; ?>">
+			<div class="picture-main cbo-picture-cover <?php if($crop == 0): ?>main--nocrop<?php endif; ?> picture--<?php echo $pictureblocpos; ?> <?php if($picturesize == 0): ?>slide-up<?php endif; ?>">
 				<img
 					decoding="async"
 					src="<?php echo $picture['sizes']['small']; ?>"

@@ -285,6 +285,27 @@ acf_add_local_field_group(array(
 							'library' => 'all',
 						),
 						array(
+							'key' => 'field_682341d43767c',
+							'label' => 'Cropper l\'image',
+							'name' => 'herorich_picturecrop',
+							'aria-label' => '',
+							'type' => 'true_false',
+							'instructions' => '',
+							'required' => 0,
+							'conditional_logic' => 0,
+							'wrapper' => array(
+								'width' => '',
+								'class' => '',
+								'id' => '',
+							),
+							'message' => '',
+							'default_value' => 1,
+							'allow_in_bindings' => 0,
+							'ui' => 0,
+							'ui_on_text' => '',
+							'ui_off_text' => '',
+						),
+						array(
 							'key' => 'field_661fb00346b05',
 							'label' => 'Position de l\'image dans son bloc',
 							'name' => 'herorich_pictureblocpos',
@@ -312,6 +333,8 @@ acf_add_local_field_group(array(
 							'placeholder' => '',
 							'allow_custom' => 0,
 							'search_placeholder' => '',
+							'create_options' => 0,
+							'save_options' => 0,
 						),
 						array(
 							'key' => 'field_661fa73316698',
@@ -421,6 +444,8 @@ acf_add_local_field_group(array(
 							'placeholder' => '',
 							'allow_custom' => 0,
 							'search_placeholder' => '',
+							'create_options' => 0,
+							'save_options' => 0,
 						),
 						array(
 							'key' => 'field_661fa2811668a',
@@ -485,6 +510,8 @@ acf_add_local_field_group(array(
 							'placeholder' => '',
 							'allow_custom' => 0,
 							'search_placeholder' => '',
+							'create_options' => 0,
+							'save_options' => 0,
 						),
 						array(
 							'key' => 'field_661fa2811668b',
@@ -582,6 +609,8 @@ acf_add_local_field_group(array(
 							'placeholder' => '',
 							'allow_custom' => 0,
 							'search_placeholder' => '',
+							'create_options' => 0,
+							'save_options' => 0,
 						),
 						array(
 							'key' => 'field_661fa67916692',
@@ -646,6 +675,8 @@ acf_add_local_field_group(array(
 							'placeholder' => '',
 							'allow_custom' => 0,
 							'search_placeholder' => '',
+							'create_options' => 0,
+							'save_options' => 0,
 						),
 						array(
 							'key' => 'field_661fa68316693',
@@ -954,6 +985,8 @@ acf_add_local_field_group(array(
 									'allow_custom' => 0,
 									'search_placeholder' => '',
 									'parent_repeater' => 'field_661e0a98d1fe7',
+									'create_options' => 0,
+									'save_options' => 0,
 								),
 							),
 						),
@@ -1893,6 +1926,8 @@ acf_add_local_field_group(array(
 									'allow_custom' => 0,
 									'search_placeholder' => '',
 									'parent_repeater' => 'field_665d7db9f1429',
+									'create_options' => 0,
+									'save_options' => 0,
 								),
 								array(
 									'key' => 'field_66b1bbb6a005b',
@@ -2327,6 +2362,8 @@ acf_add_local_field_group(array(
 							'placeholder' => '',
 							'allow_custom' => 0,
 							'search_placeholder' => '',
+							'create_options' => 0,
+							'save_options' => 0,
 						),
 						array(
 							'key' => 'field_661d24f24e243',
@@ -3880,6 +3917,8 @@ acf_add_local_field_group(array(
 							'placeholder' => '',
 							'allow_custom' => 0,
 							'search_placeholder' => '',
+							'create_options' => 0,
+							'save_options' => 0,
 						),
 						array(
 							'key' => 'field_662275b6594c5',
@@ -4315,6 +4354,8 @@ acf_add_local_field_group(array(
 							'placeholder' => '',
 							'allow_custom' => 0,
 							'search_placeholder' => '',
+							'create_options' => 0,
+							'save_options' => 0,
 						),
 						array(
 							'key' => 'field_6627b8f7afc9c',
@@ -4343,6 +4384,8 @@ acf_add_local_field_group(array(
 							'placeholder' => '',
 							'allow_custom' => 0,
 							'search_placeholder' => '',
+							'create_options' => 0,
+							'save_options' => 0,
 						),
 						array(
 							'key' => 'field_6627b26eae62c',
@@ -4521,6 +4564,8 @@ acf_add_local_field_group(array(
 							'placeholder' => '',
 							'allow_custom' => 0,
 							'search_placeholder' => '',
+							'create_options' => 0,
+							'save_options' => 0,
 						),
 						array(
 							'key' => 'field_66682b20f78e5',
@@ -4799,6 +4844,8 @@ acf_add_local_field_group(array(
 							'placeholder' => '',
 							'allow_custom' => 0,
 							'search_placeholder' => '',
+							'create_options' => 0,
+							'save_options' => 0,
 						),
 						array(
 							'key' => 'field_661e6b0b7b829',
@@ -5170,6 +5217,8 @@ acf_add_local_field_group(array(
 									'placeholder' => '',
 									'allow_custom' => 0,
 									'search_placeholder' => '',
+									'create_options' => 0,
+									'save_options' => 0,
 									'parent_repeater' => 'field_67a5fc9763398',
 								),
 								array(
@@ -5458,6 +5507,8 @@ acf_add_local_field_group(array(
 									'placeholder' => '',
 									'allow_custom' => 0,
 									'search_placeholder' => '',
+									'create_options' => 0,
+									'save_options' => 0,
 									'parent_repeater' => 'field_67a5fc9763398',
 								),
 								array(
@@ -5581,7 +5632,7 @@ acf_add_local_field_group(array(
 	'acfe_form' => 0,
 	'acfe_meta' => '',
 	'acfe_note' => '',
-	'modified' => 1740068680,
+	'modified' => 1747141217,
 ));
 
 endif;
