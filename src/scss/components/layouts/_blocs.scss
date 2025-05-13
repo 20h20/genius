@@ -46,6 +46,7 @@ SMALL SCREENS
     .blocs-list{
       display: flex;
       flex-wrap: wrap;
+      justify-content: center;
       margin: -1.25rem -0.625rem;
 
       .list-el{
@@ -79,9 +80,6 @@ LARGE SCREENS
         margin: 2.5rem 0;
         padding: 0 1.875rem;
 
-        &:nth-child(3n){
-          margin-left: 10%;
-        }
         .el-inner{
           .inner-content{
             padding-left: 1.875rem;
