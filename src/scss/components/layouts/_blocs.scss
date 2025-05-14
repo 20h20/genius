@@ -13,6 +13,7 @@ BLOCS SIMPLE COMPONENT
       .el-inner{
         display: flex;
         align-items: center;
+        background: red !important;
 
         .inner-picture{
           min-width: 2.5rem;
