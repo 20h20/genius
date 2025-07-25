@@ -34,8 +34,8 @@ NEWSLETTER MICRO COMPONENT
 			margin-bottom: 20px;
 		}
 		.newsletter-form{
-			.field--captcha{
-				margin-top: 20px;
+			.h-captcha{
+				margin: 20px auto;
 			}
 			input[type="email"]{
 				height: 60px;
@@ -76,12 +76,11 @@ SMALL SCREENS
 				form{
 					display: flex;
 					flex-wrap: wrap;
-					justify-content: space-between;
+					flex-direction: column;
 				}
 				input[type="email"]{
-					width: 100%;
-					margin-right: 30px;
-					flex: 1;
+					max-width: 500px;
+					margin: 0 auto;
 				}
 				input[type="submit"]{
 					width: 245px;
