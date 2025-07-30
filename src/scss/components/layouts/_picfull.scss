@@ -17,6 +17,8 @@ FULL PICTURE COMPONENT
       display: none;
     }
     &.picture--mobile{
+      padding: 0 20px;
+
       img{
         position: relative;
       }

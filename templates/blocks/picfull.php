@@ -7,7 +7,6 @@
 	$picturemobilecover	= get_sub_field('picfull_picturecovermobile');
 ?>
 
-
 <section class="cbo-fullpicture">
 	<div class="fullpicture-inner">
 		<?php if($title): ?>
