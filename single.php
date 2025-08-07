@@ -11,7 +11,14 @@
 	$ctatypebt	= get_field('options_testimonialsctabttype', 'option');
 	$ctabg	= get_field('options_testimonialsctabg', 'option');
 
-	$updated_date = get_the_modified_date('d/m/Y'); 
+
+
+
+	$posted_time = get_the_time('U'); 
+$modified_time = get_the_modified_time('U'); 
+
+
+
 ?>
 	<article id="post-<?php the_ID(); ?>" <?php post_class('cbo-page page--single'); ?> itemscope itemtype="http://schema.org/BlogPosting">
 		<section class="cbo-herorich">
@@ -57,9 +64,9 @@
 						</time> / 
 						<?php echo reading_time(get_the_ID()); ?> /
 						<?php 
-							if ($updated_date) {
-								echo '<p><strong>Article mis à jour le : </strong> ' . esc_html($updated_date) . '</p>';
-							}
+							if ( $modified_time > $posted_time ) {
+								echo '<p><strong>Article mis à jour le :</strong> ' . get_the_modified_time('d F Y') . '</p>';
+							} 
 						?>
 					</div>
 
