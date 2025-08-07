@@ -256,7 +256,7 @@ MEDIUM SCREENS
         .prices-list{
             display: flex;
             justify-content: space-between;
-            margin: 0 -20px;
+            margin: 0 -5px;
 
             .list-el{
                 max-width: inherit;
@@ -264,7 +264,53 @@ MEDIUM SCREENS
                 width: 50%;
     
                 .el-inner {
-                   margin: 0 20px;
+                    margin: 0 5px;
+
+                    .inner-titlecontainer{
+                        .titlecontainer-picture {
+                            margin-right: 12px;
+                        }
+                        .titlecontainer-title{
+                            font-size: 22px;
+                            line-height: 26px;
+                        }
+                    }
+                    .inner-introduction{
+                        font-size: 18px;
+                        line-height: 18px;
+                    }
+                    .offers-list{
+                        padding: 0 10px;
+                    }
+                    .inner-bottom{
+                        padding: 20px 10px;
+
+                        .bottom-top {
+                            .top-tag{
+                                font-size: 13px;
+                                line-height: 14px;
+                                font-weight: normal;
+                                padding: 0 10px;
+                                height: 30px;
+                            }
+                            .top-title{
+                                font-size: 18px;
+                                line-height: 18px;
+                            }
+                        }
+                        .bottom-prices {
+                            .prices-el {
+                                .el-text{
+                                    font-size: 13px;
+                                }
+                                .el-price {
+                                    .price{
+                                        font-size: 24px;
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -276,14 +322,28 @@ LARGE SCREENS
 @media (min-width: $screen-lg-min){
     .cbo-prices {
         .prices-list{
+            margin: 0 -15px;
+
             .list-el{
                 .el-inner {
+                    margin: 0 15px;
+
                     .inner-titlecontainer{
                         padding: 40px 20px;
                         margin-bottom: 40px;
+
+                        .titlecontainer-picture {
+                            margin-right: 22px;
+                        }
+                        .titlecontainer-title{
+                            font-size: 29px;
+                            line-height: 33px;
+                        }
                     }
                     .inner-introduction{
                         padding: 0 20px;
+                        font-size: 22px;
+                        line-height: 26px;
                     }
                     .offers-list{
                         padding: 0 20px;
@@ -297,16 +357,20 @@ LARGE SCREENS
                     .inner-bottom{
                         padding: 40px 20px;
 
+                        .bottom-top {
+                            .top-title{
+                                font-size: 22px;
+                                line-height: 26px; 
+                            }
+                        }
                         .bottom-prices{
                             .prices-el{
-                                margin: 40px 0;
-
                                 .el-text{
-                                    font-size: 26px;
+                                    font-size: 18px;
                                 }
                                 .el-price{
                                     .price{
-                                        font-size: 50px;
+                                        font-size: 34px;
                                     }
                                 }
                             }

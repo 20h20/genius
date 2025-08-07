@@ -1,5 +1,5 @@
 <section class="cbo-prices">
-	<div class="prices-inner cbo-container container--medium">
+	<div class="prices-inner cbo-container">
 
 		<div class="prices-toggle">
 			<div class="toggle-button">

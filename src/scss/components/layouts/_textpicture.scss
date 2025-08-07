@@ -21,6 +21,16 @@ TEXT PICTURE COMPONENT
     max-width: 40.625rem;
     margin: 0 auto 1.25rem auto;
     padding-bottom: 70%;
+
+    &.picture--video {
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      padding-bottom: 0;
+  
+      iframe {
+        border: 0;
+      }
+    }
   }
   .textpicture-content {
     max-width: 40.625rem;
