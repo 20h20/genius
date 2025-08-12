@@ -60,12 +60,12 @@ h1,h2,h3,h4,h5,h6{
 	}
 }
 .cbo-title-1,
-.cbo-title-1 h2, .cbo-title-1 h3, .cbo-title-1 h4, .cbo-title-1 h5, .cbo-title-1 h6, .cbo-title-1 p{
+.cbo-title-1 h1, .cbo-title-1 h2, .cbo-title-1 h3, .cbo-title-1 h4, .cbo-title-1 h5, .cbo-title-1 h6, .cbo-title-1 p{
 	font-size: 30px;
 	line-height: 38px;
 }
 .cbo-title-2,
-.cbo-title-2 h2, .cbo-title-2 h3, .cbo-title-2 h4, .cbo-title-2 h5, .cbo-title-2 h6, .cbo-title-2 p{
+.cbo-title-2 h1, .cbo-title-2 h2, .cbo-title-2 h3, .cbo-title-2 h4, .cbo-title-2 h5, .cbo-title-2 h6, .cbo-title-2 p{
 	font-size: 26px;
 	line-height: 30px;
 
@@ -340,12 +340,12 @@ MEDIUM SCREENS
 ------------------------------- */
 @media (min-width: $screen-md-min){
 	.cbo-title-1,
-	.cbo-title-1 h2, .cbo-title-1 h3, .cbo-title-1 h4, .cbo-title-1 h5, .cbo-title-1 h6, .cbo-title-1 p{
+	.cbo-title-1 h1, .cbo-title-1 h2, .cbo-title-1 h3, .cbo-title-1 h4, .cbo-title-1 h5, .cbo-title-1 h6, .cbo-title-1 p{
 		font-size: 36px;
 		line-height: 46px;
 	}
 	.cbo-title-2,
-	.cbo-title-2 h2, .cbo-title-2 h3, .cbo-title-2 h4, .cbo-title-2 h5, .cbo-title-2 h6, .cbo-title-2 p{
+	.cbo-title-2 h1, .cbo-title-2 h2, .cbo-title-2 h3, .cbo-title-2 h4, .cbo-title-2 h5, .cbo-title-2 h6, .cbo-title-2 p{
 		font-size: 29px;
 		line-height: 33px;
 	}
@@ -373,12 +373,12 @@ LARGE SCREENS
 ------------------------------- */
 @media (min-width: $screen-lg-min){
 	.cbo-title-1,
-	.cbo-title-1 h2, .cbo-title-1 h3, .cbo-title-1 h4, .cbo-title-1 h5, .cbo-title-1 h6, .cbo-title-1 p{
+	.cbo-title-1 h1, .cbo-title-1 h2, .cbo-title-1 h3, .cbo-title-1 h4, .cbo-title-1 h5, .cbo-title-1 h6, .cbo-title-1 p{
 		font-size: 40px;
 		line-height: 54px;
 	}
 	.cbo-title-2,
-	.cbo-title-2 h2, .cbo-title-2 h3, .cbo-title-2 h4, .cbo-title-2 h5, .cbo-title-2 h6, .cbo-title-2 p{
+	.cbo-title-2 h1, .cbo-title-2 h2, .cbo-title-2 h3, .cbo-title-2 h4, .cbo-title-2 h5, .cbo-title-2 h6, .cbo-title-2 p{
 		font-size: 32px;
 		line-height: 36px;
 	}

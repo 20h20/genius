@@ -1,6 +1,5 @@
 <?php
 	add_action( 'init', 'cbo_clean_head' );
-	add_action( 'wp_enqueue_scripts', 'cbo_scripts_and_styles', 999 );
 	add_filter( 'the_generator', 'cbo_remove_rss_version' );
 	add_filter( 'protected_title_format', 'cbo_remove_protected_text' );
 	add_filter( 'gallery_style', 'cbo_remove_gallery_style' );
@@ -73,20 +72,7 @@
 	function bones_filter_ptags_on_images($content){
 		return preg_replace('/<p>\s*(<a .*>)?\s*(<img .* \/>)\s*(<\/a>)?\s*<\/p>/iU', '\1\2\3', $content);
 	}
-	
-	/* Load custom scripts and styles */
-	function cbo_scripts_and_styles() {
-		if (!is_admin()) {
-			wp_register_style(
-				'bones-stylesheet',
-				get_stylesheet_directory_uri() . '/library/css/style.css',
-				array(),
-				'screen,print'
-			);
 
-			wp_enqueue_style( 'bones-stylesheet' );
-		}
-	}
 
 	/* Add defer attr on scripts */
 	function cbo_add_defer_attribute($tag, $handle) {
