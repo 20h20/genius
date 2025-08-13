@@ -9,7 +9,7 @@ RELATION COMPONENT
     .relations-button{
         text-align: center;
         margin-top: 50px;
-    }
+    }  
 }
 /* -------------------------------
 SMALL SCREENS
@@ -17,6 +17,11 @@ SMALL SCREENS
 @media (min-width: $screen-sm-min){
     .cbo-relation{
         .articles-list{
+            .slick-list{
+                width: 100%;
+                display: flex;
+                justify-content: center;
+            }
             .list-el{
                 height: 100%;
             }

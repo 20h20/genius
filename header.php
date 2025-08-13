@@ -81,7 +81,7 @@
 			</a>
 
 			<?php
-				if ($pgetype == 'standard' || is_home() || is_archive() || is_single() || is_search()) :
+				if ($pgetype == 'standard' || is_home() || is_archive() || is_single() || is_search() || is_404()) :
 			?>
 				<nav class="header-nav" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement" aria-label="Navigation principale">
 					<?php wp_nav_menu( array(

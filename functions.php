@@ -361,16 +361,6 @@
 
 
 	/* ************************* */
-	// Add a custom tool bar
-	/* ************************* */
-	function custom_acf_wysiwyg_toolbar($toolbars) {
-		$toolbars['Custom'] = [];
-		$toolbars['Custom'][1] = ['italic', 'formatselect', 'forecolor'];
-		return $toolbars;
-	}
-	add_filter('acf/fields/wysiwyg/toolbars', 'custom_acf_wysiwyg_toolbar');
-
-	/* ************************* */
 	/* ON EXCLUE LES TÉMOIGNAGES DE LA RECHERCHE */
 	/* ************************* */
 	function exclude_testimonials_from_search($query) {

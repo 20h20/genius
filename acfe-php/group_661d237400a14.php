@@ -2721,7 +2721,7 @@ acf_add_local_field_group(array(
 							'label' => 'Titre',
 							'name' => 'contact_title',
 							'aria-label' => '',
-							'type' => 'wysiwyg',
+							'type' => 'medium_editor',
 							'instructions' => '',
 							'required' => 0,
 							'conditional_logic' => 0,
@@ -2731,11 +2731,26 @@ acf_add_local_field_group(array(
 								'id' => '',
 							),
 							'default_value' => '',
-							'allow_in_bindings' => 0,
-							'tabs' => 'all',
-							'toolbar' => 'custom',
-							'media_upload' => 0,
+							'placeholder' => '',
+							'standard_buttons' => array(
+								0 => 'bold',
+								1 => 'italic',
+								2 => 'underline',
+								3 => 'h1',
+								4 => 'h2',
+								5 => 'h3',
+								6 => 'h4',
+								7 => 'h5',
+								8 => 'h6',
+								9 => 'removeFormat',
+							),
+							'other_options' => array(
+								0 => 'disableReturn',
+								1 => 'disableDoubleReturn',
+								2 => 'disableExtraSpaces',
+							),
 							'delay' => 0,
+							'allow_in_bindings' => 0,
 						),
 						array(
 							'key' => 'field_671f5b22e9cf3',
@@ -5700,7 +5715,7 @@ acf_add_local_field_group(array(
 	'acfe_form' => 0,
 	'acfe_meta' => '',
 	'acfe_note' => '',
-	'modified' => 1754995319,
+	'modified' => 1755084934,
 ));
 
 endif;
