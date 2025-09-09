@@ -4586,6 +4586,36 @@ acf_add_local_field_group(array(
 							'append' => '',
 						),
 						array(
+							'key' => 'field_68c006e0daede',
+							'label' => 'Vidéo',
+							'name' => 'textpicture_video',
+							'aria-label' => '',
+							'type' => 'file',
+							'instructions' => '',
+							'required' => 0,
+							'conditional_logic' => array(
+								array(
+									array(
+										'field' => 'field_68945d4a337c2',
+										'operator' => '==',
+										'value' => 'video',
+									),
+								),
+							),
+							'wrapper' => array(
+								'width' => '',
+								'class' => '',
+								'id' => '',
+							),
+							'uploader' => '',
+							'return_format' => 'array',
+							'min_size' => '',
+							'max_size' => '',
+							'mime_types' => '',
+							'allow_in_bindings' => 0,
+							'library' => 'all',
+						),
+						array(
 							'key' => 'field_661e174c463e0',
 							'label' => 'Image',
 							'name' => 'textpicture_picture',
@@ -5715,7 +5745,7 @@ acf_add_local_field_group(array(
 	'acfe_form' => 0,
 	'acfe_meta' => '',
 	'acfe_note' => '',
-	'modified' => 1755084934,
+	'modified' => 1757415204,
 ));
 
 endif;
