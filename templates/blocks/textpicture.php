@@ -39,7 +39,7 @@
 			</div>
 		<?php endif; ?>
 
-		<div class="inner-container">
+		<div class="inner-container <?php if($type == 'video'): ?>container--video<?php endif; ?>">
 			<?php if($type == 'picture'): ?>
 				<div class="textpicture-picture <?php if($cover == 1): ?>cbo-picture-cover<?php endif; ?> <?php if($cover == 0): ?>cbo-picture-contain<?php endif; ?> slide-up">
 					<img
@@ -54,11 +54,6 @@
 				</div>
 			<?php endif; ?>
 
-
-
-
-
-
 			<?php if($type == 'video'): ?>
 				<div class="textpicture-picture picture--video cbo-picture-contain">
 					<video
@@ -69,6 +64,7 @@
 						loop
 						itemscope itemtype="http://schema.org/VideoObject"
 						onmouseenter="event.target.setAttribute('preload','metadata')"
+						loading="lazy"
 					>
 						<source
 							type="video/mp4"
@@ -78,19 +74,6 @@
 					</video>
 				</div>
 			<?php endif; ?>
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 			<div class="textpicture-content">
 				<?php if($addquote == 1): ?>

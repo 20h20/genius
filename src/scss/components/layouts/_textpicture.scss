@@ -23,12 +23,13 @@ TEXT PICTURE COMPONENT
     padding-bottom: 70%;
 
     &.picture--video {
-      aspect-ratio: 16 / 9;
-      overflow: hidden;
-      padding-bottom: 0;
-  
-      iframe {
-        border: 0;
+      max-width: 18.75rem;
+      padding-bottom: 0%;
+
+      video{
+        border-radius: 1.25rem;
+        overflow: hidden;
+        position: relative;
       }
     }
   }
@@ -99,6 +100,10 @@ MEDIUM SCREENS
       justify-content: space-between;
       flex-wrap: wrap;
       align-items: center;
+
+      &.container--video{
+        justify-content: center;
+      }
     }
     .textpicture-picture{
       width: 45%;
@@ -111,6 +116,10 @@ MEDIUM SCREENS
 
         img{
           position: relative;
+        }
+        &.picture--video {
+          max-width: 25rem;
+          padding: 0 3.125rem;
         }
       }
     }
