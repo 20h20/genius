@@ -24,6 +24,30 @@
 		add_filter( 'wp_title', 'cbo_head_title', 10, 3 );
 	}
 
+
+	/* ************************* */
+	// STYLES
+	/* ************************* */
+	function theme_enqueue_styles() {
+		$css_file = get_stylesheet_directory() . '/library/css/style.css';
+		$css_version = file_exists($css_file) ? filemtime($css_file) : wp_get_theme()->get('Version');
+		$css_url = get_stylesheet_directory_uri() . '/library/css/style.css?ver=' . $css_version;
+	
+		if (!is_admin()) {
+			wp_enqueue_style('cbo-styles', $css_url, array(), null);
+		}
+	}
+	add_action('wp_enqueue_scripts', 'theme_enqueue_styles', 20);
+	
+	function my_admin_enqueue_styles($hook) {
+		$css_file = get_stylesheet_directory() . '/library/css/style.css';
+		$css_version = file_exists($css_file) ? filemtime($css_file) : wp_get_theme()->get('Version');
+		$css_url = get_stylesheet_directory_uri() . '/library/css/style.css?ver=' . $css_version;
+	
+		wp_enqueue_style('cbo-admin-styles', $css_url, array(), null);
+	}
+	add_action('admin_enqueue_scripts', 'my_admin_enqueue_styles');
+
 	/* Nettoyage titre et meta description */
 	function cbo_head_title( $title, $sep, $seplocation ){
 		global $page, $paged;

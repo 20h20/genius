@@ -2,6 +2,7 @@
 	function bones_ahoy() {
 		require_once( 'library/inc/custom-cleanup.php' );
 		require_once( 'library/inc/custom-admin.php' );
+		require_once( 'library/inc/custom-dashboard.php' );
 		require_once( 'library/inc/custom-post/cpt-testimonial.php' );
 		require_once( 'library/inc/custom-post/cpt-press.php' );
 		require_once( 'library/inc/custom-post/cpt-news.php' );
@@ -27,18 +28,6 @@
 	add_image_size('medium', 1200, 1200, false);
 	add_image_size('xlarge', 1920, 1920, false);
 
-
-	/* ************************* */
-	// STYLES
-	/* ************************* */
-	function my_theme_enqueue_styles() {
-		$css_file = get_stylesheet_directory() . '/library/css/style.css';
-		$css_version = file_exists($css_file) ? filemtime($css_file) : wp_get_theme()->get('Version');
-		$css_url = get_stylesheet_directory_uri() . '/library/css/style.css?ver=' . $css_version;
-		wp_enqueue_style('my-custom-style', $css_url, array(), null);
-	}
-	add_action('wp_enqueue_scripts', 'my_theme_enqueue_styles', 20);
-	
 
 	/* ************************* */
 	/* Add styles to wysiwyg editor */
