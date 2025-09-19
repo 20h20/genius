@@ -32,7 +32,7 @@
 	?>
 </head>
 
-<body <?php body_class(($pgetype == 'landing') ? 'cbo-landing' : ''); ?> itemscope itemtype="http://schema.org/WebPage">
+<body <?php body_class(($pgetype == 'landing') ? 'cbo-landing' : 'cbo-website'); ?> itemscope itemtype="http://schema.org/WebPage">
 	<?php if($popinactive){ ?>
 		<div id="myModal" class="cbo-modale modale--infos" role="dialog">
 			<div class="modale-inner modale--<?php echo $popincolor ?>">
