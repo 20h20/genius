@@ -330,6 +330,9 @@ FORMS & FIELDS
 					color: $colorbluelight;
 				}
 			}
+			.wpcf7-response-output{
+				display: none;
+			}
 		}
 		&:after {
 			background: rgba($colorwhite, 0);
