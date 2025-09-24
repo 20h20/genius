@@ -12,13 +12,13 @@
 
 		<?php if($title): ?>
 			<div class="blocsbackground-title cbo-title-2 slide-up" itemprop="headline">
-				<?php echo $title ?>
+				<?php echo esc_html($title); ?>
 			</div>
 		<?php endif; ?>
 
 		<?php if($chapo): ?>
 			<div class="blocsbackground-chapo cbo-chapo cbo-cms slide-up">
-				<?php echo $chapo ?>
+			 <?php echo esc_html($chapo); ?>
 			</div>
 		<?php endif; ?>
 

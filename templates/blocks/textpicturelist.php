@@ -9,7 +9,7 @@
 	<div class="textpicturelist-inner cbo-container">
 		<?php if($title): ?>
 			<div class="textpicturelist-title cbo-title-2 slide-up">
-				<?php echo $title ?>
+				<?php echo esc_html($title); ?>
 			</div>
 		<?php endif; ?>
 
