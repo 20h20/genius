@@ -6,7 +6,7 @@
 
 		<?php if($title): ?>
 			<div class="blocs-title cbo-title-2 slide-up" itemprop="headline">
-				<?php echo esc_html($title); ?>
+				<?php echo $title ?>
 			</div>
 		<?php endif; ?>
 
@@ -43,13 +43,13 @@
 						<div class="inner-content">
 							<?php if($title): ?>
 								<span class="content-title cbo-title-3">
-									<?php echo esc_html($title); ?>
+									<?php echo $title ?>
 								</span>
 							<?php endif; ?>
 
 							<?php if($content): ?>
 								<span class="content-text">
-									<?php echo esc_html($content); ?>
+									<?php echo $content ?>
 								</span>
 							<?php endif; ?>
 						</div>

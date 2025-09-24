@@ -6,7 +6,7 @@
 
 		<?php if($title): ?>
 			<div class="blocssimple-title cbo-title-2 slide-up" itemprop="headline">
-				<?php echo esc_html($title); ?>
+				<?php echo $title ?>
 			</div>
 		<?php endif; ?>
 

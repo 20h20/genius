@@ -11,13 +11,13 @@
 	<div class="fullpicture-inner">
 		<?php if($title): ?>
 			<div class="fullpicture-title cbo-title-2 slide-up">
-				<?php echo esc_html($title); ?>
+				<?php echo $title ?>
 			</div>
 		<?php endif; ?>
 
 		<?php if($chapo): ?>
 			<div class="fullpicture-chapo cbo-cms slide-up">
-				<?php echo esc_html($chapo); ?>
+				<?php echo $chapo ?>
 			</div>
 		<?php endif; ?>
 
