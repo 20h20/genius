@@ -1,4 +1,6 @@
 <?php
+	$thumbnail_id  = get_post_thumbnail_id(get_the_ID());
+	$thumbnail_url = wp_get_attachment_image_url($thumbnail_id, 'medium');
 	$mtop	= get_sub_field('textpicture_margetop');
 	$mbot	= get_sub_field('textpicture_margebot');
 	$title	= get_sub_field('textpicture_title');
@@ -56,6 +58,10 @@
 
 			<?php if($type == 'video'): ?>
 				<div class="textpicture-picture picture--video cbo-picture-contain">
+					<meta itemprop="name" content="<?php echo esc_attr($video['title']); ?>">
+					<meta itemprop="description" content="<?php echo esc_attr($video['description']); ?>">
+					<meta itemprop="uploadDate" content="<?php echo date('Y-m-d', strtotime($video['date'])); ?>">
+					<meta itemprop="thumbnailUrl" content="<?php echo esc_url($thumbnail_url); ?>">
 					<video
 						autoplay="autoplay"
 						preload="auto"
