@@ -230,7 +230,7 @@ $modified_time = get_the_modified_time('U');
 						<?php echo $newschapo ?>
 					</div>
 					<div class="newsletter-form cbo-form">
-						<?php echo do_shortcode( '[contact-form-7 id="4ccd478" title="Newsletter"]' ); ?>
+						<?php echo do_shortcode( '[sibwp_form id=1]' ); ?>
 					</div>
 				</div>
 			</div>
