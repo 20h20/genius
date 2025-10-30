@@ -226,7 +226,7 @@ $(window).on( 'scroll', function(){
 					var setPos = document.cookie.indexOf(name + '='), stopPos = document.cookie.indexOf(';', setPos);
 					return ~setPos ? document.cookie.substring(setPos, ~stopPos ? stopPos : undefined).split('=')[1] : null;
 				}
-
+			
 				function setCookie(name, val, days, path) {
 					var cookie = name + "=" + escape(val) + "";
 					if (days) {
@@ -237,24 +237,35 @@ $(window).on( 'scroll', function(){
 					cookie += ";" + (path || "path=/");
 					document.cookie = cookie;
 				}
+			
 				$(document).ready(function(){
 					var bandeauCookie = getCookie("bandeauCookie");
-					$("#myModal").hide();
+					var $modal = $("#myModal");
+			
+					// On s'assure que la modale existe
+					if (!$modal.length) return;
+			
+					$modal.hide();
+			
 					if (!bandeauCookie) {
 						setTimeout(function() {
-							$('body').addClass('body-modale-open');
-							$('#myModal').addClass('infos--open').show();
+							$modal.addClass('infos--open').fadeIn('fast', function() {
+								$('body').addClass('body-modale-open');
+							});
 						}, 5000);
-
-						$("#myModal-close").click(function(){
+			
+						// Fermer la modale
+						$("#myModal-close").on('click', function(){
 							setCookie("bandeauCookie", 1, 1);
-							$("#myModal").fadeOut('fast', function() {
+							$modal.fadeOut('fast', function() {
 								$('body').removeClass('body-modale-open');
+								$modal.removeClass('infos--open');
 							});
 						});
 					}
 				});
 			})(jQuery);
+			
 			
 
 			/////////////////// SLIDER ARTICLES ///////////////////
